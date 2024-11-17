@@ -1,12 +1,14 @@
 import Link from "next/link";
+import { Text } from "@/components/custom/typography";
+import { Section } from "@/components/custom/section";
 
 export default function Page() {
     return (
-        <article className="container mx-auto px-2 md:px-12">
-            <h1 className="text-8xl font-extrabold mt-16">
+        <Section>
+            <Text size="sm" as="h1" variant="heading">
                 Let&apos;s make the world a better place for everyone ❤️
-            </h1>
-            <figure className="space-y-4 my-28 prose md:prose-xl lg:prose-2xl">
+            </Text>
+            <figure className="space-y-4 my-16 prose md:prose-xl lg:prose-2xl">
                 <blockquote
                     cite="https://www.w3.org/mission/accessibility/"
                     className="text-white not-italic"
@@ -19,19 +21,19 @@ export default function Page() {
                     - Tim Berners-Lee
                 </figcaption>
             </figure>
-            <p className="text-2xl mb-28">I firmly believe in that quote.</p>
-            <p className="text-2xl mb-6">
+            <Text className="mb-24">I firmly believe in that quote.</Text>
+            <Text className="mb-6">
                 And although I have tried my best to make this website
                 accessible for everybody, I am sure there are still some
                 improvements to be made. If you have any suggestions or
                 feedback, I would like to hear from you!
-            </p>
+            </Text>
             <Link
                 href="mailto:mail@sanderboer.nl"
                 className="text-2xl underline"
             >
                 Send me an email.
             </Link>
-        </article>
+        </Section>
     );
 }

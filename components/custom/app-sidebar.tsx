@@ -154,6 +154,7 @@ function Tree({ item }: { item: Item }) {
     const [openItems, setOpenItems] = useLocalStorage<string[]>("open-items", [
         "cases",
         "highlighted",
+        "2024",
     ]);
 
     const { name, link, children } = item;

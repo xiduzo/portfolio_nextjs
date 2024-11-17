@@ -9,6 +9,11 @@ export default {
     ],
     theme: {
         extend: {
+            fontFamily: {
+                heading: "var(--font-heading)",
+                subheading: "var(--font-subheading)",
+                body: "var(--font-body)",
+            },
             colors: {
                 background: "hsl(var(--background))",
                 foreground: "hsl(var(--foreground))",

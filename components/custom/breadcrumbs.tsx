@@ -15,7 +15,7 @@ export function BreadCrumbs() {
     const pathname = usePathname();
 
     const breadcrumbs = pathname.split("/").filter(Boolean);
-    console.log(breadcrumbs);
+
     return (
         <Breadcrumb>
             <BreadcrumbList>
