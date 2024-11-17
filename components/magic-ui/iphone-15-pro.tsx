@@ -4,6 +4,7 @@ export interface Iphone15ProProps extends SVGProps<SVGSVGElement> {
     width?: number;
     height?: number;
     src?: string;
+    alt?: string;
 }
 
 export function Iphone15Pro({
@@ -57,6 +58,7 @@ export function Iphone15Pro({
 
             {src && (
                 <image
+                    aria-label={props.alt}
                     href={src}
                     x="21.25"
                     y="19.25"

@@ -13,6 +13,7 @@ export default {
                 heading: "var(--font-heading)",
                 subheading: "var(--font-subheading)",
                 body: "var(--font-body)",
+                note: "var(--font-note)",
             },
             colors: {
                 background: "hsl(var(--background))",

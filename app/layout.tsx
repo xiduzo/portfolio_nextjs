@@ -14,6 +14,7 @@ import Link from "next/link";
 import {
     body,
     headings,
+    note,
     subHeadings,
     Text,
 } from "@/components/custom/typography";
@@ -36,12 +37,12 @@ export default function RootLayout({
                 <Script src="/theme.js" />
             </head>
             <body
-                className={`${headings.variable} ${subHeadings.variable} ${body.variable} antialiased`}
+                className={`${headings.variable} ${subHeadings.variable} ${body.variable} ${note.variable} antialiased`}
             >
                 <SidebarProvider>
                     <AppSidebar />
                     <SidebarInset>
-                        <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4 sticky top-0 bg-background z-50">
+                        <header className="sticky top-0 flex shrink-0 items-center gap-2 border-b bg-background p-4 z-30">
                             <SidebarTrigger className="-ml-1" />
                             <Separator
                                 orientation="vertical"
@@ -51,11 +52,9 @@ export default function RootLayout({
                             <section hidden className="grow flex"></section>
                             <Link
                                 href="/about"
-                                className="hover:cursor-help flex items-center space-x-4 hover:bg-muted-foreground/10 transition duration-200 p-1 px-2 rounded-md"
+                                className="hover:cursor-help gap-4 flex items-center"
                             >
-                                <Text as="span" className="text-sm">
-                                    Sander Boer
-                                </Text>
+                                Sander Boer
                                 <Avatar>
                                     <AvatarImage
                                         src="/me.jpeg"
@@ -65,20 +64,17 @@ export default function RootLayout({
                                 </Avatar>
                             </Link>
                         </header>
-                        <article className="min-h-screen overflow-x-hidden">
+                        <article className="overflow-x-hidden">
                             {children}
                         </article>
-                        <footer className="py-64 mt-64 bg-muted px-6 text-center">
+                        <footer className="py-64 mt-64 bg-muted text-muted-foreground px-6 text-center">
                             <Text variant="heading" className="mb-4">
                                 Enough scrolling,
                             </Text>
-                            <Text className="text-muted-foreground font-extralight mb-10">
+                            <Text className="font-extralight mb-10">
                                 Want to make something together?
                             </Text>
-                            <Link
-                                href="mailto:mail@sanderboer.nl"
-                                className="p-6"
-                            >
+                            <Link href="mailto:mail@sanderboer.nl">
                                 <Button variant="link" className="text-3xl">
                                     Let&apos;s have a 🍺
                                 </Button>

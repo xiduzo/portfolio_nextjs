@@ -1,8 +1,8 @@
 import { cva, VariantProps } from "class-variance-authority";
-import { ClassValue } from "class-variance-authority/types";
 import { PropsWithChildren } from "react";
 import {
     Alegreya,
+    Caveat,
     Fira_Sans_Extra_Condensed,
     Work_Sans,
 } from "next/font/google";
@@ -22,6 +22,12 @@ export const subHeadings = Fira_Sans_Extra_Condensed({
 export const body = Work_Sans({
     variable: "--font-body",
     weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+    subsets: ["latin"],
+});
+
+export const note = Caveat({
+    variable: "--font-note",
+    weight: ["400", "500", "600", "700"],
     subsets: ["latin"],
 });
 
@@ -55,6 +61,7 @@ const typography = cva("", {
             heading: `font-extrabold font-heading`,
             subheading: "font-extrabold font-subheading",
             body: "font-body",
+            note: "font-note text-center",
         },
         size: {
             sm: "",
@@ -100,7 +107,7 @@ const typography = cva("", {
         {
             variant: "body",
             size: "sm",
-            className: "text-2xl mg-3",
+            className: "text-2xl mb-3",
         },
         {
             variant: "body",
@@ -111,6 +118,21 @@ const typography = cva("", {
             variant: "body",
             size: "lg",
             className: "text-4xl mb-5",
+        },
+        {
+            variant: "note",
+            size: "sm",
+            className: "text-xl mb-2",
+        },
+        {
+            variant: "note",
+            size: "base",
+            className: "text-2xl mb-3",
+        },
+        {
+            variant: "note",
+            size: "lg",
+            className: "text-3xl mb-4",
         },
     ],
 });

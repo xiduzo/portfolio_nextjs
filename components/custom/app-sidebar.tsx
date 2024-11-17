@@ -39,11 +39,6 @@ const data = {
             state: "",
         },
         {
-            file: "contact.md",
-            link: "/contact",
-            state: "",
-        },
-        {
             file: "accessibility.md",
             link: "/accessibility",
             state: "",

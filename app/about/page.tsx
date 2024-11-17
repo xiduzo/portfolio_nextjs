@@ -2,6 +2,7 @@ import { Section } from "@/components/custom/section";
 import { Text } from "@/components/custom/typography";
 import Image from "next/image";
 import Link from "next/link";
+import GitHubCalendar from "react-github-calendar";
 
 export default function Page() {
     return (
@@ -10,9 +11,13 @@ export default function Page() {
                 <Text as="h1" variant="heading">
                     Who am I?
                 </Text>
-                <Text>Designer by education,</Text>
-                <Text>Developer by interest,</Text>
-                <Text>Tinkerer by curiosity.</Text>
+                <Text className="mb-1" size="sm">
+                    Designer by education,
+                </Text>
+                <Text className="mb-1" size="sm">
+                    Developer by interest,
+                </Text>
+                <Text size="sm">Tinkerer by curiosity.</Text>
             </Section>
             <Section>
                 <Text>
@@ -21,7 +26,7 @@ export default function Page() {
                     <Link target="_blank" href="https://tibia.com">
                         tibia
                     </Link>
-                    , I was busy creating my own (hacked) version.
+                    , I was busy creating my own hacked version.
                 </Text>
                 <Text>
                     This is where my interest for programming began as I learned
@@ -36,10 +41,9 @@ export default function Page() {
                     !
                 </Text>
                 <Text>
-                    The process of unraveling (complex) systems is a driving
-                    force for me, ever since the day I ran my first{" "}
-                    <code>XAMPP</code> stack with a <code>phpMyAdmin</code>{" "}
-                    database.
+                    The process of unraveling complex systems is a driving force
+                    for me, ever since the day I ran my first <code>XAMPP</code>{" "}
+                    stack with a <code>phpMyAdmin</code> database.
                 </Text>
             </Section>
             <Section>
@@ -48,18 +52,15 @@ export default function Page() {
                 </Text>
                 <Text>
                     Throughout my journey as a creative technologist, I have
-                    honed my skills in both design and development, merging the
-                    worlds of aesthetics and functionality.
-                </Text>
-                <Text>
-                    I have a firm grasp on the principles of (digital) design
+                    gained a firm grasp on the principles of (digital) design
                     <sup>1</sup> and a deep understanding of programming
-                    <sup>2</sup>.
+                    <sup>2</sup>. Merging the worlds of aesthetics and
+                    functionality.
                 </Text>
                 <Text as="aside" className="mt-8 text-base">
                     <ol className="list-decimal list-inside">
-                        <li id="#design">
-                            With a bachelor's degree in{" "}
+                        <li>
+                            With a bachelor&apos;s degree in{" "}
                             <Link
                                 target="_blank"
                                 href="https://www.cmd-amsterdam.nl"
@@ -74,7 +75,7 @@ export default function Page() {
                                 Digital Design
                             </Link>
                         </li>
-                        <li id="#development">
+                        <li>
                             With{" "}
                             {new Date().getFullYear() -
                                 new Date("01-01-2007").getFullYear()}
@@ -103,6 +104,16 @@ export default function Page() {
                     and User Experience (UX) design. Engaging in both
                     disciplines is where I like to play ball.
                 </Text>
+            </Section>
+            <Section className="flex flex-col items-center mb-60">
+                <Text as="h2" variant="subheading" size="sm">
+                    What I am up to
+                </Text>
+                <Link href="https://github.com/xiduzo" target="_blank">
+                    <section className="xl:max-w-screen-sm lg:max-w-screen-sm max-w-96 overflow-hidden">
+                        <GitHubCalendar username="xiduzo" />
+                    </section>
+                </Link>
             </Section>
             <Section>
                 <Text as="h2" variant="subheading">

@@ -87,6 +87,88 @@ body {
     }
 }
 
-a[target="_blank"] {
+a[target="_blank"]:not(:has(*)) {
     @apply underline;
+}
+
+figure pre {
+    @apply rounded-xl shadow;
+}
+
+figure pre code {
+    @apply p-4;
+}
+
+pre {
+    overflow-x: auto;
+    /* padding: 1rem 0; */
+}
+
+code[data-theme*=" "],
+code[data-theme*=" "] span {
+    color: var(--shiki-light);
+    background-color: var(--shiki-light-bg);
+}
+
+@media (prefers-color-scheme: dark) {
+    code[data-theme*=" "],
+    code[data-theme*=" "] span {
+        color: var(--shiki-dark);
+        background-color: var(--shiki-dark-bg);
+    }
+}
+
+pre code [data-line],
+pre code [data-line] .highlighted-word {
+    @apply transition-all duration-500;
+}
+
+pre code [data-highlighted-line] > * {
+    @apply bg-transparent;
+}
+
+pre code [data-highlighted-line] {
+    @apply bg-muted-foreground/20;
+}
+
+pre code [data-highlighted-line],
+pre code [data-line].diff.remove,
+pre code [data-line].diff.add {
+    @apply -mx-6 inline-block px-6;
+    width: calc(100% + 48px);
+}
+
+pre code [data-line] .highlighted-word {
+    @apply rounded-md border border-slate-500 px-1 py-0.5;
+}
+
+pre code [data-line] .highlighted-word,
+pre code [data-line].highlighted {
+    @apply bg-white bg-opacity-10;
+}
+
+pre code [data-line].highlighted.warning {
+    @apply bg-amber-500 bg-opacity-15;
+}
+
+pre code [data-line].highlighted.error,
+pre code [data-line].diff.remove {
+    @apply bg-red-500 bg-opacity-15;
+}
+
+pre code [data-line].diff.remove::before {
+    @apply -ml-2.5 text-red-300 content-['-'];
+}
+
+pre code [data-line].diff.add {
+    @apply bg-green-500 bg-opacity-15;
+}
+
+pre code [data-line].diff.add::before {
+    @apply -ml-2.5 text-green-300 content-['+'];
+}
+
+pre.has-focused code [data-line]:not(.focused) {
+    @apply opacity-80;
+    filter: blur(0.1rem);
 }

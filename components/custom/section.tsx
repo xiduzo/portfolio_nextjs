@@ -19,10 +19,10 @@ type Props = PropsWithChildren &
         className?: string;
     };
 
-const section = cva("container mx-auto py-16", {
+const section = cva("container mx-auto pt-16 pb-32", {
     variants: {
         variant: {
-            default: "px-2 md:px-12",
+            default: "px-4 lg:px-12",
             full: "",
         },
     },
