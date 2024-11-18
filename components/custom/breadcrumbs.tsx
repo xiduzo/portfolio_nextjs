@@ -19,7 +19,7 @@ export function BreadCrumbs() {
     return (
         <Breadcrumb>
             <BreadcrumbList>
-                <BreadcrumbItem className="hidden md:block">
+                <BreadcrumbItem>
                     {!!breadcrumbs.length && (
                         <BreadcrumbLink href="/">Home</BreadcrumbLink>
                     )}

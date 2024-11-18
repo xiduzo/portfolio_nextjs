@@ -41,8 +41,8 @@ export default function RootLayout({
             >
                 <SidebarProvider>
                     <AppSidebar />
-                    <SidebarInset>
-                        <header className="sticky top-0 flex shrink-0 items-center gap-2 border-b bg-background p-4 z-30">
+                    <SidebarInset className="overflow-x-hidden">
+                        <header className="fixed grow top-0 right-0 flex items-center gap-2 border-b bg-background p-4 z-30">
                             <SidebarTrigger className="-ml-1" />
                             <Separator
                                 orientation="vertical"
@@ -54,7 +54,9 @@ export default function RootLayout({
                                 href="/about"
                                 className="hover:cursor-help gap-4 flex items-center"
                             >
-                                Sander Boer
+                                <span className="hidden md:block">
+                                    Sander Boer
+                                </span>
                                 <Avatar>
                                     <AvatarImage
                                         src="/me.jpeg"
@@ -64,9 +66,7 @@ export default function RootLayout({
                                 </Avatar>
                             </Link>
                         </header>
-                        <article className="overflow-x-hidden">
-                            {children}
-                        </article>
+                        <article className="pt-16">{children}</article>
                         <footer className="py-64 mt-64 bg-muted text-muted-foreground px-6 text-center">
                             <Text variant="heading" className="mb-4">
                                 Enough scrolling,

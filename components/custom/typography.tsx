@@ -92,7 +92,7 @@ const typography = cva("", {
         {
             variant: "subheading",
             size: "sm",
-            className: "text-4xl mb-7",
+            className: "text-4xl mb-6",
         },
         {
             variant: "subheading",
@@ -102,7 +102,7 @@ const typography = cva("", {
         {
             variant: "subheading",
             size: "lg",
-            className: "text-6xl mb-9",
+            className: "text-6xl mb-10",
         },
         {
             variant: "body",
@@ -112,12 +112,12 @@ const typography = cva("", {
         {
             variant: "body",
             size: "base",
-            className: "text-3xl mb-4",
+            className: "text-3xl mb-6",
         },
         {
             variant: "body",
             size: "lg",
-            className: "text-4xl mb-5",
+            className: "text-4xl mb-9",
         },
         {
             variant: "note",

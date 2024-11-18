@@ -58,7 +58,7 @@ export default function Page() {
                     functionality.
                 </Text>
                 <Text as="aside" className="mt-8 text-base">
-                    <ol className="list-decimal list-inside">
+                    <ol>
                         <li>
                             With a bachelor&apos;s degree in{" "}
                             <Link

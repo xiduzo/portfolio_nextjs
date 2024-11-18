@@ -5,24 +5,13 @@ import rehypeStringify from "rehype-stringify";
 import rehypePrettyCode from "rehype-pretty-code";
 import {
     transformerNotationDiff,
-    transformerNotationErrorLevel,
-    // transformerMetaWordHighlight, // Not working
-    // transformerMetaHighlight // Not working
-    transformerNotationFocus,
     transformerNotationHighlight,
     transformerNotationWordHighlight,
+    transformerNotationFocus,
+    transformerNotationErrorLevel,
+    transformerMetaWordHighlight,
+    transformerMetaHighlight,
 } from "@shikijs/transformers";
-
-// import {
-//     transformerNotationDiff,
-//     transformerNotationErrorLevel
-//     // transformerMetaWordHighlight, // Not working
-//     // transformerMetaHighlight // Not working
-//     ,
-//     transformerNotationFocus,
-//     transformerNotationHighlight,
-//     transformerNotationWordHighlight
-// } from 'shikiji-transformers';
 
 export async function CodeBlock(props: Props) {
     const file = await unified()
@@ -34,25 +23,23 @@ export async function CodeBlock(props: Props) {
                 light: "github-light",
             },
             transformers: [
-                // transformerCopyButton({
-                //     visibility: "always",
-                //     feedbackDuration: 3_000,
-                // }),
+                transformerMetaWordHighlight(),
+                transformerMetaHighlight(),
                 transformerNotationHighlight(),
-                // transformerNotationDiff(),
-                // transformerNotationErrorLevel(),
-                // transformerNotationFocus(),
-                // transformerNotationWordHighlight(),
+                transformerNotationDiff(),
+                transformerNotationErrorLevel(),
+                transformerNotationFocus(),
+                transformerNotationWordHighlight(),
             ],
         })
         .use(rehypeStringify)
         .process(props.code);
 
     return (
-        <section
-            className="my-20"
+        <div
+            className="my-36"
             dangerouslySetInnerHTML={{ __html: String(file) }}
-        ></section>
+        ></div>
     );
 }
 

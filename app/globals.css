@@ -91,44 +91,29 @@ a[target="_blank"]:not(:has(*)) {
     @apply underline;
 }
 
-figure pre {
-    @apply rounded-xl shadow;
-}
-
-figure pre code {
-    @apply p-4;
-}
-
-pre {
-    overflow-x: auto;
-    /* padding: 1rem 0; */
-}
-
-code[data-theme*=" "],
-code[data-theme*=" "] span {
+[data-rehype-pretty-code-figure] pre {
+    @apply p-4 rounded-3xl shadow overflow-x-hidden;
     color: var(--shiki-light);
     background-color: var(--shiki-light-bg);
 }
 
+code[data-theme*=" "] span {
+    color: var(--shiki-light);
+}
+
 @media (prefers-color-scheme: dark) {
-    code[data-theme*=" "],
-    code[data-theme*=" "] span {
+    [data-rehype-pretty-code-figure] pre {
         color: var(--shiki-dark);
         background-color: var(--shiki-dark-bg);
     }
+
+    code[data-theme*=" "] span {
+        color: var(--shiki-dark);
+    }
 }
 
-pre code [data-line],
-pre code [data-line] .highlighted-word {
+pre code [data-line] {
     @apply transition-all duration-500;
-}
-
-pre code [data-highlighted-line] > * {
-    @apply bg-transparent;
-}
-
-pre code [data-highlighted-line] {
-    @apply bg-muted-foreground/20;
 }
 
 pre code [data-highlighted-line],
@@ -138,37 +123,71 @@ pre code [data-line].diff.add {
     width: calc(100% + 48px);
 }
 
-pre code [data-line] .highlighted-word {
-    @apply rounded-md border border-slate-500 px-1 py-0.5;
+pre code [data-highlighted-line],
+pre code [data-highlighted-chars] {
+    @apply bg-muted-foreground/20;
 }
 
-pre code [data-line] .highlighted-word,
-pre code [data-line].highlighted {
-    @apply bg-white bg-opacity-10;
+pre code [data-line] [data-highlighted-chars] {
+    @apply rounded-md border border-muted-foreground px-1 py-0.5;
 }
 
 pre code [data-line].highlighted.warning {
-    @apply bg-amber-500 bg-opacity-15;
+    @apply bg-amber-500/20;
 }
 
 pre code [data-line].highlighted.error,
 pre code [data-line].diff.remove {
-    @apply bg-red-500 bg-opacity-15;
+    @apply bg-red-500/20;
 }
 
 pre code [data-line].diff.remove::before {
-    @apply -ml-2.5 text-red-300 content-['-'];
+    @apply -ml-2.5 text-red-500 content-['-'];
 }
 
 pre code [data-line].diff.add {
-    @apply bg-green-500 bg-opacity-15;
+    @apply bg-green-500/20;
 }
 
 pre code [data-line].diff.add::before {
-    @apply -ml-2.5 text-green-300 content-['+'];
+    @apply -ml-2.5 text-green-500 content-['+'];
 }
 
 pre.has-focused code [data-line]:not(.focused) {
     @apply opacity-80;
     filter: blur(0.1rem);
+}
+
+ol,
+ul {
+    @apply list-inside lg:list-outside;
+}
+
+nav ol,
+nav ul {
+    @apply list-none;
+}
+
+article li {
+    @apply mb-4;
+}
+
+li::marker {
+    @apply text-muted-foreground font-note;
+}
+
+ol {
+    @apply list-decimal;
+}
+
+ul {
+    @apply list-disc;
+}
+
+main > header {
+    @apply transition-all duration-200 ease-linear left-0;
+}
+
+.group\/sidebar-wrapper:has([data-state="expanded"]) main > header {
+    @apply md:left-[var(--sidebar-width)];
 }

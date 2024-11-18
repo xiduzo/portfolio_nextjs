@@ -19,10 +19,10 @@ type Props = PropsWithChildren &
         className?: string;
     };
 
-const section = cva("container mx-auto pt-16 pb-32", {
+const section = cva("pt-4 pb-12 md:pb-28 lg:pt-16 lg:pb-32", {
     variants: {
         variant: {
-            default: "px-4 lg:px-12",
+            default: "container mx-auto px-4 lg:px-12",
             full: "",
         },
     },
