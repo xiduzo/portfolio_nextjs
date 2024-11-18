@@ -29,8 +29,8 @@ export default function Page() {
                         Fissa,
                     </Text>
                     <Text variant="subheading" className="text-center">
-                        Not only one person should decide what's playing on a
-                        party
+                        Not only one person should decide what&apos;s playing on
+                        a party
                     </Text>
                 </section>
             </Section>
