@@ -110,9 +110,7 @@ export default function Page() {
                     What I am up to
                 </Text>
                 <Link href="https://github.com/xiduzo" target="_blank">
-                    <section className="xl:max-w-screen-sm lg:max-w-screen-sm max-w-96 overflow-hidden">
-                        <GitHubCalendar username="xiduzo" />
-                    </section>
+                    <GitHubCalendar username="xiduzo" />
                 </Link>
             </Section>
             <Section>

@@ -5,6 +5,7 @@ export interface SafariProps extends SVGProps<SVGSVGElement> {
     src?: string;
     width?: number;
     height?: number;
+    alt?: string;
 }
 
 export function Safari({
@@ -128,6 +129,7 @@ export function Safari({
                     />
                 </g>
                 <image
+                    aria-label={props.alt}
                     href={src}
                     width="1200"
                     height="700"

@@ -11,6 +11,7 @@ import { CodeBlock } from "@/components/custom/code-block";
 import { Button } from "@/components/ui/button";
 import { Marquee } from "@/components/magic-ui/marquee";
 import { randomSort } from "@/lib/utils";
+import { CallToAction } from "@/components/custom/call-to-action";
 
 const animals = ["🐋", "🦀", "🐕", "🦦", "🦔", "🦉", "🦥", "🐍", "🦑", "🐘"];
 
@@ -20,7 +21,7 @@ export default function Page() {
             <header className="mb-44 flex flex-col relative" aria-hidden>
                 <section className="absolute top-6 right-6 z-20 flex gap-2">
                     <Badge variant="secondary" className="pointer-events-none">
-                        2024
+                        2023
                     </Badge>
                     <Link
                         href="https://fissa-houseparty.vercel.app"
@@ -76,10 +77,10 @@ export default function Page() {
                 </section>
             </Section>
             <Section>
-                <Text as="h2" variant="subheading" className="mb-8">
+                <Text as="h2" variant="subheading">
                     Everyone can be the DJ
                 </Text>
-                <Text className="mb-4">
+                <Text>
                     Having friends at a party with a bad taste in music stinks.
                     This is what{" "}
                     <Link
@@ -339,22 +340,29 @@ const Component = () => {
                     Make a Fissa and enjoy the tunes while you read the rest of
                     the article.
                 </Text>
-                <Text as="div" className="space-x-4 mt-12">
+                <Text
+                    as="div"
+                    className="flex justify-center flex-wrap gap-4 mt-12"
+                >
                     <Link
                         href="https://apps.apple.com/nl/app/fissa-houseparty/id1632218985"
                         target="_blank"
                     >
-                        <Button variant="link">
+                        <CallToAction colorFrom="#93c5fd" colorTo="#3b82f6">
                             Open Fissa in the Apple app store
-                        </Button>
+                        </CallToAction>
                     </Link>
                     <Link
                         href="https://play.google.com/store/apps/details?id=com.fissa.app"
                         target="_blank"
                     >
-                        <Button variant="link">
+                        <CallToAction
+                            colorFrom="#22c55e"
+                            colorTo="#ef4444"
+                            delay={50}
+                        >
                             Open Fissa in the Google play store
-                        </Button>
+                        </CallToAction>
                     </Link>
                 </Text>
             </Section>
@@ -713,9 +721,14 @@ export const sortFissaTracksOrder = <T extends SortableTrack>(
                     <Text as="h2" variant="subheading" size="sm">
                         In collaboration with
                     </Text>
-                    <Text>
-                        <Link href="https://www.linkedin.com/in/milan-van-der-maaten-307a1697">
-                            <Button variant="link">Milan van der Maaten</Button>
+                    <Text className="flex gap-4 flex-wrap">
+                        <Link
+                            href="https://www.linkedin.com/in/milan-van-der-maaten-307a1697"
+                            target="_blank"
+                        >
+                            <Button variant="outline">
+                                Milan van der Maaten
+                            </Button>
                         </Link>
                     </Text>
                 </Section>
@@ -723,12 +736,18 @@ export const sortFissaTracksOrder = <T extends SortableTrack>(
                     <Text as="h2" variant="subheading" size="sm">
                         Source code
                     </Text>
-                    <Text>
-                        <Link href="https://github.com/xiduzo/t3-fissa">
-                            <Button variant="link">Fissa</Button>
+                    <Text className="flex gap-4 flex-wrap">
+                        <Link
+                            href="https://github.com/xiduzo/t3-fissa"
+                            target="_blank"
+                        >
+                            <Button variant="outline">Fissa</Button>
                         </Link>
-                        <Link href="https://github.com/xiduzo/fissa">
-                            <Button variant="link">Prototype</Button>
+                        <Link
+                            href="https://github.com/xiduzo/fissa"
+                            target="_blank"
+                        >
+                            <Button variant="outline">Prototype</Button>
                         </Link>
                     </Text>
                 </Section>

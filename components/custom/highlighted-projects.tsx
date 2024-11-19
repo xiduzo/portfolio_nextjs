@@ -59,7 +59,10 @@ export function HighlightedProjects() {
                     />
                 </WobbleCard>
             </Link>
-            <Link href="/project/fissa" className="col-span-1 lg:col-span-3">
+            <Link
+                href="/project/microflow"
+                className="col-span-1 lg:col-span-3"
+            >
                 <WobbleCard containerClassName="h-full bg-yellow-700 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px] group">
                     <div className="max-w-sm">
                         <h2 className="max-w-sm md:max-w-lg text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
