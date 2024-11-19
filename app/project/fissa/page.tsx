@@ -32,7 +32,7 @@ export default function Page() {
                         </Badge>
                     </Link>
                 </section>
-                <section className="bg-orange-500 flex items-end justify-center z-10">
+                <section className="bg-red-500 flex items-end justify-center z-10">
                     <Openmoji
                         hexcode="1F415"
                         size={420}
