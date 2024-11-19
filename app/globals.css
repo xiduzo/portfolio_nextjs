@@ -163,6 +163,7 @@ ul {
     @apply list-inside lg:list-outside;
 }
 
+[data-sidebar] ul,
 nav ol,
 nav ul {
     @apply list-none;
