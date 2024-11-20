@@ -198,3 +198,7 @@ main > header {
 :not(pre) > code {
     @apply rounded-md bg-muted px-2 py-1 border border-muted-foreground/20 font-mono;
 }
+
+figure:has(blockquote) figcaption::before {
+    content: "— ";
+}

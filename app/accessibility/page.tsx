@@ -18,7 +18,7 @@ export default function Page() {
                     <em>essential</em> aspect.
                 </blockquote>
                 <figcaption className="text-muted-foreground">
-                    - Tim Berners-Lee
+                    Tim Berners-Lee
                 </figcaption>
             </figure>
             <Text className="mb-24">I firmly believe in that quote.</Text>

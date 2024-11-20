@@ -127,13 +127,15 @@ export default function Page() {
                     entertain/annoy the dog/cat at any party!
                 </Text>
             </Section>
-            <Image
-                src="/about/me_1.png"
-                alt="Sander with food, in nature and with a dog"
-                width={1920}
-                height={1080}
-                className="my-16"
-            />
+            <Section variant="full">
+                <Image
+                    src="/about/me_1.png"
+                    alt="Sander with food, in nature and with a dog"
+                    width={1920}
+                    height={1080}
+                    className="w-full"
+                />
+            </Section>
             <Section>
                 <Text>
                     I try to experiment with random technologies like
@@ -142,13 +144,15 @@ export default function Page() {
                     interact with the (real) world.
                 </Text>
             </Section>
-            <Image
-                src="/about/technologies.png"
-                alt="Random technologies Sander has experimented with"
-                width={1920}
-                height={1080}
-                className="my-16"
-            />
+            <Section variant="full">
+                <Image
+                    src="/about/technologies.png"
+                    alt="Random technologies Sander has experimented with"
+                    width={1920}
+                    height={1080}
+                    className="w-full"
+                />
+            </Section>
             <Section>
                 <Text as="h3" variant="subheading" size="sm">
                     Sharing === caring
@@ -159,42 +163,45 @@ export default function Page() {
                     to be an active member of the developer community.
                 </Text>
             </Section>
-            <Image
-                src="/about/sharing.png"
-                alt="Sander in various workshops and mentoring sessions"
-                width={1920}
-                height={1080}
-                className="my-16"
-            />
+            <Section variant="full">
+                <Image
+                    src="/about/sharing.png"
+                    alt="Sander in various workshops and mentoring sessions"
+                    width={1920}
+                    height={1080}
+                    className="w-full"
+                />
+            </Section>
             <Section>
                 <Text className="mb-80">
                     You can always challenge me for a game but be aware…
                 </Text>
                 <Text>...I am in it to win it.</Text>
             </Section>
-            <Image
-                src="/about/games.png"
-                alt="Sander playing various games"
-                width={1920}
-                height={1080}
-                className="my-16"
-            />
+            <Section variant="full">
+                <Image
+                    src="/about/games.png"
+                    alt="Sander playing various games"
+                    width={1920}
+                    height={1080}
+                    className="w-full"
+                />
+            </Section>
             <Section>
                 <Text>
                     And if the sun is out, I’d love to join you for a beer (or
                     tequila).
                 </Text>
             </Section>
-            <Image
-                src="/about/beer.png"
-                alt="Sander enjoying some beers in the sun and visiting tequila in Mexico"
-                width={1920}
-                height={1080}
-                className="my-16"
-            />
+            <Section variant="full">
+                <Image
+                    src="/about/beer.png"
+                    alt="Sander enjoying some beers in the sun and visiting tequila in Mexico"
+                    width={1920}
+                    height={1080}
+                    className="w-full"
+                />
+            </Section>
         </>
     );
 }
-
-// [^1]: With a bachelor's degree in [Communication and Multimedia design](https://www.cmd-amsterdam.nl) and a master's degree in [Digital Design](https://www.masterdigitaldesign.com/alumni/sander-boer)
-// [^2]: With 15+ years of software development experience

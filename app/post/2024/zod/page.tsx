@@ -6,6 +6,7 @@ import { Marquee } from "@/components/magic-ui/marquee";
 import { VelocityScroll } from "@/components/magic-ui/scroll-based-velocity";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Page() {
     return (
@@ -13,7 +14,7 @@ export default function Page() {
             <header className="mb-44 flex flex-col relative" aria-hidden>
                 <section className="absolute top-6 right-6 z-20 flex gap-2">
                     <Badge variant="secondary" className="pointer-events-none">
-                        2023
+                        2024
                     </Badge>
                 </section>
                 <section className="bg-emerald-500 flex items-end justify-center z-10">
@@ -407,8 +408,8 @@ mqqClient.onMessage(message => {
                     structure.
                 </Text>
             </Section>
-            <Marquee pauseOnHover className="[--duration:120s]">
-                {Array.from({ length: 10 }).map((_, i) => (
+            <Marquee pauseOnHover className="[--duration:500s]">
+                {Array.from({ length: 100 }).map((_, i) => (
                     <Text key={i} className="px-2">
                         ⚠️
                     </Text>
@@ -422,8 +423,8 @@ mqqClient.onMessage(message => {
                 share of issues while developing and also gave me some
                 headaches.
             </Text>
-            <Marquee pauseOnHover reverse className="[--duration:120s]">
-                {Array.from({ length: 10 }).map((_, i) => (
+            <Marquee pauseOnHover reverse className="[--duration:500s]">
+                {Array.from({ length: 100 }).map((_, i) => (
                     <Text key={i} className="px-2">
                         ⚠️
                     </Text>
@@ -579,6 +580,15 @@ const example = new GrowthCycle(invalidInput) // [!code error]
                     When receiving faulty data, we will be better equipped to
                     pinpoint and handle it gracefully.
                 </Text>
+            </Section>
+            <Section variant="full">
+                <Image
+                    src="/zod/parse-failures.png"
+                    alt="Monitoring results from parse errors"
+                    width={1920}
+                    height={1080}
+                    className="w-full"
+                />
             </Section>
             <Section>
                 <Text as="h3" variant="subheading" size="sm">
