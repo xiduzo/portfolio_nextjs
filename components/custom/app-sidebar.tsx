@@ -79,7 +79,7 @@ const data = {
                 {
                     name: "2023",
                     children: [
-                        { name: "<Suspense>.md", link: "/post/suspense" },
+                        { name: "<Suspense>.md", link: "/post/2023/suspense" },
                     ],
                 },
                 {
@@ -87,10 +87,10 @@ const data = {
                     children: [
                         {
                             name: "talking-to-water.md",
-                            link: "/post/talking-to-water",
+                            link: "/post/2024/talking-to-water",
                         },
-                        { name: "testing.md", link: "/post/testing" },
-                        { name: "zod.md", link: "/post/zod" },
+                        { name: "testing.md", link: "/post/2024/testing" },
+                        { name: "zod.md", link: "/post/2024/zod" },
                     ],
                 },
                 { name: "all.md", link: "/post" },

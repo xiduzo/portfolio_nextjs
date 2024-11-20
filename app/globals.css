@@ -117,6 +117,8 @@ pre code [data-line] {
 }
 
 pre code [data-highlighted-line],
+pre code [data-line].highlighted.error,
+pre code [data-line].highlighted.warning,
 pre code [data-line].diff.remove,
 pre code [data-line].diff.add {
     @apply -mx-6 inline-block px-6;
