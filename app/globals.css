@@ -90,7 +90,20 @@ body {
 }
 
 a[target="_blank"]:not(:has(*)) {
-    @apply underline cursor-alias;
+    @apply cursor-alias text-blue-400;
+}
+
+a[target="_blank"]:not(:has(*))::before,
+a[target="_blank"]:not(:has(*))::after {
+    @apply text-foreground font-note;
+}
+
+a[target="_blank"]:not(:has(*))::before {
+    @apply content-['['];
+}
+
+a[target="_blank"]:not(:has(*))::after {
+    @apply content-[']'];
 }
 
 [data-rehype-pretty-code-figure] pre {
@@ -119,6 +132,7 @@ pre code [data-line] {
 }
 
 pre code [data-highlighted-line],
+pre code .highlighted,
 pre code [data-line].highlighted.error,
 pre code [data-line].highlighted.warning,
 pre code [data-line].diff.remove,
@@ -127,6 +141,7 @@ pre code [data-line].diff.add {
     width: calc(100% + 48px);
 }
 
+pre code .highlighted,
 pre code [data-highlighted-line],
 pre code [data-highlighted-chars] {
     @apply bg-muted-foreground/20;
@@ -198,11 +213,75 @@ main > header {
 }
 
 :not(pre) > code {
-    @apply rounded-md bg-muted px-2 py-1 border border-muted-foreground/20 font-mono;
+    @apply font-mono text-green-500;
+}
+
+@media (prefers-color-scheme: dark) {
+    :not(pre) > code {
+        @apply text-emerald-400;
+    }
+}
+
+:not(pre) > code::before {
+    @apply font-note;
+    content: "` ";
+}
+
+:not(pre) > code::after {
+    @apply font-note content-['`'];
 }
 
 sup {
     @apply text-muted-foreground font-note;
+}
+
+main > article figure blockquote > *::before,
+main > article figure blockquote > *::after {
+    content: "";
+}
+
+main > article em {
+    @apply text-blue-400 not-italic;
+}
+
+main > article em::before,
+main > article em::after {
+    @apply font-note;
+    content: "_";
+}
+
+main > article strong {
+    @apply text-orange-500;
+}
+
+main > article strong::before,
+main > article strong::after {
+    @apply font-note;
+    content: "**";
+}
+
+main > article h2,
+main > article h3,
+main > article h4 {
+    @apply text-red-400;
+}
+
+main > article h2::before {
+    content: "## ";
+}
+
+main > article h3::before {
+    content: "### ";
+}
+
+main > article h4::before {
+    content: "#### ";
+}
+
+main > article em::before,
+main > article em::after {
+    @apply font-note;
+    content: "_";
 }
 
 main > article ::selection {

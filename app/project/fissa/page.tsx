@@ -64,7 +64,7 @@ export default function Page() {
                 <Badge variant="outline">12 minute read</Badge>
             </Section>
             <Section>
-                <Text size="sm" as="h2" className="mb-2">
+                <Text size="sm" as="h2">
                     Technologies used
                 </Text>
                 <section className="flex flex-wrap gap-1.5 max-w-sm pointer-events-none">
@@ -126,9 +126,9 @@ export default function Page() {
             </Section>
             <Section>
                 <Text as="h3" variant="subheading" size="sm">
-                    <em>Group session</em>
+                    Group session
                 </Text>
-                <Text size="sm" as="em">
+                <Text size="sm">
                     While building Fissa, we noticed Spotify introduced the{" "}
                     <Link
                         href="https://support.spotify.com/us/article/remote-group-session"

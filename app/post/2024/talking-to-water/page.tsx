@@ -68,13 +68,8 @@ export default function Page() {
                     This time a group of students came to me asking if I could
                     guide them on how they could <em>talk to water</em>.
                 </Text>
-                <Text>
-                    But how does one <em>talk to water</em>? And what does it
-                    even mean to talk to water?
-                </Text>
-                <Text>
-                    And what does it even mean to <em>talk to water</em>?
-                </Text>
+                <Text>But how does one talk to water?</Text>
+                <Text>And what does it even mean to talk to water?</Text>
             </Section>
             <Section>
                 <Text>
@@ -144,7 +139,11 @@ export default function Page() {
                     >
                         What we say to water can impact its crystals: positive
                         words create intricate structures and negative words
-                        lead to collapse <em>(Dr. Masaru Emoto)</em>.
+                        lead to collapse{" "}
+                        <em className="italic text-muted-foreground">
+                            (Dr. Masaru Emoto)
+                        </em>
+                        .
                         <br />
                         <br /> AuraMotions is an art project that processes what
                         we say to make different colours and patterns of water.

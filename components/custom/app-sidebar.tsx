@@ -79,7 +79,7 @@ const data = {
                 {
                     name: "2023",
                     children: [
-                        { name: "<Suspense>.md", link: "/post/2023/suspense" },
+                        { name: "<Suspense/>.md", link: "/post/2023/suspense" },
                     ],
                 },
                 {

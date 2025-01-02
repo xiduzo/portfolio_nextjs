@@ -58,7 +58,7 @@ export default function Page() {
                 <Badge variant="outline">8 minute read</Badge>
             </Section>
             <Section>
-                <Text size="sm" as="h2" className="mb-2">
+                <Text size="sm" as="h2">
                     Technologies used
                 </Text>
                 <section className="flex flex-wrap gap-1.5 max-w-sm pointer-events-none">
@@ -223,7 +223,7 @@ export function MqttVariableMessenger() {
                     <code>sendMessageToFigma</code> and <code>useMqtt</code>,
                     but I’ll leave that up to your imagination.
                 </Text>
-                <Text size="sm" as="em">
+                <Text size="sm" className="italic">
                     Or{" "}
                     <Link
                         href="https://github.com/xiduzo/microflow/tree/main/apps/figma-plugin"
