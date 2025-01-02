@@ -5,11 +5,13 @@ import { Text } from "@/components/custom/typography";
 import { Marquee } from "@/components/magic-ui/marquee";
 import { VelocityScroll } from "@/components/magic-ui/scroll-based-velocity";
 import { Badge } from "@/components/ui/badge";
+import { SelectionColor } from "@/hooks/use-selection-color";
 import Link from "next/link";
 
 export default function Page() {
     return (
         <>
+            <SelectionColor color="#ef4444" />
             <header className="mb-44 flex flex-col relative" aria-hidden>
                 <section className="absolute top-6 right-6 z-20 flex gap-2">
                     <Badge variant="secondary" className="pointer-events-none">
@@ -89,10 +91,10 @@ export default function Page() {
                 ))}
             </Marquee>
             <Section>
-                <figure className="space-y-4 my-16 prose md:prose-xl lg:prose-2xl">
+                <figure className="space-y-4 my-16 mx-auto prose md:prose-xl lg:prose-2xl">
                     <blockquote
                         cite="https://chat.openai.com/share/97ddf631-1171-4c18-9f70-40e2b6f30e8b"
-                        className="text-white not-italic"
+                        className="text-muted-foreground not-italic"
                     >
                         Engineers conduct tests and experiments to evaluate the
                         performance, safety, and reliability of products or
@@ -100,7 +102,7 @@ export default function Page() {
                         conducting simulations, or performing real-world trials.
                     </blockquote>
                     <figcaption className="text-muted-foreground">
-                        - ChatGPT
+                        ChatGPT
                     </figcaption>
                 </figure>
             </Section>
@@ -255,10 +257,10 @@ project-root/
                     of quality as the <code>production code</code> it is
                     testing.
                 </Text>
-                <figure className="space-y-4 my-16 prose md:prose-xl lg:prose-2xl">
+                <figure className="space-y-4 my-16 mx-auto prose md:prose-xl lg:prose-2xl">
                     <blockquote
                         cite="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
-                        className="text-white not-italic"
+                        className="text-muted-foreground not-italic"
                     >
                         Indeed, the ratio of time spent reading versus writing
                         is well over 10 to 1. We are constantly reading old code
@@ -269,10 +271,10 @@ project-root/
                         Clean Code: A Handbook of Agile Software Craftsmanship
                     </figcaption>
                 </figure>
-                <figure className="space-y-4 my-16 prose md:prose-xl lg:prose-2xl">
+                <figure className="space-y-4 my-16 mx-auto prose md:prose-xl lg:prose-2xl">
                     <blockquote
                         cite="https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599"
-                        className="text-white not-italic"
+                        className="text-muted-foreground not-italic"
                     >
                         Any fool can write code that a computer can understand.
                         Good programmers write code that humans can understand.
@@ -373,7 +375,7 @@ it("should plot a curve between two data points", () => {
   ];
 
   // Act
-  const distance = calculateDistance(pointA, pointB, true);
+  const distance = calculateDistance(pointA, pointB);
   const result = plotCurve(distance, { step: 3 });
 
   // Assert
@@ -698,6 +700,490 @@ describe(add.name, () => {
                     The list below is not exhaustive, but it will give you a
                     good starting point.
                 </Text>
+            </Section>
+            <Section>
+                <Text as="h3" variant="subheading" size="sm">
+                    Build for speed
+                </Text>
+                <Text>
+                    Time moves on, and so do our tools. Most of us do not use{" "}
+                    <Link target="_blank" href="https://www.chaijs.com/">
+                        chai
+                    </Link>{" "}
+                    or{" "}
+                    <Link target="_blank" href="https://mochajs.org/">
+                        mocha
+                    </Link>{" "}
+                    anymore to write and run our tests. It is quite common to
+                    see{" "}
+                    <Link target="_blank" href="https://jestjs.io/">
+                        jest
+                    </Link>{" "}
+                    being the work-horse nowadays.
+                </Text>
+                <figure className="space-y-4 my-16 mx-auto prose md:prose-xl lg:prose-2xl">
+                    <blockquote
+                        cite="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
+                        className="text-muted-foreground not-italic"
+                    >
+                        Tests should be fast. They should run quickly. When
+                        tests run slow, you won’t want to run them frequently.
+                        If you don’t run them frequently, you won’t find
+                        problems early enough to fix them easily. You won’t feel
+                        as free to clean up the code. Eventually, the code will
+                        begin to rot.
+                    </blockquote>
+                    <figcaption className="text-muted-foreground">
+                        Clean Code: A Handbook of Agile Software Craftsmanship
+                    </figcaption>
+                </figure>
+                <Text>
+                    In order to go even faster you can use{" "}
+                    <Link target="_blank" href="https://vitest.dev/">
+                        Vitest
+                    </Link>{" "}
+                    as a drop-in replacement for Jest. This is expecialy useful
+                    for when your test suite grows.
+                </Text>
+            </Section>
+            <Section>
+                <Text as="h3" variant="subheading" size="sm">
+                    Validation
+                </Text>
+                <Text>
+                    A common way your code can break is when the data you
+                    receive is not what you expect. You should treat all
+                    external data as untrusted.
+                </Text>
+                <Text>Given the following example</Text>
+                <CodeBlock
+                    code={`
+\`\`\`typescript
+fetch("https://api.example.com")
+  .then((response) => response.json())
+  .then((data) => {
+    if (!data.property) {
+      throw new Error("Property is missing");
+    }
+
+    if (typeof data.anotherThing !== "number") {
+      throw new Error("Another thing is not a number");
+    }
+
+    // ... etc
+
+    return data as MyType;
+  })
+  .catch((error) => {
+    // Error handling
+  });
+\`\`\`
+                    `}
+                />
+                <Text>
+                    You can write a lot of safeguards and unit tests to validate
+                    the data you receive is of <code>MyType</code> otherwise it
+                    should throw an error.
+                </Text>
+                <CodeBlock
+                    code={`
+\`\`\`typescript
+describe("fetchData", () => {
+  it("should throw an error when \`property\` is missing", async () => {
+    jest.spyOn(global, "fetch").mockResolvedValue({
+      json: () => Promise.resolve({}),
+    });
+
+    expect(fetchData()).rejects.toThrow("Property is missing");
+  });
+
+  it("should throw an error when \`anotherThing\` is not a number", () => {
+    jest.spyOn(global, "fetch").mockResolvedValue({
+      json: () => Promise.resolve({ property: "foo", anotherThing: "bar" }),
+    });
+
+    expect(fetchData()).rejects.toThrow("Another thing is not a number");
+  });
+
+  // ... etc
+});
+\`\`\`
+                    `}
+                />
+                <Text>
+                    Or, I would advice that, you can use a schema validator like{" "}
+                    <Link target="_blank" href="https://zod.dev/">
+                        zod
+                    </Link>{" "}
+                    or{" "}
+                    <Link target="_blank" href="https://github.com/jquense/yup">
+                        yup
+                    </Link>{" "}
+                    to parse and validate the data you receive.
+                </Text>
+                <CodeBlock
+                    code={`
+\`\`\`typescript
+import { z } from "zod";
+
+const MyType = z.object({
+  property: z.string(),
+  anotherThing: z.number(),
+});
+
+fetch("https://api.example.com")
+  .then((response) => response.json())
+  .then((data) => MyType.parse(data))
+  .catch((error) => {
+    // Error handling
+  });
+\`\`\`
+                    `}
+                />
+                <Text>
+                    This will save a lot of effort in validating the data itself
+                    and, in my opinion, does not require any unit tests besides
+                    the error handling anymore.
+                </Text>
+            </Section>
+            <Section>
+                <Text as="h3" variant="subheading" size="sm">
+                    Passing objects
+                </Text>
+                <Text>
+                    Writing clean tests can become tedious when you have to pass
+                    a whole object while your tests only need one of the
+                    properties.
+                </Text>
+                <Text>What is seen happening a lot is the following:</Text>
+                <CodeBlock
+                    code={`
+\`\`\`typescript
+describe("Annoying boilerplate", () => {
+  it("can type-cast to make the test work", () => {
+    const result = testMe({
+      property: "foo",
+    } as any as MyType);
+
+    expect(result).toBe(true);
+  });
+
+  it("can @ts-ignore to make the test work", () => {
+    // @ts-ignore
+    const result = testMe({
+      property: "foo",
+    });
+
+    expect(result).toBe(true);
+  });
+
+  it("Can put the whole object to make the test work", () => {
+    const result = testMe({
+      property: "foo", // Test only requires this property-
+      nestedProperty: {
+        anotherProperty: "bar",
+      },
+    });
+
+    expect(result).toBe(true);
+  });
+});
+\`\`\`
+                    `}
+                />
+                <Text>
+                    And this works just fine, untill you start changing the
+                    <code>MyType</code>. A solution I used before was to make
+                    use of the{" "}
+                    <Link
+                        target="_blank"
+                        href="https://refactoring.guru/design-patterns/builder"
+                    >
+                        builder pattern
+                    </Link>{" "}
+                    to generate the objects for the tests.
+                </Text>
+                <CodeBlock
+                    code={`
+\`\`\`typescript
+class Builder<T> {
+  constructor(protected readonly obj: T) {}
+
+  public build() {
+    return this.obj;
+  }
+}
+
+class MyTypeBuilder extends Builder<MyType> {
+  constructor() {
+    super({
+      property: "foo",
+      nestedProperty: {
+        anotherProperty: "bar",
+      },
+    });
+  }
+
+  public withProperty(property: string) {
+    this.obj.property = property;
+    return this;
+  }
+
+  public withNestedProperty(nestedProperty: { anotherProperty: string }) {
+    this.obj.nestedProperty = nestedProperty;
+    return this;
+  }
+
+  public withExplicitCustomState() {
+    this.obj.property = "baz";
+    this.obj.nestedProperty = { anotherProperty: "boo" };
+    return this;
+  }
+}
+\`\`\`
+                    `}
+                />
+                <Text>
+                    This allows you to create a <code>MyType</code> object with
+                    default values and override them when needed. This can be
+                    used in the following ways:
+                </Text>
+                <CodeBlock
+                    code={`
+\`\`\`typescript
+describe("Building your tests", () => {
+  it("can pass the default values", () => {
+    const result = testMe(new MyTestBuilder().build());
+
+    expect(result).toBe(true);
+  });
+
+  it("can set specific properties for your test", () => {
+    const result = testMe(new MyTestBuilder().withProperty("bar").build());
+
+    expect(result).toBe(false);
+  });
+
+  it("can set multuple properties", () => {
+    const result = testMe(
+      new MyTestBuilder()
+        .withProperty("bar")
+        .withNestedProperty({ anotherProperty: "foo" })
+        .build()
+    );
+
+    expect(result).toBe(false);
+  });
+
+  it("can set a custom explicit state", () => {
+    const result = testMe(
+      new MyTestBuilder().withExplicitCustomState().build()
+    );
+
+    expect(result).toBe(false);
+  });
+});
+\`\`\`
+                    `}
+                />
+                <Text>
+                    But sometimes you just need to{" "}
+                    <em>force something into a space</em>.{" "}
+                    <Link
+                        target="_blank"
+                        href="https://www.npmjs.com/package/@total-typescript/shoehorn"
+                    >
+                        @total-typescript/shoehorn
+                    </Link>{" "}
+                    is the tool you are looking for. It will allow you to pass
+                    partial data in tests while keeping TypeScript happy.
+                </Text>
+                <CodeBlock
+                    code={`
+\`\`\`typescript
+import { fromPartial } from "@total-typescript/shoehorn";
+
+describe("No more boilerplate", () => {
+  it("can pass partial data", () => {
+    const result = new MyTest(fromPartial({ property: "foo" }));
+
+    expect(result).toBe(true);
+  });
+});
+\`\`\`
+                    `}
+                />
+                <Text>
+                    This removes all the boilerplate code and allows you to
+                    focus on the actual test while still remaining completely
+                    type-safe.
+                </Text>
+            </Section>
+            <Section>
+                <Text as="h3" variant="subheading" size="sm">
+                    UI testing
+                </Text>
+                <Text>
+                    As you are working with Typescript, there is a big change
+                    you will need to test some frontend code as well.
+                </Text>
+                <Text>
+                    You might be familiar with tools such as{" "}
+                    <Link
+                        target="_blank"
+                        href="https://storybook.js.org/docs/writing-tests/test-runner"
+                    >
+                        storybook
+                    </Link>
+                    ,{" "}
+                    <Link target="_blank" href="https://www.cypress.io/">
+                        cypress
+                    </Link>{" "}
+                    or{" "}
+                    <Link target="_blank" href="https://playwright.dev/">
+                        playwright
+                    </Link>
+                    .
+                </Text>
+                <Text>
+                    These tools are powerful in their own right, but I think
+                    they are bloatware when writing unit tests.
+                </Text>
+                <Text>
+                    <Link target="_blank" href="https://playwright.dev/">
+                        @testing-library
+                    </Link>{" "}
+                    are “simple and complete testing utilities that encourage
+                    good testing practices” which allow you to test the DOM.
+                </Text>
+            </Section>
+            <Section>
+                <Text as="h3" variant="subheading" size="sm">
+                    Code coverage
+                </Text>
+                <Text>
+                    Although I am against setting coverage targets, it is
+                    valuable to know what parts of your code are tested and
+                    which are not.
+                </Text>
+                <Text>
+                    <Link target="_blank" href="https://about.codecov.io/">
+                        Codecov
+                    </Link>{" "}
+                    or{" "}
+                    <Link
+                        target="_blank"
+                        href="https://www.sonarsource.com/products/sonarqube/"
+                    >
+                        Sonarqube
+                    </Link>{" "}
+                    can give you these insights. You can use it to make educated
+                    decisions on the state of your codebase and determine where
+                    to focus your testing efforts.
+                </Text>
+            </Section>
+            <Section>
+                <Text as="h2" variant="subheading">
+                    Conducting simulations
+                </Text>
+                <Text>
+                    The beauty of testing is that you can mock (simulate) almost
+                    everything. This allows you to put your system under stress
+                    and force it into states that are hard(er) to reproduce in
+                    real life.
+                </Text>
+                <CodeBlock
+                    code={`
+\`\`\`typescript
+const fetchData = async (triesLeft = 1) => {
+  try {
+    const response = await fetch("https://api.example.com");
+    const data = await response.json();
+    const parsed = MyType.parse(data);
+
+    saveMyData(parsed);
+  } catch (error) {
+    if (triesLeft > 0) {
+      return fetchData(triesLeft - 1);
+    }
+    // Error handling
+  }
+};
+
+describe("simulate your software", () => {
+  it("can throw errors", async () => {
+    jest.spyOn(global, "fetch").mockRejectedValue(new Error("Network error"));
+
+    await fetchData(0);
+
+    expect(saveMyData).not.toHaveBeenCalled();
+  });
+
+  it("can pass unexpected inputs", async () => {
+    jest.spyOn(global, "fetch").mockResolvedValue({
+      json: () => Promise.resolve({ foo: "bar", bar: "baz" }),
+    });
+
+    await fetchData(0);
+
+    expect(saveMyData).not.toHaveBeenCalled();
+  });
+
+  it("can validate retry mechanisms", async () => {
+    jest
+      .spyOn(global, "fetch")
+      .mockResolvedValueOnce({
+        json: () => throw new Error("Network error"),
+      })
+      .mockResolvedValue ({
+        json: () => Promise.resolve({ foo: "bar", bar: 42 }),
+      });
+
+    await fetchData(1);
+
+    expect(saveData).toHaveBeenCalledWith({ foo: "bar", bar: 42 });
+  });
+});
+\`\`\`
+                    `}
+                />
+                <Text>
+                    You can go even deeper by{" "}
+                    <Link
+                        target="_blank"
+                        href="https://www.npmjs.com/package/vitest-mock-extended"
+                    >
+                        mocking any interface or object
+                    </Link>{" "}
+                    to give you full control over the simulation.
+                </Text>
+            </Section>
+            <Section>
+                <Text as="h2" variant="subheading">
+                    Performing real-world trials
+                </Text>
+                <Text>
+                    Testing is great, but if you are conducting unit tests they
+                    are placed in a vacuum.
+                </Text>
+                <Text>
+                    Software does not exist in a vacuum, and{" "}
+                    <strong>things will break</strong> when placed in the real
+                    world. You should make sure to have some form of strategy
+                    for this.
+                </Text>
+                <figure className="space-y-4 my-16 mx-auto prose md:prose-xl lg:prose-2xl">
+                    <blockquote
+                        cite="https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599"
+                        className="text-muted-foreground not-italic"
+                    >
+                        When you get a bug report, start by writing a unit test
+                        that exposes the bug.
+                    </blockquote>
+                    <figcaption className="text-muted-foreground">
+                        Refactoring: Improving the Design of Existing Code
+                    </figcaption>
+                </figure>
             </Section>
         </>
     );

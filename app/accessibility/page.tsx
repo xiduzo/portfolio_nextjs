@@ -8,10 +8,10 @@ export default function Page() {
             <Text size="sm" as="h1" variant="heading">
                 Let&apos;s make the world a better place for everyone ❤️
             </Text>
-            <figure className="space-y-4 my-16 prose md:prose-xl lg:prose-2xl">
+            <figure className="space-y-4 my-16 mx-auto prose md:prose-xl lg:prose-2xl">
                 <blockquote
                     cite="https://www.w3.org/mission/accessibility/"
-                    className="text-white not-italic"
+                    className="text-muted-foreground not-italic"
                 >
                     The power of the Web is in its universality. Access by
                     everyone <strong>regardless of ability</strong> is an{" "}

@@ -62,7 +62,7 @@ export default function RootLayout({
                                         src="/me.jpeg"
                                         alt="Sander Boer"
                                     />
-                                    <AvatarFallback></AvatarFallback>
+                                    <AvatarFallback>XDZ</AvatarFallback>
                                 </Avatar>
                             </Link>
                         </header>

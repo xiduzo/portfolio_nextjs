@@ -100,7 +100,8 @@ export default {
     },
 
     plugins: [
-        require("tailwindcss-animate"),
         require("@tailwindcss/typography"),
+        require("tailwindcss-motion"),
+        require("tailwindcss-intersect"),
     ],
 } satisfies Config;

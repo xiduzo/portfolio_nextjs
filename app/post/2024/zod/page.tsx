@@ -7,10 +7,12 @@ import { VelocityScroll } from "@/components/magic-ui/scroll-based-velocity";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import Image from "next/image";
+import { SelectionColor } from "@/hooks/use-selection-color";
 
 export default function Page() {
     return (
         <>
+            <SelectionColor color="#10b981" />
             <header className="mb-44 flex flex-col relative" aria-hidden>
                 <section className="absolute top-6 right-6 z-20 flex gap-2">
                     <Badge variant="secondary" className="pointer-events-none">
@@ -339,7 +341,7 @@ mqqClient.onMessage(message => {
                 <Text>
                     When parsing a record from DynamoDB, we are assuming that
                     the data is always there and of the correct type. Similarly,
-                    when parsing an MQTT message, we're assuming that the
+                    when parsing an MQTT message, we are assuming that the
                     payload is always a stringified JSON object containing the
                     correct data.
                 </Text>
@@ -373,7 +375,8 @@ mqqClient.onMessage(message => {
                 </Text>
                 <Text>
                     <code>
-                        TypeError: Cannot read property 'foo' of undefined
+                        TypeError: Cannot read property &apos;foo&apos; of
+                        undefined
                     </code>{" "}
                     or <code>NaN</code> values after calculations were not
                     uncommon.
@@ -611,6 +614,23 @@ const example = new GrowthCycle(invalidInput) // [!code error]
                     As a result, the platform is now more stable, and the
                     reliability of the data has improved significantly.
                 </Text>
+            </Section>
+            <Section>
+                <Text as="h4" variant="note" className="italic" size="lg">
+                    Edit
+                </Text>
+                <Text>
+                    Before leaving the project, I was surprised with a gift from
+                    the team. They had named a robot after me, forever engraving{" "}
+                    <code>zod</code> <em>(and myself)</em> in the Growy system.
+                </Text>
+                <Image
+                    src="/zod/sander-zod.png"
+                    alt="A robot named after me"
+                    width={578}
+                    height={676}
+                    className="mx-auto mt-40"
+                />
             </Section>
             <Section>
                 <Text as="h3" variant="subheading" size="sm">

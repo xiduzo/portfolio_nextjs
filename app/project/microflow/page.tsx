@@ -10,10 +10,12 @@ import { CodeBlock } from "@/components/custom/code-block";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { CallToAction } from "@/components/custom/call-to-action";
+import { SelectionColor } from "@/hooks/use-selection-color";
 
 export default function Page() {
     return (
         <>
+            <SelectionColor color="#f97316" />
             <header className="mb-44 flex flex-col relative" aria-hidden>
                 <section className="absolute top-6 right-6 z-20 flex gap-2">
                     <Badge variant="secondary" className="pointer-events-none">

@@ -12,12 +12,14 @@ import { Button } from "@/components/ui/button";
 import { Marquee } from "@/components/magic-ui/marquee";
 import { randomSort } from "@/lib/utils";
 import { CallToAction } from "@/components/custom/call-to-action";
+import { SelectionColor } from "@/hooks/use-selection-color";
 
 const animals = ["🐋", "🦀", "🐕", "🦦", "🦔", "🦉", "🦥", "🐍", "🦑", "🐘"];
 
 export default function Page() {
     return (
         <>
+            <SelectionColor color="#ef4444" />
             <header className="mb-44 flex flex-col relative" aria-hidden>
                 <section className="absolute top-6 right-6 z-20 flex gap-2">
                     <Badge variant="secondary" className="pointer-events-none">
@@ -337,7 +339,7 @@ const Component = () => {
                     to experience Fissa yourself.
                 </Text>
                 <Text>
-                    Make a Fissa and enjoy the tunes while you read the rest of
+                    Make a Fissa and enjoy some tunes while you read the rest of
                     the article.
                 </Text>
                 <Text

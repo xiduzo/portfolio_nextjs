@@ -8,6 +8,8 @@ body {
 
 @layer base {
     :root {
+        --selection-color: #14532d; /* Tailwind green-500 */
+
         --background: 0 0% 100%;
         --foreground: 0 0% 3.9%;
         --card: 0 0% 100%;
@@ -88,7 +90,7 @@ body {
 }
 
 a[target="_blank"]:not(:has(*)) {
-    @apply underline;
+    @apply underline cursor-alias;
 }
 
 [data-rehype-pretty-code-figure] pre {
@@ -197,6 +199,40 @@ main > header {
 
 :not(pre) > code {
     @apply rounded-md bg-muted px-2 py-1 border border-muted-foreground/20 font-mono;
+}
+
+sup {
+    @apply text-muted-foreground font-note;
+}
+
+main > article ::selection {
+    background-color: var(--selection-color);
+}
+
+main > article pre ::selection {
+    @apply bg-muted-foreground/10;
+}
+
+main > article figure:has(blockquote) ::selection {
+    @apply bg-muted-foreground/20;
+}
+
+figure:has(blockquote)::before,
+figure:has(blockquote)::after {
+    @apply text-9xl font-note;
+}
+
+figure:has(blockquote)::before {
+    content: "“";
+}
+
+figure:has(blockquote)::after {
+    @apply w-full inline-block text-right;
+    content: "”";
+}
+
+figure:has(blockquote) figcaption {
+    @apply text-right font-note;
 }
 
 figure:has(blockquote) figcaption::before {
