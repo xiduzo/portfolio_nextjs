@@ -1,26 +1,23 @@
 import { Section } from "@/components/custom/section";
 import { Text } from "@/components/custom/typography";
-import Image from "next/image";
+import { Image } from "@/components/custom/image";
 import Link from "next/link";
 import GitHubCalendar from "react-github-calendar";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { TextRevealByWord } from "@/components/magic-ui/text-reveal";
 
 export default function Page() {
     return (
         <>
-            <Section>
-                <Text as="h1" variant="heading">
-                    Who am I?
-                </Text>
-                <Text className="mb-1" size="sm">
-                    Designer by education,
-                </Text>
-                <Text className="mb-1" size="sm">
-                    Developer by interest,
-                </Text>
-                <Text size="sm">Tinkerer by curiosity.</Text>
+            <Section className="flex items-center justify-center">
+                <Avatar className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 transition-all motion-delay-300">
+                    <AvatarImage src="/me.jpeg" alt="Sander Boer" />
+                    <AvatarFallback>Xiduzo</AvatarFallback>
+                </Avatar>
             </Section>
+            <TextRevealByWord text="Designer by education, Developer by interest, Tinkerer by curiosity." />
             <Section>
-                <Text>
+                <Text motion="none">
                     I have always been fascinated by technology. While my
                     friends played{" "}
                     <Link target="_blank" href="https://tibia.com">
@@ -28,7 +25,7 @@ export default function Page() {
                     </Link>
                     , I was busy creating my own hacked version.
                 </Text>
-                <Text>
+                <Text motion="none">
                     This is where my interest for programming began as I learned
                     how to host a server, create a database and modify game code
                     to make it work as I wanted. Checkout my awesome{" "}
@@ -105,7 +102,7 @@ export default function Page() {
                     disciplines is where I like to play ball.
                 </Text>
             </Section>
-            <Section className="flex flex-col items-center mb-60">
+            <Section className="flex flex-col items-center mb-60 max-w-[95%] overflow-hidden">
                 <Text as="h2" variant="subheading" size="sm">
                     What I am up to
                 </Text>

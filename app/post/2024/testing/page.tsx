@@ -1,10 +1,11 @@
+import Alert from "@/components/custom/alert";
 import { CodeBlock } from "@/components/custom/code-block";
 import { Hero } from "@/components/custom/hero";
 import { Quote } from "@/components/custom/quote";
+import { ScrollHint } from "@/components/custom/scroll-hint";
 import { Section } from "@/components/custom/section";
 import { Title } from "@/components/custom/title";
 import { Text } from "@/components/custom/typography";
-import { Marquee } from "@/components/magic-ui/marquee";
 import Link from "next/link";
 
 export default function Page() {
@@ -21,6 +22,7 @@ export default function Page() {
                 subtitle="And become a better engineer"
                 readTime={22}
             />
+            <ScrollHint />
             <Section>
                 <Text>
                     Although there are{" "}
@@ -45,25 +47,15 @@ export default function Page() {
                     .
                 </Text>
             </Section>
-            <Marquee pauseOnHover className="[--duration:500s]">
-                {Array.from({ length: 100 }).map((_, i) => (
-                    <Text key={i} className="px-2">
-                        💡
+            <Section>
+                <Alert icon="AlertCircle" intent="info">
+                    <Text>
+                        The examples in this article are for testing in
+                        JavaScript (TypeScript). However, the principles can be
+                        applied to you favorite tools.
                     </Text>
-                ))}
-            </Marquee>
-            <Text className="block text-center px-8" as="em">
-                The examples in this article are for testing in JavaScript
-                (TypeScript). However, the principles can be applied to you
-                favorite tools.
-            </Text>
-            <Marquee pauseOnHover reverse className="[--duration:500s]">
-                {Array.from({ length: 100 }).map((_, i) => (
-                    <Text key={i} className="px-2">
-                        💡
-                    </Text>
-                ))}
-            </Marquee>
+                </Alert>
+            </Section>
             <Quote
                 cite="ChatGPT"
                 link="https://chat.openai.com/share/97ddf631-1171-4c18-9f70-40e2b6f30e8b"

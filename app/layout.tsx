@@ -18,8 +18,8 @@ import {
     subHeadings,
     Text,
 } from "@/components/custom/typography";
-import { Button } from "@/components/ui/button";
 import ObserverProvider from "@/providers/ObserverProvider";
+import { CallToAction } from "@/components/custom/call-to-action";
 
 export const metadata: Metadata = {
     title: "Portfolio Sander Boer",
@@ -42,8 +42,8 @@ export default function RootLayout({
             >
                 <SidebarProvider>
                     <AppSidebar />
-                    <SidebarInset className="overflow-x-hidden">
-                        <header className="fixed grow top-0 right-0 flex items-center gap-2 border-b bg-background p-4 z-30">
+                    <SidebarInset>
+                        <header className="sticky top-0 flex items-center gap-2 border-b bg-background p-4 z-30">
                             <SidebarTrigger className="-ml-1" />
                             <Separator
                                 orientation="vertical"
@@ -67,21 +67,32 @@ export default function RootLayout({
                                 </Avatar>
                             </Link>
                         </header>
-                        <article className="pt-16">
+                        <article>
                             <ObserverProvider>{children}</ObserverProvider>
                         </article>
-                        <footer className="py-64 mt-64 bg-muted text-muted-foreground px-6 text-center">
-                            <Text variant="heading" className="mb-4">
+                        <footer className="py-64 mt-64 bg-muted text-muted-foreground px-3 md:px-6 text-center">
+                            <Text
+                                variant="heading"
+                                className="mb-4 break-words text-wrap"
+                            >
                                 Enough scrolling,
                             </Text>
                             <Text className="font-extralight mb-10">
                                 Want to make something together?
                             </Text>
-                            <Link href="mailto:mail@sanderboer.nl">
-                                <Button variant="link" className="text-3xl">
-                                    Let&apos;s have a 🍺
-                                </Button>
-                            </Link>
+                            <Text
+                                as="div"
+                                className="flex justify-center mt-20"
+                            >
+                                <Link href="mailto:mail@sanderboer.nl">
+                                    <CallToAction
+                                        colorFrom="#e2e8f0"
+                                        colorTo="#f59e0b"
+                                    >
+                                        Let&apos;s have a 🍺
+                                    </CallToAction>
+                                </Link>
+                            </Text>
                         </footer>
                     </SidebarInset>
                 </SidebarProvider>

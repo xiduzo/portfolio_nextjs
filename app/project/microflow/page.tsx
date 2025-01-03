@@ -4,11 +4,12 @@ import Link from "next/link";
 import { Safari } from "@/components/magic-ui/safari";
 import { CodeBlock } from "@/components/custom/code-block";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import { Image } from "@/components/custom/image";
 import { CallToAction } from "@/components/custom/call-to-action";
 import { Technologies } from "@/components/custom/technologies";
 import { Title } from "@/components/custom/title";
 import { Hero } from "@/components/custom/hero";
+import { ScrollHint } from "@/components/custom/scroll-hint";
 
 export default function Page() {
     return (
@@ -25,6 +26,7 @@ export default function Page() {
                 subtitle="Microcontrollers made simple"
                 readTime={8}
             />
+            <ScrollHint />
             <Technologies
                 technologies={[
                     "@xyflow/react",
@@ -287,7 +289,7 @@ export class Flasher {
 			const protocol = new this.board.protocol(this.connection, this.board);
 			await protocol.flash(filePath);
 		} catch (error) {
-			throw error; // This is important to rethrow the error so the caller can handle it
+			throw error; // Rethrow the error so the caller can handle it
 		} finally {
 			await this.connection.close(); // Always close the port again
 		}

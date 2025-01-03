@@ -2,7 +2,7 @@ import { Section } from "@/components/custom/section";
 import { Text } from "@/components/custom/typography";
 import Link from "next/link";
 import { Iphone15Pro } from "@/components/magic-ui/iphone-15-pro";
-import Image from "next/image";
+import { Image } from "@/components/custom/image";
 import { CodeBlock } from "@/components/custom/code-block";
 import { Button } from "@/components/ui/button";
 import { Marquee } from "@/components/magic-ui/marquee";
@@ -11,6 +11,7 @@ import { CallToAction } from "@/components/custom/call-to-action";
 import { Title } from "@/components/custom/title";
 import { Hero } from "@/components/custom/hero";
 import { Technologies } from "@/components/custom/technologies";
+import { ScrollHint } from "@/components/custom/scroll-hint";
 
 const animals = ["🐋", "🦀", "🐕", "🦦", "🦔", "🦉", "🦥", "🐍", "🦑", "🐘"];
 
@@ -29,6 +30,7 @@ export default function Page() {
                 subtitle="Not only one person should decide what is playing on a party"
                 readTime={12}
             />
+            <ScrollHint />
             <Technologies
                 technologies={[
                     "Expo",
@@ -117,14 +119,18 @@ export default function Page() {
                     why decided to give each Fissa their own color.
                 </Text>
             </Section>
-            <Text variant="note">It is a fissa, but within our boundaries</Text>
-            <Image
-                src="/fissa/colors.svg"
-                alt="The different color pallettes Fissa has"
-                className="w-fit"
-                width={1920}
-                height={1080}
-            />
+            <Section variant="full">
+                <Text variant="note">
+                    It is a fissa, but within our boundaries
+                </Text>
+                <Image
+                    src="/fissa/colors.svg"
+                    alt="The different color pallettes Fissa has"
+                    className="w-fit"
+                    width={1920}
+                    height={1080}
+                />
+            </Section>
             <Section>
                 <Text as="h3" size="sm" variant="subheading">
                     Tailwind

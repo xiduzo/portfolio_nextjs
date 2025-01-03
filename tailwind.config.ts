@@ -1,4 +1,7 @@
 import type { Config } from "tailwindcss";
+import typography from "@tailwindcss/typography";
+import motion from "tailwindcss-motion";
+import intersect from "tailwindcss-intersect";
 
 export default {
     darkMode: ["class"],
@@ -99,9 +102,5 @@ export default {
         },
     },
 
-    plugins: [
-        require("@tailwindcss/typography"),
-        require("tailwindcss-motion"),
-        require("tailwindcss-intersect"),
-    ],
+    plugins: [typography, motion, intersect],
 } satisfies Config;

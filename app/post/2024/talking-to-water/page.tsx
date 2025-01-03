@@ -1,13 +1,14 @@
 import { Text } from "@/components/custom/typography";
 import { Section } from "@/components/custom/section";
 import Link from "next/link";
-import Image from "next/image";
+import { Image } from "@/components/custom/image";
 import { CodeBlock } from "@/components/custom/code-block";
 import Video from "next-video";
 import talkingToWaterVideo from "/videos/1080p.mov";
 import { CallToAction } from "@/components/custom/call-to-action";
 import { Hero } from "@/components/custom/hero";
 import { Title } from "@/components/custom/title";
+import { ScrollHint } from "@/components/custom/scroll-hint";
 
 export default function Page() {
     return (
@@ -23,6 +24,7 @@ export default function Page() {
                 subtitle="The art of the bodge"
                 readTime={10}
             />
+            <ScrollHint />
             <Section>
                 <Text>
                     One of the things I like about my job at the{" "}
@@ -416,22 +418,20 @@ my_assistant.start()
                     You can experience the project yourself or use it as the
                     basis for your next bodge project!
                 </Text>
-                <div className="flex gap-4 justify-center flex-col items-center lg:flex-row">
-                    <Link
-                        href="https://github.com/xiduzo/whisper-sentiment-analysis"
-                        target="_blank"
-                    >
-                        <CallToAction delay={250}>
-                            Check out the code
-                        </CallToAction>
-                    </Link>
-                    <Link
-                        href="https://hub.docker.com/repository/docker/xiduzo/whisper-sentiment-analysis/general"
-                        target="_blank"
-                    >
-                        <CallToAction>Run with docker</CallToAction>
-                    </Link>
-                </div>
+            </Section>
+            <Section className="flex gap-4 justify-center flex-col items-center lg:flex-row">
+                <Link
+                    href="https://github.com/xiduzo/whisper-sentiment-analysis"
+                    target="_blank"
+                >
+                    <CallToAction delay={250}>Check out the code</CallToAction>
+                </Link>
+                <Link
+                    href="https://hub.docker.com/repository/docker/xiduzo/whisper-sentiment-analysis/general"
+                    target="_blank"
+                >
+                    <CallToAction>Run with docker</CallToAction>
+                </Link>
             </Section>
             <Section aria-hidden="true">
                 <Text className="text-center my-96">🐇</Text>

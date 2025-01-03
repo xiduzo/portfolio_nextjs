@@ -6,23 +6,25 @@ export default function Page() {
     return (
         <>
             <Section>
-                <Text as="h1" variant="heading">
+                <Text as="h1" variant="heading" motion="none">
                     My projects
                 </Text>
-                <Text as="h2" variant="subheading" className="mb-1 mt-24">
+            </Section>
+            <Section>
+                <Text as="h2" variant="subheading" motion="none">
                     Highlighted cases
                 </Text>
-                <Text size="sm" className="text-muted-foreground mb-8">
+                <Text size="sm" className="text-muted-foreground mb-20">
                     A selection of personal projects I have worked on in the
                     past.
                 </Text>
                 <HighlightedProjects />
             </Section>
             <Section>
-                <Text as="h2" variant="subheading" className="mb-1">
+                <Text as="h2" variant="subheading">
                     Other cases
                 </Text>
-                <Text size="sm" className="text-muted-foreground mb-8">
+                <Text size="sm" className="text-muted-foreground">
                     Some more projects I have done and am proud to share.
                 </Text>
             </Section>

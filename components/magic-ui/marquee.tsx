@@ -22,6 +22,7 @@ export function Marquee({
     return (
         <div
             {...props}
+            aria-hidden="true"
             className={cn(
                 "group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)]",
                 {

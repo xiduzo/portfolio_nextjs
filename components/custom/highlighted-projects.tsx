@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { WobbleCard } from "@/components/aceternity/wobble-card";
 import { Badge } from "@/components/ui/badge";
-import Image from "next/image";
+import { Image } from "@/components/custom/image";
 
 export function HighlightedProjects() {
     return (
@@ -69,8 +69,7 @@ export function HighlightedProjects() {
                             Microflow
                         </div>
                         <p className="mt-4 max-w-[26rem] text-left text-base/6 text-neutral-200">
-                            Microcontrollers made simple, a set of tools to make
-                            it easier to start prototyping for interactivity.
+                            Microcontrollers made easy.
                         </p>
                     </div>
                     <Image

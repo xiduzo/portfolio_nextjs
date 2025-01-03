@@ -3,7 +3,7 @@ import { PropsWithChildren } from "react";
 
 export function Quote(props: Props) {
     return (
-        <figure className="space-y-4 my-24 lg:my-48 px-4 lg:px-12 mx-auto prose md:prose-xl lg:prose-2xl max-w-screen-md">
+        <figure className="space-y-4 my-24 lg:my-36 px-4 lg:px-12 mx-auto prose md:prose-xl lg:prose-2xl max-w-screen-md">
             <blockquote
                 cite={props.link ?? props.cite}
                 className="text-muted-foreground not-italic"

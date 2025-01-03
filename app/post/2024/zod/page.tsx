@@ -1,51 +1,28 @@
 import { CodeBlock } from "@/components/custom/code-block";
-import { Openmoji } from "@/components/custom/openmoji";
 import { Section } from "@/components/custom/section";
 import { Text } from "@/components/custom/typography";
-import { Marquee } from "@/components/magic-ui/marquee";
-import { VelocityScroll } from "@/components/magic-ui/scroll-based-velocity";
-import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
-import Image from "next/image";
+import { Image } from "@/components/custom/image";
+import { Hero } from "@/components/custom/hero";
+import { Title } from "@/components/custom/title";
+import { ScrollHint } from "@/components/custom/scroll-hint";
+import Alert from "@/components/custom/alert";
 
 export default function Page() {
     return (
         <>
-            <header className="mb-44 flex flex-col relative" aria-hidden>
-                <section className="absolute top-6 right-6 z-20 flex gap-2">
-                    <Badge variant="secondary" className="pointer-events-none">
-                        2024
-                    </Badge>
-                </section>
-                <section className="bg-emerald-500 flex items-end justify-center z-10">
-                    <Openmoji
-                        hexcode="1F6C2"
-                        size={420}
-                        className="translate-y-32"
-                    />
-                </section>
-                <section className="text-9xl w-screen font-extrabold font-heading absolute left-0 -bottom-32">
-                    <VelocityScroll text="Zod" default_velocity={2} />
-                </section>
-            </header>
-            <Section className="text-center max-w-4xl mx-auto">
-                <Text
-                    as="h1"
-                    size="sm"
-                    variant="body"
-                    className="italic text-muted-foreground font-light"
-                >
-                    Zod,
-                </Text>
-                <Text
-                    size="lg"
-                    variant="subheading"
-                    className="text-center mb-8"
-                >
-                    Stronger interfaces, cleaner code, fewer bugs
-                </Text>
-                <Badge variant="outline">14 minute read</Badge>
-            </Section>
+            <Hero
+                title="Zod"
+                publishDate="June 30 2024"
+                emoji="1F6C2"
+                className="bg-emerald-500"
+            />
+            <Title
+                title="Zod"
+                subtitle="Stronger interfaces, cleaner code, fewer bugs"
+                readTime={14}
+            />
+            <ScrollHint />
             <Section>
                 <Text>
                     I am a big fan of TypeScript, but one thing that I still
@@ -409,28 +386,15 @@ mqqClient.onMessage(message => {
                     structure.
                 </Text>
             </Section>
-            <Marquee pauseOnHover className="[--duration:500s]">
-                {Array.from({ length: 100 }).map((_, i) => (
-                    <Text key={i} className="px-2">
-                        ⚠️
+            <Section>
+                <Alert icon="AlertCircle" intent="warning">
+                    <Text>
+                        The following code took some time to made, had its&apos;
+                        fair share of issues while developing and also gave me
+                        some headaches.
                     </Text>
-                ))}
-            </Marquee>
-            <Text
-                className="block text-center px-8 text-orange-500"
-                as="strong"
-            >
-                The following code took some time to made, had its&apos; fair
-                share of issues while developing and also gave me some
-                headaches.
-            </Text>
-            <Marquee pauseOnHover reverse className="[--duration:500s]">
-                {Array.from({ length: 100 }).map((_, i) => (
-                    <Text key={i} className="px-2">
-                        ⚠️
-                    </Text>
-                ))}
-            </Marquee>
+                </Alert>
+            </Section>
             <Section>
                 <Text>
                     The following <code>Parsable</code> class serves as the

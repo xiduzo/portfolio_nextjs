@@ -34,10 +34,10 @@ export const note = Caveat({
 export function Text<T extends keyof JSX.IntrinsicElements = "p">(
     props: Props<T>,
 ) {
-    const { as: Component = "p", ...restProps } = props;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const { as: Component = "p" as any, ...restProps } = props;
 
     return (
-        // @ts-expect-error can not spread unknown type
         <Component
             {...restProps}
             className={typography({
@@ -73,7 +73,7 @@ const typography = cva("", {
         },
         motion: {
             intersect:
-                "intersect-once intersect:motion-preset-slide-up-md intersect:motion-delay-300",
+                "intersect-once intersect:motion-translate-y-in-25 intersect:motion-opacity-in-40 intersect:motion-duration-700",
             none: "",
         },
     },

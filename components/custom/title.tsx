@@ -16,16 +16,22 @@ export function Title(props: Props) {
                 as="h1"
                 size="sm"
                 variant="body"
-                className="italic text-muted-foreground font-light"
+                className="italic text-muted-foreground font-light motion-preset-slide-up-md"
+                motion="none"
             >
                 {props.title},
             </Text>
-            <Text size="lg" variant="subheading" className="text-center mb-8">
+            <Text
+                size="lg"
+                variant="subheading"
+                className="text-center mb-8 motion-preset-slide-up-md motion-delay-75"
+                motion="none"
+            >
                 {props.subtitle}
             </Text>
             <Badge
                 variant="outline"
-                className="motion-scale-in-0 motion-delay-300"
+                className="motion-scale-in-0 motion-delay-200"
             >
                 {props.readTime}{" "}
                 {pluralForms.get(pluralRules.select(props.readTime))} read

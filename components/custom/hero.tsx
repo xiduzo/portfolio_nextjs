@@ -11,7 +11,7 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", {
 
 export function Hero(props: Props) {
     return (
-        <header className="mb-44 flex flex-col relative" aria-hidden>
+        <header className="mb-44 flex flex-col relative z-0">
             <section className="absolute top-6 right-6 z-20 flex gap-2">
                 <time dateTime={props.publishDate}>
                     <Badge variant="secondary" className="pointer-events-none">
@@ -28,18 +28,21 @@ export function Hero(props: Props) {
                 )}
             </section>
             <section
-                className={header({
-                    className: props.className,
-                })}
+                className={header({ className: props.className })}
+                aria-hidden="true"
             >
+                <section className="absolute w-full text-9xl leading-[9.25rem] font-extrabold font-heading left-0 -bottom-16">
+                    <VelocityScroll
+                        text={props.title}
+                        default_velocity={2}
+                        amount={1}
+                    />
+                </section>
                 <Openmoji
                     hexcode={props.emoji}
                     size={420}
-                    className="translate-y-32 motion-blur-in-3xl motion-delay-500"
+                    className="translate-y-44 motion-blur-in-3xl motion-opacity-in-65 motion-delay-75"
                 />
-            </section>
-            <section className="text-9xl leading-[9.25rem] w-screen font-extrabold font-heading absolute left-0 -bottom-32">
-                <VelocityScroll text={props.title} default_velocity={2} />
             </section>
         </header>
     );
@@ -53,4 +56,6 @@ type Props = {
     className?: string;
 };
 
-const header = cva("flex items-end justify-center z-10");
+const header = cva(
+    "flex items-end justify-center z-10 motion-grayscale-in motion-delay-150",
+);

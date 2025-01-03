@@ -23,6 +23,7 @@ export function Safari({
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             {...props}
+            className={`max-w-[100%] ${props.className}`}
         >
             <g clipPath="url(#path0)">
                 <path
