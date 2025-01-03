@@ -26,6 +26,7 @@
         "react": "19.0.0-rc-66855b96-20241106",
         "react-dom": "19.0.0-rc-66855b96-20241106",
         "react-github-calendar": "^4.5.1",
+        "react-rough-notation": "^1.0.5",
         "rehype-pretty-code": "^0.14.0",
         "rehype-stringify": "^10.0.1",
         "remark-parse": "^11.0.0",

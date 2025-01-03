@@ -106,8 +106,12 @@ a[target="_blank"]:not(:has(*))::after {
     @apply content-[']'];
 }
 
+[data-rehype-pretty-code-figure] {
+    @apply max-w-screen-lg mx-auto;
+}
+
 [data-rehype-pretty-code-figure] pre {
-    @apply p-4 rounded-3xl shadow overflow-x-hidden;
+    @apply p-4 rounded-2xl shadow overflow-x-hidden;
     color: var(--shiki-light);
     background-color: var(--shiki-light-bg);
 }
@@ -200,8 +204,12 @@ ol {
     @apply list-decimal;
 }
 
+ol li p {
+    @apply px-0;
+}
+
 ul {
-    @apply list-disc;
+    list-style-type: "- ";
 }
 
 main > header {
@@ -284,16 +292,8 @@ main > article em::after {
     content: "_";
 }
 
-main > article ::selection {
-    background-color: var(--selection-color);
-}
-
-main > article pre ::selection {
+main > article *::selection {
     @apply bg-muted-foreground/10;
-}
-
-main > article figure:has(blockquote) ::selection {
-    @apply bg-muted-foreground/20;
 }
 
 figure:has(blockquote)::before,

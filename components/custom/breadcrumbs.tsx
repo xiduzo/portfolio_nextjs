@@ -30,23 +30,29 @@ export function BreadCrumbs() {
                 {!!breadcrumbs.length && (
                     <BreadcrumbSeparator className="hidden md:block" />
                 )}
-                {breadcrumbs.map((breadcrumb, index) => (
-                    <React.Fragment key={breadcrumb}>
-                        <BreadcrumbItem className="hidden md:block">
-                            {index === breadcrumbs.length - 1 && (
-                                <BreadcrumbPage>{breadcrumb}</BreadcrumbPage>
-                            )}
+                {breadcrumbs.map((breadcrumb, index, path) => {
+                    return (
+                        <React.Fragment key={breadcrumb}>
+                            <BreadcrumbItem className="hidden md:block">
+                                {index === breadcrumbs.length - 1 && (
+                                    <BreadcrumbPage>
+                                        {breadcrumb}
+                                    </BreadcrumbPage>
+                                )}
+                                {index !== breadcrumbs.length - 1 && (
+                                    <BreadcrumbLink
+                                        href={`/${path.slice(0, index + 1).join("/")}`}
+                                    >
+                                        {breadcrumb}
+                                    </BreadcrumbLink>
+                                )}
+                            </BreadcrumbItem>
                             {index < breadcrumbs.length - 1 && (
-                                <BreadcrumbLink href={`/${breadcrumb}`}>
-                                    {breadcrumb}
-                                </BreadcrumbLink>
+                                <BreadcrumbSeparator className="hidden md:block" />
                             )}
-                        </BreadcrumbItem>
-                        {index < breadcrumbs.length - 1 && (
-                            <BreadcrumbSeparator className="hidden md:block" />
-                        )}
-                    </React.Fragment>
-                ))}
+                        </React.Fragment>
+                    );
+                })}
             </BreadcrumbList>
         </Breadcrumb>
     );

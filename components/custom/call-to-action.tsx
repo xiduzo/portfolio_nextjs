@@ -6,12 +6,14 @@ export function CallToAction(props: PropsWithChildren & BorderBeamProps) {
     const { children, ...rest } = props;
 
     return (
-        <Button
-            variant="outline"
-            className="relative text-2xl p-4 md:text-4xl md:p-8 font-note font-extrabold"
-        >
-            {children}
-            <BorderBeam size={90} {...rest} />
-        </Button>
+        <div className="intersect:motion-preset-confetti">
+            <Button
+                variant="outline"
+                className="relative text-2xl p-4 md:text-4xl md:p-8 font-note font-extrabold"
+            >
+                {children}
+                <BorderBeam size={90} {...rest} />
+            </Button>
+        </div>
     );
 }

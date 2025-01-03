@@ -16,9 +16,9 @@ export function HighlightedProjects() {
                     className=""
                 >
                     <div className="max-w-xs">
-                        <h2 className="text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
+                        <div className="text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
                             Assessor bot
-                        </h2>
+                        </div>
                         <p className="mt-4 text-left text-base/6 text-neutral-200">
                             A LLM experiment for providing students with
                             feedback
@@ -40,11 +40,11 @@ export function HighlightedProjects() {
                 </WobbleCard>
             </Link>
             <Link href="/project/fissa" className="col-span-1">
-                <WobbleCard containerClassName="h-full bg-red-800 group">
+                <WobbleCard containerClassName="h-full bg-pink-800 group">
                     <div>
-                        <h2 className="max-w-80 text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
+                        <div className="max-w-80 text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
                             Fissa
-                        </h2>
+                        </div>
                         <p className="mt-4 max-w-[12rem] text-left text-base/6 text-neutral-200">
                             Not only one person should decide what is playing at
                             a party
@@ -65,9 +65,9 @@ export function HighlightedProjects() {
             >
                 <WobbleCard containerClassName="h-full bg-orange-800 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px] group">
                     <div className="max-w-sm">
-                        <h2 className="max-w-sm md:max-w-lg text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
+                        <div className="max-w-sm md:max-w-lg text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
                             Microflow
-                        </h2>
+                        </div>
                         <p className="mt-4 max-w-[26rem] text-left text-base/6 text-neutral-200">
                             Microcontrollers made simple, a set of tools to make
                             it easier to start prototyping for interactivity.

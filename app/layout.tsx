@@ -19,11 +19,12 @@ import {
     Text,
 } from "@/components/custom/typography";
 import { Button } from "@/components/ui/button";
+import ObserverProvider from "@/providers/ObserverProvider";
 
 export const metadata: Metadata = {
     title: "Portfolio Sander Boer",
     description:
-        "Hello world! My name is Sander and I am a passionate developer with a creative mind™. I love to create tools that enhance the performance of professionals or/and empower individuals.",
+        "Hello world! My name is Sander and I am a passionate developer with a creative mind™. I love to create tools that enhance the performance of professionals and empower individuals.",
 };
 
 export default function RootLayout({
@@ -66,7 +67,9 @@ export default function RootLayout({
                                 </Avatar>
                             </Link>
                         </header>
-                        <article className="pt-16">{children}</article>
+                        <article className="pt-16">
+                            <ObserverProvider>{children}</ObserverProvider>
+                        </article>
                         <footer className="py-64 mt-64 bg-muted text-muted-foreground px-6 text-center">
                             <Text variant="heading" className="mb-4">
                                 Enough scrolling,

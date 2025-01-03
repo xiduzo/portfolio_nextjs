@@ -1,52 +1,26 @@
 import { CodeBlock } from "@/components/custom/code-block";
-import { Openmoji } from "@/components/custom/openmoji";
+import { Hero } from "@/components/custom/hero";
+import { Quote } from "@/components/custom/quote";
 import { Section } from "@/components/custom/section";
+import { Title } from "@/components/custom/title";
 import { Text } from "@/components/custom/typography";
 import { Marquee } from "@/components/magic-ui/marquee";
-import { VelocityScroll } from "@/components/magic-ui/scroll-based-velocity";
-import { Badge } from "@/components/ui/badge";
-import { SelectionColor } from "@/hooks/use-selection-color";
 import Link from "next/link";
 
 export default function Page() {
     return (
         <>
-            <SelectionColor color="#ef4444" />
-            <header className="mb-44 flex flex-col relative" aria-hidden>
-                <section className="absolute top-6 right-6 z-20 flex gap-2">
-                    <Badge variant="secondary" className="pointer-events-none">
-                        2024
-                    </Badge>
-                </section>
-                <section className="bg-red-500 flex items-end justify-center z-10">
-                    <Openmoji
-                        hexcode="1F9EA"
-                        size={420}
-                        className="translate-y-32"
-                    />
-                </section>
-                <section className="text-9xl leading-[9.25rem] w-screen font-extrabold font-heading absolute left-0 -bottom-32">
-                    <VelocityScroll text="Testing" default_velocity={2} />
-                </section>
-            </header>
-            <Section className="text-center max-w-4xl mx-auto">
-                <Text
-                    as="h1"
-                    size="sm"
-                    variant="body"
-                    className="italic text-muted-foreground font-light"
-                >
-                    Testing,
-                </Text>
-                <Text
-                    size="lg"
-                    variant="subheading"
-                    className="text-center mb-8"
-                >
-                    And become a better engineer
-                </Text>
-                <Badge variant="outline">22 minute read</Badge>
-            </Section>
+            <Hero
+                title="Testing"
+                publishDate="Apr 4 2024"
+                emoji="1F9EA"
+                className="bg-red-500"
+            />
+            <Title
+                title="Testing"
+                subtitle="And become a better engineer"
+                readTime={22}
+            />
             <Section>
                 <Text>
                     Although there are{" "}
@@ -78,7 +52,7 @@ export default function Page() {
                     </Text>
                 ))}
             </Marquee>
-            <Text className="block text-center px-8 text-blue-500" as="strong">
+            <Text className="block text-center px-8" as="em">
                 The examples in this article are for testing in JavaScript
                 (TypeScript). However, the principles can be applied to you
                 favorite tools.
@@ -90,22 +64,15 @@ export default function Page() {
                     </Text>
                 ))}
             </Marquee>
-            <Section>
-                <figure className="space-y-4 my-16 mx-auto prose md:prose-xl lg:prose-2xl">
-                    <blockquote
-                        cite="https://chat.openai.com/share/97ddf631-1171-4c18-9f70-40e2b6f30e8b"
-                        className="text-muted-foreground not-italic"
-                    >
-                        Engineers conduct tests and experiments to evaluate the
-                        performance, safety, and reliability of products or
-                        systems. This may involve using specialized equipment,
-                        conducting simulations, or performing real-world trials.
-                    </blockquote>
-                    <figcaption className="text-muted-foreground">
-                        ChatGPT
-                    </figcaption>
-                </figure>
-            </Section>
+            <Quote
+                cite="ChatGPT"
+                link="https://chat.openai.com/share/97ddf631-1171-4c18-9f70-40e2b6f30e8b"
+            >
+                Engineers conduct tests and experiments to evaluate the
+                performance, safety, and reliability of products or systems.
+                This may involve using specialized equipment, conducting
+                simulations, or performing real-world trials.
+            </Quote>
             <Section>
                 <Text as="h2" variant="subheading">
                     The software engineer
@@ -238,7 +205,7 @@ project-root/
             </Section>
             <Section>
                 <Text as="h3" variant="subheading" size="sm">
-                    🚩 Test code is not <em>clean</em>
+                    🚩 Test code is not &ldquo;clean&rdquo;
                 </Text>
                 <Text>
                     Why do you go to great lengths to write clean, maintainable
@@ -247,52 +214,38 @@ project-root/
                 </Text>
                 <Text>
                     Before we start this section I would like to define what I
-                    consider as <code>source code</code>.{" "}
-                    <code>Source code</code> is all the code which is part of
-                    the project. This can be broken down into{" "}
-                    <code>test code</code> and <code>production code</code>.
+                    consider as <strong>source code</strong>. Source code is all
+                    the code which is part of the project. This can be broken
+                    down into <em>test code</em> and <em>production code</em>.
                 </Text>
                 <Text>
-                    <code>Test code</code> should adhere to the same standards
-                    of quality as the <code>production code</code> it is
-                    testing.
+                    Test code should adhere to the same standards of quality as
+                    the production code it is testing.
                 </Text>
-                <figure className="space-y-4 my-16 mx-auto prose md:prose-xl lg:prose-2xl">
-                    <blockquote
-                        cite="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
-                        className="text-muted-foreground not-italic"
-                    >
-                        Indeed, the ratio of time spent reading versus writing
-                        is well over 10 to 1. We are constantly reading old code
-                        as part of the effort to write new code. Therefore,
-                        making it easy to read makes it easier to write.
-                    </blockquote>
-                    <figcaption className="text-muted-foreground">
-                        Clean Code: A Handbook of Agile Software Craftsmanship
-                    </figcaption>
-                </figure>
-                <figure className="space-y-4 my-16 mx-auto prose md:prose-xl lg:prose-2xl">
-                    <blockquote
-                        cite="https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599"
-                        className="text-muted-foreground not-italic"
-                    >
-                        Any fool can write code that a computer can understand.
-                        Good programmers write code that humans can understand.
-                    </blockquote>
-                    <figcaption className="text-muted-foreground">
-                        Refactoring: Improving the Design of Existing Code
-                    </figcaption>
-                </figure>
+                <Quote
+                    cite="Clean Code: A Handbook of Agile Software Craftsmanship"
+                    link="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
+                >
+                    Indeed, the ratio of time spent reading versus writing is
+                    well over 10 to 1. We are constantly reading old code as
+                    part of the effort to write new code. Therefore, making it
+                    easy to read makes it easier to write.
+                </Quote>
+                <Quote
+                    cite=" Refactoring: Improving the Design of Existing Code"
+                    link="https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599"
+                >
+                    Any fool can write code that a computer can understand. Good
+                    programmers write code that humans can understand.
+                </Quote>
             </Section>
             <Section>
                 <Text>
                     Some indicators I have found that you throw out clean code
                     principles when writing tests:
                 </Text>
-                <Text className="mt-28">
-                    <ol>
-                        <li>Ignoring test files in your linting</li>
-                    </ol>
+                <Text className="mt-28" as="ol">
+                    <li>Ignoring test files in your linting</li>
                 </Text>
                 <Text>
                     Sure, this makes your life easier in the short term. But
@@ -309,10 +262,8 @@ project-root/
 \`\`\`
                     `}
                 />
-                <Text>
-                    <ol start={2}>
-                        <li>Making the test (file) a puzzle by itself</li>
-                    </ol>
+                <Text as="ol" start={2}>
+                    <li>Making the test (file) a puzzle by itself</li>
                 </Text>
                 <Text>
                     Tests can be considered documentation itself when written
@@ -343,7 +294,7 @@ it("should do the thing", () => {
                     `}
                 />
                 <Text>
-                    Act like you are writing <em>&ldquo;normal&rdquo;</em> code.
+                    Act like you are writing <em>normal</em> code.
                 </Text>
                 <Text>
                     This makes it easier to skim over the tests to see what is
@@ -351,14 +302,12 @@ it("should do the thing", () => {
                 </Text>
                 <Text>
                     The{" "}
-                    <em>
-                        <Link
-                            href="https://automationpanda.com/2020/07/07/arrange-act-assert-a-pattern-for-writing-good-tests/"
-                            target="_blank"
-                        >
-                            Arrange, Act, Assert
-                        </Link>
-                    </em>{" "}
+                    <Link
+                        href="https://automationpanda.com/2020/07/07/arrange-act-assert-a-pattern-for-writing-good-tests/"
+                        target="_blank"
+                    >
+                        Arrange, Act, Assert
+                    </Link>{" "}
                     pattern can help you structure your tests.
                 </Text>
                 <CodeBlock
@@ -384,14 +333,12 @@ it("should plot a curve between two data points", () => {
 \`\`\`
                     `}
                 />
-                <Text>
-                    <ol start={3}>
-                        <li>
-                            Not using <code>constant</code>, <code>enums</code>,{" "}
-                            <code>types</code> or <code>interfaces</code>
-                            defined in your production code
-                        </li>
-                    </ol>
+                <Text as="ol" start={3}>
+                    <li>
+                        Not using <code>constant</code>, <code>enums</code>,{" "}
+                        <code>types</code> or <code>interfaces</code> defined in
+                        your production code
+                    </li>
                 </Text>
                 <Text>
                     In our <em>production code</em> we tend use those to try and
@@ -449,10 +396,8 @@ it("should log the constant", async () => {
 \`\`\`
                     `}
                 />
-                <Text>
-                    <ol start={4}>
-                        <li>The test has too many responsibilities</li>
-                    </ol>
+                <Text as="ol" start={4}>
+                    <li>The test has too many responsibilities</li>
                 </Text>
                 <Text>
                     When a test is <em>doing</em> too many things at once it
@@ -480,7 +425,7 @@ it("should test some other thing", () => {
 \`\`\`
                     `}
                 />
-                <Text>
+                <Text as="section">
                     <div className="mb-4">Tests should be:</div>
                     <ul>
                         <li>
@@ -658,9 +603,10 @@ describe(add.name, () => {
                     is empty? What if the array only has one element?
                 </Text>
                 <Text>
-                    Setting a (mandatory) coverage percentage is a ~stupid~ bad
-                    idea. More often than not this will lead to poorer tests
-                    just for the sake of increasing the coverage.
+                    Setting a (mandatory) coverage percentage is a{" "}
+                    <del>stupid</del> bad idea. More often than not this will
+                    lead to poorer tests just for the sake of increasing the
+                    coverage.
                 </Text>
                 <Text>
                     I would not go as far as to{" "}
@@ -721,22 +667,16 @@ describe(add.name, () => {
                     </Link>{" "}
                     being the work-horse nowadays.
                 </Text>
-                <figure className="space-y-4 my-16 mx-auto prose md:prose-xl lg:prose-2xl">
-                    <blockquote
-                        cite="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
-                        className="text-muted-foreground not-italic"
-                    >
-                        Tests should be fast. They should run quickly. When
-                        tests run slow, you won’t want to run them frequently.
-                        If you don’t run them frequently, you won’t find
-                        problems early enough to fix them easily. You won’t feel
-                        as free to clean up the code. Eventually, the code will
-                        begin to rot.
-                    </blockquote>
-                    <figcaption className="text-muted-foreground">
-                        Clean Code: A Handbook of Agile Software Craftsmanship
-                    </figcaption>
-                </figure>
+                <Quote
+                    cite="Clean Code: A Handbook of Agile Software Craftsmanship"
+                    link="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
+                >
+                    Tests should be fast. They should run quickly. When tests
+                    run slow, you won’t want to run them frequently. If you
+                    don’t run them frequently, you won’t find problems early
+                    enough to fix them easily. You won’t feel as free to clean
+                    up the code. Eventually, the code will begin to rot.
+                </Quote>
                 <Text>
                     In order to go even faster you can use{" "}
                     <Link target="_blank" href="https://vitest.dev/">
@@ -1172,19 +1112,14 @@ describe("simulate your software", () => {
                     world. You should make sure to have some form of strategy
                     for this.
                 </Text>
-                <figure className="space-y-4 my-16 mx-auto prose md:prose-xl lg:prose-2xl">
-                    <blockquote
-                        cite="https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599"
-                        className="text-muted-foreground not-italic"
-                    >
-                        When you get a bug report, start by writing a unit test
-                        that exposes the bug.
-                    </blockquote>
-                    <figcaption className="text-muted-foreground">
-                        Refactoring: Improving the Design of Existing Code
-                    </figcaption>
-                </figure>
             </Section>
+            <Quote
+                cite="Refactoring: Improving the Design of Existing Code"
+                link="https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599"
+            >
+                When you get a bug report, start by writing a unit test that
+                exposes the bug.
+            </Quote>
         </>
     );
 }

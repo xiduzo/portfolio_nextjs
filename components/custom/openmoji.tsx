@@ -18,8 +18,10 @@ export function Openmoji(props: Props) {
 }
 
 type Props = {
-    hexcode: string;
+    hexcode: keyof typeof EMOJIS;
     size?: number;
     style?: "black" | "color";
     className?: string;
 };
+
+export type EmojiHexcode = keyof typeof EMOJIS;

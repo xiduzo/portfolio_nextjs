@@ -1,79 +1,44 @@
 import { Section } from "@/components/custom/section";
-import { Openmoji } from "@/components/custom/openmoji";
 import { Text } from "@/components/custom/typography";
-import { VelocityScroll } from "@/components/magic-ui/scroll-based-velocity";
-import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
-import { ExternalLink } from "lucide-react";
 import { Safari } from "@/components/magic-ui/safari";
 import { CodeBlock } from "@/components/custom/code-block";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { CallToAction } from "@/components/custom/call-to-action";
-import { SelectionColor } from "@/hooks/use-selection-color";
+import { Technologies } from "@/components/custom/technologies";
+import { Title } from "@/components/custom/title";
+import { Hero } from "@/components/custom/hero";
 
 export default function Page() {
     return (
         <>
-            <SelectionColor color="#f97316" />
-            <header className="mb-44 flex flex-col relative" aria-hidden>
-                <section className="absolute top-6 right-6 z-20 flex gap-2">
-                    <Badge variant="secondary" className="pointer-events-none">
-                        2024
-                    </Badge>
-                    <Link href="https://microflow.vercel.app/" target="_blank">
-                        <Badge className="space-x-1">
-                            <span>Visit Microflow</span>{" "}
-                            <ExternalLink size={12} />
-                        </Badge>
-                    </Link>
-                </section>
-                <section className="bg-orange-500 flex items-end justify-center z-10">
-                    <Openmoji
-                        hexcode="E1D3"
-                        size={420}
-                        className="translate-y-32"
-                    />
-                </section>
-                <section className="text-9xl w-screen font-extrabold font-heading absolute left-0 -bottom-32">
-                    <VelocityScroll text="Microflow" default_velocity={2} />
-                </section>
-            </header>
-            <Section className="text-center max-w-4xl mx-auto">
-                <Text
-                    as="h1"
-                    size="sm"
-                    variant="body"
-                    className="italic text-muted-foreground font-light"
-                >
-                    Microflow,
-                </Text>
-                <Text
-                    size="lg"
-                    variant="subheading"
-                    className="text-center mb-8"
-                >
-                    Microcontrollers made simple
-                </Text>
-                <Badge variant="outline">8 minute read</Badge>
-            </Section>
-            <Section>
-                <Text size="sm" as="h2">
-                    Technologies used
-                </Text>
-                <section className="flex flex-wrap gap-1.5 max-w-sm pointer-events-none">
-                    <Badge variant="secondary">@xyflow/react</Badge>
-                    <Badge variant="secondary">Arduino Firmata</Badge>
-                    <Badge variant="secondary">Electron</Badge>
-                    <Badge variant="secondary">Figma Plugin</Badge>
-                    <Badge variant="secondary">Johnny-Five</Badge>
-                    <Badge variant="secondary">shadcn/ui</Badge>
-                    <Badge variant="secondary">MQTT</Badge>
-                </section>
-            </Section>
+            <Hero
+                title="Microflow"
+                publishDate="Sep 14 2024"
+                emoji="E1D3"
+                className="bg-orange-500"
+                link="https://microflow.vercel.app/"
+            />
+            <Title
+                title="Microflow"
+                subtitle="Microcontrollers made simple"
+                readTime={8}
+            />
+            <Technologies
+                technologies={[
+                    "@xyflow/react",
+                    "Arduino Firmata",
+                    "Electron",
+                    "Figma Plugin",
+                    "Johnny-Five",
+                    "shadcn/ui",
+                    "MQTT",
+                ]}
+            />
             <Section>
                 <Text as="h2" variant="subheading">
-                    Interactiity
+                    Interactivity
                 </Text>
                 <Text>
                     After helping students at the{" "}

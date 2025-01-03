@@ -7,12 +7,10 @@ import { VelocityScroll } from "@/components/magic-ui/scroll-based-velocity";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import Image from "next/image";
-import { SelectionColor } from "@/hooks/use-selection-color";
 
 export default function Page() {
     return (
         <>
-            <SelectionColor color="#10b981" />
             <header className="mb-44 flex flex-col relative" aria-hidden>
                 <section className="absolute top-6 right-6 z-20 flex gap-2">
                     <Badge variant="secondary" className="pointer-events-none">
@@ -616,7 +614,7 @@ const example = new GrowthCycle(invalidInput) // [!code error]
                 </Text>
             </Section>
             <Section>
-                <Text as="h4" variant="note" className="italic" size="lg">
+                <Text variant="note" className="italic" size="lg">
                     Edit
                 </Text>
                 <Text>

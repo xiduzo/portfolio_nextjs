@@ -1,7 +1,3 @@
-import { Openmoji } from "@/components/custom/openmoji";
-import { VelocityScroll } from "@/components/magic-ui/scroll-based-velocity";
-import { Badge } from "@/components/ui/badge";
-import { SelectionColor } from "@/hooks/use-selection-color";
 import { Text } from "@/components/custom/typography";
 import { Section } from "@/components/custom/section";
 import Link from "next/link";
@@ -10,49 +6,23 @@ import { CodeBlock } from "@/components/custom/code-block";
 import Video from "next-video";
 import talkingToWaterVideo from "/videos/1080p.mov";
 import { CallToAction } from "@/components/custom/call-to-action";
+import { Hero } from "@/components/custom/hero";
+import { Title } from "@/components/custom/title";
 
 export default function Page() {
     return (
         <>
-            <SelectionColor color="#8b5cf6" />
-            <header className="mb-44 flex flex-col relative" aria-hidden>
-                <section className="absolute top-6 right-6 z-20 flex gap-2">
-                    <Badge variant="secondary" className="pointer-events-none">
-                        2024
-                    </Badge>
-                </section>
-                <section className="bg-violet-500 flex items-end justify-center z-10">
-                    <Openmoji
-                        hexcode="1F30A"
-                        size={420}
-                        className="translate-y-20"
-                    />
-                </section>
-                <section className="text-9xl leading-[9.25rem] w-screen font-extrabold font-heading absolute left-0 -bottom-32">
-                    <VelocityScroll
-                        text="Talking to water"
-                        default_velocity={2}
-                    />
-                </section>
-            </header>
-            <Section className="text-center max-w-4xl mx-auto">
-                <Text
-                    as="h1"
-                    size="sm"
-                    variant="body"
-                    className="italic text-muted-foreground font-light"
-                >
-                    Talking to water,
-                </Text>
-                <Text
-                    size="lg"
-                    variant="subheading"
-                    className="text-center mb-8"
-                >
-                    The art of the bodge
-                </Text>
-                <Badge variant="outline">10 minute read</Badge>
-            </Section>
+            <Hero
+                title="Talking to water"
+                publishDate="Feb 21 2024"
+                emoji="1F30A"
+                className="bg-violet-500"
+            />
+            <Title
+                title="Talking to water"
+                subtitle="The art of the bodge"
+                readTime={10}
+            />
             <Section>
                 <Text>
                     One of the things I like about my job at the{" "}
@@ -242,10 +212,14 @@ export default function Page() {
                         href="https://openai.com/research/whisper"
                         target="_blank"
                     >
-                        <em className="underline">Whisper</em>
+                        Whisper
                     </Link>{" "}
-                    is “an open-sourced neural net that approaches human level
-                    robustness and accuracy on English speech recognition”.
+                    is{" "}
+                    <em>
+                        “an open-sourced neural net that approaches human level
+                        robustness and accuracy on English speech recognition”
+                    </em>
+                    .
                 </Text>
                 <Text>
                     Some cool folks even build a python wrapper around the

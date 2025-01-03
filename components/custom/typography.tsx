@@ -31,15 +31,20 @@ export const note = Caveat({
     subsets: ["latin"],
 });
 
-export function Text(props: Props) {
-    const Component = props.as ?? "p";
+export function Text<T extends keyof JSX.IntrinsicElements = "p">(
+    props: Props<T>,
+) {
+    const { as: Component = "p", ...restProps } = props;
 
     return (
+        // @ts-expect-error can not spread unknown type
         <Component
+            {...restProps}
             className={typography({
                 className: props.className,
                 variant: props.variant,
                 size: props.size,
+                motion: props.motion,
             })}
         >
             {props.children}
@@ -47,13 +52,11 @@ export function Text(props: Props) {
     );
 }
 
-type Props = PropsWithChildren &
+type Props<T extends keyof JSX.IntrinsicElements> = PropsWithChildren &
     VariantProps<typeof typography> & {
         className?: string;
-        as?: keyof JSX.IntrinsicElements; // TODO: narrow down?
-    };
-
-<Text className="font"></Text>;
+        as?: T;
+    } & JSX.IntrinsicElements[T];
 
 const typography = cva("", {
     variants: {
@@ -68,10 +71,16 @@ const typography = cva("", {
             base: "",
             lg: "",
         },
+        motion: {
+            intersect:
+                "intersect-once intersect:motion-preset-slide-up-md intersect:motion-delay-300",
+            none: "",
+        },
     },
     defaultVariants: {
         variant: "body",
         size: "base",
+        motion: "intersect",
     },
     compoundVariants: [
         {

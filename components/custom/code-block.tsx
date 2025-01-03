@@ -37,7 +37,7 @@ export async function CodeBlock(props: Props) {
 
     return (
         <div
-            className="my-36"
+            className="my-36 intersect-once intersect:motion-preset-slide-up-md intersect:motion-delay-300"
             dangerouslySetInnerHTML={{ __html: String(file) }}
         ></div>
     );

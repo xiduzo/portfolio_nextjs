@@ -1,83 +1,46 @@
 import { Section } from "@/components/custom/section";
-import { Openmoji } from "@/components/custom/openmoji";
 import { Text } from "@/components/custom/typography";
-import { VelocityScroll } from "@/components/magic-ui/scroll-based-velocity";
-import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import { Iphone15Pro } from "@/components/magic-ui/iphone-15-pro";
-import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import { CodeBlock } from "@/components/custom/code-block";
 import { Button } from "@/components/ui/button";
 import { Marquee } from "@/components/magic-ui/marquee";
 import { randomSort } from "@/lib/utils";
 import { CallToAction } from "@/components/custom/call-to-action";
-import { SelectionColor } from "@/hooks/use-selection-color";
+import { Title } from "@/components/custom/title";
+import { Hero } from "@/components/custom/hero";
+import { Technologies } from "@/components/custom/technologies";
 
 const animals = ["🐋", "🦀", "🐕", "🦦", "🦔", "🦉", "🦥", "🐍", "🦑", "🐘"];
 
 export default function Page() {
     return (
         <>
-            <SelectionColor color="#ef4444" />
-            <header className="mb-44 flex flex-col relative" aria-hidden>
-                <section className="absolute top-6 right-6 z-20 flex gap-2">
-                    <Badge variant="secondary" className="pointer-events-none">
-                        2023
-                    </Badge>
-                    <Link
-                        href="https://fissa-houseparty.vercel.app"
-                        target="_blank"
-                    >
-                        <Badge className="space-x-1">
-                            <span>Visit Fissa</span> <ExternalLink size={12} />
-                        </Badge>
-                    </Link>
-                </section>
-                <section className="bg-red-500 flex items-end justify-center z-10">
-                    <Openmoji
-                        hexcode="1F415"
-                        size={420}
-                        className="translate-y-32"
-                    />
-                </section>
-                <section className="text-9xl w-screen font-extrabold font-heading absolute left-0 -bottom-32">
-                    <VelocityScroll text="Fissa" default_velocity={2} />
-                </section>
-            </header>
-            <Section className="text-center max-w-4xl mx-auto">
-                <Text
-                    as="h1"
-                    size="sm"
-                    variant="body"
-                    className="italic text-muted-foreground font-light"
-                >
-                    Fissa,
-                </Text>
-                <Text
-                    size="lg"
-                    variant="subheading"
-                    className="text-center mb-8"
-                >
-                    Not only one person should decide what is playing on a party
-                </Text>
-                <Badge variant="outline">12 minute read</Badge>
-            </Section>
-            <Section>
-                <Text size="sm" as="h2">
-                    Technologies used
-                </Text>
-                <section className="flex flex-wrap gap-1.5 max-w-sm pointer-events-none">
-                    <Badge variant="secondary">Expo</Badge>
-                    <Badge variant="secondary">NativeWind</Badge>
-                    <Badge variant="secondary">Next.js</Badge>
-                    <Badge variant="secondary">NextAuth.js</Badge>
-                    <Badge variant="secondary">Prisma</Badge>
-                    <Badge variant="secondary">React Native</Badge>
-                    <Badge variant="secondary">tRPC</Badge>
-                    <Badge variant="secondary">Vercel serverless</Badge>
-                </section>
-            </Section>
+            <Hero
+                title="Fissa"
+                publishDate="Jun 02 2023"
+                emoji="1F415"
+                className="bg-pink-500"
+                link="https://fissa-houseparty.vercel.app"
+            />
+            <Title
+                title="Fissa"
+                subtitle="Not only one person should decide what is playing on a party"
+                readTime={12}
+            />
+            <Technologies
+                technologies={[
+                    "Expo",
+                    "NativeWind",
+                    "Next.js",
+                    "NextAuth.js",
+                    "Prisma",
+                    "React Native",
+                    "tRPC",
+                    "Vercel serverless",
+                ]}
+            />
             <Section>
                 <Text as="h2" variant="subheading">
                     Everyone can be the DJ

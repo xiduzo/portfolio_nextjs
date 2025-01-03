@@ -1,53 +1,27 @@
-import { Openmoji } from "@/components/custom/openmoji";
 import { Section } from "@/components/custom/section";
-import { VelocityScroll } from "@/components/magic-ui/scroll-based-velocity";
-import { Badge } from "@/components/ui/badge";
-import { SelectionColor } from "@/hooks/use-selection-color";
 import { Text } from "@/components/custom/typography";
 import Link from "next/link";
 import { CodeBlock } from "@/components/custom/code-block";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { Hero } from "@/components/custom/hero";
+import { Title } from "@/components/custom/title";
+import { Quote } from "@/components/custom/quote";
 
 export default function Page() {
     return (
         <>
-            <SelectionColor color="#0ea5e9" />
-            <header className="mb-44 flex flex-col relative" aria-hidden>
-                <section className="absolute top-6 right-6 z-20 flex gap-2">
-                    <Badge variant="secondary" className="pointer-events-none">
-                        2023
-                    </Badge>
-                </section>
-                <section className="bg-sky-500 flex items-end justify-center z-10">
-                    <Openmoji
-                        hexcode="1FA84"
-                        size={420}
-                        className="translate-y-32"
-                    />
-                </section>
-                <section className="text-9xl leading-[9.25rem] w-screen font-extrabold font-heading absolute left-0 -bottom-32">
-                    <VelocityScroll text="<Suspense />" default_velocity={2} />
-                </section>
-            </header>
-            <Section className="text-center max-w-4xl mx-auto">
-                <Text
-                    as="h1"
-                    size="sm"
-                    variant="body"
-                    className="italic text-muted-foreground font-light"
-                >
-                    &lt;Suspense/&gt;,
-                </Text>
-                <Text
-                    size="lg"
-                    variant="subheading"
-                    className="text-center mb-8"
-                >
-                    Unravelling the magic from React
-                </Text>
-                <Badge variant="outline">12 minute read</Badge>
-            </Section>
+            <Hero
+                title="<Suspense />"
+                publishDate="Nov 21 2023"
+                emoji="1FA84"
+                className="bg-sky-500"
+            />
+            <Title
+                title="<Suspense />"
+                subtitle="Unravelling the magic from React"
+                readTime={12}
+            />
             <Section>
                 <Text>
                     While trying to answer{" "}
@@ -62,26 +36,16 @@ export default function Page() {
                     decided to do some research and write this article.
                 </Text>
             </Section>
+            <Quote
+                cite="React documentation"
+                link="https://react.dev/reference/react/Suspense"
+            >
+                **Suspense**,
+                <br />
+                lets you display a fallback until its children have finished
+                loading
+            </Quote>
             <Section>
-                <figure className="space-y-4 my-16 mx-auto prose md:prose-xl lg:prose-2xl">
-                    <blockquote
-                        cite="https://react.dev/reference/react/Suspense"
-                        className="text-muted-foreground not-italic"
-                    >
-                        <strong>Suspense</strong>,<br />
-                        lets you display a fallback until its children have
-                        finished loading
-                    </blockquote>
-                    <figcaption className="text-muted-foreground">
-                        <Link
-                            target="_blank"
-                            href="https://react.dev/reference/react/Suspense"
-                            className="text-muted-foreground"
-                        >
-                            React documentation
-                        </Link>
-                    </figcaption>
-                </figure>
                 <CodeBlock
                     code={`
 \`\`\`tsx
@@ -141,9 +105,9 @@ export default function Page() {
                 <Image
                     src="/suspense/magic.gif"
                     alt="A meme showing a man waving his hand an saying 'magic'"
-                    width={1920}
-                    height={1080}
-                    className="w-full"
+                    width={400}
+                    height={400}
+                    className="mx-auto"
                 />
             </Section>
             <Section>
