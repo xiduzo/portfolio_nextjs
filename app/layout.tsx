@@ -6,7 +6,6 @@ import {
     SidebarInset,
     SidebarTrigger,
 } from "@/components/ui/sidebar";
-import Script from "next/script";
 import { Separator } from "@/components/ui/separator";
 import { BreadCrumbs } from "@/components/custom/breadcrumbs";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -20,6 +19,10 @@ import {
 } from "@/components/custom/typography";
 import ObserverProvider from "@/providers/ObserverProvider";
 import { CallToAction } from "@/components/custom/call-to-action";
+import { Theme } from "@/components/custom/theme";
+
+import { cookies } from "next/headers";
+import { THEME_STORAGE_KEY } from "@/lib/constants";
 
 export const metadata: Metadata = {
     title: "Portfolio Sander Boer",
@@ -27,19 +30,19 @@ export const metadata: Metadata = {
         "Hello world! My name is Sander and I am a passionate developer with a creative mind™. I love to create tools that enhance the performance of professionals and empower individuals.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    const theme = (await cookies()).get(THEME_STORAGE_KEY)?.value;
+
     return (
-        <html lang="en" className="dark">
-            <head>
-                <Script src="/theme.js" />
-            </head>
+        <html lang="en" className={theme}>
             <body
                 className={`${headings.variable} ${subHeadings.variable} ${body.variable} ${note.variable} antialiased`}
             >
+                <Theme />
                 <SidebarProvider>
                     <AppSidebar />
                     <SidebarInset>

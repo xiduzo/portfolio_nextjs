@@ -338,7 +338,7 @@ const Component = () => {
                 </Text>
             </Section>
             <Section variant="full">
-                <Marquee pauseOnHover className="[--duration:180s]">
+                <Marquee className="[--duration:180s]">
                     {animals.sort(randomSort).map((animal) => (
                         <Text
                             key={animal}
@@ -350,7 +350,7 @@ const Component = () => {
                         </Text>
                     ))}
                 </Marquee>
-                <Marquee pauseOnHover reverse className="[--duration:180s]">
+                <Marquee reverse className="[--duration:180s]">
                     {animals.sort(randomSort).map((animal) => (
                         <Text
                             key={animal}

@@ -238,13 +238,19 @@ main > header {
     }
 }
 
-:not(pre) > code::before {
+:not(pre) > code::before,
+:not(pre) > code::after {
     @apply font-note;
-    content: "` ";
+}
+
+:not(pre) > code::before {
+    @apply mr-1;
+    content: "`";
 }
 
 :not(pre) > code::after {
-    @apply font-note content-['`'];
+    @apply -ml-1;
+    content: "`";
 }
 
 sup {
