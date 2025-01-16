@@ -636,7 +636,7 @@ model Track {
                     `}
                 />
                 <Text>
-                    <strong>THE algorithm</strong> for determining the queue:
+                    <strong>THE algorithm</strong> which is the heart of Fissa
                 </Text>
                 <CodeBlock
                     code={`

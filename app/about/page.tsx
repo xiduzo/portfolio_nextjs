@@ -55,7 +55,7 @@ export default function Page() {
                     functionality.
                 </Text>
                 <Text as="aside" className="mt-8 text-base">
-                    <ol>
+                    <ol className="text-sm text-muted-foreground">
                         <li>
                             With a bachelor&apos;s degree in{" "}
                             <Link
@@ -115,13 +115,13 @@ export default function Page() {
                     Who is Sander <em>really</em>?
                 </Text>
                 <Text>
-                    Besides solving wicked problems, I enjoy cooking —and
-                    eating. Making a mean pasta or some sloppy tacos, but
+                    Besides solving wicked problems, I enjoy cooking — and
+                    eating. Making a mean pasta or some sloppy tacos but
                     whenever there is flavour, I’m in!
                 </Text>
                 <Text>
-                    I like (to be in) nature and am your go-to-guy to
-                    entertain/annoy the dog/cat at any party!
+                    I like (to be in) nature and am your go-to-person to{" "}
+                    <del>annoy</del> entertain the house pet at any party!
                 </Text>
             </Section>
             <Section variant="full">

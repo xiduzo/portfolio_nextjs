@@ -14,9 +14,9 @@ export default function Page() {
                 <Text as="h2" variant="subheading" motion="none">
                     Highlighted cases
                 </Text>
-                <Text size="sm" className="text-muted-foreground mb-20">
-                    A selection of personal projects I have worked on in the
-                    past.
+                <Text size="sm" className="text-muted-foreground mb-14">
+                    A selection of personal projects I am proud to share with
+                    you.
                 </Text>
                 <HighlightedProjects />
             </Section>
@@ -25,7 +25,7 @@ export default function Page() {
                     Other cases
                 </Text>
                 <Text size="sm" className="text-muted-foreground">
-                    Some more projects I have done and am proud to share.
+                    Some more projects I have done that you might like.
                 </Text>
             </Section>
         </>

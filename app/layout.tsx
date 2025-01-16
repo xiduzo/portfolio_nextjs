@@ -81,7 +81,7 @@ export default async function RootLayout({
                                 Enough scrolling,
                             </Text>
                             <Text className="font-extralight mb-10">
-                                Want to make something together?
+                                Want to make 🪄 together?
                             </Text>
                             <Text
                                 as="div"
