@@ -1,5 +1,5 @@
 import { cva, VariantProps } from "class-variance-authority";
-import { PropsWithChildren } from "react";
+import { JSX, PropsWithChildren } from "react";
 import {
     Alegreya,
     Caveat,

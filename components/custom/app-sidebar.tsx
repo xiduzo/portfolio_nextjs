@@ -46,7 +46,7 @@ const data = {
     ],
     tree: [
         {
-            name: "cases",
+            name: "things-I-made",
             children: [
                 {
                     name: "archive",
@@ -74,7 +74,7 @@ const data = {
             ],
         },
         {
-            name: "posts",
+            name: "things-I-wrote",
             children: [
                 {
                     name: "2023",
@@ -147,8 +147,9 @@ function Tree({ item }: { item: Item }) {
     const pathname = usePathname();
 
     const [openItems, setOpenItems] = useLocalStorage<string[]>("open-items", [
-        "cases",
+        "things-I-made",
         "highlighted",
+        "things-I-wrote",
         "2024",
     ]);
 

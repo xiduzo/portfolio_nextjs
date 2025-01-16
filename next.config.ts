@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
     /* config options here */
-    staticPageGenerationTimeout: 1000,
+    staticPageGenerationTimeout: 60,
 };
 
 export default withNextVideo(nextConfig, {

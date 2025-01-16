@@ -29,7 +29,7 @@ export function ScrollHint() {
                 onClick={scrollDownSmooth}
                 variant="note"
                 size="sm"
-                className="my-32 hidden md:block motion-preset-oscillate motion-duration-[3s] motion-ease-out-quad motion-delay-2000 motion-opacity-in-0 motion-blur-in-0 cursor-pointer"
+                className="my-32 hover:cursor-s-resize hidden md:block motion-preset-oscillate motion-duration-[3s] motion-ease-out-quad motion-delay-2000 motion-opacity-in-0 motion-blur-in-0 cursor-pointer"
                 motion="none"
             >
                 {hints[Math.floor(Math.random() * hints.length)]}

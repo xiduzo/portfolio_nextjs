@@ -14,7 +14,7 @@ export default function Page() {
                 <Text as="h2" variant="subheading" motion="none">
                     Highlighted cases
                 </Text>
-                <Text size="sm" className="text-muted-foreground mb-14">
+                <Text size="sm" className="text-muted-foreground" motion="none">
                     A selection of personal projects I am proud to share with
                     you.
                 </Text>

@@ -393,14 +393,14 @@ Interval_4aeu4a.on("change", () => {
             </Section>
             <Section>
                 <Text as="h3" variant="subheading" size="sm">
-                    A wrapper around the wrapper around a wrapper
+                    A wrapper around a wrapper around a wrapper
                 </Text>
                 <Text>
                     To communicate with the firmata firmware we have flashed on
                     the microcontroller, all <code>@microflow/components</code>{" "}
                     are wrappers around the <code>Johnny-Five</code> library —
                     Which is a wrapper around the <code>firmata.js</code>{" "}
-                    library.
+                    library itself.
                 </Text>
                 <CodeBlock
                     code={`
@@ -437,6 +437,9 @@ export class Button extends BaseComponent<ButtonValueType> {
 \`\`\`
 `}
                 />
+                <Text size="lg" variant="heading" className="text-center">
+                    🪆
+                </Text>
             </Section>
             <Section className="flex justify-center">
                 <Link href="https://microflow.vercel.app/" target="_blank">

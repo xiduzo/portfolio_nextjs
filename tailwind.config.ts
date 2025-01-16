@@ -101,6 +101,5 @@ export default {
             },
         },
     },
-
     plugins: [typography, motion, intersect],
 } satisfies Config;
