@@ -2,7 +2,6 @@ import Alert from "@/components/custom/alert";
 import { CodeBlock } from "@/components/custom/code-block";
 import { Hero } from "@/components/custom/hero";
 import { Quote } from "@/components/custom/quote";
-import { ScrollHint } from "@/components/custom/scroll-hint";
 import { Section } from "@/components/custom/section";
 import { Title } from "@/components/custom/title";
 import { Text } from "@/components/custom/typography";
@@ -22,7 +21,6 @@ export default function Page() {
                 subtitle="And become a better engineer"
                 readTime={22}
             />
-            <ScrollHint />
             <Section>
                 <Text>
                     Although there are{" "}

@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Hero } from "@/components/custom/hero";
 import { Title } from "@/components/custom/title";
 import { Quote } from "@/components/custom/quote";
-import { ScrollHint } from "@/components/custom/scroll-hint";
 
 export default function Page() {
     return (
@@ -23,7 +22,6 @@ export default function Page() {
                 subtitle="Unravelling the magic from React"
                 readTime={12}
             />
-            <ScrollHint />
             <Section>
                 <Text>
                     While trying to answer{" "}

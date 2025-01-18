@@ -14,7 +14,9 @@ export default function Page() {
                     <span className="inline-block motion-rotate-in-12 motion-ease-spring-bounciest">
                         👋
                     </span>{" "}
-                    <code>Hello world!</code>
+                    <code className="after:content-['`'] after:-ml-8">
+                        Hello world!
+                    </code>
                 </Text>
             </Section>
             <Section className="flex gap-12 flex-col-reverse lg:flex-row items-center">
@@ -33,15 +35,13 @@ export default function Page() {
                     </Text>
                     <Text as="div" className="flex justify-center mt-20">
                         <Link href="/about">
-                            <CallToAction colorFrom="#f43f5e" colorTo="#14b8a6">
-                                Get to know me better
-                            </CallToAction>
+                            <CallToAction>Get to know me better</CallToAction>
                         </Link>
                     </Text>
                 </section>
                 <Avatar className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 transition-all">
                     <AvatarImage src="/me.jpeg" alt="Sander Boer" />
-                    <AvatarFallback>Xiduzo</AvatarFallback>
+                    <AvatarFallback>Oh hi there 😊</AvatarFallback>
                 </Avatar>
             </Section>
             <ScrollHint />
@@ -49,7 +49,7 @@ export default function Page() {
                 <Text as="h2" variant="subheading">
                     Highlighted cases
                 </Text>
-                <Text size="sm" className="text-muted-foreground">
+                <Text size="sm" className="text-muted-foreground pb-12">
                     A selection of personal projects I am proud to share with
                     you.
                 </Text>
@@ -57,9 +57,7 @@ export default function Page() {
             </Section>
             <Section className="flex justify-center flex-wrap">
                 <Link href="/project">
-                    <CallToAction colorFrom="#f43f5e" colorTo="#14b8a6">
-                        See all projects
-                    </CallToAction>
+                    <CallToAction>See all projects</CallToAction>
                 </Link>
             </Section>
         </>

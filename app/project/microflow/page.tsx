@@ -9,7 +9,6 @@ import { CallToAction } from "@/components/custom/call-to-action";
 import { Technologies } from "@/components/custom/technologies";
 import { Title } from "@/components/custom/title";
 import { Hero } from "@/components/custom/hero";
-import { ScrollHint } from "@/components/custom/scroll-hint";
 
 export default function Page() {
     return (
@@ -26,7 +25,6 @@ export default function Page() {
                 subtitle="Microcontrollers made simple"
                 readTime={8}
             />
-            <ScrollHint />
             <Technologies
                 technologies={[
                     "@xyflow/react",
@@ -206,9 +204,7 @@ export function MqttVariableMessenger() {
                     href="https://www.figma.com/community/plugin/1373258770799080545"
                     target="_blank"
                 >
-                    <CallToAction colorFrom="#eab308" colorTo="#3b82f6">
-                        Get Microflow hardware bridge
-                    </CallToAction>
+                    <CallToAction>Try Microflow hardware bridge</CallToAction>
                 </Link>
             </Section>
             <Section variant="full">
@@ -443,9 +439,7 @@ export class Button extends BaseComponent<ButtonValueType> {
             </Section>
             <Section className="flex justify-center">
                 <Link href="https://microflow.vercel.app/" target="_blank">
-                    <CallToAction colorFrom="#eab308" colorTo="#3b82f6">
-                        Get Microflow studio
-                    </CallToAction>
+                    <CallToAction>Try Microflow studio</CallToAction>
                 </Link>
             </Section>
             <Section>

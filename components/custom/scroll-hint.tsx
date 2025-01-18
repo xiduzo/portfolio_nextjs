@@ -1,6 +1,6 @@
 "use client";
 
-import { Section } from "./section";
+import clsx from "clsx";
 import { Text } from "./typography";
 
 const hints = [
@@ -15,7 +15,7 @@ const hints = [
     "Continue for more excitement",
 ];
 
-export function ScrollHint() {
+export function ScrollHint(props: { className?: string }) {
     function scrollDownSmooth() {
         window.scrollBy({
             top: window.innerHeight * 0.85,
@@ -24,16 +24,17 @@ export function ScrollHint() {
     }
 
     return (
-        <Section aria-hidden="true">
-            <Text
-                onClick={scrollDownSmooth}
-                variant="note"
-                size="sm"
-                className="my-32 hover:cursor-s-resize hidden md:block motion-preset-oscillate motion-duration-[3s] motion-ease-out-quad motion-delay-2000 motion-opacity-in-0 motion-blur-in-0 cursor-pointer"
-                motion="none"
-            >
-                {hints[Math.floor(Math.random() * hints.length)]}
-            </Text>
-        </Section>
+        <Text
+            onClick={scrollDownSmooth}
+            variant="note"
+            size="sm"
+            className={clsx(
+                "hover:cursor-s-resize hidden md:block motion-preset-oscillate motion-duration-[3s] motion-ease-out-quad motion-delay-2000 motion-opacity-in-0 motion-blur-in-0 cursor-pointer",
+                props.className,
+            )}
+            motion="none"
+        >
+            {hints[Math.floor(Math.random() * hints.length)]}
+        </Text>
     );
 }

@@ -24,147 +24,153 @@ import {
 import Link from "next/link";
 import { useLocalStorage } from "usehooks-ts";
 import { usePathname } from "next/navigation";
+import clsx from "clsx";
 
 type Item = {
     name: string;
     link?: string;
+    state?: string;
     children?: Item[];
 };
 
-const data = {
-    standalones: [
-        {
-            file: "README.md",
-            link: "/about",
-            state: "",
-        },
-        {
-            file: "accessibility.md",
-            link: "/accessibility",
-            state: "",
-        },
-    ],
-    tree: [
-        {
-            name: "things-I-made",
-            children: [
-                {
-                    name: "archive",
-                    children: [
-                        {
-                            name: "Athena.md",
-                            link: "/project/athena",
-                        },
-                        { name: "LiveStock.md", link: "/project/livestock" },
-                        { name: "Spirit.md", link: "/project/spirit" },
-                        { name: "VeileNext.md", link: "/project/veilenext" },
-                    ],
-                },
-                {
-                    name: "highlighted",
-                    children: [
-                        {
-                            name: "Fissa.md",
-                            link: "/project/fissa",
-                        },
-                        { name: "Microflow.md", link: "/project/microflow" },
-                    ],
-                },
-                { name: "all.md", link: "/project" },
-            ],
-        },
-        {
-            name: "things-I-wrote",
-            children: [
-                {
-                    name: "2023",
-                    children: [
-                        { name: "<Suspense/>.md", link: "/post/2023/suspense" },
-                    ],
-                },
-                {
-                    name: "2024",
-                    children: [
-                        {
-                            name: "talking-to-water.md",
-                            link: "/post/2024/talking-to-water",
-                        },
-                        { name: "testing.md", link: "/post/2024/testing" },
-                        { name: "zod.md", link: "/post/2024/zod" },
-                    ],
-                },
-                { name: "all.md", link: "/post" },
-            ],
-        },
-    ] satisfies Item[],
-};
+const items: Item[] = [
+    {
+        name: "Get to know me",
+        children: [
+            {
+                name: "README.md",
+                link: "/about",
+            },
+            {
+                name: "accessibility.md",
+                link: "/accessibility",
+                state: "♥️",
+            },
+        ],
+    },
+    {
+        name: "Things I made",
+        children: [
+            {
+                name: "archive",
+                children: [
+                    {
+                        name: "Athena.md",
+                        link: "/project/athena",
+                    },
+                    {
+                        name: "LiveStock.md",
+                        link: "/project/livestock",
+                    },
+                    {
+                        name: "Spirit.md",
+                        link: "/project/spirit",
+                    },
+                    {
+                        name: "VeileNext.md",
+                        link: "/project/veilenext",
+                    },
+                ],
+            },
+            {
+                name: "highlighted",
+                children: [
+                    {
+                        name: "Fissa.md",
+                        link: "/project/fissa",
+                    },
+                    {
+                        name: "Microflow.md",
+                        link: "/project/microflow",
+                        state: "new",
+                    },
+                ],
+            },
+            { name: "all.md", link: "/project" },
+        ],
+    },
+    {
+        name: "Things I wrote",
+        children: [
+            {
+                name: "2023",
+                children: [
+                    {
+                        name: "<Suspense/>.md",
+                        link: "/post/2023/suspense",
+                    },
+                ],
+            },
+            {
+                name: "2024",
+                children: [
+                    {
+                        name: "talking-to-water.md",
+                        link: "/post/2024/talking-to-water",
+                    },
+                    {
+                        name: "testing.md",
+                        link: "/post/2024/testing",
+                    },
+                    { name: "zod.md", link: "/post/2024/zod" },
+                ],
+            },
+            { name: "all.md", link: "/post" },
+        ],
+    },
+];
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
-    const pathname = usePathname();
-
     return (
         <Sidebar {...props}>
             <SidebarContent>
-                <SidebarGroup>
-                    <SidebarGroupLabel>Get to know me</SidebarGroupLabel>
-                    <SidebarGroupContent>
-                        <SidebarMenu>
-                            {data.standalones.map((item, index) => (
-                                <Link href={item.link} key={index}>
-                                    <SidebarMenuItem>
-                                        <SidebarMenuButton
-                                            className={`${pathname.endsWith(item.link) ? "bg-muted/70" : ""}`}
-                                        >
-                                            <File />
-                                            {item.file}
-                                        </SidebarMenuButton>
-                                        <SidebarMenuBadge>
-                                            {item.state}
-                                        </SidebarMenuBadge>
-                                    </SidebarMenuItem>
-                                </Link>
-                            ))}
-                        </SidebarMenu>
-                    </SidebarGroupContent>
-                </SidebarGroup>
-                <SidebarGroup>
-                    <SidebarGroupLabel>Things I do</SidebarGroupLabel>
-                    <SidebarGroupContent>
-                        <SidebarMenu>
-                            {data.tree.map((item, index) => (
-                                <Tree key={index} item={item} />
-                            ))}
-                        </SidebarMenu>
-                    </SidebarGroupContent>
-                </SidebarGroup>
+                {items.map((item) => (
+                    <SidebarGroup key={item.name}>
+                        <SidebarGroupLabel>{item.name}</SidebarGroupLabel>
+                        <SidebarGroupContent>
+                            <SidebarMenu>
+                                {item.children?.map((item, index) => (
+                                    <Tree key={index} item={item} />
+                                ))}
+                            </SidebarMenu>
+                        </SidebarGroupContent>
+                    </SidebarGroup>
+                ))}
             </SidebarContent>
             <SidebarRail />
         </Sidebar>
     );
 }
 
-function Tree({ item }: { item: Item }) {
+function Tree(props: { item: Item }) {
     const pathname = usePathname();
 
     const [openItems, setOpenItems] = useLocalStorage<string[]>("open-items", [
-        "things-I-made",
         "highlighted",
-        "things-I-wrote",
         "2024",
     ]);
 
-    const { name, link, children } = item;
+    const { name, link, children } = props.item;
+    console.log(props.item);
 
     if (!children?.length) {
         return (
             <Link href={link ?? "/404"}>
-                <SidebarMenuButton
-                    isActive={name === "button.tsx"}
-                    className={`${pathname.endsWith(link ?? "") ? "bg-muted/70" : ""}`}
-                >
-                    <File />
-                    {name}
-                </SidebarMenuButton>
+                <SidebarMenuItem>
+                    <SidebarMenuButton
+                        isActive={name === "button.tsx"}
+                        className={clsx(
+                            "",
+                            `${pathname.endsWith(link ?? "") ? "bg-muted/70" : ""}`,
+                        )}
+                    >
+                        <File />
+                        {name}
+                    </SidebarMenuButton>
+                    <SidebarMenuBadge className="text-muted-foreground">
+                        {props.item.state}
+                    </SidebarMenuBadge>
+                </SidebarMenuItem>
             </Link>
         );
     }
@@ -201,6 +207,7 @@ function Tree({ item }: { item: Item }) {
                     </SidebarMenuSub>
                 </CollapsibleContent>
             </Collapsible>
+            <SidebarMenuBadge>{props.item.state}</SidebarMenuBadge>
         </SidebarMenuItem>
     );
 }

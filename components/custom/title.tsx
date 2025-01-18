@@ -1,4 +1,5 @@
 import { Badge } from "../ui/badge";
+import { ScrollHint } from "./scroll-hint";
 import { Section } from "./section";
 import { Text } from "./typography";
 
@@ -11,7 +12,7 @@ const pluralForms = new Map([
 
 export function Title(props: Props) {
     return (
-        <Section className="text-center max-w-4xl mx-auto">
+        <Section className="text-center max-w-screen-lg mx-auto">
             <Text
                 as="h1"
                 size="sm"
@@ -36,6 +37,7 @@ export function Title(props: Props) {
                 {props.readTime}{" "}
                 {pluralForms.get(pluralRules.select(props.readTime))} read
             </Badge>
+            <ScrollHint className="mt-16" />
         </Section>
     );
 }

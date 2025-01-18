@@ -23,6 +23,7 @@ import { Theme } from "@/components/custom/theme";
 
 import { cookies } from "next/headers";
 import { THEME_STORAGE_KEY } from "@/lib/constants";
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
     title: "Portfolio Sander Boer",
@@ -42,6 +43,13 @@ export default async function RootLayout({
             <body
                 className={`${headings.variable} ${subHeadings.variable} ${body.variable} ${note.variable} antialiased`}
             >
+                <a
+                    tabIndex={0}
+                    className="bg-primary absolute left-0 z-50 m-3 -translate-y-16 p-3 transition focus:translate-y-0 focus:opacity-100 motion-reduce:-z-10 motion-reduce:translate-y-0 motion-reduce:opacity-0 motion-reduce:focus:z-50"
+                    href="#main-content"
+                >
+                    Jump to content
+                </a>
                 <Theme />
                 <SidebarProvider>
                     <AppSidebar />
@@ -70,10 +78,10 @@ export default async function RootLayout({
                                 </Avatar>
                             </Link>
                         </header>
-                        <article>
+                        <article id="main-content">
                             <ObserverProvider>{children}</ObserverProvider>
                         </article>
-                        <footer className="py-64 mt-64 bg-muted text-muted-foreground px-3 md:px-6 text-center">
+                        <footer className="pt-64 pb-24 mt-64 bg-muted text-muted-foreground px-3 md:px-6 text-center">
                             <Text
                                 variant="heading"
                                 className="mb-4 break-words text-wrap"
@@ -88,14 +96,21 @@ export default async function RootLayout({
                                 className="flex justify-center mt-20"
                             >
                                 <Link href="mailto:mail@sanderboer.nl">
-                                    <CallToAction
-                                        colorFrom="#e2e8f0"
-                                        colorTo="#f59e0b"
-                                    >
+                                    <CallToAction variant="default">
                                         Let&apos;s have a 🍺
                                     </CallToAction>
                                 </Link>
                             </Text>
+                            <Link href="https://www.linkedin.com/in/xiduzo/">
+                                <Button
+                                    variant="ghost"
+                                    className="hover:cursor-alias mt-52"
+                                >
+                                    <Text variant="note">
+                                        Or stalk me on LinkedIn
+                                    </Text>
+                                </Button>
+                            </Link>
                         </footer>
                     </SidebarInset>
                 </SidebarProvider>

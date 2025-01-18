@@ -2,7 +2,6 @@ import { Section } from "@/components/custom/section";
 import { Text } from "@/components/custom/typography";
 import { Hero } from "@/components/custom/hero";
 import { Title } from "@/components/custom/title";
-import { ScrollHint } from "@/components/custom/scroll-hint";
 import { Technologies } from "@/components/custom/technologies";
 import Link from "next/link";
 import { Safari } from "@/components/magic-ui/safari";
@@ -22,7 +21,6 @@ export default function Page() {
                 subtitle="An honest feedback tool for students"
                 readTime={4}
             />
-            <ScrollHint />
             <Technologies
                 technologies={[
                     "Angular",

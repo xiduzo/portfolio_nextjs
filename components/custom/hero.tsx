@@ -19,7 +19,7 @@ export function Hero(props: Props) {
                     </Badge>
                 </time>
                 {props.link && (
-                    <Link href={props.link} target="_blank">
+                    <Link href={props.link} target="_blank" tabIndex={-1}>
                         <Badge className="space-x-1">
                             <span>Visit project</span>{" "}
                             <ExternalLink size={12} />

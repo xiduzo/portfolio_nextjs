@@ -249,7 +249,7 @@ main > header {
 }
 
 :not(pre) > code::after {
-    @apply -ml-1;
+    @apply -ml-1.5;
     content: "`";
 }
 
@@ -263,7 +263,7 @@ main > article figure blockquote > *::after {
 }
 
 main > article em {
-    @apply text-blue-400 not-italic;
+    @apply text-blue-400;
 }
 
 main > article em::before,
@@ -282,6 +282,13 @@ main > article strong::after {
     content: "**";
 }
 
+main > article strong::before {
+    @apply mr-1;
+}
+main > article strong::after {
+    @apply -ml-1;
+}
+
 main > article h2,
 main > article h3,
 main > article h4 {
@@ -289,15 +296,18 @@ main > article h4 {
 }
 
 main > article h2::before {
-    content: "## ";
+    @apply font-note;
+    content: "# ";
 }
 
 main > article h3::before {
-    content: "### ";
+    @apply font-note;
+    content: "## ";
 }
 
 main > article h4::before {
-    content: "#### ";
+    @apply font-note;
+    content: "### ";
 }
 
 main > article em::before,

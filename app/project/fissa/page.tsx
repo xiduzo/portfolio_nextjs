@@ -11,7 +11,6 @@ import { CallToAction } from "@/components/custom/call-to-action";
 import { Title } from "@/components/custom/title";
 import { Hero } from "@/components/custom/hero";
 import { Technologies } from "@/components/custom/technologies";
-import { ScrollHint } from "@/components/custom/scroll-hint";
 
 const animals = ["🐋", "🦀", "🐕", "🦦", "🦔", "🦉", "🦥", "🐍", "🦑", "🐘"];
 
@@ -30,7 +29,6 @@ export default function Page() {
                 subtitle="Not only one person should decide what is playing on a party"
                 readTime={12}
             />
-            <ScrollHint />
             <Technologies
                 technologies={[
                     "Expo",
@@ -319,7 +317,7 @@ const Component = () => {
                         href="https://apps.apple.com/nl/app/fissa-houseparty/id1632218985"
                         target="_blank"
                     >
-                        <CallToAction colorFrom="#93c5fd" colorTo="#3b82f6">
+                        <CallToAction>
                             Open Fissa in the Apple app store
                         </CallToAction>
                     </Link>
@@ -327,11 +325,7 @@ const Component = () => {
                         href="https://play.google.com/store/apps/details?id=com.fissa.app"
                         target="_blank"
                     >
-                        <CallToAction
-                            colorFrom="#22c55e"
-                            colorTo="#ef4444"
-                            delay={50}
-                        >
+                        <CallToAction>
                             Open Fissa in the Google play store
                         </CallToAction>
                     </Link>

@@ -8,7 +8,6 @@ import talkingToWaterVideo from "/videos/1080p.mov";
 import { CallToAction } from "@/components/custom/call-to-action";
 import { Hero } from "@/components/custom/hero";
 import { Title } from "@/components/custom/title";
-import { ScrollHint } from "@/components/custom/scroll-hint";
 
 export default function Page() {
     return (
@@ -24,7 +23,6 @@ export default function Page() {
                 subtitle="The art of the bodge"
                 readTime={10}
             />
-            <ScrollHint />
             <Section>
                 <Text>
                     One of the things I like about my job at the{" "}
@@ -424,7 +422,7 @@ my_assistant.start()
                     href="https://github.com/xiduzo/whisper-sentiment-analysis"
                     target="_blank"
                 >
-                    <CallToAction delay={250}>Check out the code</CallToAction>
+                    <CallToAction>Check out the code</CallToAction>
                 </Link>
                 <Link
                     href="https://hub.docker.com/repository/docker/xiduzo/whisper-sentiment-analysis/general"

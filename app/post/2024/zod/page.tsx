@@ -5,8 +5,8 @@ import Link from "next/link";
 import { Image } from "@/components/custom/image";
 import { Hero } from "@/components/custom/hero";
 import { Title } from "@/components/custom/title";
-import { ScrollHint } from "@/components/custom/scroll-hint";
 import Alert from "@/components/custom/alert";
+import { Safari } from "@/components/magic-ui/safari";
 
 export default function Page() {
     return (
@@ -22,7 +22,6 @@ export default function Page() {
                 subtitle="Stronger interfaces, cleaner code, fewer bugs"
                 readTime={14}
             />
-            <ScrollHint />
             <Section>
                 <Text>
                     I am a big fan of TypeScript, but one thing that I still
@@ -546,13 +545,11 @@ const example = new GrowthCycle(invalidInput) // [!code error]
                     pinpoint and handle it gracefully.
                 </Text>
             </Section>
-            <Section variant="full">
-                <Image
+            <Section>
+                <Safari
                     src="/zod/parse-failures.png"
                     alt="Monitoring results from parse errors"
-                    width={1920}
-                    height={1080}
-                    className="w-full"
+                    className="mx-auto"
                 />
             </Section>
             <Section>

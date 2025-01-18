@@ -5,6 +5,7 @@ import Link from "next/link";
 import GitHubCalendar from "react-github-calendar";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { TextRevealByWord } from "@/components/magic-ui/text-reveal";
+import { ScrollHint } from "@/components/custom/scroll-hint";
 
 export default function Page() {
     return (
@@ -12,8 +13,11 @@ export default function Page() {
             <Section className="flex items-center justify-center">
                 <Avatar className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 transition-all motion-delay-300">
                     <AvatarImage src="/me.jpeg" alt="Sander Boer" />
-                    <AvatarFallback>Xiduzo</AvatarFallback>
+                    <AvatarFallback>Oh hi there 😊</AvatarFallback>
                 </Avatar>
+            </Section>
+            <Section>
+                <ScrollHint />
             </Section>
             <TextRevealByWord text="Designer by education, Developer by interest, Tinkerer by curiosity." />
             <Section>
