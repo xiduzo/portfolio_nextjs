@@ -30,7 +30,7 @@ export default function Page() {
                     "@xyflow/react",
                     "Arduino Firmata",
                     "Electron",
-                    "Figma Plugin",
+                    "Figma plugin API",
                     "Johnny-Five",
                     "shadcn/ui",
                     "MQTT",

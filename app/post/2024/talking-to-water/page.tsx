@@ -8,6 +8,7 @@ import talkingToWaterVideo from "/videos/1080p.mov";
 import { CallToAction } from "@/components/custom/call-to-action";
 import { Hero } from "@/components/custom/hero";
 import { Title } from "@/components/custom/title";
+import Alert from "@/components/custom/alert";
 
 export default function Page() {
     return (
@@ -42,46 +43,52 @@ export default function Page() {
                 <Text>And what does it even mean to talk to water?</Text>
             </Section>
             <Section>
-                <Text>
-                    The concept and execution of the project were done by{" "}
-                    <Link
-                        href="https://www.linkedin.com/in/hieu/"
-                        target="_blank"
-                    >
-                        Hieu Nguyen
-                    </Link>
-                    ,{" "}
-                    <Link
-                        href="https://www.linkedin.com/in/bo-n%C3%A9meth-16960ab4"
-                        target="_blank"
-                    >
-                        Bo Németh
-                    </Link>
-                    ,{" "}
-                    <Link
-                        href="https://www.linkedin.com/in/ekta-gadekar"
-                        target="_blank"
-                    >
-                        Ekta Gadekar
-                    </Link>{" "}
-                    and{" "}
-                    <Link
-                        href="https://www.linkedin.com/in/viktoriya-marchenko/"
-                        target="_blank"
-                    >
-                        Viktoriya Marchenko
-                    </Link>
-                    . This article will go into some of the technical details of
-                    the project for which I provided guidance.
-                </Text>
-                <Text>
-                    I will keep it straightforward and easy to follow, leaving
-                    out jargon until going down the rabbit hole.
-                </Text>
-                <Text>
-                    For the non-technical aspects, I would like to refer you to
-                    the students themselves.
-                </Text>
+                <Alert icon="Copyleft" intent="info">
+                    <section>
+                        <Text>
+                            The concept and execution of the project were done
+                            by{" "}
+                            <Link
+                                href="https://www.linkedin.com/in/hieu/"
+                                target="_blank"
+                            >
+                                Hieu Nguyen
+                            </Link>
+                            ,{" "}
+                            <Link
+                                href="https://www.linkedin.com/in/bo-n%C3%A9meth-16960ab4"
+                                target="_blank"
+                            >
+                                Bo Németh
+                            </Link>
+                            ,{" "}
+                            <Link
+                                href="https://www.linkedin.com/in/ekta-gadekar"
+                                target="_blank"
+                            >
+                                Ekta Gadekar
+                            </Link>{" "}
+                            and{" "}
+                            <Link
+                                href="https://www.linkedin.com/in/viktoriya-marchenko/"
+                                target="_blank"
+                            >
+                                Viktoriya Marchenko
+                            </Link>
+                            . This article will go into some of the technical
+                            details of the project for which I provided
+                            guidance.
+                        </Text>
+                        <Text>
+                            I will keep it straightforward and easy to follow,
+                            leaving out jargon until going down the rabbit hole.
+                        </Text>
+                        <Text>
+                            For the non-technical aspects, I would like to refer
+                            you to the students themselves.
+                        </Text>
+                    </section>
+                </Alert>
             </Section>
             <Section variant="full">
                 <Text variant="note">

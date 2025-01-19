@@ -40,7 +40,7 @@ export default function Page() {
                 cite="React documentation"
                 link="https://react.dev/reference/react/Suspense"
             >
-                **Suspense**,
+                <strong>Suspense</strong>,
                 <br />
                 lets you display a fallback until its children have finished
                 loading
@@ -189,7 +189,7 @@ export function fakeApi(name) {
                     <sup>1</sup>
                 </Text>
                 <Text as="aside" className="mt-8 text-base">
-                    <ol>
+                    <ol className="text-sm text-muted-foreground">
                         <li>
                             As of writing this article, Reacts `use` hook is
                             still experimental and not available in the stable

@@ -32,7 +32,6 @@ export default function Page() {
                     "Highcharts",
                     "Heroku",
                     "Ionic",
-                    "Webpack",
                 ]}
             />
             <Section>
