@@ -37,8 +37,8 @@ export default function Page() {
                     "NextAuth.js",
                     "Prisma",
                     "React Native",
-                    "tRPC",
                     "Vercel serverless",
+                    "tRPC",
                 ]}
             />
             <Section>

@@ -442,86 +442,88 @@ export class Button extends BaseComponent<ButtonValueType> {
                     <CallToAction>Try Microflow studio</CallToAction>
                 </Link>
             </Section>
-            <Section>
-                <Text as="h2" variant="subheading" size="sm">
-                    Inspired by
-                </Text>
-                <Text className="flex gap-4 flex-wrap">
-                    <Link
-                        href="https://www.youtube.com/live/UwX0ntmJ61A?si=snK2eaVRrkk35YfM"
-                        target="_blank"
-                    >
-                        <Button variant="outline">
-                            The coding train + Noopcat video
-                        </Button>
-                    </Link>
-                    <Link
-                        href="https://edges.ideo.com/posts/figproxy"
-                        target="_blank"
-                    >
-                        <Button variant="outline">FigProxy</Button>
-                    </Link>
-                    <Link href="https://www.protopie.io/" target="_blank">
-                        <Button variant="outline">Protopie</Button>
-                    </Link>
-                    <Link href="https://blokdots.com/" target="_blank">
-                        <Button variant="outline">Blokdots</Button>
-                    </Link>
-                    <Link href="https://nodered.org/" target="_blank">
-                        <Button variant="outline">Node-RED</Button>
-                    </Link>
-                    <Link href="https://derivative.ca/" target="_blank">
-                        <Button variant="outline">TouchDesigner</Button>
-                    </Link>
-                    <Link
-                        href="https://dev.epicgames.com/documentation/en-us/unreal-engine/blueprints-visual-scripting-in-unreal-engine"
-                        target="_blank"
-                    >
-                        <Button variant="outline">
-                            Unreal Engine Blueprints
-                        </Button>
-                    </Link>
-                </Text>
-            </Section>
-            <Section>
-                <Text as="h2" variant="subheading" size="sm">
-                    Other reads
-                </Text>
-                <Text className="flex gap-4 flex-wrap">
-                    <Link
-                        href="https://github.com/xiduzo/microflow"
-                        target="_blank"
-                    >
-                        <Button variant="outline">
-                            See all the code on GitHub
-                        </Button>
-                    </Link>
-                    <Link
-                        href="https://microflow.vercel.app/docs"
-                        target="_blank"
-                    >
-                        <Button variant="outline">
-                            Microflow documentation
-                        </Button>
-                    </Link>
-                    <Link
-                        href="https://github.com/xiduzo/figma-hardware-connect"
-                        target="_blank"
-                    >
-                        <Button variant="outline">
-                            First prototype on GitHub
-                        </Button>
-                    </Link>
-                    <Link
-                        href="https://github.com/xiduzo/figma-hardware-connect-with-companion"
-                        target="_blank"
-                    >
-                        <Button variant="outline">
-                            Second prototype on GitHub
-                        </Button>
-                    </Link>
-                </Text>
-            </Section>
+            <aside>
+                <Section>
+                    <Text as="h2" variant="subheading" size="sm">
+                        Inspired by
+                    </Text>
+                    <Text className="flex gap-4 flex-wrap">
+                        <Link
+                            href="https://www.youtube.com/live/UwX0ntmJ61A?si=snK2eaVRrkk35YfM"
+                            target="_blank"
+                        >
+                            <Button variant="outline">
+                                The coding train + Noopcat video
+                            </Button>
+                        </Link>
+                        <Link
+                            href="https://edges.ideo.com/posts/figproxy"
+                            target="_blank"
+                        >
+                            <Button variant="outline">FigProxy</Button>
+                        </Link>
+                        <Link href="https://www.protopie.io/" target="_blank">
+                            <Button variant="outline">Protopie</Button>
+                        </Link>
+                        <Link href="https://blokdots.com/" target="_blank">
+                            <Button variant="outline">Blokdots</Button>
+                        </Link>
+                        <Link href="https://nodered.org/" target="_blank">
+                            <Button variant="outline">Node-RED</Button>
+                        </Link>
+                        <Link href="https://derivative.ca/" target="_blank">
+                            <Button variant="outline">TouchDesigner</Button>
+                        </Link>
+                        <Link
+                            href="https://dev.epicgames.com/documentation/en-us/unreal-engine/blueprints-visual-scripting-in-unreal-engine"
+                            target="_blank"
+                        >
+                            <Button variant="outline">
+                                Unreal Engine Blueprints
+                            </Button>
+                        </Link>
+                    </Text>
+                </Section>
+                <Section>
+                    <Text as="h2" variant="subheading" size="sm">
+                        Other reads
+                    </Text>
+                    <Text className="flex gap-4 flex-wrap">
+                        <Link
+                            href="https://github.com/xiduzo/microflow"
+                            target="_blank"
+                        >
+                            <Button variant="outline">
+                                See all the code on GitHub
+                            </Button>
+                        </Link>
+                        <Link
+                            href="https://microflow.vercel.app/docs"
+                            target="_blank"
+                        >
+                            <Button variant="outline">
+                                Microflow documentation
+                            </Button>
+                        </Link>
+                        <Link
+                            href="https://github.com/xiduzo/figma-hardware-connect"
+                            target="_blank"
+                        >
+                            <Button variant="outline">
+                                First prototype on GitHub
+                            </Button>
+                        </Link>
+                        <Link
+                            href="https://github.com/xiduzo/figma-hardware-connect-with-companion"
+                            target="_blank"
+                        >
+                            <Button variant="outline">
+                                Second prototype on GitHub
+                            </Button>
+                        </Link>
+                    </Text>
+                </Section>
+            </aside>
         </>
     );
 }

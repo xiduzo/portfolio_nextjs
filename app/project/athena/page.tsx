@@ -24,10 +24,10 @@ export default function Page() {
             <Technologies
                 technologies={[
                     "Angular",
-                    "Gulp",
                     "Django",
-                    "Material design",
+                    "Gulp",
                     "HvA LDAP",
+                    "Material design",
                     "Trello API",
                 ]}
             />
@@ -184,25 +184,27 @@ export default function Page() {
                     to a trello board if a teacher would like to.
                 </Text>
             </Section>
-            <Section>
-                <Text as="h2" variant="subheading" size="sm">
-                    References
-                </Text>
-                <Text className="flex gap-4 flex-wrap">
-                    <Link
-                        href="https://github.com/xiduzo/afstudeerproject_backend"
-                        target="_blank"
-                    >
-                        <Button variant="outline">Code (server)</Button>
-                    </Link>
-                    <Link
-                        href="https://github.com/xiduzo/afstudeerproject"
-                        target="_blank"
-                    >
-                        <Button variant="outline">Code (app)</Button>
-                    </Link>
-                </Text>
-            </Section>
+            <aside>
+                <Section>
+                    <Text as="h2" variant="subheading" size="sm">
+                        References
+                    </Text>
+                    <Text className="flex gap-4 flex-wrap">
+                        <Link
+                            href="https://github.com/xiduzo/afstudeerproject_backend"
+                            target="_blank"
+                        >
+                            <Button variant="outline">Code (server)</Button>
+                        </Link>
+                        <Link
+                            href="https://github.com/xiduzo/afstudeerproject"
+                            target="_blank"
+                        >
+                            <Button variant="outline">Code (app)</Button>
+                        </Link>
+                    </Text>
+                </Section>
+            </aside>
         </>
     );
 }

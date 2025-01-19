@@ -43,7 +43,7 @@ export default function Page() {
                 subtitle="Introduce humans to the blockchain and crypto-currency wallets"
                 readTime={6}
             />
-            <Technologies technologies={["Angular", "Express", "WebSockets"]} />
+            <Technologies technologies={["Angular", "Express", "Socket.io"]} />
             <Section>
                 <Text as="h2" variant="subheading">
                     Back to the basics
@@ -57,7 +57,11 @@ export default function Page() {
                     it’s accessible to everyone?
                 </Text>
             </Section>
-            <Section variant="full" className="gap-28 flex flex-col">
+            <Section
+                variant="full"
+                className="gap-28 flex flex-col"
+                aria-hidden="true"
+            >
                 <Marquee className="[--gap:80px]">
                     {images
                         .sort(() => (Math.random() > 0.5 ? -1 : 1))
