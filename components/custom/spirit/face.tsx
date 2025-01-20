@@ -20,7 +20,7 @@ export function Face(props: {
             })}
         >
             {phase === 4 && (
-                <section className="flex gap-10 absolute mb-40">
+                <section className="flex gap-10 absolute mb-40 z-20">
                     <div className="w-20 h-3 rounded-full bg-zinc-700 -rotate-12"></div>
                     <div className="w-20 h-3 rounded-full bg-zinc-700 rotate-12"></div>
                 </section>
@@ -35,7 +35,7 @@ export function Face(props: {
             </section>
             {phase === 4 && (
                 <section className="absolute ml-52">
-                    <div className="w-12 h-12 rounded-[0px_90px_90px_90px] rotate-45 bg-blue-300"></div>
+                    <div className="w-12 h-12 rounded-[0px_90px_90px_90px] rotate-45 bg-blue-300 motion-preset-slide-down-lg"></div>
                 </section>
             )}
             {phase === 1 && (
@@ -47,7 +47,7 @@ export function Face(props: {
             <section className="flex">
                 <div className={mouth({ phase: phase })}></div>
             </section>
-            <section className="w-full px-2 absolute bottom-12 text-center">
+            <section className="w-full px-6 absolute bottom-12 text-center">
                 {!props.text && (
                     <Slider
                         className="w-full"
@@ -71,7 +71,7 @@ export function Face(props: {
 type Phase = VariantProps<typeof face>["phase"];
 
 const face = cva(
-    "relative rounded-3xl w-[90vw] md:w-[50vw] lg:w-[33vw] xl:w-[25vw] h-[66vh] lg:h-[50vh] flex flex-col items-center justify-center transition-all",
+    "relative rounded-3xl w-[90vw] md:w-[50vw] lg:w-[33vw] xl:w-[25vw] h-[66vh] lg:h-[50vh] flex flex-col items-center justify-center transition-all duration-700",
     {
         variants: {
             phase: {
@@ -86,7 +86,7 @@ const face = cva(
 );
 
 const eye = cva(
-    "w-24 h-24 rounded-full flex items-center justify-center transition-all duration-500",
+    "w-24 h-24 rounded-full flex items-center justify-center transition-all duration-500 z-10",
     {
         variants: {
             phase: {
@@ -112,14 +112,14 @@ const pupil = cva("rounded-full bg-zinc-900 transition-all duration-500", {
     },
 });
 
-const mouth = cva("transition-all duration-200", {
+const mouth = cva("transition-all", {
     variants: {
         phase: {
-            1: "w-16 h-20 -mt-12 rounded-full border-b-8 border-zinc-700",
-            2: "w-16 h-12 rounded-full border-b-8 border-zinc-700",
-            3: "w-24 h-2 mt-12 rounded-full border-4 border-zinc-700",
-            4: "w-24 h-6 mt-12 rounded-full border-t-8 border-zinc-700",
-            5: "w-20 h-32 rounded-[50%_50%_25%_25%_/_60%_60%_30%_30%] bg-gray-950 border-emerald-200 mt-2 border-8",
+            1: "w-16 h-20 -mt-12 rounded-full border-8 border-b-zinc-700 border-orange-300 duration-700",
+            2: "w-16 h-12 rounded-full border-b-8 border-b-zinc-700 border-emerald-200 duration-700",
+            3: "w-24 h-2 mt-12 rounded-full border-8 border-b-zinc-700 border-stone-300 duration-200",
+            4: "w-24 h-6 mt-12 rounded-full border-t-8 border-t-zinc-700 border-blue-400 duration-50",
+            5: "w-20 h-32 rounded-[50%_50%_25%_25%_/_60%_60%_30%_30%] bg-gray-950 border-emerald-200 mt-2 border-8 duration-200",
         },
     },
 });

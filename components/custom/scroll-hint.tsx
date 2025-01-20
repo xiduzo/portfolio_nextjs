@@ -17,8 +17,8 @@ const hints = [
 
 export function ScrollHint(props: { className?: string }) {
     function scrollDownSmooth() {
-        window.scrollBy({
-            top: window.innerHeight * 0.85,
+        window.scrollTo({
+            top: window.innerHeight * 0.95,
             behavior: "smooth",
         });
     }
@@ -29,7 +29,7 @@ export function ScrollHint(props: { className?: string }) {
             variant="note"
             size="sm"
             className={clsx(
-                "hover:cursor-s-resize hidden md:block motion-preset-oscillate motion-duration-[3s] motion-ease-out-quad motion-delay-2000 motion-opacity-in-0 motion-blur-in-0 cursor-pointer",
+                "hover:cursor-s-resize p-4 rounded-lg hover:bg-muted-foreground/5 transition-all hidden md:block motion-preset-oscillate motion-duration-[3s] motion-ease-out-quad motion-delay-2000 motion-opacity-in-0 motion-blur-in-0 cursor-pointer",
                 props.className,
             )}
             motion="none"

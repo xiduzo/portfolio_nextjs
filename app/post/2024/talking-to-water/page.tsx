@@ -7,7 +7,6 @@ import Video from "next-video";
 import talkingToWaterVideo from "/videos/1080p.mov";
 import { CallToAction } from "@/components/custom/call-to-action";
 import { Hero } from "@/components/custom/hero";
-import { Title } from "@/components/custom/title";
 import Alert from "@/components/custom/alert";
 
 export default function Page() {
@@ -15,14 +14,11 @@ export default function Page() {
         <>
             <Hero
                 title="Talking to water"
+                subtitle="The art of the bodge"
                 publishDate="Feb 21 2024"
                 emoji="1F30A"
-                className="bg-violet-500"
-            />
-            <Title
-                title="Talking to water"
-                subtitle="The art of the bodge"
                 readTime={10}
+                className="bg-violet-500"
             />
             <Section>
                 <Text>

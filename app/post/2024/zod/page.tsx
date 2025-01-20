@@ -4,7 +4,6 @@ import { Text } from "@/components/custom/typography";
 import Link from "next/link";
 import { Image } from "@/components/custom/image";
 import { Hero } from "@/components/custom/hero";
-import { Title } from "@/components/custom/title";
 import Alert from "@/components/custom/alert";
 import { Safari } from "@/components/magic-ui/safari";
 
@@ -16,9 +15,6 @@ export default function Page() {
                 publishDate="June 30 2024"
                 emoji="1F6C2"
                 className="bg-emerald-500"
-            />
-            <Title
-                title="Zod"
                 subtitle="Stronger interfaces, cleaner code, fewer bugs"
                 readTime={14}
             />

@@ -1,7 +1,6 @@
 import { Section } from "@/components/custom/section";
 import { Text } from "@/components/custom/typography";
 import { Hero } from "@/components/custom/hero";
-import { Title } from "@/components/custom/title";
 import { Technologies } from "@/components/custom/technologies";
 import Link from "next/link";
 import { Safari } from "@/components/magic-ui/safari";
@@ -15,9 +14,6 @@ export default function Page() {
                 publishDate="Mar 21 2017"
                 emoji="1F984"
                 className="bg-amber-300"
-            />
-            <Title
-                title="Athena"
                 subtitle="An honest feedback tool for students"
                 readTime={4}
             />

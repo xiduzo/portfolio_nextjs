@@ -5,7 +5,6 @@ import { CodeBlock } from "@/components/custom/code-block";
 import { Image } from "@/components/custom/image";
 import { Button } from "@/components/ui/button";
 import { Hero } from "@/components/custom/hero";
-import { Title } from "@/components/custom/title";
 import { Quote } from "@/components/custom/quote";
 
 export default function Page() {
@@ -16,9 +15,6 @@ export default function Page() {
                 publishDate="Nov 21 2023"
                 emoji="1FA84"
                 className="bg-sky-500"
-            />
-            <Title
-                title="<Suspense />"
                 subtitle="Unravelling the magic from React"
                 readTime={12}
             />

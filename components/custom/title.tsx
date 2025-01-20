@@ -1,5 +1,4 @@
 import { Badge } from "../ui/badge";
-import { ScrollHint } from "./scroll-hint";
 import { Section } from "./section";
 import { Text } from "./typography";
 
@@ -37,7 +36,6 @@ export function Title(props: Props) {
                 {props.readTime}{" "}
                 {pluralForms.get(pluralRules.select(props.readTime))} read
             </Badge>
-            <ScrollHint className="mt-16" />
         </Section>
     );
 }
@@ -47,3 +45,5 @@ type Props = {
     subtitle: string;
     readTime: number;
 };
+
+export type TitleProps = Props;

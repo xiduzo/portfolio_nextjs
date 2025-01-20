@@ -3,7 +3,6 @@ import { CodeBlock } from "@/components/custom/code-block";
 import { Hero } from "@/components/custom/hero";
 import { Quote } from "@/components/custom/quote";
 import { Section } from "@/components/custom/section";
-import { Title } from "@/components/custom/title";
 import { Text } from "@/components/custom/typography";
 import Link from "next/link";
 
@@ -15,9 +14,6 @@ export default function Page() {
                 publishDate="Apr 4 2024"
                 emoji="1F9EA"
                 className="bg-red-500"
-            />
-            <Title
-                title="Testing"
                 subtitle="And become a better engineer"
                 readTime={22}
             />

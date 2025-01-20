@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import { Marquee } from "@/components/magic-ui/marquee";
 import { randomSort } from "@/lib/utils";
 import { CallToAction } from "@/components/custom/call-to-action";
-import { Title } from "@/components/custom/title";
 import { Hero } from "@/components/custom/hero";
 import { Technologies } from "@/components/custom/technologies";
 
@@ -19,15 +18,12 @@ export default function Page() {
         <>
             <Hero
                 title="Fissa"
+                subtitle="Not only one person should decide what is playing on a party"
+                readTime={12}
                 publishDate="Jun 02 2023"
                 emoji="1F415"
                 className="bg-pink-500"
                 link="https://fissa-houseparty.vercel.app"
-            />
-            <Title
-                title="Fissa"
-                subtitle="Not only one person should decide what is playing on a party"
-                readTime={12}
             />
             <Technologies
                 technologies={[
@@ -54,7 +50,7 @@ export default function Page() {
                     >
                         Milan
                     </Link>{" "}
-                    and myself have experienced countless times. And instead of
+                    and myself have experienced countless times. Instead of
                     complaining about it constantly we decided to do something
                     about it.
                 </Text>
@@ -113,8 +109,8 @@ export default function Page() {
                     sharing your favorite tunes, we create a social experience.
                 </Text>
                 <Text>
-                    We wanted to give the user a personal experience. This is
-                    why decided to give each Fissa their own color.
+                    We wanted to give the user a personal experience too. This
+                    is why decided to give each Fissa their own color.
                 </Text>
             </Section>
             <Section variant="full">
@@ -427,7 +423,7 @@ const Component = () => {
                         Spotify recommendations
                     </Link>
                     , but most importantly they will be based on the tracks
-                    which gained the most votes.
+                    which are the most popular in <strong>your Fissa</strong>.
                 </Text>
                 <CodeBlock
                     code={`
@@ -463,8 +459,9 @@ class FissaService {
                 </Text>
                 <Text>
                     As the Fissa is a collaborative playlist, users determine
-                    the order of the songs. This is done by voting on the songs.
-                    This proved to be the most challenging part of the project.
+                    the order of the songs. This is done by up- or down-voting
+                    songs. This proved to be the most challenging part of the
+                    project.
                 </Text>
                 <Text>
                     So strap-on your seatbelt, the next part will contain a lot
@@ -520,22 +517,22 @@ model Track {
                 </Text>
                 <Text as="ol">
                     <li>
-                        When we add a song to Fissa, we up-vote it. Who would
-                        not up-vote their own track, right? But this means that
-                        whenever a track is added, we must recalculate the
-                        indexes of all the tracks below it because their order
-                        might change.
+                        When we add a song to Fissa, we up-vote it.{" "}
+                        <em>Who would not up-vote their own track</em>? But this
+                        means that whenever a track is added, we must
+                        recalculate the indexes of all the tracks because their
+                        order might have changed.
                     </li>
                     <li>
                         Users can up- or down-vote tracks anytime, leading to
-                        constant index changes. While this isn&apos;t inherently
+                        constant index changes. While this is not inherently
                         problematic, it can disrupt ongoing index
                         recalculations.
                     </li>
                     <li>
                         Because of the unique index constraint in prisma (read
                         postgres), we had to update it twice: once to clear the
-                        new index and once to update the moved track&apos;s
+                        new index and once to update the moved tracks&apos;
                         index.
                     </li>
                 </Text>
@@ -585,7 +582,10 @@ class FissaService {
                         vercel
                     </Link>
                     . As nobody pays for their pet-project in this day-and-age,
-                    we only have 10 seconds to perform any operation.
+                    we only have <strong>10 seconds</strong> to perform any
+                    operation.
+                </Text>
+                <Text>
                     Recalculating and updating indexes of Fissas with 50+ songs
                     proved to be not possible. Even with the latest{" "}
                     <Link
@@ -610,7 +610,13 @@ class FissaService {
                 <Text>
                     By using the logic which was already in Fissa, we could
                     remove a lot of code and make the whole process a lot
-                    simpler and stable.
+                    simpler and stable.{" "}
+                    <Link
+                        href="https://www.youtube.com/watch?v=h3uBr0CCm58"
+                        target="_blank"
+                    >
+                        Noice
+                    </Link>
                 </Text>
                 <CodeBlock
                     code={`
@@ -630,7 +636,8 @@ model Track {
                     `}
                 />
                 <Text>
-                    <strong>THE algorithm</strong> which is the heart of Fissa
+                    This only leaves us with <strong>THE algorithm</strong>{" "}
+                    which is the heart of Fissa.
                 </Text>
                 <CodeBlock
                     code={`

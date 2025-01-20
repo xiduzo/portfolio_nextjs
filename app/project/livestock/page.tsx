@@ -1,7 +1,6 @@
 import { Section } from "@/components/custom/section";
 import { Text } from "@/components/custom/typography";
 import { Hero } from "@/components/custom/hero";
-import { Title } from "@/components/custom/title";
 import { Technologies } from "@/components/custom/technologies";
 import Link from "next/link";
 import { Image } from "@/components/custom/image";
@@ -34,14 +33,11 @@ export default function Page() {
         <>
             <Hero
                 title="LiveStock"
+                subtitle="Introduce humans to the blockchain and crypto-currency wallets"
+                readTime={6}
                 publishDate="Feb 21 2018"
                 emoji="1F4B0"
                 className="bg-cyan-700"
-            />
-            <Title
-                title="LiveStock"
-                subtitle="Introduce humans to the blockchain and crypto-currency wallets"
-                readTime={6}
             />
             <Technologies technologies={["Angular", "Express", "Socket.io"]} />
             <Section>
@@ -125,9 +121,8 @@ export default function Page() {
                 </Text>
                 <Text>
                     The blockchain and cryptocurrencies can be complex and
-                    difficult to understand. Because of its global influence
-                    it&apos;s important to make them accessible for discussion
-                    and use.
+                    difficult to understand. Because of its global influence it
+                    is important to make them accessible for discussion and use.
                 </Text>
                 <Text>
                     Potential users face many options for currencies, wallets,
@@ -237,7 +232,7 @@ export default function Page() {
                 </Text>
                 <Text>
                     This data will help the Institute of Network Cultures (INC)
-                    to evaluate wallet designs
+                    to evaluate wallet designs.
                 </Text>
             </Section>
             <Section
@@ -265,8 +260,8 @@ export default function Page() {
                 </Text>
                 <Text>
                     Livestock is a multiplayer research tool that utilizes the
-                    human brain’s ability to subconsciously learn abstract and
-                    complex concepts.
+                    human brains&apos; ability to subconsciously learn abstract
+                    and complex concepts.
                 </Text>
                 <Text>
                     While it may appear to be another <em>Farmville-style</em>{" "}

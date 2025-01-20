@@ -4,6 +4,8 @@ import { Badge } from "../ui/badge";
 import { EmojiHexcode, Openmoji } from "./openmoji";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
+import { Title, TitleProps } from "./title";
+import { ScrollHint } from "./scroll-hint";
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
     dateStyle: "long",
@@ -11,7 +13,7 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", {
 
 export function Hero(props: Props) {
     return (
-        <header className="mb-44 flex flex-col relative z-0">
+        <header className="mb-18 md:mb-32 lg:mb-44 flex flex-col relative z-0 h-[90vh] justify-between">
             <section className="absolute top-6 right-6 z-20 flex gap-2">
                 <time dateTime={props.publishDate}>
                     <Badge variant="secondary" className="pointer-events-none">
@@ -44,12 +46,19 @@ export function Hero(props: Props) {
                     className="translate-y-44 motion-blur-in-3xl motion-opacity-in-65 motion-delay-75"
                 />
             </section>
+            <Title
+                title={props.title}
+                subtitle={props.subtitle}
+                readTime={props.readTime}
+            />
+            <div className="flex justify-center">
+                <ScrollHint />
+            </div>
         </header>
     );
 }
 
-type Props = {
-    title: string;
+type Props = TitleProps & {
     emoji: EmojiHexcode;
     publishDate: string;
     link?: string;

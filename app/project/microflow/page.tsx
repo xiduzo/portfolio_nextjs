@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Image } from "@/components/custom/image";
 import { CallToAction } from "@/components/custom/call-to-action";
 import { Technologies } from "@/components/custom/technologies";
-import { Title } from "@/components/custom/title";
 import { Hero } from "@/components/custom/hero";
 
 export default function Page() {
@@ -15,15 +14,12 @@ export default function Page() {
         <>
             <Hero
                 title="Microflow"
+                subtitle="Microcontrollers made simple"
+                readTime={8}
                 publishDate="Sep 14 2024"
                 emoji="E1D3"
                 className="bg-orange-500"
                 link="https://microflow.vercel.app/"
-            />
-            <Title
-                title="Microflow"
-                subtitle="Microcontrollers made simple"
-                readTime={8}
             />
             <Technologies
                 technologies={[
