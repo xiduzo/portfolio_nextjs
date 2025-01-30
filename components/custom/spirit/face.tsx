@@ -49,14 +49,27 @@ export function Face(props: {
             </section>
             <section className="w-full px-6 absolute bottom-12 text-center">
                 {!props.text && (
-                    <Slider
-                        className="w-full"
-                        value={[Number(phase)]}
-                        min={1}
-                        max={5}
-                        step={1}
-                        onValueChange={([value]) => setPhase(value as Phase)}
-                    />
+                    <div>
+                        <Slider
+                            className="w-full"
+                            value={[Number(phase)]}
+                            min={1}
+                            max={5}
+                            step={1}
+                            onValueChange={([value]) =>
+                                setPhase(value as Phase)
+                            }
+                            aria-label="Slider to control a visualisation change based on the users' mood"
+                        />
+                        <Text
+                            aria-hidden="true"
+                            variant="note"
+                            size="sm"
+                            className="mt-3 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
+                        >
+                            (slide me)
+                        </Text>
+                    </div>
                 )}
                 {props.text && (
                     <Text variant="heading" size="sm">

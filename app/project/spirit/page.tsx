@@ -8,7 +8,7 @@ import { Iphone15Pro } from "@/components/magic-ui/iphone-15-pro";
 import { Image } from "@/components/custom/image";
 import NextImage from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Links } from "@/components/custom/links";
 
 export default function Page() {
     return (
@@ -371,55 +371,37 @@ export default function Page() {
                 />
             </Section>
             <aside>
-                <Section>
-                    <Text as="h2" variant="subheading" size="sm">
-                        Invited to
-                    </Text>
-                    <Text className="flex gap-4 flex-wrap">
-                        <Link
-                            href="https://web.archive.org/web/20220526214733/https://www.gamesforhealtheurope.org/speaker/sander-boer"
-                            target="_blank"
-                        >
-                            <Button variant="outline">
-                                Games for health Europe
-                            </Button>
-                        </Link>
-                    </Text>
-                </Section>
-                <Section>
-                    <Text as="h2" variant="subheading" size="sm">
-                        In collaboration with
-                    </Text>
-                    <Text className="flex gap-4 flex-wrap">
-                        <Link
-                            href="https://carmenscherbaum.myportfolio.com/"
-                            target="_blank"
-                        >
-                            <Button variant="outline">Carmen Scherbaum</Button>
-                        </Link>
-                        <Link
-                            href="https://clinical-neuropsychology.de/steffen-moritz"
-                            target="_blank"
-                        >
-                            <Button variant="outline">
-                                Prof. Dr. Steffen Moritz
-                            </Button>
-                        </Link>
-                    </Text>
-                </Section>
-                <Section>
-                    <Text as="h2" variant="subheading" size="sm">
-                        References
-                    </Text>
-                    <Text className="flex gap-4 flex-wrap">
-                        <Link
-                            href="https://github.com/xiduzo/ocdTreatmentApp"
-                            target="_blank"
-                        >
-                            <Button variant="outline">Prototype (code)</Button>
-                        </Link>
-                    </Text>
-                </Section>
+                <Links
+                    title="Invited to"
+                    links={[
+                        [
+                            "https://web.archive.org/web/20220526214733/https://www.gamesforhealtheurope.org/speaker/sander-boer",
+                            "Games for health Europe",
+                        ],
+                    ]}
+                />
+                <Links
+                    title="In collaboration with"
+                    links={[
+                        [
+                            "https://carmenscherbaum.myportfolio.com",
+                            "Carmen Scherbaum",
+                        ],
+                        [
+                            "https://clinical-neuropsychology.de/steffen-moritz",
+                            "Prof. Dr. Steffen Moritz",
+                        ],
+                    ]}
+                />
+                <Links
+                    title="References"
+                    links={[
+                        [
+                            "https://github.com/xiduzo/ocdTreatmentApp",
+                            "Prototype (code)",
+                        ],
+                    ]}
+                />
             </aside>
         </>
     );

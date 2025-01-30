@@ -43,6 +43,8 @@ export default function Page() {
                 </Text>
                 <Text>
                     Having friends at a party with a bad taste in music stinks.
+                </Text>
+                <Text>
                     This is what{" "}
                     <Link
                         href="https://www.linkedin.com/in/milan-van-der-maaten-307a1697"
@@ -50,11 +52,11 @@ export default function Page() {
                     >
                         Milan
                     </Link>{" "}
-                    and myself have experienced countless times. Instead of
+                    and myself have experienced countless times and instead of
                     complaining about it constantly we decided to do something
                     about it.
                 </Text>
-                <Text>
+                <Text size="sm">
                     As I am always looking for an excuse to start a new
                     pet-project to learn and explore new technologies, Fissa
                     seemed like a perfect opportunity to do so.

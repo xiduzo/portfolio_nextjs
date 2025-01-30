@@ -3,11 +3,11 @@ import { Text } from "@/components/custom/typography";
 import Link from "next/link";
 import { Safari } from "@/components/magic-ui/safari";
 import { CodeBlock } from "@/components/custom/code-block";
-import { Button } from "@/components/ui/button";
 import { Image } from "@/components/custom/image";
 import { CallToAction } from "@/components/custom/call-to-action";
 import { Technologies } from "@/components/custom/technologies";
 import { Hero } from "@/components/custom/hero";
+import { Links } from "@/components/custom/links";
 
 export default function Page() {
     return (
@@ -179,11 +179,21 @@ export function MqttVariableMessenger() {
 \`\`\`
                     `}
                 />
-                <Text className="mb-96">
+                <Text>
                     Some more sorcery is happening in the{" "}
                     <code>sendMessageToFigma</code> and <code>useMqtt</code>,
                     but I’ll leave that up to your imagination.
                 </Text>
+            </Section>
+            <Section className="flex justify-center">
+                <Link
+                    href="https://www.figma.com/community/plugin/1373258770799080545"
+                    target="_blank"
+                >
+                    <CallToAction>Try Microflow hardware bridge</CallToAction>
+                </Link>
+            </Section>
+            <Section className="my-96 text-center">
                 <Text size="sm" className="italic">
                     Or{" "}
                     <Link
@@ -194,14 +204,6 @@ export function MqttVariableMessenger() {
                     </Link>{" "}
                     if you are a nerd like me who likes to know how things work.
                 </Text>
-            </Section>
-            <Section className="flex justify-center">
-                <Link
-                    href="https://www.figma.com/community/plugin/1373258770799080545"
-                    target="_blank"
-                >
-                    <CallToAction>Try Microflow hardware bridge</CallToAction>
-                </Link>
             </Section>
             <Section variant="full">
                 <Text className="col-span-12" variant="note">
@@ -220,8 +222,13 @@ export function MqttVariableMessenger() {
                     Microflow studio
                 </Text>
                 <Text>
-                    This tool was build to make working with microcontrollers{" "}
-                    <em>plug-and-play</em>.
+                    Microflow studio is a tool that allows you to create
+                    complext interaction with microcontrollers without writing a
+                    single line of code.
+                </Text>
+                <Text>
+                    This tool was build to make working with microcontrollers as
+                    easy as <em>plug-and-play</em>.
                 </Text>
                 <Text>
                     In order to achieve that, there is some magic happening
@@ -439,86 +446,45 @@ export class Button extends BaseComponent<ButtonValueType> {
                 </Link>
             </Section>
             <aside>
-                <Section>
-                    <Text as="h2" variant="subheading" size="sm">
-                        Inspired by
-                    </Text>
-                    <Text className="flex gap-4 flex-wrap">
-                        <Link
-                            href="https://www.youtube.com/live/UwX0ntmJ61A?si=snK2eaVRrkk35YfM"
-                            target="_blank"
-                        >
-                            <Button variant="outline">
-                                The coding train + Noopcat video
-                            </Button>
-                        </Link>
-                        <Link
-                            href="https://edges.ideo.com/posts/figproxy"
-                            target="_blank"
-                        >
-                            <Button variant="outline">FigProxy</Button>
-                        </Link>
-                        <Link href="https://www.protopie.io/" target="_blank">
-                            <Button variant="outline">Protopie</Button>
-                        </Link>
-                        <Link href="https://blokdots.com/" target="_blank">
-                            <Button variant="outline">Blokdots</Button>
-                        </Link>
-                        <Link href="https://nodered.org/" target="_blank">
-                            <Button variant="outline">Node-RED</Button>
-                        </Link>
-                        <Link href="https://derivative.ca/" target="_blank">
-                            <Button variant="outline">TouchDesigner</Button>
-                        </Link>
-                        <Link
-                            href="https://dev.epicgames.com/documentation/en-us/unreal-engine/blueprints-visual-scripting-in-unreal-engine"
-                            target="_blank"
-                        >
-                            <Button variant="outline">
-                                Unreal Engine Blueprints
-                            </Button>
-                        </Link>
-                    </Text>
-                </Section>
-                <Section>
-                    <Text as="h2" variant="subheading" size="sm">
-                        Other reads
-                    </Text>
-                    <Text className="flex gap-4 flex-wrap">
-                        <Link
-                            href="https://github.com/xiduzo/microflow"
-                            target="_blank"
-                        >
-                            <Button variant="outline">
-                                See all the code on GitHub
-                            </Button>
-                        </Link>
-                        <Link
-                            href="https://microflow.vercel.app/docs"
-                            target="_blank"
-                        >
-                            <Button variant="outline">
-                                Microflow documentation
-                            </Button>
-                        </Link>
-                        <Link
-                            href="https://github.com/xiduzo/figma-hardware-connect"
-                            target="_blank"
-                        >
-                            <Button variant="outline">
-                                First prototype on GitHub
-                            </Button>
-                        </Link>
-                        <Link
-                            href="https://github.com/xiduzo/figma-hardware-connect-with-companion"
-                            target="_blank"
-                        >
-                            <Button variant="outline">
-                                Second prototype on GitHub
-                            </Button>
-                        </Link>
-                    </Text>
-                </Section>
+                <Links
+                    title="Inspired by"
+                    links={[
+                        [
+                            "https://www.youtube.com/live/UwX0ntmJ61A?si=snK2eaVRrkk35YfM",
+                            "The coding train + Noopcat video",
+                        ],
+                        ["https://edges.ideo.com/posts/figproxy", "FigProxy"],
+                        ["https://www.protopie.io/", "Protopie"],
+                        ["https://blokdots.com/", "Blokdots"],
+                        ["https://nodered.org/", "Node-RED"],
+                        ["https://derivative.ca/", "TouchDesigner"],
+                        [
+                            "https://dev.epicgames.com/documentation/en-us/unreal-engine/blueprints-visual-scripting-in-unreal-engine",
+                            "Unreal Engine Blueprints",
+                        ],
+                    ]}
+                />
+                <Links
+                    title="Other reads"
+                    links={[
+                        [
+                            "https://github.com/xiduzo/microflow",
+                            "See all the code on GitHub",
+                        ],
+                        [
+                            "https://microflow.vercel.app/docs",
+                            "Microflow documentation",
+                        ],
+                        [
+                            "https://github.com/xiduzo/figma-hardware-connect",
+                            "First prototype on GitHub",
+                        ],
+                        [
+                            "https://github.com/xiduzo/figma-hardware-connect-with-companion",
+                            "Second prototype on GitHub",
+                        ],
+                    ]}
+                />
             </aside>
         </>
     );

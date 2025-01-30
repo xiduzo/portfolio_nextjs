@@ -9,8 +9,8 @@ import { ScrollHint } from "@/components/custom/scroll-hint";
 export default function Page() {
     return (
         <>
-            <Section>
-                <Text as="h1" variant="heading" motion="none">
+            <Section className="min-h-screen flex flex-col justify-between">
+                <Text as="h1" variant="heading" motion="none" className="mb-0">
                     <span className="inline-block motion-rotate-in-12 motion-ease-spring-bounciest">
                         👋
                     </span>{" "}
@@ -18,33 +18,39 @@ export default function Page() {
                         Hello world!
                     </code>
                 </Text>
+                <div className="flex gap-6 md:gap-12 flex-col-reverse lg:flex-row items-center">
+                    <section>
+                        <Text motion="none">
+                            My name is <strong>Sander</strong>, and I am a
+                            passionate developer with a creative mind.
+                        </Text>
+                        <Text motion="none">
+                            I{" "}
+                            <span className="motion-preset-pulse inline-block motion-ease-bounce">
+                                ♥️
+                            </span>{" "}
+                            to create <em>things</em> that enhance the
+                            performance of professionals and empower
+                            individuals.
+                        </Text>
+                        <Text
+                            as="div"
+                            className="flex justify-center mt-12 md:mt-20"
+                        >
+                            <Link href="/about">
+                                <CallToAction>
+                                    Get to know me better
+                                </CallToAction>
+                            </Link>
+                        </Text>
+                    </section>
+                    <Avatar className="w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 transition-all">
+                        <AvatarImage src="/me.jpeg" alt="Sander Boer" />
+                        <AvatarFallback>Oh hi there 😊</AvatarFallback>
+                    </Avatar>
+                </div>
+                <ScrollHint />
             </Section>
-            <Section className="flex gap-12 flex-col-reverse lg:flex-row items-center">
-                <section>
-                    <Text motion="none">
-                        My name is <strong>Sander</strong>, and I am a
-                        passionate developer with a creative mind.
-                    </Text>
-                    <Text motion="none">
-                        I{" "}
-                        <span className="motion-preset-pulse inline-block motion-ease-bounce">
-                            ♥️
-                        </span>{" "}
-                        to create tools that enhance the performance of
-                        professionals and empower individuals.
-                    </Text>
-                    <Text as="div" className="flex justify-center mt-20">
-                        <Link href="/about">
-                            <CallToAction>Get to know me better</CallToAction>
-                        </Link>
-                    </Text>
-                </section>
-                <Avatar className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 transition-all">
-                    <AvatarImage src="/me.jpeg" alt="Sander Boer" />
-                    <AvatarFallback>Oh hi there 😊</AvatarFallback>
-                </Avatar>
-            </Section>
-            <ScrollHint />
             <Section>
                 <Text as="h2" variant="subheading">
                     Highlighted cases

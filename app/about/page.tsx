@@ -10,13 +10,11 @@ import { ScrollHint } from "@/components/custom/scroll-hint";
 export default function Page() {
     return (
         <>
-            <Section className="flex items-center justify-center">
-                <Avatar className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 transition-all motion-delay-300">
+            <Section className="flex flex-col items-center justify-between min-h-screen">
+                <Avatar className="w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 transition-all">
                     <AvatarImage src="/me.jpeg" alt="Sander Boer" />
                     <AvatarFallback>Oh hi there 😊</AvatarFallback>
                 </Avatar>
-            </Section>
-            <Section>
                 <ScrollHint />
             </Section>
             <TextRevealByWord text="Designer by education, Developer by interest, Tinkerer by curiosity." />
@@ -44,7 +42,7 @@ export default function Page() {
                 <Text>
                     The process of unraveling complex systems is a driving force
                     for me, ever since the day I ran my first <code>XAMPP</code>{" "}
-                    stack with a <code>phpMyAdmin</code> database.
+                    stack.
                 </Text>
             </Section>
             <Section>

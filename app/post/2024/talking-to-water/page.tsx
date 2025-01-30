@@ -8,6 +8,7 @@ import talkingToWaterVideo from "/videos/1080p.mov";
 import { CallToAction } from "@/components/custom/call-to-action";
 import { Hero } from "@/components/custom/hero";
 import Alert from "@/components/custom/alert";
+import { Quote } from "@/components/custom/quote";
 
 export default function Page() {
     return (
@@ -105,32 +106,26 @@ export default function Page() {
                 />
             </Section>
             <Section>
-                <figure className="space-y-4 my-16 mx-auto prose md:prose-xl lg:prose-2xl">
-                    <blockquote
-                        cite="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
-                        className="text-muted-foreground not-italic"
-                    >
-                        What we say to water can impact its crystals: positive
-                        words create intricate structures and negative words
-                        lead to collapse{" "}
-                        <em className="italic text-muted-foreground">
-                            (Dr. Masaru Emoto)
-                        </em>
-                        .
-                        <br />
-                        <br /> AuraMotions is an art project that processes what
-                        we say to make different colours and patterns of water.
-                        <br />
-                        <br />
-                        It applies sentiment analysis technology to detect
-                        emotions from what we say. Then, through MQTT, data is
-                        sent to TouchDesigner to create captivating effects on
-                        water.
-                    </blockquote>
-                    <figcaption className="text-muted-foreground">
-                        The students
-                    </figcaption>
-                </figure>
+                <Quote
+                    link="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
+                    cite="The students"
+                >
+                    What we say to water can impact its crystals: positive words
+                    create intricate structures and negative words lead to
+                    collapse{" "}
+                    <em className="italic text-muted-foreground">
+                        (Dr. Masaru Emoto)
+                    </em>
+                    .
+                    <br />
+                    <br /> AuraMotions is an art project that processes what we
+                    say to make different colours and patterns of water.
+                    <br />
+                    <br />
+                    It applies sentiment analysis technology to detect emotions
+                    from what we say. Then, through MQTT, data is sent to
+                    TouchDesigner to create captivating effects on water.
+                </Quote>
             </Section>
             <Section>
                 <Text as="h2" variant="subheading">
@@ -181,7 +176,7 @@ export default function Page() {
                 </Text>
                 <Text as="ol">
                     <li>
-                        <strong>Speech-to-text</strong> — convert human voice
+                        <strong>Speech to text</strong> — convert human voice
                         into the words they speak
                     </li>
                     <li>

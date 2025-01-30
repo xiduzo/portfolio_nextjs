@@ -55,20 +55,29 @@ const items: Item[] = [
                 name: "archive",
                 children: [
                     {
-                        name: "Athena.md",
+                        name: "athena.md",
                         link: "/project/athena",
                     },
                     {
-                        name: "LiveStock.md",
+                        name: "live-stock.md",
                         link: "/project/livestock",
                     },
                     {
-                        name: "Spirit.md",
+                        name: "spirit.md",
                         link: "/project/spirit",
                     },
                     {
-                        name: "VeileNext.md",
+                        name: "veile-next.md",
                         link: "/project/veilenext",
+                    },
+                ],
+            },
+            {
+                name: "experimental",
+                children: [
+                    {
+                        name: "assessor-bot.md",
+                        link: "/project/assessor-bot",
                     },
                 ],
             },
@@ -76,11 +85,11 @@ const items: Item[] = [
                 name: "highlighted",
                 children: [
                     {
-                        name: "Fissa.md",
+                        name: "fissa.md",
                         link: "/project/fissa",
                     },
                     {
-                        name: "Microflow.md",
+                        name: "microflow.md",
                         link: "/project/microflow",
                         state: "new",
                     },
@@ -96,7 +105,7 @@ const items: Item[] = [
                 name: "2023",
                 children: [
                     {
-                        name: "<Suspense/>.md",
+                        name: "suspense.md",
                         link: "/post/2023/suspense",
                     },
                 ],
@@ -151,7 +160,6 @@ function Tree(props: { item: Item }) {
     ]);
 
     const { name, link, children } = props.item;
-    console.log(props.item);
 
     if (!children?.length) {
         return (

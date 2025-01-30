@@ -4,7 +4,7 @@ import { Hero } from "@/components/custom/hero";
 import { Technologies } from "@/components/custom/technologies";
 import Link from "next/link";
 import { Safari } from "@/components/magic-ui/safari";
-import { Button } from "@/components/ui/button";
+import { Links } from "@/components/custom/links";
 
 export default function Page() {
     return (
@@ -181,25 +181,19 @@ export default function Page() {
                 </Text>
             </Section>
             <aside>
-                <Section>
-                    <Text as="h2" variant="subheading" size="sm">
-                        References
-                    </Text>
-                    <Text className="flex gap-4 flex-wrap">
-                        <Link
-                            href="https://github.com/xiduzo/afstudeerproject_backend"
-                            target="_blank"
-                        >
-                            <Button variant="outline">Code (server)</Button>
-                        </Link>
-                        <Link
-                            href="https://github.com/xiduzo/afstudeerproject"
-                            target="_blank"
-                        >
-                            <Button variant="outline">Code (app)</Button>
-                        </Link>
-                    </Text>
-                </Section>
+                <Links
+                    title="References"
+                    links={[
+                        [
+                            "https://github.com/xiduzo/afstudeerproject_backend",
+                            "Code (server)",
+                        ],
+                        [
+                            "https://github.com/xiduzo/afstudeerproject",
+                            "Code (app)",
+                        ],
+                    ]}
+                />
             </aside>
         </>
     );

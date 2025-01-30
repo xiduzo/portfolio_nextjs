@@ -7,7 +7,7 @@ import { Image } from "@/components/custom/image";
 import { Marquee } from "@/components/magic-ui/marquee";
 import NextImage from "next/image";
 import { Iphone15Pro } from "@/components/magic-ui/iphone-15-pro";
-import { Button } from "@/components/ui/button";
+import { Links } from "@/components/custom/links";
 
 const images = [
     "/livestock/bacon.svg",
@@ -437,56 +437,36 @@ export default function Page() {
                 </Text>
             </Section>
             <aside>
-                <Section>
-                    <Text as="h2" variant="subheading" size="sm">
-                        Mentioned at
-                    </Text>
-                    <Text className="flex gap-4 flex-wrap">
-                        <Link
-                            href="https://networkcultures.org/moneylab/2018/06/04/students-design-blockchain-wallet-game"
-                            target="_blank"
-                        >
-                            <Button variant="outline">
-                                Institute of network cultures
-                            </Button>
-                        </Link>
-                    </Text>
-                </Section>
-                <Section>
-                    <Text as="h2" variant="subheading" size="sm">
-                        In collaboration with
-                    </Text>
-                    <Text className="flex gap-4 flex-wrap">
-                        <Link href="https://bkantar.com/" target="_blank">
-                            <Button variant="outline">Buğra Kantar</Button>
-                        </Link>
-                        <Link href="https://chantalramzy.com/" target="_blank">
-                            <Button variant="outline">Chantal Ramzy</Button>
-                        </Link>
-                        <Link href="https://lenaheinrich.de/" target="_blank">
-                            <Button variant="outline">Lena Heinrich</Button>
-                        </Link>
-                    </Text>
-                </Section>
-                <Section>
-                    <Text as="h2" variant="subheading" size="sm">
-                        References
-                    </Text>
-                    <Text className="flex gap-4 flex-wrap">
-                        <Link
-                            href="https://github.com/xiduzo/blockchaingame"
-                            target="_blank"
-                        >
-                            <Button variant="outline">Code (app)</Button>
-                        </Link>
-                        <Link
-                            href="https://github.com/xiduzo/blockchainserver"
-                            target="_blank"
-                        >
-                            <Button variant="outline">Code (server)</Button>
-                        </Link>
-                    </Text>
-                </Section>
+                <Links
+                    title="Mentioned at"
+                    links={[
+                        [
+                            "https://networkcultures.org/moneylab/2018/06/04/students-design-blockchain-wallet-game",
+                            "Institute of network cultures",
+                        ],
+                    ]}
+                />
+                <Links
+                    title="In collaboration with"
+                    links={[
+                        ["https://bkantar.com/", "Buğra Kantar"],
+                        ["https://chantalramzy.com/", "Chantal Ramzy"],
+                        ["https://lenaheinrich.de/", "Lena Heinrich"],
+                    ]}
+                />
+                <Links
+                    title="References"
+                    links={[
+                        [
+                            "https://github.com/xiduzo/blockchaingame",
+                            "Code (app)",
+                        ],
+                        [
+                            "https://github.com/xiduzo/blockchainserver",
+                            "Code (server)",
+                        ],
+                    ]}
+                />
             </aside>
         </>
     );

@@ -13,7 +13,7 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", {
 
 export function Hero(props: Props) {
     return (
-        <header className="mb-18 md:mb-32 lg:mb-44 flex flex-col relative z-0 h-[90vh] justify-between">
+        <header className="mb-24 md:mb-32 lg:mb-44 flex flex-col relative z-0 min-h-[90vh] justify-between">
             <section className="absolute top-6 right-6 z-20 flex gap-2">
                 <time dateTime={props.publishDate}>
                     <Badge variant="secondary" className="pointer-events-none">
@@ -51,9 +51,7 @@ export function Hero(props: Props) {
                 subtitle={props.subtitle}
                 readTime={props.readTime}
             />
-            <div className="flex justify-center">
-                <ScrollHint />
-            </div>
+            <ScrollHint />
         </header>
     );
 }

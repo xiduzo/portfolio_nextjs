@@ -9,8 +9,8 @@ export default function Page() {
         <>
             <Section>
                 <Text size="sm" as="h1" variant="heading" motion="none">
-                    Together we can make the world a better place for everyone
-                    ♥️
+                    Together we can make the digital world a better place for
+                    everyone ♥️
                 </Text>
                 <Quote
                     link="https://www.w3.org/mission/accessibility/"

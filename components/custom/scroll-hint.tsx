@@ -24,17 +24,19 @@ export function ScrollHint(props: { className?: string }) {
     }
 
     return (
-        <Text
-            onClick={scrollDownSmooth}
-            variant="note"
-            size="sm"
-            className={clsx(
-                "hover:cursor-s-resize p-4 rounded-lg hover:bg-muted-foreground/5 transition-all hidden md:block motion-preset-oscillate motion-duration-[3s] motion-ease-out-quad motion-delay-2000 motion-opacity-in-0 motion-blur-in-0 cursor-pointer",
-                props.className,
-            )}
-            motion="none"
-        >
-            {hints[Math.floor(Math.random() * hints.length)]}
-        </Text>
+        <div className="flex justify-center">
+            <Text
+                onClick={scrollDownSmooth}
+                variant="note"
+                size="sm"
+                className={clsx(
+                    "hover:cursor-s-resize p-4 rounded-lg hover:bg-muted-foreground/5 transition-all motion-preset-oscillate motion-duration-[3s] motion-ease-out-quad motion-delay-2000 motion-opacity-in-0 motion-blur-in-0 cursor-pointer",
+                    props.className,
+                )}
+                motion="none"
+            >
+                {hints[Math.floor(Math.random() * hints.length)]}
+            </Text>
+        </div>
     );
 }
