@@ -9,7 +9,7 @@ export default function Alert(props: Props) {
         <div className={container({ intent: props.intent })}>
             <div className={text({ intent: props.intent })}>
                 <Icon size={36} className="shrink-0" />
-                {props.children}
+                <section>{props.children}</section>
             </div>
         </div>
     );

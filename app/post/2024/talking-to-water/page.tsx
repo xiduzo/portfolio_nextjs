@@ -41,50 +41,46 @@ export default function Page() {
             </Section>
             <Section>
                 <Alert icon="Copyleft" intent="info">
-                    <section>
-                        <Text>
-                            The concept and execution of the project were done
-                            by{" "}
-                            <Link
-                                href="https://www.linkedin.com/in/hieu/"
-                                target="_blank"
-                            >
-                                Hieu Nguyen
-                            </Link>
-                            ,{" "}
-                            <Link
-                                href="https://www.linkedin.com/in/bo-n%C3%A9meth-16960ab4"
-                                target="_blank"
-                            >
-                                Bo Németh
-                            </Link>
-                            ,{" "}
-                            <Link
-                                href="https://www.linkedin.com/in/ekta-gadekar"
-                                target="_blank"
-                            >
-                                Ekta Gadekar
-                            </Link>{" "}
-                            and{" "}
-                            <Link
-                                href="https://www.linkedin.com/in/viktoriya-marchenko/"
-                                target="_blank"
-                            >
-                                Viktoriya Marchenko
-                            </Link>
-                            . This article will go into some of the technical
-                            details of the project for which I provided
-                            guidance.
-                        </Text>
-                        <Text>
-                            I will keep it straightforward and easy to follow,
-                            leaving out jargon until going down the rabbit hole.
-                        </Text>
-                        <Text>
-                            For the non-technical aspects, I would like to refer
-                            you to the students themselves.
-                        </Text>
-                    </section>
+                    <Text>
+                        The concept and execution of the project were done by{" "}
+                        <Link
+                            href="https://www.linkedin.com/in/hieu/"
+                            target="_blank"
+                        >
+                            Hieu Nguyen
+                        </Link>
+                        ,{" "}
+                        <Link
+                            href="https://www.linkedin.com/in/bo-n%C3%A9meth-16960ab4"
+                            target="_blank"
+                        >
+                            Bo Németh
+                        </Link>
+                        ,{" "}
+                        <Link
+                            href="https://www.linkedin.com/in/ekta-gadekar"
+                            target="_blank"
+                        >
+                            Ekta Gadekar
+                        </Link>{" "}
+                        and{" "}
+                        <Link
+                            href="https://www.linkedin.com/in/viktoriya-marchenko/"
+                            target="_blank"
+                        >
+                            Viktoriya Marchenko
+                        </Link>
+                        . This article will go into some of the technical
+                        details of the project for which I provided guidance.
+                    </Text>
+                    <Text>
+                        I will keep it straightforward and easy to follow,
+                        leaving out jargon until going down the rabbit hole.
+                    </Text>
+                    <Text>
+                        For the non-technical aspects, I would like to refer you
+                        to the students themselves.
+                    </Text>
                 </Alert>
             </Section>
             <Section variant="full">
