@@ -55,8 +55,8 @@ export default function Page() {
                         target="_blank"
                     >
                         transitioned to the public cloud
-                    </Link>
-                    the underlying .NET Windows-based applications{" "}
+                    </Link>{" "}
+                    the underlying .NET, Windows-based, applications{" "}
                     <Link
                         href="https://aws.amazon.com/products/storage/lift-and-shift"
                         target="_blank"
@@ -83,7 +83,7 @@ export default function Page() {
                     Breaking the status quo
                 </Text>
                 <Text>
-                    Royal Flora Hollands&apos; old physical processes were built
+                    Royal Flora Hollands&apos; old physical processes are built
                     into many tools, making automation a key aspect of their
                     digital transformation.
                 </Text>
@@ -151,7 +151,7 @@ export default function Page() {
                             href="mailto:mail@sanderboer.nl"
                             className="underline"
                         >
-                            Let&apos; grab a beer
+                            Let&apos;s grab a beer
                         </Link>{" "}
                         and poke my brain about software-architecture.
                     </Text>
@@ -197,9 +197,8 @@ export default function Page() {
                     and processes were developed to support all the physical
                     processes. These include digital buying locations such as
                     the <em>Tribune Werkplek</em> and the remote buying
-                    application,
-                    <em>Kopen Op Afstand</em>, which enable buyers to purchase
-                    from anywhere in the world.
+                    application, <em>Kopen Op Afstand</em>, which enable buyers
+                    to purchase from anywhere in the world<sup>1</sup>.
                 </Text>
                 <Text>
                     Tools like{" "}
@@ -220,6 +219,16 @@ export default function Page() {
                     has modernized the supply chain of Royal Flora Holland, the
                     real-time auction, where auctioneers sell flowers and plants
                     to buyers worldwide, still relies on outdated systems.
+                </Text>
+                <Text as="aside" className="mt-8 text-base">
+                    <ol className="text-sm text-muted-foreground">
+                        <li>
+                            While buyers still prefer to see and touch the
+                            flowers they are about to buy and were sceptical
+                            about online tools, this adoption has been
+                            accelerated by the COVID-19 pandemic
+                        </li>
+                    </ol>
                 </Text>
             </Section>
             <Section>
@@ -244,37 +253,37 @@ export default function Page() {
                 <Text as="ol">
                     <li>
                         The systems were constructed as monolithic entities that
-                        are heavily inter-connected
+                        are heavily inter-connected and hard to change.
                     </li>
                     <li>
                         <code>UDP</code> is used to send instantaneous messages
                         to clients. Twice, just to ensure all clients receive
-                        the correct data
+                        the correct data.
                     </li>
                     <li>
                         Releases are planned and scheduled with multiple
-                        release-freezes per year
+                        release-freezes per year.
                     </li>
-                    <li>Clients exclusive to Windows are used</li>
+                    <li>Clients exclusive to Windows are used.</li>
                 </Text>
             </Section>
             <Section>
                 <Text as="h3" variant="subheading" size="sm">
                     1. Micro-services
                 </Text>
-                <Text>
-                    We are untangling the highly intertwined current systems of
-                    Royal Flora Holland by transforming the monolithic
-                    applications into <em>micro-services</em>.
+                <Text size="sm">
+                    Untangling the highly intertwined current systems of Royal
+                    Flora Holland by transforming the monolithic applications
+                    into <em>micro-services</em>.
                 </Text>
-                <Text>
+                <Text size="sm">
                     To ensure clear separation of concerns, each micro-service
                     is <strong>responsible for a single task</strong>, while
                     still allowing interdependence among services.
                 </Text>
-                <Text>
-                    Our micro-services are running on cloud native building
-                    blocks and utilize standard cloud patterns developed by
+                <Text size="sm">
+                    The micro-services are running on cloud native building
+                    blocks and utilize standard cloud patterns developed by{" "}
                     <Link
                         href="https://www.conclusion.nl/application-innovation"
                         target="_blank"
@@ -290,30 +299,29 @@ export default function Page() {
                 <Text as="h3" variant="subheading" size="sm">
                     2. Websockets
                 </Text>
-                <Text>
+                <Text size="sm">
                     The current systems use <code>UDP</code>/
                     <code>multi-cast</code> to broadcast messages to all active
-                    buyers. Although this technology is proven, there are some
+                    buyers. Although this is a proven technology, there are some
                     issues that require the system to send messages multiple
                     times to ensure that all clients receive the correct data.
                 </Text>
-                <Text>
+                <Text size="sm">
                     To replace <code>UDP</code> messaging, any new technology
                     must meet two requirements:
                 </Text>
-                <Text as="ul">
-                    <li>
-                        Ensure that all clients receive (near-)real-time updates
-                    </li>
+                <Text as="ul" size="sm">
+                    <li>Ensure that all clients receive any message send</li>
                     <li>
                         Provide an average{" "}
                         <strong>maximum latency of 90ms</strong> from anywhere
                         in the world
                     </li>
                 </Text>
-                <Text>
-                    After extensively researching various technologies, and
-                    their implementations, we determined that the{" "}
+                <Text size="sm">
+                    After extensively researching various technologies
+                    <sup>1</sup>, and their implementations, we determined that
+                    the{" "}
                     <Link
                         href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/websockets?view=aspnetcore-6.0"
                         target="_blank"
@@ -322,18 +330,26 @@ export default function Page() {
                     </Link>{" "}
                     was the most appropriate solution for <em>our</em> needs.
                 </Text>
+                <Text as="aside" className="mt-8 text-base">
+                    <ol className="text-sm text-muted-foreground">
+                        <li>
+                            We investivated Native Websockets, socket.io,
+                            SignalR, gRPC, and WebRTC
+                        </li>
+                    </ol>
+                </Text>
             </Section>
             <Section>
                 <Text as="h3" variant="subheading" size="sm">
                     3. Continuous Integration / Continuous Delivery (CI/CD)
                 </Text>
-                <Text>
+                <Text size="sm">
                     The new auction system is developed using complete CI/CD
                     tooling, eliminating planned releases and freeze periods. To
                     ensure quick and reliable releases, all new code is
                     thoroughly tested and monitored.
                 </Text>
-                <Text>
+                <Text size="sm">
                     The frontend uses{" "}
                     <Link href="https://storybook.js.org" target="_blank">
                         Storybook
@@ -347,7 +363,7 @@ export default function Page() {
                     src="/veilenext/storybook_scaled.png"
                     alt="Showcasing how we use Storybook to develop and test components in isolation"
                 />
-                <Text>
+                <Text size="sm">
                     End-to-end tests are performed using{" "}
                     <Link
                         href="https://docs.cypress.io/guides/overview/why-cypress"
@@ -358,7 +374,7 @@ export default function Page() {
                     to ensure seamless integration of components and expected
                     behavior of the application in real-world scenarios.
                 </Text>
-                <Text>
+                <Text size="sm">
                     Quality gates are integrated into the automated release
                     pipeline to prevent untested code from reaching production.
                     The releases are continuously monitored with tools such as{" "}
@@ -379,18 +395,18 @@ export default function Page() {
                 <Text as="h3" variant="subheading" size="sm">
                     4. A web interface
                 </Text>
-                <Text>
+                <Text size="sm">
                     Buying flowers and plants at the auction can be inconvenient
                     for new buyers as they have to install software that runs
                     exclusively on Windows.
                 </Text>
-                <Text>
+                <Text size="sm">
                     In addition, this software requires manual updates to access
                     new features or bug fixes. Users must also install and
                     operate a VPN client to connect to the Royal Flora Holland
-                    network and receive <code>UDP</code> messages.
+                    network in order to receive the <code>UDP</code> messages.
                 </Text>
-                <Text>
+                <Text size="sm">
                     To improve accessibility, we have developed a new system
                     that utilizes a browser-based React application. This
                     application can be accessed through any device with an
@@ -426,8 +442,8 @@ export default function Page() {
                         target="_blank"
                     >
                         pilot phase
-                    </Link>
-                    with a small group of growers and buyers<sup>1</sup>.
+                    </Link>{" "}
+                    with a small group of growers and buyers<sup>1, 2</sup>.
                 </Text>
                 <Text as="aside" className="mt-8 text-base">
                     <ol className="text-sm text-muted-foreground">
