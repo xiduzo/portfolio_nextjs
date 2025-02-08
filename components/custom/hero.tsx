@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { Title, TitleProps } from "./title";
 import { ScrollHint } from "./scroll-hint";
+import { AnimatedGridPattern } from "../magic-ui/animated-grid-pattern";
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
     dateStyle: "long",

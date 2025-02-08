@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { WobbleCard } from "@/components/aceternity/wobble-card";
-import { Badge } from "@/components/ui/badge";
 import { Image } from "@/components/custom/image";
 import { Text } from "@/components/custom/text";
 import { Iphone15Pro } from "../magic-ui/iphone-15-pro";
@@ -20,12 +19,6 @@ export function HighlightedProjects() {
                     <Text size="sm" motion="none">
                         A LLM experiment for providing students with feedback
                     </Text>
-                    <Badge
-                        className="mt-4 pointer-events-none"
-                        variant="secondary"
-                    >
-                        Released soon
-                    </Badge>
                     <div className="absolute top-[60%] filter grayscale group-hover:filter-none -z-10 transition-all duration-300">
                         <Image
                             width={1920}

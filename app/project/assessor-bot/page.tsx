@@ -5,9 +5,11 @@ import { Technologies } from "@/components/custom/technologies";
 import { Text } from "@/components/custom/text";
 import Link from "next/link";
 import assessorBot from "/videos/assessor-bot.mov";
+import assessorBotOllama from "/videos/install-ollama.mov";
 import Video from "next-video";
 import { Image } from "@/components/custom/image";
 import { CodeBlock } from "@/components/custom/code-block";
+import { CallToAction } from "@/components/custom/call-to-action";
 
 export default function Page() {
     return (
@@ -53,10 +55,10 @@ export default function Page() {
                     documents that are submitted by students.
                 </Text>
                 <Text>
-                    From a assessors&apos; perspective, we could see the
-                    mediocre and generic text that was generated and submitted
-                    and held an intervention to have an open conversation on the
-                    use of these models.
+                    From a assessors&apos; perspective, we could see the generic
+                    (and mostly mediocre) generated text which was submitted and
+                    held an intervention to have an open conversation on the use
+                    of these models.
                 </Text>
             </Section>
             <Section>
@@ -192,10 +194,13 @@ export default function Page() {
                 <Text>
                     As this was my first time incorporating a Large Language
                     Model (LLM) into a product I only had a rhough idea on how
-                    to approach this. Having the students upload their
-                    documents, use Retrieval-augmented generation (RAG) to find
-                    relevant infromation, throw those through a promt and
-                    generate feedback.
+                    to approach this.
+                </Text>
+                <Text>
+                    By making the students upload their documents, use
+                    Retrieval-augmented generation (RAG) to find relevant
+                    infromation, and combine the relevant data through a custom
+                    prompt to generate the feedback.
                 </Text>
                 <Text>
                     After some research I found{" "}
@@ -285,15 +290,15 @@ const addStudentDocuments = async (files: AddDocumentInput[]) => {
       }),
     );
     const documents = await documentSplitter.createDocuments(texts, meta);
-    await vectorStore..addDocuments(documents);
+    await vectorStore.addDocuments(documents);
   }
 );
 \`\`\`
                 `}
                 />
                 <Text size="sm">
-                    And when the student would ask for feedback, it would create
-                    a <code>Runnable</code> for each of the indicators using a{" "}
+                    When the student would ask for feedback, it would create a{" "}
+                    <code>Runnable</code> for each of the indicators using a{" "}
                     <code>FEEDBACK_TEMPLATE</code> and the following prompt:{" "}
                 </Text>
                 <Text as="code" size="sm">
@@ -338,12 +343,11 @@ export async function createRunner(
 \`\`\`typescript
 export const FEEDBACK_TEMPLATE = \`
 # IDENTITY and PURPOSE
-You are acting as an assessor for a master's program in digital design.
-You will be giving constructive feedback on the student's text for them to improve upon.
-Your feedback will always be directed at the text provided and will refer to examples and evidence from the text.
-The provided grade MUST always reflect the expectations of the indicator you are grading.
-You are allowed to be a very critical assessor.
-When not enough evidence is provided for an indicator, the student should receive a "novice" grade.
+You are acting as a very critical assessor for a master's program in digital design.
+You will be giving constructive feedback on the student's work for them to improve upon.
+Your feedback will always be directed at the work presented and will refer to examples and evidence from the text.
+The provided grade and feedback MUST always reflect the expectations of the indicator you are grading.
+When not enough evidence is provided for an indicator, the student should receive a "novice" grade and this should be reflected in the feedback.
 
 # OUTPUT
 A JSON feedback that matches the following schema:
@@ -354,10 +358,10 @@ A JSON feedback that matches the following schema:
 }}
 \\\`\\\`\\\`
 
-## FEEDBACK
+# FEEDBACK
 To give proper feedback, try to refer to the student's text and provide constructive criticism. Always refer to the student's text and provide examples or evidence to support your feedback. The feedback should be clear, concise, and focused on the student's work.
 
-# TONE OF VOICE
+## TONE OF VOICE
 Never use text from the examples provided below directly in your feedback, use it only as a tone-of-voice reference. Always refer to the student's text. If you use any text directly from the examples, the feedback will be considered invalid.
 
 - Overall, we see a lot of growth and learning in you. We enjoyed seeing a lot of making explorations in this project and using creative methods to explore ideas in a very open brief – nice!
@@ -369,9 +373,9 @@ Never use text from the examples provided below directly in your feedback, use i
 - You did not provide concrete examples of how you addressed potential unintended consequences and ensured user autonomy. When you compare your work to other work, more explicit identification of strong and weak points and how you plan to address them would provide clearer directions for future iterations.
 - While the activities undertaken and their rationales are clearly listed, how they affected their work is not adequately articulated.
 
-# CONTEXT
-Use the following pieces of retrieved context to help you give a grade and provide feedback:
-{context}
+# INDICATOR GRADING
+Use the following grading guide to help you give a grade and provide feedback:
+{indicator_text}
 \`;
 \`\`\`
                 `}
@@ -380,15 +384,17 @@ Use the following pieces of retrieved context to help you give a grade and provi
                     This all generated quite some reasonable sounding feedback
                     🥳!
                 </Text>
+            </Section>
+            <Section>
                 <Text size="sm">
-                    But when digging deeper, this system would either:
+                    However, when digging deeper this system would either:
                 </Text>
                 <Text as="ul" size="sm">
                     <li>
                         not get the correct information from the competencies
                         and indicators, due to the RAG not working as expected.
                         It would therefor give completely wrong/nonsense
-                        feedback. not in the document.
+                        feedback.
                     </li>
                     <li>
                         Hallucinate so bad that it would make up content that
@@ -398,9 +404,221 @@ Use the following pieces of retrieved context to help you give a grade and provi
                 </Text>
             </Section>
             <Section>
+                <Text as="h3" variant="subheading" size="sm">
+                    Use the large context-windows
+                </Text>
+                <Text size="sm">
+                    I tried to over-engineer the system where it was not needed.
+                </Text>
+                <Text size="sm">
+                    As we ask students to reflect upon their work within a{" "}
+                    <strong>set word limit</strong> and with the current models
+                    context windows of 1024 tokens, there was no need to split
+                    all documents into smaller chunks.
+                </Text>
+                <Text size="sm">
+                    By removing the splitting of the documents and using the
+                    full document as context, <em>most</em> of the
+                    hallucinations were surpressed and <em>nearly</em> no
+                    content was being made up anymore!
+                </Text>
+                <Text size="sm">
+                    Most (modern) Large Language Models are capable of handling
+                    all the documents content in their context window.
+                </Text>
+                <CodeBlock
+                    code={`
+\`\`\`typescript
+const chat = [
+  new SystemMessage(
+    FEEDBACK_TEMPLATE.replace("{indicator_text}", indicatorText.text),
+  ),
+  new HumanMessage(
+    "I will now provide you with the documents to grade, each document will have a title and the content of the document:",
+  ),
+  ...request.documents.map(
+    ({ name, text }) => new HumanMessage(\`\\n# \${name}\\n\\n\${text}\`),
+  ),
+  new HumanMessage(
+    \`what grade ("novice", "competent", "proficient", or "visionary") and feedback would you give the student for given the competency \${indicatorText.competency} and indicator \${request.indicator.name}?\`,
+  ),
+];
+\`\`\`
+                `}
+                />
+            </Section>
+            <Section>
                 <Text as="h2" variant="subheading">
+                    It is your data
+                </Text>
+                <Text>
+                    Two thing which was important to me was that 1) the data of
+                    the students was not stored on any server, but only on the
+                    device of the student and 2) I do no want to force the
+                    student into a{" "}
+                    <Link
+                        target="_blank"
+                        href="https://techcrunch.com/2024/12/05/openai-may-be-planning-a-chatgpt-pro-plan-for-200-per-month"
+                    >
+                        200$ per month plan
+                    </Link>{" "}
+                    to get feedback on their work.
+                </Text>
+                <Text>
+                    The assessor bot is utulising{" "}
+                    <Link target="_blank" href="https://ollama.com/">
+                        Ollama
+                    </Link>{" "}
+                    as it&apos;s core to interact with the Large Language Model.
+                    Even though it is not be as <em>plug and play</em> and
+                    requires the student to have a local installation of Ollama,
+                    it does give me a more peace of mind.
+                </Text>
+            </Section>
+            <Section variant="full">
+                <Text variant="note">Guiding the student towards Ollama</Text>
+                <Video
+                    src={assessorBotOllama}
+                    aria-label="a video showing the process of uploading your document and receiving feedback from a LLM"
+                />
+            </Section>
+            <Section>
+                <Text as="h3" variant="subheading" size="sm">
                     Structured output
                 </Text>
+                <Text size="sm">
+                    While most models are capable of generating structured
+                    output and{" "}
+                    <Link
+                        target="_blank"
+                        href="https://python.langchain.com/docs/how_to/structured_output/"
+                    >
+                        according to the documentation
+                    </Link>{" "}
+                    of <code>LangChain</code> it should be possible to generate
+                    structured output using <code>Ollama</code>. In{" "}
+                    <code>@langchain/ollama 0.1.0</code>, the version available
+                    when building this tool, this interface was not availalbe.
+                </Text>
+                <Text size="sm">
+                    I could hovever make the models give me back a{" "}
+                    <code>JSON</code> response
+                </Text>
+                <CodeBlock
+                    code={`
+\`\`\`typescript
+const llm = new Ollama({
+  model: request.model.name,
+  format: "json",
+  temperature: 0.9,
+  // ...other config
+});
+\`\`\`
+                `}
+                />
+                <Text size="sm">
+                    And do some rudimentary post-processing to get the feedback
+                    in the format required for the student.
+                </Text>
+                <CodeBlock
+                    code={`
+\`\`\`typescript
+function postProcessResponse(input: Record<string, unknown>) {
+  return Object.keys(input).reduce(
+    (acc, key) => {
+      const value = input[key];
+      const lowerKey = key.toLowerCase();
+
+      if (
+        [
+          "grade",
+          "grading",
+          "score",
+          "rating",
+          "overall",
+          "result",
+          "value",
+        ].includes(lowerKey)
+      ) {
+        switch (typeof value) {
+          case "object":
+            if (value === null) break;
+            if ("level" in value)
+              acc.grade = (value as Record<string, unknown>).level;
+            if ("value" in value)
+              acc.grade = (value as Record<string, unknown>).value;
+            if ("grade" in value)
+              acc.grade = (value as Record<string, unknown>).grade;
+            break;
+          case "number":
+          case "string":
+          default:
+            acc.grade = value;
+            break;
+        }
+
+        return acc;
+      }
+
+      acc[lowerKey] = value;
+      return acc;
+    },
+    {} as Record<string, unknown>,
+  );
+}
+\`\`\`
+                `}
+                />
+                <Text size="sm">
+                    This would give me the required output in about 80% of the
+                    cases, which is more than plenty for an experimental tool.
+                </Text>
+            </Section>
+            <Section className="flex justify-center flex-wrap">
+                <Link
+                    target="_blank"
+                    href="https://github.com/xiduzo/mdd-assessor-bot"
+                >
+                    <CallToAction>Checkout the code on GitHub</CallToAction>
+                </Link>
+            </Section>
+            <Section>
+                <Text as="h2" variant="subheading">
+                    Over-rule the design(ers)
+                </Text>
+                <Text>
+                    As a small nudge to{" "}
+                    <Link
+                        target="_blank"
+                        href="https://dl.acm.org/doi/pdf/10.1145/3442188.3445922"
+                    >
+                        this research paper
+                    </Link>{" "}
+                    &ldquo;On the Dangers of Stochastic Parrots&rdquo;, I
+                    designed the <em>entity</em> you get feedback from to a
+                    parrot.{" "}
+                    <Link href="https://www.studio-joop.nl" target="_blank">
+                        Jaap Hulst
+                    </Link>{" "}
+                    made another itteration to get the style more in line with
+                    the <code>Ollama</code> llama.
+                </Text>
+            </Section>
+            <Section className="grid grid-cols-12 gap-4 lg:gap-6 xl:gap-12">
+                <div className="col-span-12 md:col-span-6">
+                    <Image
+                        src="/mdd-assessor-bot/parrot-head.svg"
+                        className="w-full"
+                        alt="A parrot head as the entity you get feedback from"
+                    />
+                </div>
+                <div className="col-span-12 md:col-span-6">
+                    <Image
+                        src="/mdd-assessor-bot/parrot-head-2.svg"
+                        className="w-full"
+                        alt="An update on the parrot head design by Jaap to be in line with Ollama"
+                    />
+                </div>
             </Section>
         </>
     );

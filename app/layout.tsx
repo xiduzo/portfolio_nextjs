@@ -28,7 +28,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
     title: "Portfolio Sander Boer",
     description:
-        "Hello world! My name is Sander and I am a passionate developer with a creative mind™. I love to create tools that enhance the performance of professionals and empower individuals.",
+        "Hello world! My name is Sander and I am a passionate developer with a creative mind. I love to create things that enhance the performance of professionals and empower individuals.",
 };
 
 export default async function RootLayout({
@@ -45,7 +45,7 @@ export default async function RootLayout({
             >
                 <a
                     tabIndex={0}
-                    className="bg-primary absolute left-0 z-50 m-3 -translate-y-16 p-3 transition focus:translate-y-0 focus:opacity-100 motion-reduce:-z-10 motion-reduce:translate-y-0 motion-reduce:opacity-0 motion-reduce:focus:z-50"
+                    className="bg-muted absolute left-0 z-50 m-3 -translate-y-16 p-3 transition focus:translate-y-0 focus:opacity-100 motion-reduce:-z-10 motion-reduce:translate-y-0 motion-reduce:opacity-0 motion-reduce:focus:z-50"
                     href="#main-content"
                 >
                     Jump to content

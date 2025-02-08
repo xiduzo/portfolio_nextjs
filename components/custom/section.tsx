@@ -20,7 +20,7 @@ type Props = PropsWithChildren &
         className?: string;
     };
 
-const section = cva("max-w-", {
+const section = cva("", {
     variants: {
         variant: {
             default: "container mx-auto px-4 lg:px-12",

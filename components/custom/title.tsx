@@ -11,7 +11,10 @@ const pluralForms = new Map([
 
 export function Title(props: Props) {
     return (
-        <Section className="text-center max-w-screen-lg mx-auto">
+        <Section
+            space="none"
+            className="text-center max-w-screen-lg mx-auto mt-12"
+        >
             <Text
                 as="h1"
                 size="sm"
