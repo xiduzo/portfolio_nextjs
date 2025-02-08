@@ -13,6 +13,7 @@ export function Openmoji(props: Props) {
             width={props.size ?? 24}
             height={props.size ?? 24}
             src={`/openmoji/${props.style ?? "color"}/${props.hexcode}.svg`}
+            loading="eager"
         />
     );
 }

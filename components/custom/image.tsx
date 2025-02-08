@@ -6,6 +6,7 @@ export async function Image(props: Props) {
         <NextImage
             width={1920}
             height={1080}
+            loading="lazy"
             {...props}
             className={image({
                 className: props.className,

@@ -22,6 +22,7 @@ export function Iphone15Pro({
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             {...props}
+            aria-label={props.alt}
             className={iphone15Pro({ className: props.className })}
         >
             <path
@@ -59,7 +60,6 @@ export function Iphone15Pro({
             />
             {src && (
                 <image
-                    aria-label={props.alt}
                     href={src}
                     x="21.25"
                     y="19.25"

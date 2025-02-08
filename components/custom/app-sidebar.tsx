@@ -158,8 +158,8 @@ function Tree(props: { item: Item }) {
 
     if (!children?.length) {
         return (
-            <Link href={link ?? "/404"}>
-                <SidebarMenuItem>
+            <SidebarMenuItem>
+                <Link href={link ?? "/404"}>
                     <SidebarMenuButton
                         isActive={name === "button.tsx"}
                         className={clsx(
@@ -173,8 +173,8 @@ function Tree(props: { item: Item }) {
                     <SidebarMenuBadge className="text-muted-foreground">
                         {props.item.state}
                     </SidebarMenuBadge>
-                </SidebarMenuItem>
-            </Link>
+                </Link>
+            </SidebarMenuItem>
         );
     }
 
