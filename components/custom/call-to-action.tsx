@@ -7,10 +7,10 @@ export function CallToAction(
     const { children, variant } = props;
 
     return (
-        <div className="intersect:motion-preset-confetti">
+        <div className="intersect:motion-preset-confetti pointer-events-none">
             <Button
                 variant={variant ?? "secondary"}
-                className="relative text-2xl p-4 md:text-4xl md:p-8 font-note font-extrabold"
+                className="text-2xl p-4 md:text-4xl md:p-8 font-note font-extrabold pointer-events-auto"
             >
                 {children}
             </Button>
