@@ -1,5 +1,5 @@
 import { Section } from "@/components/custom/section";
-import { Text } from "@/components/custom/typography";
+import { Text } from "@/components/custom/text";
 import { Image } from "@/components/custom/image";
 import Link from "next/link";
 import GitHubCalendar from "react-github-calendar";

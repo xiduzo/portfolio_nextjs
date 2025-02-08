@@ -73,17 +73,12 @@ const items: Item[] = [
                 ],
             },
             {
-                name: "experimental",
+                name: "highlighted",
                 children: [
                     {
                         name: "assessor-bot.md",
                         link: "/project/assessor-bot",
                     },
-                ],
-            },
-            {
-                name: "highlighted",
-                children: [
                     {
                         name: "fissa.md",
                         link: "/project/fissa",

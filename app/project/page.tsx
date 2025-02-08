@@ -1,6 +1,6 @@
 import { Section } from "@/components/custom/section";
 import { HighlightedProjects } from "@/components/custom/highlighted-projects";
-import { Text } from "@/components/custom/typography";
+import { Text } from "@/components/custom/text";
 
 export default function Page() {
     return (

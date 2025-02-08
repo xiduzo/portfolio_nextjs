@@ -4,6 +4,8 @@ import NextImage, { ImageProps } from "next/image";
 export async function Image(props: Props) {
     return (
         <NextImage
+            width={1920}
+            height={1080}
             {...props}
             className={image({
                 className: props.className,

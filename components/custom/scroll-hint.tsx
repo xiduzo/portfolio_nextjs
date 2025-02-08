@@ -1,7 +1,7 @@
 "use client";
 
 import clsx from "clsx";
-import { Text } from "./typography";
+import { Text } from "./text";
 
 const hints = [
     "Scroll to read more",

@@ -1,5 +1,5 @@
 import { Section } from "@/components/custom/section";
-import { Text } from "@/components/custom/typography";
+import { Text } from "@/components/custom/text";
 import { Hero } from "@/components/custom/hero";
 import { Technologies } from "@/components/custom/technologies";
 import Link from "next/link";

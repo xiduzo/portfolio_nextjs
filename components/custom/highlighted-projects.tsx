@@ -2,7 +2,7 @@ import Link from "next/link";
 import { WobbleCard } from "@/components/aceternity/wobble-card";
 import { Badge } from "@/components/ui/badge";
 import { Image } from "@/components/custom/image";
-import { Text } from "@/components/custom/typography";
+import { Text } from "@/components/custom/text";
 import { Iphone15Pro } from "../magic-ui/iphone-15-pro";
 
 export function HighlightedProjects() {
@@ -10,7 +10,7 @@ export function HighlightedProjects() {
         <div className="grid grid-cols-1 lg:grid-cols-6 gap-4 mx-auto w-full">
             <Link
                 aria-disabled={true}
-                href="#/project/mdd-assessor-bot"
+                href="/project/assessor-bot"
                 className="col-span-6 xl:col-span-3"
             >
                 <WobbleCard containerClassName="h-full bg-green-800 min-h-[500px] group">

@@ -1,7 +1,7 @@
 import { Hero } from "@/components/custom/hero";
 import { Section } from "@/components/custom/section";
 import { Image } from "@/components/custom/image";
-import { Text } from "@/components/custom/typography";
+import { Text } from "@/components/custom/text";
 import Link from "next/link";
 import Alert from "@/components/custom/alert";
 import { Safari } from "@/components/magic-ui/safari";

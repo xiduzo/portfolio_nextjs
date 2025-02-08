@@ -12,6 +12,7 @@ import {
     transformerMetaWordHighlight,
     transformerMetaHighlight,
 } from "@shikijs/transformers";
+import clsx from "clsx";
 
 export async function CodeBlock(props: Props) {
     const file = await unified()
@@ -37,7 +38,10 @@ export async function CodeBlock(props: Props) {
 
     return (
         <div
-            className="my-36 intersect-once intersect:motion-preset-slide-up-md intersect:motion-delay-300"
+            className={clsx(
+                "my-36 intersect-once intersect:motion-preset-slide-up-md intersect:motion-delay-300",
+                props.className,
+            )}
             dangerouslySetInnerHTML={{ __html: String(file) }}
         ></div>
     );
@@ -45,4 +49,5 @@ export async function CodeBlock(props: Props) {
 
 type Props = {
     code: string;
+    className?: string;
 };

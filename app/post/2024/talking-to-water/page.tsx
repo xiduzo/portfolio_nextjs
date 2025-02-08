@@ -1,4 +1,4 @@
-import { Text } from "@/components/custom/typography";
+import { Text } from "@/components/custom/text";
 import { Section } from "@/components/custom/section";
 import Link from "next/link";
 import { Image } from "@/components/custom/image";
@@ -40,7 +40,7 @@ export default function Page() {
                 <Text>And what does it even mean to talk to water?</Text>
             </Section>
             <Section>
-                <Alert icon="Copyleft" intent="info">
+                <Alert icon="Copyright" intent="info">
                     <Text>
                         The concept and execution of the project were done by{" "}
                         <Link

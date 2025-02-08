@@ -3,7 +3,7 @@ import { Quote } from "@/components/custom/quote";
 import { Section } from "@/components/custom/section";
 import { Face } from "@/components/custom/spirit/face";
 import { Technologies } from "@/components/custom/technologies";
-import { Text } from "@/components/custom/typography";
+import { Text } from "@/components/custom/text";
 import { Iphone15Pro } from "@/components/magic-ui/iphone-15-pro";
 import { Image } from "@/components/custom/image";
 import NextImage from "next/image";

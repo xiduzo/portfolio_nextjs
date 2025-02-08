@@ -16,7 +16,7 @@ import {
     note,
     subHeadings,
     Text,
-} from "@/components/custom/typography";
+} from "@/components/custom/text";
 import ObserverProvider from "@/providers/ObserverProvider";
 import { CallToAction } from "@/components/custom/call-to-action";
 import { Theme } from "@/components/custom/theme";

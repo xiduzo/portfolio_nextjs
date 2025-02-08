@@ -1,6 +1,6 @@
 import { Badge } from "../ui/badge";
 import { Section } from "./section";
-import { Text } from "./typography";
+import { Text } from "./text";
 
 const pluralRules = new Intl.PluralRules("en-US");
 

@@ -1,5 +1,5 @@
 import { Section } from "@/components/custom/section";
-import { Text } from "@/components/custom/typography";
+import { Text } from "@/components/custom/text";
 import Link from "next/link";
 import { Safari } from "@/components/magic-ui/safari";
 import { CodeBlock } from "@/components/custom/code-block";
@@ -48,9 +48,9 @@ export default function Page() {
                     a common issue: microcontrollers.
                 </Text>
                 <Text>
-                    The students want to create interactive prototypes, but the
-                    learning curve is often too steep for most designers who had
-                    (almost) never touched code before.
+                    The students want to create interactive (phygital)
+                    prototypes, but the learning curve is often too steep for
+                    most designers whom have never touched code before.
                 </Text>
                 <Text>
                     And I must agree; even though I’ve been working with
@@ -63,7 +63,7 @@ export default function Page() {
                 <Text as="h3" variant="subheading" size="sm">
                     Rapid prototyping
                 </Text>
-                <Text>
+                <Text size="sm">
                     While there are some tools available that simplify working
                     with microcontrollers, such as{" "}
                     <Link href="https://www.arduinoblocks.com/" target="_blank">
@@ -83,8 +83,8 @@ export default function Page() {
                     , starting a new project still requires a lot of
                     Arduino-like knowledge.
                 </Text>
-                <Text>That’s where Microflow comes in.</Text>
-                <Text>
+                <Text size="sm">That is where Microflow comes in.</Text>
+                <Text size="sm">
                     Microflow is a set of tools designed to facilitate
                     prototyping for interactivity without the need to worry
                     about low-level coding, or coding at all for that matter!
@@ -129,6 +129,14 @@ export default function Page() {
                     What is still missing, however, is the interaction with the
                     physical world.
                 </Text>
+                <Text size="sm">
+                    <Link
+                        href="https://forum.figma.com/ask-the-community-7/communicating-between-prototype-and-figma-plugin-13868?postid=150147#post150147"
+                        target="_blank"
+                    >
+                        And for plugin developers to access the preview
+                    </Link>
+                </Text>
             </Section>
             <Section>
                 <Text as="h3" variant="subheading" size="sm">
@@ -142,7 +150,7 @@ export default function Page() {
                     This enables any client – whether in your browser, mobile
                     app, microcontroller, or even an IoT device like your fridge
                     (if it sends the correct data) – to send and receive
-                    messages from Microflow Hardware Bridge.
+                    messages from Figma.
                 </Text>
                 <Text>
                     The core of this plugin is achieved through a simple React
@@ -239,7 +247,7 @@ export function MqttVariableMessenger() {
                 <Text as="h3" variant="subheading" size="sm">
                     Flashing firmware
                 </Text>
-                <Text>
+                <Text size="sm">
                     When connecting a supported microcontroller, Microflow
                     studio will automatically detect the board and flash it with
                     the correct{" "}
@@ -251,7 +259,7 @@ export function MqttVariableMessenger() {
                     </Link>
                     .
                 </Text>
-                <Text>
+                <Text size="sm">
                     To make this work with <code>Electron</code>, the backbone
                     of the application, I stole and adapted the good parts of{" "}
                     <Link
@@ -302,14 +310,14 @@ export class Flasher {
                 <Text as="h3" variant="subheading" size="sm">
                     Code to generate code
                 </Text>
-                <Text>
+                <Text size="sm">
                     Microflow studio provides a visual flow-based interface to
                     connect components and create interactions.
                 </Text>
-                <Text>
+                <Text size="sm">
                     For this, I utilized <code>@xyflow/react</code>. Custom code
-                    is generated for the microcontroller based on the nodes and
-                    edges, as well as how the user connected them.
+                    is generated for the microcontroller based on how the user
+                    connected the <em>nodes</em> and <em>edges</em>.
                 </Text>
                 <CodeBlock
                     code={`
@@ -364,7 +372,7 @@ export function generateCode(nodes: Node[], edges: Edge[]) {
 \`\`\`
                     `}
                 />
-                <Text>
+                <Text size="sm">
                     Which is a whole lot of code, even after some
                     simplifications, to generate the following few lines of code
                     for the microcontroller:
@@ -394,7 +402,7 @@ Interval_4aeu4a.on("change", () => {
                 <Text as="h3" variant="subheading" size="sm">
                     A wrapper around a wrapper around a wrapper
                 </Text>
-                <Text>
+                <Text size="sm">
                     To communicate with the firmata firmware we have flashed on
                     the microcontroller, all <code>@microflow/components</code>{" "}
                     are wrappers around the <code>Johnny-Five</code> library —

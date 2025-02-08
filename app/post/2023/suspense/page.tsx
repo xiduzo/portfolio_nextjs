@@ -1,5 +1,5 @@
 import { Section } from "@/components/custom/section";
-import { Text } from "@/components/custom/typography";
+import { Text } from "@/components/custom/text";
 import Link from "next/link";
 import { CodeBlock } from "@/components/custom/code-block";
 import { Image } from "@/components/custom/image";

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Text } from "@/components/custom/typography";
+import { Text } from "@/components/custom/text";
 import { HighlightedProjects } from "@/components/custom/highlighted-projects";
 import { Section } from "@/components/custom/section";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";

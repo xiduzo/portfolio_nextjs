@@ -1,4 +1,4 @@
-import { Text } from "@/components/custom/typography";
+import { Text } from "@/components/custom/text";
 
 export default function Page() {
     return (

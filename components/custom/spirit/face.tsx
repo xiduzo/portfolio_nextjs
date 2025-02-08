@@ -3,7 +3,7 @@
 import { Slider } from "@/components/ui/slider";
 import { cva, VariantProps } from "class-variance-authority";
 import { useState } from "react";
-import { Text } from "../typography";
+import { Text } from "../text";
 
 export function Face(props: {
     initialPhase?: Phase;

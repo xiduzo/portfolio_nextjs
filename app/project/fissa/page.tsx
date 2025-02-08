@@ -1,5 +1,5 @@
 import { Section } from "@/components/custom/section";
-import { Text } from "@/components/custom/typography";
+import { Text } from "@/components/custom/text";
 import Link from "next/link";
 import { Iphone15Pro } from "@/components/magic-ui/iphone-15-pro";
 import { Image } from "@/components/custom/image";

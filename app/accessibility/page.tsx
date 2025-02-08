@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Text } from "@/components/custom/typography";
+import { Text } from "@/components/custom/text";
 import { Section } from "@/components/custom/section";
 import { Quote } from "@/components/custom/quote";
 import { CallToAction } from "@/components/custom/call-to-action";

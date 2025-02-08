@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Section } from "./section";
-import { Text } from "./typography";
+import { Text } from "./text";
 import { Button } from "../ui/button";
 
 export function Links(props: Props) {
