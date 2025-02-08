@@ -13,7 +13,7 @@ export function Title(props: Props) {
     return (
         <Section
             space="none"
-            className="text-center max-w-screen-lg mx-auto mt-12"
+            className="text-center max-w-screen-lg mx-auto mt-24"
         >
             <Text
                 as="h1"

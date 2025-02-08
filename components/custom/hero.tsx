@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { Title, TitleProps } from "./title";
 import { ScrollHint } from "./scroll-hint";
+import { HeroOpenMoji } from "./hero-openmoji";
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
     dateStyle: "long",
@@ -40,11 +41,7 @@ export function Hero(props: Props) {
                         amount={1}
                     />
                 </section>
-                <Openmoji
-                    hexcode={props.emoji}
-                    size={420}
-                    className="translate-y-44 motion-blur-in-3xl motion-opacity-in-65 motion-delay-75"
-                />
+                <HeroOpenMoji emoji={props.emoji} />
             </section>
             <Title
                 title={props.title}
