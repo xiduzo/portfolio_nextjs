@@ -53,17 +53,16 @@ export default function Page() {
             </Section>
             <Section>
                 <Text as="h2" variant="subheading">
-                    Highlighted cases
+                    Highlighted things I made
                 </Text>
                 <Text size="sm" className="text-muted-foreground pb-12">
-                    A selection of personal projects I am proud to share with
-                    you.
+                    A selection of things I am proud to share.
                 </Text>
                 <HighlightedProjects />
             </Section>
             <Section className="flex justify-center flex-wrap">
                 <Link href="/project">
-                    <CallToAction>See all projects</CallToAction>
+                    <CallToAction>See more things</CallToAction>
                 </Link>
             </Section>
         </>

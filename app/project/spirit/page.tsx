@@ -19,7 +19,7 @@ export default function Page() {
                 readTime={8}
                 publishDate="Aug 08 2019"
                 emoji="1FA9C"
-                className="bg-cyan-700"
+                className="bg-orange-300"
             />
             <Technologies
                 technologies={[

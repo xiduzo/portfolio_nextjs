@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 import { VelocityScroll } from "../magic-ui/scroll-based-velocity";
 import { Badge } from "../ui/badge";
-import { EmojiHexcode, Openmoji } from "./openmoji";
+import { EmojiHexcode } from "./openmoji";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { Title, TitleProps } from "./title";
