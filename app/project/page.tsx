@@ -1,7 +1,6 @@
 import { Section } from "@/components/custom/section";
 import { HighlightedProjects } from "@/components/custom/highlighted-projects";
 import { Text } from "@/components/custom/text";
-import { ProjectCard } from "@/components/custom/project-card";
 import Link from "next/link";
 import { WobbleCard } from "@/components/aceternity/wobble-card";
 import { Openmoji } from "@/components/custom/openmoji";
