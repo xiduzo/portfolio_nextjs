@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "IBM Plex Mono", Arial, Helvetica, sans-serif;
 }
 
 @layer base {
@@ -103,7 +103,7 @@ a[target="_blank"]:not(:has(*)) {
 
 a[target="_blank"]:not(:has(*))::before,
 a[target="_blank"]:not(:has(*))::after {
-    @apply text-foreground font-note;
+    @apply text-foreground font-body;
 }
 
 a[target="_blank"]:not(:has(*))::before {
@@ -240,16 +240,14 @@ main > header {
 
 :not(pre) > code::before,
 :not(pre) > code::after {
-    @apply font-note;
+    @apply font-body;
 }
 
 :not(pre) > code::before {
-    @apply mr-1;
     content: "`";
 }
 
 :not(pre) > code::after {
-    @apply -ml-1.5;
     content: "`";
 }
 
@@ -296,23 +294,23 @@ main > article h4 {
 }
 
 main > article h2::before {
-    @apply font-note;
+    @apply font-body;
     content: "# ";
 }
 
 main > article h3::before {
-    @apply font-note;
+    @apply font-body;
     content: "## ";
 }
 
 main > article h4::before {
-    @apply font-note;
+    @apply font-body;
     content: "### ";
 }
 
 main > article em::before,
 main > article em::after {
-    @apply font-note;
+    @apply font-body;
     content: "_";
 }
 

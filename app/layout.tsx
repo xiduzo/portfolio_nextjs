@@ -106,7 +106,7 @@ export default async function RootLayout({
                                     variant="ghost"
                                     className="hover:cursor-alias mt-52"
                                 >
-                                    <Text variant="note">
+                                    <Text size="sm">
                                         Or stalk me on LinkedIn
                                     </Text>
                                 </Button>

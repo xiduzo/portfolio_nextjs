@@ -1,11 +1,6 @@
 import { cva, VariantProps } from "class-variance-authority";
 import { JSX, PropsWithChildren } from "react";
-import {
-    Alegreya,
-    Caveat,
-    Fira_Sans_Extra_Condensed,
-    Work_Sans,
-} from "next/font/google";
+import { Alegreya, Caveat, IBM_Plex_Mono } from "next/font/google";
 
 export const headings = Alegreya({
     variable: "--font-heading",
@@ -13,15 +8,15 @@ export const headings = Alegreya({
     subsets: ["latin"],
 });
 
-export const subHeadings = Fira_Sans_Extra_Condensed({
+export const subHeadings = IBM_Plex_Mono({
     variable: "--font-subheading",
-    weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+    weight: ["100", "200", "300", "400", "500", "600", "700"],
     subsets: ["latin"],
 });
 
-export const body = Work_Sans({
+export const body = IBM_Plex_Mono({
     variable: "--font-body",
-    weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+    weight: ["100", "200", "300", "400", "500", "600", "700"],
     subsets: ["latin"],
 });
 
