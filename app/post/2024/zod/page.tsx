@@ -122,7 +122,7 @@ const response = await fetchData<ApiData>("example.api.org"); // ApiData
                     it pays off in terms of new type-safe superpowers inside
                     your IDE.
                 </Text>
-                <Text as="aside" className="mt-8 text-base">
+                <Text as="aside" size="sm" className="mt-8">
                     <ol>
                         <li>
                             Zod is my personal go-to runtime validation library
@@ -276,7 +276,7 @@ function getRecord(id: string) {
                     And for MQTT messages, there were handlers that parsed data
                     <sup>2</sup> as follows:
                 </Text>
-                <Text as="aside" className="mt-8 text-base">
+                <Text as="aside" size="sm" className="mt-8">
                     <ol start={2}>
                         <li>
                             For better <code>JSON.parse</code> type safety,
