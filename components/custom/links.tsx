@@ -9,13 +9,17 @@ export function Links(props: Props) {
             <Text as="h2" variant="subheading" size="sm">
                 {props.title}
             </Text>
-            <div className="flex gap-4 flex-wrap">
+            <ul className="flex gap-4 flex-wrap">
                 {props.links.map(([href, text]) => (
-                    <Link key={href} href={href} passHref target="_blank">
-                        <Button variant="outline">{text}</Button>
-                    </Link>
+                    <li className="m-0 list-none" key={href}>
+                        <Button variant="ghost" asChild>
+                            <Link href={href} passHref target="_blank">
+                                {text}
+                            </Link>
+                        </Button>
+                    </li>
                 ))}
-            </div>
+            </ul>
         </Section>
     );
 }

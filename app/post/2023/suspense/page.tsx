@@ -6,6 +6,7 @@ import { Image } from "@/components/custom/image";
 import { Button } from "@/components/ui/button";
 import { Hero } from "@/components/custom/hero";
 import { Quote } from "@/components/custom/quote";
+import { Links } from "@/components/custom/links";
 
 export default function Page() {
     return (
@@ -413,51 +414,33 @@ export default function App() {
                     will be a great addition to your work.
                 </Text>
             </Section>
-            <Section>
-                <Text as="h2" variant="subheading" size="sm">
-                    Unmentioned resources
-                </Text>
-                <Text className="flex gap-4 flex-wrap">
-                    <Link
-                        href="https://codesandbox.io/s/ymcj43"
-                        target="_blank"
-                    >
-                        <Button variant="outline">
-                            Reacts codesandbox example
-                        </Button>
-                    </Link>
-                    <Link
-                        href="https://17.reactjs.org/docs/concurrent-mode-suspense.html"
-                        target="_blank"
-                    >
-                        <Button variant="outline">
-                            React 17 documentation on suspense
-                        </Button>
-                    </Link>
-                    <Link
-                        href="https://stackoverflow.com/q/74196656/4655177"
-                        target="_blank"
-                    >
-                        <Button variant="outline">
-                            Another stackoverflow question
-                        </Button>
-                    </Link>
-                    <Link
-                        href="https://stackoverflow.com/a/73356890/4655177"
-                        target="_blank"
-                    >
-                        <Button variant="outline">
-                            And another stackoverflow question
-                        </Button>
-                    </Link>
-                    <Link
-                        href="https://blog.logrocket.com/data-fetching-react-suspense/"
-                        target="_blank"
-                    >
-                        <Button variant="outline">Logrocket blog post</Button>
-                    </Link>
-                </Text>
-            </Section>
+            <aside>
+                <Links
+                    title="Unmentioned resources"
+                    links={[
+                        [
+                            "https://codesandbox.io/s/ymcj43",
+                            "Reacts codesandbox example",
+                        ],
+                        [
+                            "https://17.reactjs.org/docs/concurrent-mode-suspense.html",
+                            "React 17 documentation on suspense",
+                        ],
+                        [
+                            "https://stackoverflow.com/q/74196656/4655177",
+                            "Another stackoverflow question",
+                        ],
+                        [
+                            "https://stackoverflow.com/a/73356890/4655177",
+                            "And another stackoverflow question",
+                        ],
+                        [
+                            "https://blog.logrocket.com/data-fetching-react-suspense/",
+                            "Logrocket blog post",
+                        ],
+                    ]}
+                />
+            </aside>
         </>
     );
 }

@@ -14,6 +14,7 @@ export function InteractiveHoverButton({
                 className,
             )}
             {...props}
+            aria-label={typeof children === "string" ? children : undefined}
         >
             <div className="flex items-center gap-2">
                 <div className="bg-primary h-2 w-2 rounded-full transition-all duration-300 group-hover:scale-[100.8]"></div>

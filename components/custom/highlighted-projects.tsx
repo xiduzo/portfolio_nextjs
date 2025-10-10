@@ -18,7 +18,7 @@ export function HighlightedProjects() {
                         variant="subheading"
                         size="sm"
                         motion="none"
-                        className="flex gap-4 md:justify-start justify-between"
+                        className="flex gap-4 md:justify-start justify-between text-foreground"
                     >
                         Assessor bot
                         <Openmoji hexcode="1F99C" size={42} />
@@ -43,7 +43,7 @@ export function HighlightedProjects() {
                         variant="subheading"
                         size="sm"
                         motion="none"
-                        className="flex gap-4 md:justify-start justify-between"
+                        className="flex gap-4 md:justify-start justify-between text-foreground"
                     >
                         Fissa
                         <Openmoji hexcode="1F415" size={42} />
@@ -69,7 +69,7 @@ export function HighlightedProjects() {
                             variant="subheading"
                             size="sm"
                             motion="none"
-                            className="flex gap-4 md:justify-start justify-between"
+                            className="flex gap-4 md:justify-start justify-between text-foreground"
                         >
                             Microflow
                             <Openmoji hexcode="E1D3" size={42} />

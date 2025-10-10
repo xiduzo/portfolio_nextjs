@@ -10,7 +10,8 @@ import { randomSort } from "@/lib/utils";
 import { CallToAction } from "@/components/custom/call-to-action";
 import { Hero } from "@/components/custom/hero";
 import { Technologies } from "@/components/custom/technologies";
-import { AppleIcon, StoreIcon } from "lucide-react";
+import { StoreIcon } from "lucide-react";
+import { Links } from "@/components/custom/links";
 
 const animals = ["🐋", "🦀", "🐕", "🦦", "🦔", "🦉", "🦥", "🐍", "🦑", "🐘"];
 
@@ -715,40 +716,23 @@ export const sortFissaTracksOrder = <T extends SortableTrack>(
                 />
             </Section>
             <aside>
-                <Section>
-                    <Text as="h2" variant="subheading" size="sm">
-                        In collaboration with
-                    </Text>
-                    <Text className="flex gap-4 flex-wrap">
-                        <Link
-                            href="https://www.linkedin.com/in/milan-van-der-maaten-307a1697"
-                            target="_blank"
-                        >
-                            <Button variant="outline">
-                                Milan van der Maaten
-                            </Button>
-                        </Link>
-                    </Text>
-                </Section>
-                <Section>
-                    <Text as="h2" variant="subheading" size="sm">
-                        Source code
-                    </Text>
-                    <Text className="flex gap-4 flex-wrap">
-                        <Link
-                            href="https://github.com/xiduzo/t3-fissa"
-                            target="_blank"
-                        >
-                            <Button variant="outline">Fissa</Button>
-                        </Link>
-                        <Link
-                            href="https://github.com/xiduzo/fissa"
-                            target="_blank"
-                        >
-                            <Button variant="outline">Prototype</Button>
-                        </Link>
-                    </Text>
-                </Section>
+                <Links
+                    title="In collaboration with"
+                    links={[
+                        [
+                            "https://www.linkedin.com/in/milan-van-der-maaten-307a1697",
+                            "Milan van der Maaten",
+                        ],
+                    ]}
+                />
+
+                <Links
+                    title="Source code"
+                    links={[
+                        ["https://github.com/xiduzo/t3-fissa", "Fissa"],
+                        ["https://github.com/xiduzo/fissa", "Prototype"],
+                    ]}
+                />
             </aside>
         </>
     );
