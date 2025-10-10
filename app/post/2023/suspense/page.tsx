@@ -94,8 +94,8 @@ export default function Page() {
                     `}
                 />
             </Section>
-            <Section variant="full">
-                <Text variant="note">
+            <Section variant="full" as="figure">
+                <Text variant="note" as="figcaption">
                     How people perceive the Suspense component
                 </Text>
                 <Image

@@ -14,6 +14,7 @@ export function HighlightedProjects() {
             >
                 <WobbleCard containerClassName="h-full bg-green-800 min-h-[500px] group">
                     <Text
+                        as="h3"
                         variant="subheading"
                         size="sm"
                         motion="none"
@@ -38,6 +39,7 @@ export function HighlightedProjects() {
             <Link href="/project/fissa" className="col-span-6 xl:col-span-3">
                 <WobbleCard containerClassName="h-full bg-pink-800 min-h-[500px] group">
                     <Text
+                        as="h3"
                         variant="subheading"
                         size="sm"
                         motion="none"
@@ -63,6 +65,7 @@ export function HighlightedProjects() {
                 <WobbleCard containerClassName="h-full bg-orange-800 min-h-[500px] group">
                     <div className="md:max-w-sm">
                         <Text
+                            as="h3"
                             variant="subheading"
                             size="sm"
                             motion="none"

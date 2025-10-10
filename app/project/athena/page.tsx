@@ -96,8 +96,10 @@ export default function Page() {
                     (disappointing) grade of the project.
                 </Text>
             </Section>
-            <Section>
-                <Text variant="note">Teachers insights into feedback</Text>
+            <Section as="figure">
+                <Text variant="note" as="figcaption">
+                    Teachers insights into feedback
+                </Text>
                 <Safari
                     src="/athena/feedback.png"
                     className="mx-auto"
@@ -133,8 +135,10 @@ export default function Page() {
                     each other on the agreed upon indicators.
                 </Text>
             </Section>
-            <Section>
-                <Text variant="note">Insights into trello activities</Text>
+            <Section as="figure">
+                <Text variant="note" as="figcaption">
+                    Insights into trello activities
+                </Text>
                 <Safari
                     src="/athena/workload.png"
                     className="mx-auto"
@@ -157,7 +161,7 @@ export default function Page() {
                     gave what feedback.
                 </Text>
             </Section>
-            <Section>
+            <Section as="figure">
                 <Safari
                     src="/athena/workload_2.png"
                     className="mx-auto"

@@ -10,6 +10,7 @@ import { randomSort } from "@/lib/utils";
 import { CallToAction } from "@/components/custom/call-to-action";
 import { Hero } from "@/components/custom/hero";
 import { Technologies } from "@/components/custom/technologies";
+import { AppleIcon, StoreIcon } from "lucide-react";
 
 const animals = ["🐋", "🦀", "🐕", "🦦", "🦔", "🦉", "🦥", "🐍", "🦑", "🐘"];
 
@@ -62,7 +63,10 @@ export default function Page() {
                     seemed like a perfect opportunity to do so.
                 </Text>
             </Section>
-            <Section className="grid grid-cols-12 gap-4 lg:gap-6 xl:gap-12">
+            <Section
+                className="grid grid-cols-12 gap-4 lg:gap-6 xl:gap-12"
+                as="figure"
+            >
                 <div className="lg:-mt-32 lg:col-span-4 col-span-12 md:col-span-6">
                     <Iphone15Pro
                         src="/fissa/screen-3.svg"
@@ -115,8 +119,8 @@ export default function Page() {
                     is why decided to give each Fissa their own color.
                 </Text>
             </Section>
-            <Section variant="full">
-                <Text variant="note">
+            <Section variant="full" as="figure">
+                <Text variant="note" as="figcaption">
                     It is a fissa, but within our boundaries
                 </Text>
                 <Image
@@ -219,7 +223,10 @@ const Component = () => {
 `}
                 />
             </Section>
-            <Section className="grid grid-cols-12 gap-4 lg:gap-6 xl:gap-12">
+            <Section
+                className="grid grid-cols-12 gap-4 lg:gap-6 xl:gap-12"
+                as="figure"
+            >
                 <div className="xl:col-start-2 xl:col-span-4 md:col-span-6 col-span-12">
                     <Iphone15Pro
                         src="/fissa/pinkey.svg"
@@ -269,8 +276,15 @@ const Component = () => {
                 </Text>
                 <Text as="strong">Do one thing, and do it well.</Text>
             </Section>
-            <Section className="grid grid-cols-12 gap-4 lg:gap-6 xl:gap-12">
-                <Text className="col-span-12 xl:mb-32" variant="note">
+            <Section
+                className="grid grid-cols-12 gap-4 lg:gap-6 xl:gap-12"
+                as="figure"
+            >
+                <Text
+                    className="col-span-12 xl:mb-32"
+                    variant="note"
+                    as="figcaption"
+                >
                     Explorations on how we could add songs to a Fissa
                 </Text>
                 <div className="col-span-12 md:col-span-6 lg:col-span-4">
@@ -315,21 +329,21 @@ const Component = () => {
                         href="https://apps.apple.com/nl/app/fissa-houseparty/id1632218985"
                         target="_blank"
                     >
-                        <CallToAction>
-                            Open Fissa in the Apple app store
+                        <CallToAction icon={<StoreIcon />}>
+                            Fissa for iOS
                         </CallToAction>
                     </Link>
                     <Link
                         href="https://play.google.com/store/apps/details?id=com.fissa.app"
                         target="_blank"
                     >
-                        <CallToAction>
-                            Open Fissa in the Google play store
+                        <CallToAction icon={<StoreIcon />}>
+                            Fissa for Android
                         </CallToAction>
                     </Link>
                 </Text>
             </Section>
-            <Section variant="full">
+            <Section variant="full" aria-hidden="true">
                 <Marquee className="[--duration:180s]">
                     {animals.sort(randomSort).map((animal) => (
                         <Text
@@ -375,8 +389,15 @@ const Component = () => {
                     different states of Fissa.
                 </Text>
             </Section>
-            <Section className="grid grid-cols-12 gap-4 lg:gap-6 xl:gap-12">
-                <Text className="col-span-12 xl:mb-32" variant="note">
+            <Section
+                className="grid grid-cols-12 gap-4 lg:gap-6 xl:gap-12"
+                as="figure"
+            >
+                <Text
+                    className="col-span-12 xl:mb-32"
+                    variant="note"
+                    as="figcaption"
+                >
                     A few examples of the use of emojis in Fissa
                 </Text>
                 <div className="lg:-mt-32 col-span-12 md:col-span-6 lg:col-span-4">
@@ -470,8 +491,11 @@ class FissaService {
                     of nerd info.
                 </Text>
             </Section>
-            <Section className="grid grid-cols-12 gap-4 lg:gap-6 xl:gap-12">
-                <Text className="col-span-12" variant="note">
+            <Section
+                className="grid grid-cols-12 gap-4 lg:gap-6 xl:gap-12"
+                as="figure"
+            >
+                <Text className="col-span-12" variant="note" as="figcaption">
                     The playlist is democratic, votes determine the queue
                 </Text>
                 <div className="lg:col-start-3 lg:col-span-4 col-span-12 md:col-span-6">

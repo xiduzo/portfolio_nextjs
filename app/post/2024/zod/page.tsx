@@ -541,7 +541,7 @@ const example = new GrowthCycle(invalidInput) // [!code error]
                     pinpoint and handle it gracefully.
                 </Text>
             </Section>
-            <Section>
+            <Section as="figure">
                 <Safari
                     src="/zod/parse-failures.png"
                     alt="Monitoring results from parse errors"

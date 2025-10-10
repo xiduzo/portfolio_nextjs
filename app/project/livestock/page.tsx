@@ -106,7 +106,7 @@ export default function Page() {
                     or bad wallet design.
                 </Text>
             </Section>
-            <Section variant="full">
+            <Section variant="full" as="figure">
                 <Image
                     src="/livestock/mindmap.png"
                     alt="Brainstorming session on a game around the blockchain technology"
@@ -129,7 +129,10 @@ export default function Page() {
                     and services and require knowledge to avoid errors.
                 </Text>
             </Section>
-            <Section className="grid grid-cols-12 gap-4 lg:gap-6 xl:gap-12">
+            <Section
+                className="grid grid-cols-12 gap-4 lg:gap-6 xl:gap-12"
+                as="figure"
+            >
                 <div className="col-span-12 md:col-span-6 lg:col-span-4">
                     <Iphone15Pro
                         src="/livestock/challenge_1.png"
@@ -198,7 +201,10 @@ export default function Page() {
                     development?
                 </Text>
             </Section>
-            <Section className="grid grid-cols-12 gap-4 lg:gap-6 xl:gap-12">
+            <Section
+                className="grid grid-cols-12 gap-4 lg:gap-6 xl:gap-12"
+                as="figure"
+            >
                 <div className="lg:mt-32 col-span-12 md:col-span-6 lg:col-span-4">
                     <Iphone15Pro
                         src="/livestock/wallets_1.png"
@@ -274,8 +280,10 @@ export default function Page() {
                     a real-time multiplayer game.
                 </Text>
             </Section>
-            <Section variant="full">
-                <Text variant="note">Snapshots of the design process</Text>
+            <Section variant="full" as="figure">
+                <Text variant="note" as="figcaption">
+                    Snapshots of the design process
+                </Text>
                 <Image
                     src="/livestock/progress.png"
                     alt="A set of screenshots showcasing the design itterations LiveStock went through"
@@ -304,7 +312,10 @@ export default function Page() {
                     respective currencies.
                 </Text>
             </Section>
-            <Section className="grid grid-cols-12 gap-4 lg:gap-6 xl:gap-12">
+            <Section
+                className="grid grid-cols-12 gap-4 lg:gap-6 xl:gap-12"
+                as="figure"
+            >
                 <div className="col-span-12 md:col-span-6 lg:col-span-4">
                     <Iphone15Pro
                         src="/livestock/symbolism_2.png"
@@ -327,8 +338,11 @@ export default function Page() {
                     />
                 </div>
             </Section>
-            <Section className="grid grid-cols-12 gap-4 lg:gap-6 xl:gap-12">
-                <Text className="col-span-12" variant="note">
+            <Section
+                className="grid grid-cols-12 gap-4 lg:gap-6 xl:gap-12"
+                as="figure"
+            >
+                <Text className="col-span-12" variant="note" as="figcaption">
                     Hardware wallets are replaced by your safe vault
                 </Text>
                 <div className="lg:col-start-3 lg:col-span-4 col-span-12 md:col-span-6">
@@ -361,8 +375,10 @@ export default function Page() {
                     choices will impact the outcome of the session.
                 </Text>
             </Section>
-            <Section variant="full">
-                <Text variant="note">User testing with a paper prototype</Text>
+            <Section variant="full" as="figure">
+                <Text variant="note" as="figcaption">
+                    User testing with a paper prototype
+                </Text>
                 <Image
                     src="/livestock/paper_prototype.png"
                     alt="A picture taken during in the early stages of the project, paper prototyping the concept of LiveStock"
@@ -371,8 +387,8 @@ export default function Page() {
                     height={1080}
                 />
             </Section>
-            <Section variant="full">
-                <Text variant="note">
+            <Section variant="full" as="figure">
+                <Text variant="note" as="figcaption">
                     Some symbolisms started to emerge during the paper prototype
                 </Text>
                 <Image
@@ -404,7 +420,7 @@ export default function Page() {
                     <em>(similar as losing your private keys)</em>.
                 </Text>
             </Section>
-            <Section variant="full">
+            <Section variant="full" as="figure">
                 <Image
                     src="/livestock/wireframes.png"
                     alt="Early wireframes of the LiveStock application after the initial tests with the paper prototype"

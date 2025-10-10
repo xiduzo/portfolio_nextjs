@@ -59,7 +59,10 @@ export default function Page() {
                     guidance to monitor their progress and stay motivated.
                 </Text>
             </Section>
-            <Section className="grid grid-cols-12 gap-4 lg:gap-6 xl:gap-12">
+            <Section
+                className="grid grid-cols-12 gap-4 lg:gap-6 xl:gap-12"
+                as="figure"
+            >
                 <div className="col-span-12 md:col-span-6 lg:col-span-4">
                     <Iphone15Pro
                         src="/spirit/onboarding_1.png"
@@ -93,7 +96,7 @@ export default function Page() {
                     sessions.
                 </Text>
             </Section>
-            <Section variant="full">
+            <Section variant="full" as="figure">
                 <Image
                     src="/spirit/sketch.png"
                     alt="A photograph of various sketches of the Spirit app while in the concepting phase of the project"
@@ -118,8 +121,8 @@ export default function Page() {
                     preferably, under the auspices of an expert therapist.
                 </Text>
             </Section>
-            <Section variant="full">
-                <Text variant="note" className="mt-32">
+            <Section variant="full" as="figure">
+                <Text variant="note" className="mt-32" as="figcaption">
                     The promise of Spirit
                 </Text>
                 <div className="flex">
@@ -208,7 +211,7 @@ export default function Page() {
                     obsessive thoughts or compulsive behavior.
                 </Text>
             </Section>
-            <Section variant="full">
+            <Section variant="full" as="figure">
                 <Image
                     src="/spirit/user_flow.png"
                     alt="A photograph making the user flow of the Spirit app using printed out screens of the application"
@@ -279,7 +282,10 @@ export default function Page() {
                     <em>only if the patient desires so</em>.
                 </Text>
             </Section>
-            <Section className="grid grid-cols-12 gap-4 lg:gap-6 xl:gap-12">
+            <Section
+                className="grid grid-cols-12 gap-4 lg:gap-6 xl:gap-12"
+                as="figure"
+            >
                 <div className="col-span-12 md:col-span-6 lg:col-span-4">
                     <Iphone15Pro
                         src="/spirit/logbook.png"
@@ -317,8 +323,11 @@ export default function Page() {
                     personal goal.
                 </Text>
             </Section>
-            <Section className="grid grid-cols-12 gap-4 lg:gap-6 xl:gap-12">
-                <Text variant="note" className="col-span-12">
+            <Section
+                className="grid grid-cols-12 gap-4 lg:gap-6 xl:gap-12"
+                as="figure"
+            >
+                <Text variant="note" className="col-span-12" as="figcaption">
                     Some badge designs
                 </Text>
                 <div className="col-span-3">
@@ -358,8 +367,8 @@ export default function Page() {
                     />
                 </div>
             </Section>
-            <Section variant="full">
-                <Text variant="note">
+            <Section variant="full" as="figure">
+                <Text variant="note" as="figcaption">
                     Presenting Spirit at the Games for Health conference
                 </Text>
                 <Image

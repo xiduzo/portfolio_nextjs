@@ -1,7 +1,7 @@
 "use client";
 
 import clsx from "clsx";
-import { Text } from "./text";
+import { TypingAnimation } from "../ui/typing-animation";
 
 const hints = [
     "Scroll to read more",
@@ -24,19 +24,20 @@ export function ScrollHint(props: { className?: string }) {
     }
 
     return (
-        <div className="flex justify-center">
-            <Text
-                onClick={scrollDownSmooth}
-                variant="note"
-                size="sm"
+        <div
+            className="flex justify-center hover:cursor-s-resize"
+            onClick={scrollDownSmooth}
+        >
+            <TypingAnimation
+                cursorStyle="block"
+                delay={3000}
                 className={clsx(
-                    "hover:cursor-s-resize p-4 rounded-lg hover:bg-muted-foreground/5 transition-all motion-preset-oscillate motion-duration-[3s] motion-ease-out-quad motion-delay-2000 motion-opacity-in-0 motion-blur-in-0 cursor-pointer",
+                    "text-sm text-muted-foreground rounded-lg p-4 transition-all",
                     props.className,
                 )}
-                motion="none"
             >
                 {hints[Math.floor(Math.random() * hints.length)]}
-            </Text>
+            </TypingAnimation>
         </div>
     );
 }

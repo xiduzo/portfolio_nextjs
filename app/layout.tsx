@@ -24,6 +24,7 @@ import { Theme } from "@/components/custom/theme";
 import { cookies } from "next/headers";
 import { THEME_STORAGE_KEY } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
+import { MailIcon, SmileIcon } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Portfolio Sander Boer",
@@ -74,7 +75,9 @@ export default async function RootLayout({
                                         src="/me.jpeg"
                                         alt="Sander Boer"
                                     />
-                                    <AvatarFallback>XDZ</AvatarFallback>
+                                    <AvatarFallback>
+                                        <SmileIcon className="text-muted-foreground" />
+                                    </AvatarFallback>
                                 </Avatar>
                             </Link>
                         </header>
@@ -96,8 +99,8 @@ export default async function RootLayout({
                                 className="flex justify-center mt-20"
                             >
                                 <Link href="mailto:mail@sanderboer.nl">
-                                    <CallToAction variant="default">
-                                        Let&apos;s have a 🍺
+                                    <CallToAction icon={<MailIcon />}>
+                                        Grab a 🍺 with me
                                     </CallToAction>
                                 </Link>
                             </Text>

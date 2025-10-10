@@ -10,6 +10,7 @@ import Video from "next-video";
 import { Image } from "@/components/custom/image";
 import { CodeBlock } from "@/components/custom/code-block";
 import { CallToAction } from "@/components/custom/call-to-action";
+import { GithubIcon } from "lucide-react";
 
 export default function Page() {
     return (
@@ -177,8 +178,10 @@ export default function Page() {
                     </Text>
                 </Alert>
             </Section>
-            <Section variant="full">
-                <Text variant="note">From document to feedback</Text>
+            <Section variant="full" as="figure">
+                <Text variant="note" as="figcaption">
+                    From document to feedback
+                </Text>
                 <Video
                     src={assessorBot}
                     aria-label="a video showing the process of uploading your document and receiving feedback from a LLM"
@@ -299,7 +302,8 @@ const addStudentDocuments = async (files: AddDocumentInput[]) => {
                 <Text size="sm">
                     When the student would ask for feedback, it would create a{" "}
                     <code>Runnable</code> for each of the indicators using a{" "}
-                    <code>FEEDBACK_TEMPLATE</code> and the following prompt:{" "}
+                    <code>FEEDBACK_TEMPLATE</code> and the following
+                    prompt:{" "}
                 </Text>
                 <Text as="code" size="sm">
                     {
@@ -475,8 +479,10 @@ const chat = [
                     it does give me a more peace of mind.
                 </Text>
             </Section>
-            <Section variant="full">
-                <Text variant="note">Guiding the student towards Ollama</Text>
+            <Section variant="full" as="figure">
+                <Text variant="note" as="figcaption">
+                    Guiding the student towards Ollama
+                </Text>
                 <Video
                     src={assessorBotOllama}
                     aria-label="a video showing the process of uploading your document and receiving feedback from a LLM"
@@ -579,7 +585,9 @@ function postProcessResponse(input: Record<string, unknown>) {
                     target="_blank"
                     href="https://github.com/xiduzo/mdd-assessor-bot"
                 >
-                    <CallToAction>Checkout the code on GitHub</CallToAction>
+                    <CallToAction icon={<GithubIcon />}>
+                        Check out the code
+                    </CallToAction>
                 </Link>
             </Section>
             <Section>
@@ -604,7 +612,10 @@ function postProcessResponse(input: Record<string, unknown>) {
                     the <code>Ollama</code> llama.
                 </Text>
             </Section>
-            <Section className="grid grid-cols-12 gap-4 lg:gap-6 xl:gap-12">
+            <Section
+                className="grid grid-cols-12 gap-4 lg:gap-6 xl:gap-12"
+                as="figure"
+            >
                 <div className="col-span-12 md:col-span-6">
                     <Image
                         src="/mdd-assessor-bot/parrot-head.svg"
@@ -616,7 +627,7 @@ function postProcessResponse(input: Record<string, unknown>) {
                     <Image
                         src="/mdd-assessor-bot/parrot-head-2.svg"
                         className="w-full"
-                        alt="An update on the parrot head design by Jaap to be in line with Ollama"
+                        alt="An update on the parrot head design by Jaap to be in line with Ollama style"
                     />
                 </div>
             </Section>

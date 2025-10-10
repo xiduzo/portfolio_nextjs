@@ -105,8 +105,8 @@ export default function Page() {
                     </li>
                 </Text>
             </Section>
-            <Section className="items-center flex flex-col ">
-                <Text className="col-span-12" variant="note">
+            <Section className="items-center flex flex-col" as="figure">
+                <Text className="col-span-12" variant="note" as="figcaption">
                     Microflow hardware bridge running in Figma
                 </Text>
                 <Safari
@@ -213,8 +213,8 @@ export function MqttVariableMessenger() {
                     if you are a nerd like me who likes to know how things work.
                 </Text>
             </Section>
-            <Section variant="full">
-                <Text className="col-span-12" variant="note">
+            <Section variant="full" as="figure">
+                <Text className="col-span-12" variant="note" as="figcaption">
                     Microflow studio connected to Figma
                 </Text>
                 <Image

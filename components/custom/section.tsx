@@ -1,9 +1,15 @@
 import { cva, VariantProps } from "class-variance-authority";
-import { PropsWithChildren } from "react";
+import { JSX, PropsWithChildren } from "react";
 
-export function Section(props: Props) {
+export function Section<T extends keyof JSX.IntrinsicElements = "section">(
+    props: Props<T>,
+) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const { as: Component = "section" as any, ...restProps } = props;
+
     return (
-        <section
+        <Component
+            {...restProps}
             className={section({
                 className: props.className,
                 variant: props.variant,
@@ -11,14 +17,15 @@ export function Section(props: Props) {
             })}
         >
             {props.children}
-        </section>
+        </Component>
     );
 }
 
-type Props = PropsWithChildren &
+type Props<T extends keyof JSX.IntrinsicElements> = PropsWithChildren &
     VariantProps<typeof section> & {
         className?: string;
-    };
+        as?: T;
+    } & JSX.IntrinsicElements[T];
 
 const section = cva("", {
     variants: {

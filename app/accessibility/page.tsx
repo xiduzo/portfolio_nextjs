@@ -3,6 +3,7 @@ import { Text } from "@/components/custom/text";
 import { Section } from "@/components/custom/section";
 import { Quote } from "@/components/custom/quote";
 import { CallToAction } from "@/components/custom/call-to-action";
+import { MailIcon } from "lucide-react";
 
 export default function Page() {
     return (
@@ -33,7 +34,9 @@ export default function Page() {
                         href="mailto:mail@sanderboer.nl"
                         className="text-2xl underline"
                     >
-                        <CallToAction>Send me an email</CallToAction>
+                        <CallToAction icon={<MailIcon />}>
+                            Send me an email
+                        </CallToAction>
                     </Link>
                 </Text>
             </Section>

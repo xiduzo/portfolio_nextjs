@@ -9,6 +9,7 @@ import { CallToAction } from "@/components/custom/call-to-action";
 import { Hero } from "@/components/custom/hero";
 import Alert from "@/components/custom/alert";
 import { Quote } from "@/components/custom/quote";
+import { ContainerIcon, GithubIcon } from "lucide-react";
 
 export default function Page() {
     return (
@@ -83,8 +84,8 @@ export default function Page() {
                     </Text>
                 </Alert>
             </Section>
-            <Section variant="full">
-                <Text variant="note">
+            <Section variant="full" as="figure">
+                <Text variant="note" as="figcaption">
                     AuraMotions. Photo by{" "}
                     <Link
                         href="https://www.linkedin.com/in/bo-n%C3%A9meth-16960ab4"
@@ -379,8 +380,8 @@ my_assistant.start()
                     representation they need.
                 </Text>
             </Section>
-            <Section variant="full">
-                <Text variant="note">
+            <Section variant="full" as="figure">
+                <Text variant="note" as="figcaption">
                     An example of generative visuals in{" "}
                     <Link href="https://derivative.ca/" target="_blank">
                         TouchDesigner
@@ -416,13 +417,17 @@ my_assistant.start()
                     href="https://github.com/xiduzo/whisper-sentiment-analysis"
                     target="_blank"
                 >
-                    <CallToAction>Check out the code</CallToAction>
+                    <CallToAction icon={<GithubIcon />}>
+                        Check out the code
+                    </CallToAction>
                 </Link>
                 <Link
                     href="https://hub.docker.com/repository/docker/xiduzo/whisper-sentiment-analysis/general"
                     target="_blank"
                 >
-                    <CallToAction>Run with docker</CallToAction>
+                    <CallToAction icon={<ContainerIcon />}>
+                        Run with docker
+                    </CallToAction>
                 </Link>
             </Section>
             <Section aria-hidden="true">
@@ -458,7 +463,7 @@ my_assistant.start()
                     on the students’ machines.
                 </Text>
             </Section>
-            <Section>
+            <Section as="figure">
                 <Image
                     src="/talking-to-water/works-on-my-machine.webp"
                     alt="works on my machine meme"
@@ -516,8 +521,10 @@ CMD ["python3", "-u", "main.py"]
                 </Text>
                 <Text className="mt-28">Right?!</Text>
             </Section>
-            <Section>
-                <Text variant="note">New tool, new issue</Text>
+            <Section as="figure">
+                <Text variant="note" as="figcaption">
+                    New tool, new issue
+                </Text>
                 <Image
                     src="/talking-to-water/works-on-my-docker.webp"
                     alt="Image containing two characters talking to each other. On the left image a person says 'It works on my machine'. On the right image a person says 'It works on my container'."

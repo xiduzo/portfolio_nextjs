@@ -18,8 +18,10 @@ export default function Page() {
                 readTime={8}
                 className="bg-indigo-900"
             />
-            <Section>
-                <Text variant="note">The auction back in 1940</Text>
+            <Section as="figure">
+                <Text variant="note" as="figcaption">
+                    The auction back in 1940
+                </Text>
                 <Image
                     width={1920}
                     height={1080}
@@ -66,8 +68,8 @@ export default function Page() {
                     .
                 </Text>
             </Section>
-            <Section variant="full">
-                <Text variant="note">
+            <Section variant="full" as="figure">
+                <Text variant="note" as="figcaption">
                     Flowers being sold &ldquo;Underneath the clock&rdquo;
                 </Text>
                 <Image
@@ -105,8 +107,8 @@ export default function Page() {
                     .
                 </Text>
             </Section>
-            <Section>
-                <Text variant="note">
+            <Section as="figure">
+                <Text variant="note" as="figcaption">
                     Status quo architecture of the processes and tools that
                     mimic the physical auction
                 </Text>
@@ -178,8 +180,10 @@ export default function Page() {
                     mechanical clock to set a suitable price.
                 </Text>
             </Section>
-            <Section>
-                <Text variant="note">Auctioning with a mechanical clock</Text>
+            <Section as="figure">
+                <Text variant="note" as="figcaption">
+                    Auctioning with a mechanical clock
+                </Text>
                 <Image
                     width={1920}
                     height={1080}
@@ -231,8 +235,10 @@ export default function Page() {
                     </ol>
                 </Text>
             </Section>
-            <Section>
-                <Text variant="note">Auctioning with current systems</Text>
+            <Section as="figure">
+                <Text variant="note" as="figcaption">
+                    Auctioning with current systems
+                </Text>
                 <Image
                     width={1920}
                     height={1080}
@@ -358,11 +364,15 @@ export default function Page() {
                     bringing business requirements, development, and design
                     together.
                 </Text>
+            </Section>
+            <Section as="figure">
                 <Safari
                     className="w-full my-28"
                     src="/veilenext/storybook_scaled.png"
                     alt="Showcasing how we use Storybook to develop and test components in isolation"
                 />
+            </Section>
+            <Section>
                 <Text size="sm">
                     End-to-end tests are performed using{" "}
                     <Link
@@ -414,8 +424,10 @@ export default function Page() {
                     phones.
                 </Text>
             </Section>
-            <Section>
-                <Text variant="note">Current auction interface</Text>
+            <Section as="figure">
+                <Text variant="note" as="figcaption">
+                    Current auction interface
+                </Text>
                 <Image
                     width={1920}
                     height={1080}
@@ -424,8 +436,8 @@ export default function Page() {
                     alt="Status quo of the auctioneers interface"
                 />
             </Section>
-            <Section>
-                <Text variant="note">
+            <Section as="figure" className="flex flex-col items-center">
+                <Text variant="note" as="figcaption">
                     Exploratory design to spark conversations
                 </Text>
                 <Safari
