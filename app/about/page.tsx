@@ -6,16 +6,24 @@ import GitHubCalendar from "react-github-calendar";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { TextRevealByWord } from "@/components/magic-ui/text-reveal";
 import { ScrollHint } from "@/components/custom/scroll-hint";
+import { SmileIcon } from "lucide-react";
 
 export default function Page() {
     return (
         <>
             <Section className="flex flex-col items-center justify-between min-h-screen">
-                <Avatar className="w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 transition-all">
-                    <AvatarImage src="/me.jpeg" alt="Sander Boer" />
-                    <AvatarFallback>Oh hi there 😊</AvatarFallback>
-                </Avatar>
-                <ScrollHint />
+                <div className="flex-grow flex items-center">
+                    <Avatar className="w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 transition-all">
+                        <AvatarImage src="/me.jpeg" alt="Sander Boer" />
+                        <AvatarFallback>
+                            <SmileIcon
+                                size={72}
+                                className="text-muted-foreground"
+                            />
+                        </AvatarFallback>
+                    </Avatar>
+                </div>
+                <ScrollHint className="-mt-32" />
             </Section>
             <TextRevealByWord text="Designer by education, Developer by interest, Tinkerer by curiosity." />
             <Section>

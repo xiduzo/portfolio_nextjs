@@ -13,6 +13,16 @@ const hints = [
     "Do not stop now, there is more to see",
     "More wonders await",
     "Continue for more excitement",
+    "Keep going, there is more to the story",
+    "Scroll down, it gets better",
+    "Curious? You should be",
+    "Go on, have a look below",
+    "Down there, things get interesting",
+    "The story continues in pixels below",
+    "Keep scrolling, discovery is iterative",
+    "Keep exploring, curiosity pays off",
+    "Every scroll is a small act of exploration",
+    "Each scroll reveals something new",
 ];
 
 export function ScrollHint(props: { className?: string }) {
