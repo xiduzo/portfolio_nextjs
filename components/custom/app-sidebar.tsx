@@ -25,7 +25,11 @@ import Link from "next/link";
 import { useLocalStorage } from "usehooks-ts";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
-import { playMenuSound, playOpenFolderSound } from "@/lib/sound";
+import {
+    playMenuItemClosedSound,
+    playMenuItemHoverSound,
+    playMenuItemOpenedSound,
+} from "@/lib/sound";
 
 type Item = {
     name: string;
@@ -149,6 +153,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
 function Tree(props: { item: Item }) {
     const pathname = usePathname();
+    const [isClient, setIsClient] = React.useState(false);
 
     const [openItems, setOpenItems] = useLocalStorage<string[]>("open-items", [
         "highlighted",
@@ -157,10 +162,18 @@ function Tree(props: { item: Item }) {
 
     const { name, link, children } = props.item;
 
+    // Ensure we're on the client side before rendering collapsible state
+    React.useEffect(() => {
+        setIsClient(true);
+    }, []);
+
     if (!children?.length) {
         return (
             <SidebarMenuItem>
-                <Link href={link ?? "/404"} onMouseEnter={playMenuSound}>
+                <Link
+                    href={link ?? "/404"}
+                    onMouseEnter={playMenuItemHoverSound}
+                >
                     <SidebarMenuButton
                         isActive={name === "button.tsx"}
                         className={clsx(
@@ -183,18 +196,19 @@ function Tree(props: { item: Item }) {
         <SidebarMenuItem>
             <Collapsible
                 className="group/collapsible [&[data-state=open]>button>svg:first-child]:hidden [&[data-state=open]>button>svg:last-child]:block"
-                defaultOpen={openItems.includes(name)}
+                defaultOpen={isClient ? openItems.includes(name) : false}
             >
                 <CollapsibleTrigger
                     asChild
-                    onMouseEnter={playMenuSound}
+                    onMouseEnter={playMenuItemHoverSound}
                     onClick={() => {
-                        playOpenFolderSound();
                         if (openItems.includes(name)) {
+                            playMenuItemClosedSound();
                             setOpenItems(
                                 openItems.filter((item) => item !== name),
                             );
                         } else {
+                            playMenuItemOpenedSound();
                             setOpenItems([...openItems, name]);
                         }
                     }}

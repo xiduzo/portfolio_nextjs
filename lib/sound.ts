@@ -1,91 +1,89 @@
-import {
-    NoiseSynth,
-    Synth,
-    now,
-    MembraneSynth,
-    Filter,
-    getContext,
-    start,
-} from "tone";
+// Global AudioContext to avoid creating multiple instances
+let globalAudioContext: AudioContext | null = null;
 
-export function playMenuSound() {
-    playSound(menuSound);
-}
+// Cache for audio buffers to avoid repeated downloads
+const audioBufferCache = new Map<string, AudioBuffer>();
 
-export function playOpenFolderSound() {
-    playSound(openFolderSound);
-}
+// Initialize the global AudioContext
+function getAudioContext(): AudioContext | null {
+  if (typeof window === "undefined") return null;
 
-function playSound(soundToPlay: () => void) {
-    if (getContext().state !== "running") {
-        start().then(soundToPlay);
-    } else {
-        soundToPlay();
+  if (!globalAudioContext) {
+    try {
+      globalAudioContext = new window.AudioContext();
+    } catch (error) {
+      console.warn("Failed to create AudioContext:", error);
+      return null;
     }
+  }
+
+  // Resume the context if it's suspended (required for user interaction)
+  if (globalAudioContext.state === "suspended") {
+    globalAudioContext.resume().catch((error) => {
+      console.warn("Failed to resume AudioContext:", error);
+    });
+  }
+
+  return globalAudioContext;
 }
 
-const click = new NoiseSynth({
-    noise: { type: "white" },
-    envelope: {
-        attack: 0.0005,
-        decay: 0.02, // slightly longer to make it smoother
-        sustain: 0,
-        release: 0,
-    },
-}).toDestination();
+export async function playMenuItemHoverSound() {
+  if (typeof window === "undefined") return;
 
-// Add a filter to remove harsh highs and give it a warm tone
-const filter = new Filter(1000, "lowpass").toDestination();
-click.connect(filter);
+  const audios = [
+    // "/sound/click-1.wav",
+    // "/sound/click-2.wav",
+    // "/sound/click-3.wav",
+    "/sound/click-4.wav",
+    "/sound/click-5.wav",
+  ];
 
-function menuSound() {
-    // Limit max volume and add slight randomization
-    const maxVolume = -28; // maximum volume in dB
-    const minVolume = -35; // minimum volume in dB
-    click.volume.value = minVolume + Math.random() * (maxVolume - minVolume);
-
-    click.triggerAttackRelease("16n");
+  const randomIndex = Math.floor(Math.random() * audios.length);
+  await playWav(audios[randomIndex], 0.1);
 }
 
-// Create a soft noise "swoosh"
-const openNoise = new NoiseSynth({
-    noise: { type: "pink" }, // pink = softer than white
-    envelope: {
-        attack: 0.01,
-        decay: 0.3, // longer and smoother
-        sustain: 0,
-        release: 0.05,
-    },
-}).toDestination();
+export async function playMenuItemOpenedSound() {
+  if (typeof window === "undefined") return;
+  await playWav("/sound/folder-open.wav");
+}
 
-// Soft rustle (main paper sound)
-const rustle = new NoiseSynth({
-    noise: { type: "pink" }, // pink = warm and natural
-    envelope: {
-        attack: 0.02, // gentle rise
-        decay: 0.25, // short fade
-        sustain: 0,
-        release: 0.05,
-    },
-}).toDestination();
+export async function playMenuItemClosedSound() {
+  if (typeof window === "undefined") return;
+  await playWav("/sound/folder-close.wav");
+}
 
-// Create two sources: a flap (low hit) and a rustle (noise)
-const flap = new MembraneSynth({
-    pitchDecay: 0.05,
-    octaves: 2,
-    envelope: { attack: 0.001, decay: 0.2, sustain: 0.0, release: 0.1 },
-}).toDestination();
+async function playWav(url: string, volume: number = 1.0) {
+  try {
+    const audioContext = getAudioContext();
+    if (!audioContext) return;
 
-const rustleFolder = new NoiseSynth({
-    noise: { type: "brown" },
-    envelope: { attack: 0.001, decay: 0.15, sustain: 0 },
-})
-    .connect(new Filter(8000, "lowpass"))
-    .toDestination();
+    // Check if we already have this audio buffer cached
+    let audioBuffer = audioBufferCache.get(url);
 
-// Function to play the folder-opening sound
-export function openFolderSound() {
-    // Start both with slightly offset timing for realism
-    flap.triggerAttackRelease("C2", "8n", now());
-    rustleFolder.triggerAttackRelease("16n", now() + 0.02);
+    if (!audioBuffer) {
+      // Download and decode the audio file
+      const response = await fetch(url);
+      const arrayBuffer = await response.arrayBuffer();
+      audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+
+      // Cache the decoded audio buffer
+      audioBufferCache.set(url, audioBuffer);
+    }
+
+    // Create and play the audio source
+    const source = audioContext.createBufferSource();
+    const gainNode = audioContext.createGain();
+
+    // Set the volume (0.0 = silent, 1.0 = full volume)
+    gainNode.gain.value = Math.max(0, Math.min(1, volume));
+
+    // Connect: source -> gain -> destination
+    source.buffer = audioBuffer;
+    source.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+    source.start(0);
+  } catch (error) {
+    // Silently fail if audio can't be played
+    console.warn("Failed to play audio:", error);
+  }
 }
