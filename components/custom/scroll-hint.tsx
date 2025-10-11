@@ -40,7 +40,7 @@ export function ScrollHint(props: { className?: string }) {
         >
             <TypingAnimation
                 cursorStyle="block"
-                delay={3000}
+                delay={5000}
                 className={clsx(
                     "text-sm text-muted-foreground rounded-lg p-4 transition-all",
                     props.className,

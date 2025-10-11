@@ -25,6 +25,7 @@ import { cookies } from "next/headers";
 import { THEME_STORAGE_KEY } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { MailIcon, SmileIcon } from "lucide-react";
+import { SparklesText } from "@/components/ui/sparkles-text";
 
 export const metadata: Metadata = {
     title: "Portfolio Sander Boer",
@@ -81,7 +82,7 @@ export default async function RootLayout({
                                 </Avatar>
                             </Link>
                         </header>
-                        <article id="main-content">
+                        <article id="main-content" tabIndex={-1}>
                             <ObserverProvider>{children}</ObserverProvider>
                         </article>
                         <footer className="pt-64 pb-24 mt-64 bg-muted text-muted-foreground px-3 md:px-6 text-center">
@@ -91,22 +92,38 @@ export default async function RootLayout({
                             >
                                 Enough scrolling,
                             </Text>
-                            <Text className="font-extralight mb-10">
-                                Want to make 🪄 together?
+                            <Text
+                                className="font-extralight mb-10"
+                                aria-label="Want to make magic together?"
+                                as="div"
+                            >
+                                Want to make{" "}
+                                <SparklesText className="font-extralight inline-block text-3xl">
+                                    🪄
+                                </SparklesText>{" "}
+                                together?
                             </Text>
                             <Text
                                 as="div"
                                 className="flex justify-center mt-20"
                             >
-                                <Link href="mailto:mail@sanderboer.nl">
+                                <Link
+                                    href="mailto:mail@sanderboer.nl"
+                                    aria-label="Send me an email"
+                                >
                                     <CallToAction icon={<MailIcon />}>
                                         Grab a 🍺 with me
                                     </CallToAction>
                                 </Link>
                             </Text>
-                            <Link href="https://www.linkedin.com/in/xiduzo/">
+                            <Link
+                                href="https://www.linkedin.com/in/xiduzo/"
+                                target="_blank"
+                                aria-label="Visit my LinkedIn profile"
+                            >
                                 <Button
                                     variant="ghost"
+                                    asChild
                                     className="hover:cursor-alias mt-52"
                                 >
                                     <Text size="sm">

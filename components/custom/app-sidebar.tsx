@@ -25,6 +25,7 @@ import Link from "next/link";
 import { useLocalStorage } from "usehooks-ts";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
+import { playMenuSound, playOpenFolderSound } from "@/lib/sound";
 
 type Item = {
     name: string;
@@ -159,7 +160,7 @@ function Tree(props: { item: Item }) {
     if (!children?.length) {
         return (
             <SidebarMenuItem>
-                <Link href={link ?? "/404"}>
+                <Link href={link ?? "/404"} onMouseEnter={playMenuSound}>
                     <SidebarMenuButton
                         isActive={name === "button.tsx"}
                         className={clsx(
@@ -186,7 +187,9 @@ function Tree(props: { item: Item }) {
             >
                 <CollapsibleTrigger
                     asChild
+                    onMouseEnter={playMenuSound}
                     onClick={() => {
+                        playOpenFolderSound();
                         if (openItems.includes(name)) {
                             setOpenItems(
                                 openItems.filter((item) => item !== name),

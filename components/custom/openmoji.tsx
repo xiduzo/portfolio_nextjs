@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { EMOJIS } from "@/lib/openmoji";
+import { cn } from "@/lib/utils";
 
 export function Openmoji(props: Props) {
     const emoji = EMOJIS[props.hexcode];
@@ -7,15 +7,20 @@ export function Openmoji(props: Props) {
     if (!emoji) return null;
 
     return (
-        <Image
-            className={props.className}
-            alt={emoji.annotation}
-            width={props.size ?? 24}
-            height={props.size ?? 24}
-            src={`/openmoji/${props.style ?? "color"}/${props.hexcode}.svg`}
-            loading="eager"
-            priority
-        />
+        <div
+            className={cn(
+                "open-moji",
+                `text-[${props.size ?? 24}px]`,
+                props.className,
+            )}
+            style={{
+                fontSize: props.size ?? 24,
+                lineHeight: 1,
+            }}
+            dangerouslySetInnerHTML={{
+                __html: `&#x${props.hexcode};`,
+            }}
+        ></div>
     );
 }
 

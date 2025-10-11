@@ -96,8 +96,20 @@ export default function Page() {
                 <Text as="h2" variant="subheading">
                     What I like to do
                 </Text>
-                <Text>
-                    Fusing 🔥 technology with{" "}
+                <Text aria-label="Fusing hot technology with magic design">
+                    Fusing{" "}
+                    <div className="relative inline-block w-8">
+                        <span className="absolute bottom-0 left-0 motion-preset-stretch motion-ease-bounce motion-loop-infinite">
+                            🔥
+                        </span>
+                        <span className="absolute bottom-0 left-2 motion-preset-stretch motion-delay-500 motion-ease-bounce motion-loop-infinite">
+                            🔥
+                        </span>
+                        <span className="absolute bottom-0 -left-2 motion-preset-stretch motion-delay-150 motion-ease-bounce motion-loop-infinite">
+                            🔥
+                        </span>
+                    </div>{" "}
+                    technology with{" "}
                     <SparklesText className="font-base inline-block text-3xl">
                         🪄
                     </SparklesText>{" "}
