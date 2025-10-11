@@ -7,6 +7,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { TextRevealByWord } from "@/components/magic-ui/text-reveal";
 import { ScrollHint } from "@/components/custom/scroll-hint";
 import { SmileIcon } from "lucide-react";
+import { SparklesText } from "@/components/ui/sparkles-text";
 
 export default function Page() {
     return (
@@ -95,7 +96,13 @@ export default function Page() {
                 <Text as="h2" variant="subheading">
                     What I like to do
                 </Text>
-                <Text>Fusing 🔥 technology with ✨ design.</Text>
+                <Text>
+                    Fusing 🔥 technology with{" "}
+                    <SparklesText className="font-base inline-block text-3xl">
+                        🪄
+                    </SparklesText>{" "}
+                    design.
+                </Text>
                 <Text>
                     I love to create tools that enhance the performance of
                     professionals or/and empower individuals.

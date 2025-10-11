@@ -13,6 +13,7 @@ export function Quote(props: Props) {
             <figcaption className="text-muted-foreground">
                 {props.link && (
                     <Link
+                        // as="cite" // TODO make use of cite propery
                         target="_blank"
                         href={props.link}
                         className="text-muted-foreground"

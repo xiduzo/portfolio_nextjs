@@ -34,6 +34,10 @@ export default function Page() {
                             performance of professionals and empower
                             individuals.
                         </Text>
+                        <Link href="/about" target="_blank">
+                            Get to know me more
+                        </Link>
+                        <Text as="h2">hi there partner!</Text>
                         <Text
                             as="div"
                             className="flex justify-center mt-12 md:mt-20"

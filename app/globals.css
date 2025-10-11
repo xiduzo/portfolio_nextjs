@@ -78,7 +78,7 @@ body {
         --sidebar-border: 240 3.7% 15.9%;
         --sidebar-ring: 217.2 91.2% 59.8%;
     }
-  .theme {
+    .theme {
         --animate-blink-cursor: blink-cursor 1.2s step-end infinite;
     }
 }
@@ -104,10 +104,10 @@ a[target="_blank"]:not(:has(*)) {
     @apply cursor-alias text-blue-400;
 }
 
-a[target="_blank"]:not(:has(*))::before,
+/*a[target="_blank"]:not(:has(*))::before,
 a[target="_blank"]:not(:has(*))::after {
     @apply text-foreground font-body;
-}
+}*/
 
 a[target="_blank"]:not(:has(*))::before {
     @apply content-['['];
@@ -232,13 +232,7 @@ main > header {
 }
 
 :not(pre) > code {
-    @apply font-mono text-green-500;
-}
-
-@media (prefers-color-scheme: dark) {
-    :not(pre) > code {
-        @apply text-emerald-400;
-    }
+    @apply text-green-700 dark:text-green-400;
 }
 
 :not(pre) > code::before,
@@ -255,7 +249,7 @@ main > header {
 }
 
 sup {
-    @apply text-muted-foreground font-note;
+    @apply text-muted-foreground;
 }
 
 main > article figure blockquote > *::before,
@@ -264,56 +258,43 @@ main > article figure blockquote > *::after {
 }
 
 main > article em {
-    @apply text-blue-400;
+    @apply text-indigo-600  dark:text-indigo-400;
 }
 
 main > article em::before,
 main > article em::after {
-    @apply font-note;
     content: "_";
 }
 
 main > article strong {
-    @apply text-orange-500;
+    @apply text-amber-700 dark:text-amber-400;
 }
 
 main > article strong::before,
 main > article strong::after {
-    @apply font-note;
     content: "**";
-}
-
-main > article strong::before {
-    @apply mr-1;
-}
-main > article strong::after {
-    @apply -ml-1;
 }
 
 main > article h2,
 main > article h3,
 main > article h4 {
-    @apply text-red-400;
+    @apply text-rose-700 dark:text-rose-400 font-bold;
 }
 
 main > article h2::before {
-    @apply font-body;
     content: "# ";
 }
 
 main > article h3::before {
-    @apply font-body;
     content: "## ";
 }
 
 main > article h4::before {
-    @apply font-body;
     content: "### ";
 }
 
 main > article em::before,
 main > article em::after {
-    @apply font-body;
     content: "_";
 }
 
@@ -343,13 +324,26 @@ figure:has(blockquote) figcaption::before {
     content: "— ";
 }
 
+figure:not(:has(blockquote)) figcaption {
+    @apply text-indigo-700 dark:text-indigo-400;
+}
+
+figure:not(:has(blockquote)) figcaption::before {
+    content: "![";
+}
+figure:not(:has(blockquote)) figcaption::after {
+    content: "]";
+}
+
 @theme inline {
-  @keyframes blink-cursor {
-  0%, 49% {
-    opacity: 1;
+    @keyframes blink-cursor {
+        0%,
+        49% {
+            opacity: 1;
         }
-  50%, 100% {
-    opacity: 0;
+        50%,
+        100% {
+            opacity: 0;
         }
     }
 }
