@@ -153,7 +153,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
 function Tree(props: { item: Item }) {
     const pathname = usePathname();
-    const [isClient, setIsClient] = React.useState(false);
 
     const [openItems, setOpenItems] = useLocalStorage<string[]>("open-items", [
         "highlighted",
@@ -161,11 +160,6 @@ function Tree(props: { item: Item }) {
     ]);
 
     const { name, link, children } = props.item;
-
-    // Ensure we're on the client side before rendering collapsible state
-    React.useEffect(() => {
-        setIsClient(true);
-    }, []);
 
     if (!children?.length) {
         return (
@@ -196,7 +190,7 @@ function Tree(props: { item: Item }) {
         <SidebarMenuItem>
             <Collapsible
                 className="group/collapsible [&[data-state=open]>button>svg:first-child]:hidden [&[data-state=open]>button>svg:last-child]:block"
-                defaultOpen={isClient ? openItems.includes(name) : false}
+                defaultOpen={openItems.includes(name)}
             >
                 <CollapsibleTrigger
                     asChild
