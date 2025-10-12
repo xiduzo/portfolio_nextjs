@@ -27,6 +27,8 @@ import { Button } from "@/components/ui/button";
 import { MailIcon, SmileIcon } from "lucide-react";
 import { SparklesText } from "@/components/ui/sparkles-text";
 
+import { Analytics } from "@vercel/analytics/next";
+
 export const metadata: Metadata = {
     title: "Portfolio Sander Boer",
     description:
@@ -169,6 +171,7 @@ export default async function RootLayout({
                         </footer>
                     </SidebarInset>
                 </SidebarProvider>
+                <Analytics />
             </body>
         </html>
     );
