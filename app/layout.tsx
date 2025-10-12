@@ -42,6 +42,41 @@ export default async function RootLayout({
 
     return (
         <html lang="en" className={theme}>
+            <head>
+                <link rel="icon" href="/icon/favicon.ico" />
+                <link
+                    rel="icon"
+                    type="image/png"
+                    sizes="16x16"
+                    href="/icon/favicon-16x16.png"
+                />
+                <link
+                    rel="icon"
+                    type="image/png"
+                    sizes="32x32"
+                    href="/icon/favicon-32x32.png"
+                />
+                <link
+                    rel="icon"
+                    type="image/png"
+                    sizes="64x64"
+                    href="/icon/favicon-64x64.png"
+                />
+                <link
+                    rel="apple-touch-icon"
+                    sizes="192x192"
+                    href="/icon/favicon-192x192.png"
+                />
+                <link
+                    rel="apple-touch-icon"
+                    sizes="512x512"
+                    href="/icon/favicon-512x512.png"
+                />
+                <meta
+                    name="msapplication-TileImage"
+                    content="/icon/favicon-192x192.png"
+                />
+            </head>
             <body
                 className={`${headings.variable} ${subHeadings.variable} ${body.variable} ${note.variable} antialiased`}
             >
