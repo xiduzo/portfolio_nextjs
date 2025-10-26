@@ -42,6 +42,11 @@ export async function playMenuItemHoverSound() {
   await playWav(audios[randomIndex], 0.1);
 }
 
+export async function playCTASound() {
+  if (typeof window === "undefined") return;
+  await playWav("/sound/soft-bubbly_button_click_in_01.wav", 0.2);
+}
+
 export async function playMenuItemOpenedSound() {
   if (typeof window === "undefined") return;
   await playWav("/sound/folder-open.wav");

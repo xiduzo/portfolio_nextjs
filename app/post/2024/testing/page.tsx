@@ -5,115 +5,121 @@ import { Quote } from "@/components/custom/quote";
 import { Section } from "@/components/custom/section";
 import { Text } from "@/components/custom/text";
 import Link from "next/link";
+import { TLDR } from "@/components/custom/tldr";
 
 export default function Page() {
-    return (
-        <>
-            <Hero
-                title="Testing"
-                publishDate="Apr 4 2024"
-                emoji="1F9EA"
-                className="bg-red-500"
-                subtitle="And become a better engineer"
-                readTime={22}
-            />
-            <Section>
-                <Text>
-                    Although there are{" "}
-                    <Link
-                        href="https://medium.com/codex/types-of-testing-de4cdd98df77"
-                        target="_blank"
-                    >
-                        many forms of testing
-                    </Link>
-                    , in this article I will focus on unit testing — in
-                    TypeScript.
-                </Text>
-                <Text>
-                    I believe they are the easiest to setup, easy to
-                    write/maintain and when done properly{" "}
-                    <Link
-                        href="https://www.youtube.com/watch?v=QFCHSEHgqFE"
-                        target="_blank"
-                    >
-                        end-to-end testing may become obsolete
-                    </Link>
-                    .
-                </Text>
-            </Section>
-            <Section>
-                <Alert icon="AlertCircle" intent="info">
-                    <Text>
-                        The examples in this article are for testing in
-                        JavaScript (TypeScript). However, the principles can be
-                        applied to you favorite tools.
-                    </Text>
-                </Alert>
-            </Section>
-            <Quote
-                cite="ChatGPT"
-                link="https://chat.openai.com/share/97ddf631-1171-4c18-9f70-40e2b6f30e8b"
-            >
-                Engineers conduct tests and experiments to evaluate the
-                performance, safety, and reliability of products or systems.
-                This may involve using specialized equipment, conducting
-                simulations, or performing real-world trials.
-            </Quote>
-            <Section>
-                <Text as="h2" variant="subheading">
-                    The software engineer
-                </Text>
-                <Text>
-                    In the physical world, you rely on engineers to be due
-                    diligent in their work. You would not like to have a bridge
-                    collapse because it was not tested properly, right?
-                </Text>
-                <Text>
-                    So how is it that I come across many{" "}
-                    <em>software engineers</em> who not test their code?
-                </Text>
-                <Text>
-                    It is our job that the code we write works as intended, and
-                    —preferably— keeps on working as intended after changes have
-                    been made.
-                </Text>
-                <Text>
-                    This is, to me, part of the <em>engineering</em> mindset.
-                </Text>
-            </Section>
-            <Section>
-                <Text as="h2" variant="subheading">
-                    Some 🚩🚩🚩🚩
-                </Text>
-                <Text>
-                    Every project (-team) is different, but there are some
-                    common pitfalls that I have seen over and over again which
-                    should raise some red flags for you.
-                </Text>
-            </Section>
-            <Section>
-                <Text as="h3" variant="subheading" size="sm">
-                    🚩 No test runner has been setup
-                </Text>
-                <Text>
-                    This one is kind of obvious, but when a project has no test
-                    runner setup it does not motivate (new) team members to
-                    write tests.
-                </Text>
-                <Text>
-                    Why would you bother writing tests as this project clearly
-                    does not find them important?
-                </Text>
-                <Text>
-                    This is true for a local setup which enables developers to
-                    validate their code locally.
-                </Text>
-                <Text>
-                    It is equally important to have a test runner in your CI/CD
-                    pipeline.
-                </Text>
-                <CodeBlock
-                    code={`
+  return (
+    <>
+      <Hero
+        title="Testing"
+        publishDate="Apr 4 2024"
+        emoji="1F9EA"
+        className="bg-red-500"
+        subtitle="And become a better engineer"
+        readTime={22}
+      />
+      <TLDR
+        lines={[
+          "Testing is essential for software engineers to ensure code works as intended and continues working after changes.",
+          "Common pitfalls include no test runner setup, treating tests as second-class citizens, writing unclean test code, and focusing on coverage percentages over actual confidence.",
+          "Use modern tools like Vitest, Zod for validation, and testing-library for UI tests.",
+          "Write clean, independent, repeatable tests that follow the Arrange-Act-Assert pattern.",
+        ]}
+      />
+      <Section>
+        <Text>
+          Although there are{" "}
+          <Link
+            href="https://medium.com/codex/types-of-testing-de4cdd98df77"
+            target="_blank"
+          >
+            many forms of testing
+          </Link>
+          , in this article I will focus on unit testing — in TypeScript.
+        </Text>
+        <Text>
+          I believe they are the easiest to setup, easy to write/maintain and
+          when done properly{" "}
+          <Link
+            href="https://www.youtube.com/watch?v=QFCHSEHgqFE"
+            target="_blank"
+          >
+            end-to-end testing may become obsolete
+          </Link>
+          .
+        </Text>
+      </Section>
+      <Section>
+        <Alert icon="AlertCircle" intent="info">
+          <Text>
+            The examples in this article are for testing in JavaScript
+            (TypeScript). However, the principles can be applied to you favorite
+            tools.
+          </Text>
+        </Alert>
+      </Section>
+      <Quote
+        cite="ChatGPT"
+        link="https://chat.openai.com/share/97ddf631-1171-4c18-9f70-40e2b6f30e8b"
+      >
+        Engineers conduct tests and experiments to evaluate the performance,
+        safety, and reliability of products or systems. This may involve using
+        specialized equipment, conducting simulations, or performing real-world
+        trials.
+      </Quote>
+      <Section>
+        <Text as="h2" variant="subheading">
+          The software engineer
+        </Text>
+        <Text>
+          In the physical world, you rely on engineers to be due diligent in
+          their work. You would not like to have a bridge collapse because it
+          was not tested properly, right?
+        </Text>
+        <Text>
+          So how is it that I come across many <em>software engineers</em> who
+          not test their code?
+        </Text>
+        <Text>
+          It is our job that the code we write works as intended, and
+          —preferably— keeps on working as intended after changes have been
+          made.
+        </Text>
+        <Text>
+          This is, to me, part of the <em>engineering</em> mindset.
+        </Text>
+      </Section>
+      <Section>
+        <Text as="h2" variant="subheading">
+          Some 🚩🚩🚩🚩
+        </Text>
+        <Text>
+          Every project (-team) is different, but there are some common pitfalls
+          that I have seen over and over again which should raise some red flags
+          for you.
+        </Text>
+      </Section>
+      <Section>
+        <Text as="h3" variant="subheading" size="sm">
+          🚩 No test runner has been setup
+        </Text>
+        <Text>
+          This one is kind of obvious, but when a project has no test runner
+          setup it does not motivate (new) team members to write tests.
+        </Text>
+        <Text>
+          Why would you bother writing tests as this project clearly does not
+          find them important?
+        </Text>
+        <Text>
+          This is true for a local setup which enables developers to validate
+          their code locally.
+        </Text>
+        <Text>
+          It is equally important to have a test runner in your CI/CD pipeline.
+        </Text>
+        <CodeBlock
+          code={`
 \`\`\`yml
 # Simple GitHub-actions example
 name: Node.js CI
@@ -135,24 +141,23 @@ jobs:
       - run: npm run test
 \`\`\`
                     `}
-                />
-                <Text>
-                    This way you can ensure no old code is broken
-                    unintentionally. Even when you or a team member forgot about
-                    running the tests locally.
-                </Text>
-            </Section>
-            <Section>
-                <Text as="h3" variant="subheading" size="sm">
-                    🚩 Tests are treated as second-class citizens
-                </Text>
-                <Text>
-                    When tests are stored away in a separate folder it makes
-                    them harder to find and easier to forget about.
-                </Text>
-                <Text>There is no constant nudge to write tests.</Text>
-                <CodeBlock
-                    code={`
+        />
+        <Text>
+          This way you can ensure no old code is broken unintentionally. Even
+          when you or a team member forgot about running the tests locally.
+        </Text>
+      </Section>
+      <Section>
+        <Text as="h3" variant="subheading" size="sm">
+          🚩 Tests are treated as second-class citizens
+        </Text>
+        <Text>
+          When tests are stored away in a separate folder it makes them harder
+          to find and easier to forget about.
+        </Text>
+        <Text>There is no constant nudge to write tests.</Text>
+        <CodeBlock
+          code={`
 \`\`\`
 project-root/
 │
@@ -165,18 +170,17 @@ project-root/
     └── utils.test.ts
 \`\`\`
                     `}
-                />
-                <Text>
-                    Try placing the tests as part of the source code, next to
-                    the code they are testing.
-                </Text>
-                <Text>
-                    This way the project itself tells you{" "}
-                    <em>&ldquo;we care about tests&rdquo;</em> just by working
-                    on it.
-                </Text>
-                <CodeBlock
-                    code={`
+        />
+        <Text>
+          Try placing the tests as part of the source code, next to the code
+          they are testing.
+        </Text>
+        <Text>
+          This way the project itself tells you{" "}
+          <em>&ldquo;we care about tests&rdquo;</em> just by working on it.
+        </Text>
+        <CodeBlock
+          code={`
 \`\`\`
 project-root/
 │
@@ -187,80 +191,78 @@ project-root/
     └── utils.test.ts
 \`\`\`
                     `}
-                />
-            </Section>
-            <Section>
-                <Text as="h3" variant="subheading" size="sm">
-                    🚩 Test code is not &ldquo;clean&rdquo;
-                </Text>
-                <Text>
-                    Why do you go to great lengths to write clean, maintainable
-                    code, but throw all of this out of the window when writing
-                    tests?
-                </Text>
-                <Text>
-                    Before we start this section I would like to define what I
-                    consider as <strong>source code</strong>. Source code is all
-                    the code which is part of the project. This can be broken
-                    down into <em>test code</em> and <em>production code</em>.
-                </Text>
-                <Text>
-                    Test code should adhere to the same standards of quality as
-                    the production code it is testing.
-                </Text>
-                <Quote
-                    cite="Clean Code: A Handbook of Agile Software Craftsmanship"
-                    link="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
-                >
-                    Indeed, the ratio of time spent reading versus writing is
-                    well over 10 to 1. We are constantly reading old code as
-                    part of the effort to write new code. Therefore, making it
-                    easy to read makes it easier to write.
-                </Quote>
-                <Quote
-                    cite=" Refactoring: Improving the Design of Existing Code"
-                    link="https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599"
-                >
-                    Any fool can write code that a computer can understand. Good
-                    programmers write code that humans can understand.
-                </Quote>
-            </Section>
-            <Section>
-                <Text>
-                    Some indicators I have found that you throw out clean code
-                    principles when writing tests:
-                </Text>
-                <Text className="mt-28" as="ol">
-                    <li>Ignoring test files in your linting</li>
-                </Text>
-                <Text>
-                    Sure, this makes your life easier in the short term. But
-                    over the lifespan of a project you will end up with a lot of
-                    unmaintainable tests (read technical debt) that you have
-                    created yourself unnecessarily.
-                </Text>
-                <CodeBlock
-                    code={`
+        />
+      </Section>
+      <Section>
+        <Text as="h3" variant="subheading" size="sm">
+          🚩 Test code is not &ldquo;clean&rdquo;
+        </Text>
+        <Text>
+          Why do you go to great lengths to write clean, maintainable code, but
+          throw all of this out of the window when writing tests?
+        </Text>
+        <Text>
+          Before we start this section I would like to define what I consider as{" "}
+          <strong>source code</strong>. Source code is all the code which is
+          part of the project. This can be broken down into <em>test code</em>{" "}
+          and <em>production code</em>.
+        </Text>
+        <Text>
+          Test code should adhere to the same standards of quality as the
+          production code it is testing.
+        </Text>
+        <Quote
+          cite="Clean Code: A Handbook of Agile Software Craftsmanship"
+          link="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
+        >
+          Indeed, the ratio of time spent reading versus writing is well over 10
+          to 1. We are constantly reading old code as part of the effort to
+          write new code. Therefore, making it easy to read makes it easier to
+          write.
+        </Quote>
+        <Quote
+          cite=" Refactoring: Improving the Design of Existing Code"
+          link="https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599"
+        >
+          Any fool can write code that a computer can understand. Good
+          programmers write code that humans can understand.
+        </Quote>
+      </Section>
+      <Section>
+        <Text>
+          Some indicators I have found that you throw out clean code principles
+          when writing tests:
+        </Text>
+        <Text className="mt-28" as="ol">
+          <li>Ignoring test files in your linting</li>
+        </Text>
+        <Text>
+          Sure, this makes your life easier in the short term. But over the
+          lifespan of a project you will end up with a lot of unmaintainable
+          tests (read technical debt) that you have created yourself
+          unnecessarily.
+        </Text>
+        <CodeBlock
+          code={`
 \`\`\`typescript
 {
     "ignorePatterns": ["**/*.test.ts"], // Don't do this
 }
 \`\`\`
                     `}
-                />
-                <Text as="ol" start={2}>
-                    <li>Making the test (file) a puzzle by itself</li>
-                </Text>
-                <Text>
-                    Tests can be considered documentation itself when written
-                    properly.
-                </Text>
-                <Text>
-                    Why make it harder for the next person, which is most likely
-                    going to be you, to understand what is going on?
-                </Text>
-                <CodeBlock
-                    code={`
+        />
+        <Text as="ol" start={2}>
+          <li>Making the test (file) a puzzle by itself</li>
+        </Text>
+        <Text>
+          Tests can be considered documentation itself when written properly.
+        </Text>
+        <Text>
+          Why make it harder for the next person, which is most likely going to
+          be you, to understand what is going on?
+        </Text>
+        <CodeBlock
+          code={`
 \`\`\`typescript
 it("should do the thing", () => {
   const a = [1, 10];
@@ -278,26 +280,26 @@ it("should do the thing", () => {
 });
 \`\`\`
                     `}
-                />
-                <Text>
-                    Act like you are writing <em>normal</em> code.
-                </Text>
-                <Text>
-                    This makes it easier to skim over the tests to see what is
-                    being tested and what the expected outcome is.
-                </Text>
-                <Text>
-                    The{" "}
-                    <Link
-                        href="https://automationpanda.com/2020/07/07/arrange-act-assert-a-pattern-for-writing-good-tests/"
-                        target="_blank"
-                    >
-                        Arrange, Act, Assert
-                    </Link>{" "}
-                    pattern can help you structure your tests.
-                </Text>
-                <CodeBlock
-                    code={`
+        />
+        <Text>
+          Act like you are writing <em>normal</em> code.
+        </Text>
+        <Text>
+          This makes it easier to skim over the tests to see what is being
+          tested and what the expected outcome is.
+        </Text>
+        <Text>
+          The{" "}
+          <Link
+            href="https://automationpanda.com/2020/07/07/arrange-act-assert-a-pattern-for-writing-good-tests/"
+            target="_blank"
+          >
+            Arrange, Act, Assert
+          </Link>{" "}
+          pattern can help you structure your tests.
+        </Text>
+        <CodeBlock
+          code={`
 \`\`\`typescript
 it("should plot a curve between two data points", () => {
   // Arrange
@@ -318,20 +320,20 @@ it("should plot a curve between two data points", () => {
 });
 \`\`\`
                     `}
-                />
-                <Text as="ol" start={3}>
-                    <li>
-                        Not using <code>constant</code>, <code>enums</code>,{" "}
-                        <code>types</code> or <code>interfaces</code> defined in
-                        your production code
-                    </li>
-                </Text>
-                <Text>
-                    In our <em>production code</em> we tend use those to try and
-                    make the code more self-explanatory.
-                </Text>
-                <CodeBlock
-                    code={`
+        />
+        <Text as="ol" start={3}>
+          <li>
+            Not using <code>constant</code>, <code>enums</code>,{" "}
+            <code>types</code> or <code>interfaces</code> defined in your
+            production code
+          </li>
+        </Text>
+        <Text>
+          In our <em>production code</em> we tend use those to try and make the
+          code more self-explanatory.
+        </Text>
+        <CodeBlock
+          code={`
 \`\`\`typescript
 // sendCommand.ts
 enum CommandType {
@@ -349,10 +351,10 @@ async function sendCommand(command: Command) {
 }
 \`\`\`
                     `}
-                />
-                <Text>Why do we forget about this when writing tests?</Text>
-                <CodeBlock
-                    code={`
+        />
+        <Text>Why do we forget about this when writing tests?</Text>
+        <CodeBlock
+          code={`
 \`\`\`typescript
 // sendCommand.test.ts
 it("should log the constant", async () => {
@@ -363,14 +365,13 @@ it("should log the constant", async () => {
 });
 \`\`\`
                     `}
-                />
-                <Text>
-                    We can easily use them in our tests as well. This makes the
-                    tests more robust and less likely to break when the
-                    production code changes.
-                </Text>
-                <CodeBlock
-                    code={`
+        />
+        <Text>
+          We can easily use them in our tests as well. This makes the tests more
+          robust and less likely to break when the production code changes.
+        </Text>
+        <CodeBlock
+          code={`
 \`\`\`typescript
 // sendCommand.test.ts
 it("should log the constant", async () => {
@@ -381,17 +382,16 @@ it("should log the constant", async () => {
 });
 \`\`\`
                     `}
-                />
-                <Text as="ol" start={4}>
-                    <li>The test has too many responsibilities</li>
-                </Text>
-                <Text>
-                    When a test is <em>doing</em> too many things at once it
-                    becomes harder to pinpoint what is going wrong when the
-                    tests start failing.
-                </Text>
-                <CodeBlock
-                    code={`
+        />
+        <Text as="ol" start={4}>
+          <li>The test has too many responsibilities</li>
+        </Text>
+        <Text>
+          When a test is <em>doing</em> too many things at once it becomes
+          harder to pinpoint what is going wrong when the tests start failing.
+        </Text>
+        <CodeBlock
+          code={`
 \`\`\`typescript
 it("should test everything", () => {
   // should set global \`someGlobalValue\` to \`true\`
@@ -410,35 +410,32 @@ it("should test some other thing", () => {
 });
 \`\`\`
                     `}
-                />
-                <Text as="section">
-                    <div className="mb-4">Tests should be:</div>
-                    <ul>
-                        <li>
-                            <strong>independent</strong> —{" "}
-                            <code>
-                                it(&ldquo;should not rely on the outcome of
-                                another test&rdquo;)
-                            </code>
-                        </li>
-                        <li>
-                            <strong>repeatable</strong> —{" "}
-                            <code>
-                                it(&ldquo;should be runnable in any
-                                environment&rdquo;)
-                            </code>
-                        </li>
-                        <li>
-                            <strong>self-validating</strong> —{" "}
-                            <code>
-                                it(&ldquo;should return a clear pass or fail
-                                result&rdquo;)
-                            </code>
-                        </li>
-                    </ul>
-                </Text>
-                <CodeBlock
-                    code={`
+        />
+        <Text as="section">
+          <div className="mb-4">Tests should be:</div>
+          <ul>
+            <li>
+              <strong>independent</strong> —{" "}
+              <code>
+                it(&ldquo;should not rely on the outcome of another test&rdquo;)
+              </code>
+            </li>
+            <li>
+              <strong>repeatable</strong> —{" "}
+              <code>
+                it(&ldquo;should be runnable in any environment&rdquo;)
+              </code>
+            </li>
+            <li>
+              <strong>self-validating</strong> —{" "}
+              <code>
+                it(&ldquo;should return a clear pass or fail result&rdquo;)
+              </code>
+            </li>
+          </ul>
+        </Text>
+        <CodeBlock
+          code={`
 \`\`\`typescript
 // Make sure the tests can run anywhere,
 // even without a local DB
@@ -496,28 +493,27 @@ describe(doSomeOtherThing.name, () => {
 });
 \`\`\`
                     `}
-                />
-                <Text>
-                    Yes, the test file is significantly longer than the original
-                    example but it is easier to follow the intent of each test.
-                    And as a bonus, when a test fails you can pin-point the
-                    issue much faster.
-                </Text>
-            </Section>
-            <Section>
-                <Text as="h3" variant="subheading" size="sm">
-                    🚩 Coverage !== Confidence
-                </Text>
-                <Text>
-                    Hitting a certain percentage of coverage does not mean your
-                    software is properly tested.
-                </Text>
-                <Text>
-                    The following code has <strong>80% coverage</strong>, as
-                    this seems to be the general (mandatory) coverage goal.
-                </Text>
-                <CodeBlock
-                    code={`
+        />
+        <Text>
+          Yes, the test file is significantly longer than the original example
+          but it is easier to follow the intent of each test. And as a bonus,
+          when a test fails you can pin-point the issue much faster.
+        </Text>
+      </Section>
+      <Section>
+        <Text as="h3" variant="subheading" size="sm">
+          🚩 Coverage !== Confidence
+        </Text>
+        <Text>
+          Hitting a certain percentage of coverage does not mean your software
+          is properly tested.
+        </Text>
+        <Text>
+          The following code has <strong>80% coverage</strong>, as this seems to
+          be the general (mandatory) coverage goal.
+        </Text>
+        <CodeBlock
+          code={`
 \`\`\`typescript
 // src/test-me.ts
 import { deleteImportantData } from "./utils";
@@ -556,16 +552,16 @@ describe(TestMe.name, () => {
 });
 \`\`\`
                     `}
-                />
-                <Text>
-                    But what are you testing here? Does the JavaScript
-                    constructor still work?
-                </Text>
-            </Section>
-            <Section>
-                <Text>Have a look at the next example:</Text>
-                <CodeBlock
-                    code={`
+        />
+        <Text>
+          But what are you testing here? Does the JavaScript constructor still
+          work?
+        </Text>
+      </Section>
+      <Section>
+        <Text>Have a look at the next example:</Text>
+        <CodeBlock
+          code={`
 \`\`\`typescript
 // src/add.ts
 function add(array: number[]) => {
@@ -582,108 +578,105 @@ describe(add.name, () => {
 });
 \`\`\`
                     `}
-                />
-                <Text>
-                    And boom, you have <strong>100% coverage</strong>! But you
-                    are missing out on testing the edge cases. What if the array
-                    is empty? What if the array only has one element?
-                </Text>
-                <Text>
-                    Setting a (mandatory) coverage percentage is a{" "}
-                    <del>stupid</del> bad idea. More often than not this will
-                    lead to poorer tests just for the sake of increasing the
-                    coverage.
-                </Text>
-                <Text>
-                    I would not go as far as to{" "}
-                    <Link
-                        href="https://www.youtube.com/watch?v=ZGKGb109-I4"
-                        target="_blank"
-                    >
-                        not write any unit tests
-                    </Link>
-                    , just be{" "}
-                    <Link
-                        href="https://www.youtube.com/watch?v=IInciWyU74U"
-                        target="_blank"
-                    >
-                        thoughtful about what you are testing
-                    </Link>
-                    .
-                </Text>
-            </Section>
-            <Section>
-                <Text as="h2" variant="subheading">
-                    Using specialized equipment
-                </Text>
-                <Text>
-                    Being new in testing, or development for that matter, can be
-                    overwhelming. And although you can{" "}
-                    <Link
-                        href="https://www.jetbrains.com/help/idea/generate-tests.html"
-                        target="_blank"
-                    >
-                        generate your tests with AI
-                    </Link>
-                    , I think there are other tools out there which enable you
-                    to write better tests yourself.
-                </Text>
-                <Text>
-                    The list below is not exhaustive, but it will give you a
-                    good starting point.
-                </Text>
-            </Section>
-            <Section>
-                <Text as="h3" variant="subheading" size="sm">
-                    Build for speed
-                </Text>
-                <Text>
-                    Time moves on, and so do our tools. Most of us do not use{" "}
-                    <Link target="_blank" href="https://www.chaijs.com/">
-                        chai
-                    </Link>{" "}
-                    or{" "}
-                    <Link target="_blank" href="https://mochajs.org/">
-                        mocha
-                    </Link>{" "}
-                    anymore to write and run our tests. It is quite common to
-                    see{" "}
-                    <Link target="_blank" href="https://jestjs.io/">
-                        jest
-                    </Link>{" "}
-                    being the work-horse nowadays.
-                </Text>
-                <Quote
-                    cite="Clean Code: A Handbook of Agile Software Craftsmanship"
-                    link="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
-                >
-                    Tests should be fast. They should run quickly. When tests
-                    run slow, you won’t want to run them frequently. If you
-                    don’t run them frequently, you won’t find problems early
-                    enough to fix them easily. You won’t feel as free to clean
-                    up the code. Eventually, the code will begin to rot.
-                </Quote>
-                <Text>
-                    In order to go even faster you can use{" "}
-                    <Link target="_blank" href="https://vitest.dev/">
-                        Vitest
-                    </Link>{" "}
-                    as a drop-in replacement for Jest. This is expecialy useful
-                    for when your test suite grows.
-                </Text>
-            </Section>
-            <Section>
-                <Text as="h3" variant="subheading" size="sm">
-                    Validation
-                </Text>
-                <Text>
-                    A common way your code can break is when the data you
-                    receive is not what you expect. You should treat all
-                    external data as untrusted.
-                </Text>
-                <Text>Given the following example</Text>
-                <CodeBlock
-                    code={`
+        />
+        <Text>
+          And boom, you have <strong>100% coverage</strong>! But you are missing
+          out on testing the edge cases. What if the array is empty? What if the
+          array only has one element?
+        </Text>
+        <Text>
+          Setting a (mandatory) coverage percentage is a <del>stupid</del> bad
+          idea. More often than not this will lead to poorer tests just for the
+          sake of increasing the coverage.
+        </Text>
+        <Text>
+          I would not go as far as to{" "}
+          <Link
+            href="https://www.youtube.com/watch?v=ZGKGb109-I4"
+            target="_blank"
+          >
+            not write any unit tests
+          </Link>
+          , just be{" "}
+          <Link
+            href="https://www.youtube.com/watch?v=IInciWyU74U"
+            target="_blank"
+          >
+            thoughtful about what you are testing
+          </Link>
+          .
+        </Text>
+      </Section>
+      <Section>
+        <Text as="h2" variant="subheading">
+          Using specialized equipment
+        </Text>
+        <Text>
+          Being new in testing, or development for that matter, can be
+          overwhelming. And although you can{" "}
+          <Link
+            href="https://www.jetbrains.com/help/idea/generate-tests.html"
+            target="_blank"
+          >
+            generate your tests with AI
+          </Link>
+          , I think there are other tools out there which enable you to write
+          better tests yourself.
+        </Text>
+        <Text>
+          The list below is not exhaustive, but it will give you a good starting
+          point.
+        </Text>
+      </Section>
+      <Section>
+        <Text as="h3" variant="subheading" size="sm">
+          Build for speed
+        </Text>
+        <Text>
+          Time moves on, and so do our tools. Most of us do not use{" "}
+          <Link target="_blank" href="https://www.chaijs.com/">
+            chai
+          </Link>{" "}
+          or{" "}
+          <Link target="_blank" href="https://mochajs.org/">
+            mocha
+          </Link>{" "}
+          anymore to write and run our tests. It is quite common to see{" "}
+          <Link target="_blank" href="https://jestjs.io/">
+            jest
+          </Link>{" "}
+          being the work-horse nowadays.
+        </Text>
+        <Quote
+          cite="Clean Code: A Handbook of Agile Software Craftsmanship"
+          link="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
+        >
+          Tests should be fast. They should run quickly. When tests run slow,
+          you won’t want to run them frequently. If you don’t run them
+          frequently, you won’t find problems early enough to fix them easily.
+          You won’t feel as free to clean up the code. Eventually, the code will
+          begin to rot.
+        </Quote>
+        <Text>
+          In order to go even faster you can use{" "}
+          <Link target="_blank" href="https://vitest.dev/">
+            Vitest
+          </Link>{" "}
+          as a drop-in replacement for Jest. This is expecialy useful for when
+          your test suite grows.
+        </Text>
+      </Section>
+      <Section>
+        <Text as="h3" variant="subheading" size="sm">
+          Validation
+        </Text>
+        <Text>
+          A common way your code can break is when the data you receive is not
+          what you expect. You should treat all external data as untrusted.
+        </Text>
+        <Text>Given the following example</Text>
+        <CodeBlock
+          code={`
 \`\`\`typescript
 fetch("https://api.example.com")
   .then((response) => response.json())
@@ -705,14 +698,14 @@ fetch("https://api.example.com")
   });
 \`\`\`
                     `}
-                />
-                <Text>
-                    You can write a lot of safeguards and unit tests to validate
-                    the data you receive is of <code>MyType</code> otherwise it
-                    should throw an error.
-                </Text>
-                <CodeBlock
-                    code={`
+        />
+        <Text>
+          You can write a lot of safeguards and unit tests to validate the data
+          you receive is of <code>MyType</code> otherwise it should throw an
+          error.
+        </Text>
+        <CodeBlock
+          code={`
 \`\`\`typescript
 describe("fetchData", () => {
   it("should throw an error when \`property\` is missing", async () => {
@@ -735,20 +728,20 @@ describe("fetchData", () => {
 });
 \`\`\`
                     `}
-                />
-                <Text>
-                    Or, I would advice that, you can use a schema validator like{" "}
-                    <Link target="_blank" href="https://zod.dev/">
-                        zod
-                    </Link>{" "}
-                    or{" "}
-                    <Link target="_blank" href="https://github.com/jquense/yup">
-                        yup
-                    </Link>{" "}
-                    to parse and validate the data you receive.
-                </Text>
-                <CodeBlock
-                    code={`
+        />
+        <Text>
+          Or, I would advice that, you can use a schema validator like{" "}
+          <Link target="_blank" href="https://zod.dev/">
+            zod
+          </Link>{" "}
+          or{" "}
+          <Link target="_blank" href="https://github.com/jquense/yup">
+            yup
+          </Link>{" "}
+          to parse and validate the data you receive.
+        </Text>
+        <CodeBlock
+          code={`
 \`\`\`typescript
 import { z } from "zod";
 
@@ -765,25 +758,24 @@ fetch("https://api.example.com")
   });
 \`\`\`
                     `}
-                />
-                <Text>
-                    This will save a lot of effort in validating the data itself
-                    and, in my opinion, does not require any unit tests besides
-                    the error handling anymore.
-                </Text>
-            </Section>
-            <Section>
-                <Text as="h3" variant="subheading" size="sm">
-                    Passing objects
-                </Text>
-                <Text>
-                    Writing clean tests can become tedious when you have to pass
-                    a whole object while your tests only need one of the
-                    properties.
-                </Text>
-                <Text>What is seen happening a lot is the following:</Text>
-                <CodeBlock
-                    code={`
+        />
+        <Text>
+          This will save a lot of effort in validating the data itself and, in
+          my opinion, does not require any unit tests besides the error handling
+          anymore.
+        </Text>
+      </Section>
+      <Section>
+        <Text as="h3" variant="subheading" size="sm">
+          Passing objects
+        </Text>
+        <Text>
+          Writing clean tests can become tedious when you have to pass a whole
+          object while your tests only need one of the properties.
+        </Text>
+        <Text>What is seen happening a lot is the following:</Text>
+        <CodeBlock
+          code={`
 \`\`\`typescript
 describe("Annoying boilerplate", () => {
   it("can type-cast to make the test work", () => {
@@ -816,21 +808,20 @@ describe("Annoying boilerplate", () => {
 });
 \`\`\`
                     `}
-                />
-                <Text>
-                    And this works just fine, untill you start changing the
-                    <code>MyType</code>. A solution I used before was to make
-                    use of the{" "}
-                    <Link
-                        target="_blank"
-                        href="https://refactoring.guru/design-patterns/builder"
-                    >
-                        builder pattern
-                    </Link>{" "}
-                    to generate the objects for the tests.
-                </Text>
-                <CodeBlock
-                    code={`
+        />
+        <Text>
+          And this works just fine, untill you start changing the
+          <code>MyType</code>. A solution I used before was to make use of the{" "}
+          <Link
+            target="_blank"
+            href="https://refactoring.guru/design-patterns/builder"
+          >
+            builder pattern
+          </Link>{" "}
+          to generate the objects for the tests.
+        </Text>
+        <CodeBlock
+          code={`
 \`\`\`typescript
 class Builder<T> {
   constructor(protected readonly obj: T) {}
@@ -868,14 +859,14 @@ class MyTypeBuilder extends Builder<MyType> {
 }
 \`\`\`
                     `}
-                />
-                <Text>
-                    This allows you to create a <code>MyType</code> object with
-                    default values and override them when needed. This can be
-                    used in the following ways:
-                </Text>
-                <CodeBlock
-                    code={`
+        />
+        <Text>
+          This allows you to create a <code>MyType</code> object with default
+          values and override them when needed. This can be used in the
+          following ways:
+        </Text>
+        <CodeBlock
+          code={`
 \`\`\`typescript
 describe("Building your tests", () => {
   it("can pass the default values", () => {
@@ -911,21 +902,20 @@ describe("Building your tests", () => {
 });
 \`\`\`
                     `}
-                />
-                <Text>
-                    But sometimes you just need to{" "}
-                    <em>force something into a space</em>.{" "}
-                    <Link
-                        target="_blank"
-                        href="https://www.npmjs.com/package/@total-typescript/shoehorn"
-                    >
-                        @total-typescript/shoehorn
-                    </Link>{" "}
-                    is the tool you are looking for. It will allow you to pass
-                    partial data in tests while keeping TypeScript happy.
-                </Text>
-                <CodeBlock
-                    code={`
+        />
+        <Text>
+          But sometimes you just need to <em>force something into a space</em>.{" "}
+          <Link
+            target="_blank"
+            href="https://www.npmjs.com/package/@total-typescript/shoehorn"
+          >
+            @total-typescript/shoehorn
+          </Link>{" "}
+          is the tool you are looking for. It will allow you to pass partial
+          data in tests while keeping TypeScript happy.
+        </Text>
+        <CodeBlock
+          code={`
 \`\`\`typescript
 import { fromPartial } from "@total-typescript/shoehorn";
 
@@ -938,88 +928,85 @@ describe("No more boilerplate", () => {
 });
 \`\`\`
                     `}
-                />
-                <Text>
-                    This removes all the boilerplate code and allows you to
-                    focus on the actual test while still remaining completely
-                    type-safe.
-                </Text>
-            </Section>
-            <Section>
-                <Text as="h3" variant="subheading" size="sm">
-                    UI testing
-                </Text>
-                <Text>
-                    As you are working with Typescript, there is a big change
-                    you will need to test some frontend code as well.
-                </Text>
-                <Text>
-                    You might be familiar with tools such as{" "}
-                    <Link
-                        target="_blank"
-                        href="https://storybook.js.org/docs/writing-tests/test-runner"
-                    >
-                        storybook
-                    </Link>
-                    ,{" "}
-                    <Link target="_blank" href="https://www.cypress.io/">
-                        cypress
-                    </Link>{" "}
-                    or{" "}
-                    <Link target="_blank" href="https://playwright.dev/">
-                        playwright
-                    </Link>
-                    .
-                </Text>
-                <Text>
-                    These tools are powerful in their own right, but I think
-                    they are bloatware when writing unit tests.
-                </Text>
-                <Text>
-                    <Link target="_blank" href="https://playwright.dev/">
-                        @testing-library
-                    </Link>{" "}
-                    are “simple and complete testing utilities that encourage
-                    good testing practices” which allow you to test the DOM.
-                </Text>
-            </Section>
-            <Section>
-                <Text as="h3" variant="subheading" size="sm">
-                    Code coverage
-                </Text>
-                <Text>
-                    Although I am against setting coverage targets, it is
-                    valuable to know what parts of your code are tested and
-                    which are not.
-                </Text>
-                <Text>
-                    <Link target="_blank" href="https://about.codecov.io/">
-                        Codecov
-                    </Link>{" "}
-                    or{" "}
-                    <Link
-                        target="_blank"
-                        href="https://www.sonarsource.com/products/sonarqube/"
-                    >
-                        Sonarqube
-                    </Link>{" "}
-                    can give you these insights. You can use it to make educated
-                    decisions on the state of your codebase and determine where
-                    to focus your testing efforts.
-                </Text>
-            </Section>
-            <Section>
-                <Text as="h2" variant="subheading">
-                    Conducting simulations
-                </Text>
-                <Text>
-                    The beauty of testing is that you can mock (simulate) almost
-                    everything. This allows you to put your system under stress
-                    and force it into states that are hard(er) to reproduce in
-                    real life.
-                </Text>
-                <CodeBlock
-                    code={`
+        />
+        <Text>
+          This removes all the boilerplate code and allows you to focus on the
+          actual test while still remaining completely type-safe.
+        </Text>
+      </Section>
+      <Section>
+        <Text as="h3" variant="subheading" size="sm">
+          UI testing
+        </Text>
+        <Text>
+          As you are working with Typescript, there is a big change you will
+          need to test some frontend code as well.
+        </Text>
+        <Text>
+          You might be familiar with tools such as{" "}
+          <Link
+            target="_blank"
+            href="https://storybook.js.org/docs/writing-tests/test-runner"
+          >
+            storybook
+          </Link>
+          ,{" "}
+          <Link target="_blank" href="https://www.cypress.io/">
+            cypress
+          </Link>{" "}
+          or{" "}
+          <Link target="_blank" href="https://playwright.dev/">
+            playwright
+          </Link>
+          .
+        </Text>
+        <Text>
+          These tools are powerful in their own right, but I think they are
+          bloatware when writing unit tests.
+        </Text>
+        <Text>
+          <Link target="_blank" href="https://playwright.dev/">
+            @testing-library
+          </Link>{" "}
+          are “simple and complete testing utilities that encourage good testing
+          practices” which allow you to test the DOM.
+        </Text>
+      </Section>
+      <Section>
+        <Text as="h3" variant="subheading" size="sm">
+          Code coverage
+        </Text>
+        <Text>
+          Although I am against setting coverage targets, it is valuable to know
+          what parts of your code are tested and which are not.
+        </Text>
+        <Text>
+          <Link target="_blank" href="https://about.codecov.io/">
+            Codecov
+          </Link>{" "}
+          or{" "}
+          <Link
+            target="_blank"
+            href="https://www.sonarsource.com/products/sonarqube/"
+          >
+            Sonarqube
+          </Link>{" "}
+          can give you these insights. You can use it to make educated decisions
+          on the state of your codebase and determine where to focus your
+          testing efforts.
+        </Text>
+      </Section>
+      <Section>
+        <Text as="h2" variant="subheading">
+          Conducting simulations
+        </Text>
+        <Text>
+          The beauty of testing is that you can mock (simulate) almost
+          everything. This allows you to put your system under stress and force
+          it into states that are hard(er) to reproduce in real life.
+        </Text>
+        <CodeBlock
+          code={`
 \`\`\`typescript
 const fetchData = async (triesLeft = 1) => {
   try {
@@ -1072,40 +1059,39 @@ describe("simulate your software", () => {
 });
 \`\`\`
                     `}
-                />
-                <Text>
-                    You can go even deeper by{" "}
-                    <Link
-                        target="_blank"
-                        href="https://www.npmjs.com/package/vitest-mock-extended"
-                    >
-                        mocking any interface or object
-                    </Link>{" "}
-                    to give you full control over the simulation.
-                </Text>
-            </Section>
-            <Section>
-                <Text as="h2" variant="subheading">
-                    Performing real-world trials
-                </Text>
-                <Text>
-                    Testing is great, but if you are conducting unit tests they
-                    are placed in a vacuum.
-                </Text>
-                <Text>
-                    Software does not exist in a vacuum, and{" "}
-                    <strong>things will break</strong> when placed in the real
-                    world. You should make sure to have some form of strategy
-                    for this.
-                </Text>
-            </Section>
-            <Quote
-                cite="Refactoring: Improving the Design of Existing Code"
-                link="https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599"
-            >
-                When you get a bug report, start by writing a unit test that
-                exposes the bug.
-            </Quote>
-        </>
-    );
+        />
+        <Text>
+          You can go even deeper by{" "}
+          <Link
+            target="_blank"
+            href="https://www.npmjs.com/package/vitest-mock-extended"
+          >
+            mocking any interface or object
+          </Link>{" "}
+          to give you full control over the simulation.
+        </Text>
+      </Section>
+      <Section>
+        <Text as="h2" variant="subheading">
+          Performing real-world trials
+        </Text>
+        <Text>
+          Testing is great, but if you are conducting unit tests they are placed
+          in a vacuum.
+        </Text>
+        <Text>
+          Software does not exist in a vacuum, and{" "}
+          <strong>things will break</strong> when placed in the real world. You
+          should make sure to have some form of strategy for this.
+        </Text>
+      </Section>
+      <Quote
+        cite="Refactoring: Improving the Design of Existing Code"
+        link="https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599"
+      >
+        When you get a bug report, start by writing a unit test that exposes the
+        bug.
+      </Quote>
+    </>
+  );
 }

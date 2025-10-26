@@ -8,156 +8,159 @@ import { CallToAction } from "@/components/custom/call-to-action";
 import { Technologies } from "@/components/custom/technologies";
 import { Hero } from "@/components/custom/hero";
 import { Links } from "@/components/custom/links";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { TLDR } from "@/components/custom/tldr";
 
 export default function Page() {
-    return (
-        <>
-            <Hero
-                title="Microflow"
-                subtitle="Microcontrollers made simple"
-                readTime={8}
-                publishDate="Sep 14 2024"
-                emoji="E1D3"
-                className="bg-orange-500"
-                link="https://microflow.vercel.app/"
-            />
-            <Technologies
-                technologies={[
-                    "@xyflow/react",
-                    "Arduino Firmata",
-                    "Electron",
-                    "Figma plugin API",
-                    "Johnny-Five",
-                    "shadcn/ui",
-                    "MQTT",
-                ]}
-            />
-            <Section>
-                <Text as="h2" variant="subheading">
-                    Interactivity
-                </Text>
-                <Text>
-                    After helping students at the{" "}
-                    <Link
-                        href="https://www.masterdigitaldesign.com/"
-                        target="_blank"
-                    >
-                        Master Digital Design
-                    </Link>{" "}
-                    for some years, I noticed that many students struggled with
-                    a common issue: microcontrollers.
-                </Text>
-                <Text>
-                    The students want to create interactive (phygital)
-                    prototypes, but the learning curve is often too steep for
-                    most designers whom have never touched code before.
-                </Text>
-                <Text>
-                    And I must agree; even though I’ve been working with
-                    microcontrollers for several years now, switching from my
-                    usual JavaScript environment to the Arduino IDE still is
-                    rough for me.
-                </Text>
-            </Section>
-            <Section>
-                <Text as="h3" variant="subheading" size="sm">
-                    Rapid prototyping
-                </Text>
-                <Text size="sm">
-                    While there are some tools available that simplify working
-                    with microcontrollers, such as{" "}
-                    <Link href="https://www.arduinoblocks.com/" target="_blank">
-                        Arduino Blocks
-                    </Link>
-                    ,{" "}
-                    <Link
-                        href="https://edukits.co/code/#/editor"
-                        target="_blank"
-                    >
-                        Code kit
-                    </Link>{" "}
-                    or{" "}
-                    <Link href="http://johnny-five.io/" target="_blank">
-                        Johnny Five
-                    </Link>
-                    , starting a new project still requires a lot of
-                    Arduino-like knowledge.
-                </Text>
-                <Text size="sm">That is where Microflow comes in.</Text>
-                <Text size="sm">
-                    Microflow is a set of tools designed to facilitate
-                    prototyping for interactivity without the need to worry
-                    about low-level coding, or coding at all for that matter!
-                </Text>
-            </Section>
-            <Section>
-                <Text size="sm">Microflow consists of 2 tools so far:</Text>
-                <Text as="ol" size="sm">
-                    <li>
-                        <strong>Microflow hardware bridge</strong> — a Figma
-                        plugin that enables interaction with your Figma
-                        variables via MQTT.
-                    </li>
-                    <li>
-                        <strong>Microflow studio</strong> — a desktop
-                        application that allows you to create interactive
-                        prototypes using a visual, flow-based interface.
-                    </li>
-                </Text>
-            </Section>
-            <Section className="items-center flex flex-col" as="figure">
-                <Text className="col-span-12" variant="note" as="figcaption">
-                    Microflow hardware bridge running in Figma
-                </Text>
-                <Safari
-                    src="/microflow/microflow-hardware-bridge.png"
-                    alt="An example design in Figma connected to the Microflow hardware bridge plugin"
-                />
-            </Section>
-            <Section>
-                <Text as="h2" variant="subheading">
-                    Microflow hardware bridge
-                </Text>
-                <Text>I think Figma is an awesome tool.</Text>
-                <Text>
-                    After the introducion of <em>variables</em> in Figma, you
-                    can create some pretty nifty prototypes and fool any
-                    stakeholders, making them believe they’re already viewing a
-                    real application.
-                </Text>
-                <Text>
-                    What is still missing, however, is the interaction with the
-                    physical world.
-                </Text>
-                <Text size="sm">
-                    <Link
-                        href="https://forum.figma.com/ask-the-community-7/communicating-between-prototype-and-figma-plugin-13868?postid=150147#post150147"
-                        target="_blank"
-                    >
-                        And for plugin developers to access the preview
-                    </Link>
-                </Text>
-            </Section>
-            <Section>
-                <Text as="h3" variant="subheading" size="sm">
-                    MQTT
-                </Text>
-                <Text>
-                    Microflow Hardware Bridge relies on MQTT to communicate
-                    between Figma and the plugin.
-                </Text>
-                <Text>
-                    This enables any client – whether in your browser, mobile
-                    app, microcontroller, or even an IoT device like your fridge
-                    (if it sends the correct data) – to send and receive
-                    messages from Figma.
-                </Text>
-                <Text>
-                    The core of this plugin is achieved through a simple React
-                    component:
-                </Text>
-                <CodeBlock
-                    code={`
+  return (
+    <>
+      <Hero
+        title="Microflow"
+        subtitle="Microcontrollers made simple"
+        readTime={8}
+        publishDate="Sep 14 2024"
+        emoji="E1D3"
+        className="bg-orange-500"
+        link="https://microflow.vercel.app/"
+      />
+      <Technologies
+        technologies={[
+          "@xyflow/react",
+          "Arduino Firmata",
+          "Electron",
+          "Figma plugin API",
+          "Johnny-Five",
+          "shadcn/ui",
+          "MQTT",
+        ]}
+      />
+      <TLDR
+        lines={[
+          "Created a visual programming tool for microcontrollers that eliminates the need for coding.",
+          "Features a Figma plugin for hardware interaction via MQTT and a desktop app with flow-based interface.",
+          "Automatically flashes firmware and generates code from visual connections.",
+        ]}
+      />
+      <Section>
+        <Text as="h2" variant="subheading">
+          Interactivity
+        </Text>
+        <Text>
+          After helping students at the{" "}
+          <Link href="https://www.masterdigitaldesign.com/" target="_blank">
+            Master Digital Design
+          </Link>{" "}
+          for some years, I noticed that many students struggled with a common
+          issue: microcontrollers.
+        </Text>
+        <Text>
+          The students want to create interactive (phygital) prototypes, but the
+          learning curve is often too steep for most designers whom have never
+          touched code before.
+        </Text>
+        <Text>
+          And I must agree; even though I’ve been working with microcontrollers
+          for several years now, switching from my usual JavaScript environment
+          to the Arduino IDE still is rough for me.
+        </Text>
+      </Section>
+      <Section>
+        <Text as="h3" variant="subheading" size="sm">
+          Rapid prototyping
+        </Text>
+        <Text size="sm">
+          While there are some tools available that simplify working with
+          microcontrollers, such as{" "}
+          <Link href="https://www.arduinoblocks.com/" target="_blank">
+            Arduino Blocks
+          </Link>
+          ,{" "}
+          <Link href="https://edukits.co/code/#/editor" target="_blank">
+            Code kit
+          </Link>{" "}
+          or{" "}
+          <Link href="http://johnny-five.io/" target="_blank">
+            Johnny Five
+          </Link>
+          , starting a new project still requires a lot of Arduino-like
+          knowledge.
+        </Text>
+        <Text size="sm">That is where Microflow comes in.</Text>
+        <Text size="sm">
+          Microflow is a set of tools designed to facilitate prototyping for
+          interactivity without the need to worry about low-level coding, or
+          coding at all for that matter!
+        </Text>
+      </Section>
+      <Section>
+        <Text size="sm">Microflow consists of 2 tools so far:</Text>
+        <Text as="ol" size="sm">
+          <li>
+            <strong>Microflow hardware bridge</strong> — a Figma plugin that
+            enables interaction with your Figma variables via MQTT.
+          </li>
+          <li>
+            <strong>Microflow studio</strong> — a desktop application that
+            allows you to create interactive prototypes using a visual,
+            flow-based interface.
+          </li>
+        </Text>
+      </Section>
+      <Section className="items-center flex flex-col" as="figure">
+        <Text className="col-span-12" variant="note" as="figcaption">
+          Microflow hardware bridge running in Figma
+        </Text>
+        <Safari
+          src="/microflow/microflow-hardware-bridge.png"
+          alt="An example design in Figma connected to the Microflow hardware bridge plugin"
+        />
+      </Section>
+      <Section>
+        <Text as="h2" variant="subheading">
+          Microflow hardware bridge
+        </Text>
+        <Text>I think Figma is an awesome tool.</Text>
+        <Text>
+          After the introducion of <em>variables</em> in Figma, you can create
+          some pretty nifty prototypes and fool any stakeholders, making them
+          believe they’re already viewing a real application.
+        </Text>
+        <Text>
+          What is still missing, however, is the interaction with the physical
+          world.
+        </Text>
+        <Text size="sm">
+          <Link
+            href="https://forum.figma.com/ask-the-community-7/communicating-between-prototype-and-figma-plugin-13868?postid=150147#post150147"
+            target="_blank"
+          >
+            And for plugin developers to access the preview
+          </Link>
+        </Text>
+      </Section>
+      <Section>
+        <Text as="h3" variant="subheading" size="sm">
+          MQTT
+        </Text>
+        <Text>
+          Microflow Hardware Bridge relies on MQTT to communicate between Figma
+          and the plugin.
+        </Text>
+        <Text>
+          This enables any client – whether in your browser, mobile app,
+          microcontroller, or even an IoT device like your fridge (if it sends
+          the correct data) – to send and receive messages from Figma.
+        </Text>
+        <Text>
+          The core of this plugin is achieved through a simple React component:
+        </Text>
+        <CodeBlock
+          code={`
 \`\`\`typescript
 export function MqttVariableMessenger() {
 	const { publish, subscribe, uniqueId } = useMqtt();
@@ -186,92 +189,90 @@ export function MqttVariableMessenger() {
 }
 \`\`\`
                     `}
-                />
-                <Text>
-                    Some more sorcery is happening in the{" "}
-                    <code>sendMessageToFigma</code> and <code>useMqtt</code>,
-                    but I’ll leave that up to your imagination.
-                </Text>
-            </Section>
-            <Section className="flex justify-center">
-                <Link
-                    href="https://www.figma.com/community/plugin/1373258770799080545"
-                    target="_blank"
-                >
-                    <CallToAction>Try Microflow hardware bridge</CallToAction>
-                </Link>
-            </Section>
-            <Section className="my-96 text-center">
-                <Text size="sm" className="italic">
-                    Or{" "}
-                    <Link
-                        href="https://github.com/xiduzo/microflow/tree/main/apps/figma-plugin"
-                        target="_blank"
-                    >
-                        check the code
-                    </Link>{" "}
-                    if you are a nerd like me who likes to know how things work.
-                </Text>
-            </Section>
-            <Section variant="full" as="figure">
-                <Text className="col-span-12" variant="note" as="figcaption">
-                    Microflow studio connected to Figma
-                </Text>
-                <Image
-                    src="/microflow/microflow-studio.png"
-                    alt="Example flow in Microflow studio, connected to Figma using the Microflow hardware bridge plugin"
-                    width={1920}
-                    height={1080}
-                    className="w-full"
-                />
-            </Section>
-            <Section>
-                <Text as="h2" variant="subheading">
-                    Microflow studio
-                </Text>
-                <Text>
-                    Microflow studio is a tool that allows you to create
-                    complext interaction with microcontrollers without writing a
-                    single line of code.
-                </Text>
-                <Text>
-                    This tool was build to make working with microcontrollers as
-                    easy as <em>plug-and-play</em>.
-                </Text>
-                <Text>
-                    In order to achieve that, there is some magic happening
-                    behind the scenes.
-                </Text>
-            </Section>
-            <Section>
-                <Text as="h3" variant="subheading" size="sm">
-                    Flashing firmware
-                </Text>
-                <Text size="sm">
-                    When connecting a supported microcontroller, Microflow
-                    studio will automatically detect the board and flash it with
-                    the correct{" "}
-                    <Link
-                        href="https://docs.arduino.cc/retired/hacking/software/FirmataLibrary/"
-                        target="_blank"
-                    >
-                        firmata firmware
-                    </Link>
-                    .
-                </Text>
-                <Text size="sm">
-                    To make this work with <code>Electron</code>, the backbone
-                    of the application, I stole and adapted the good parts of{" "}
-                    <Link
-                        href="https://github.com/noopkat/avrgirl-arduino"
-                        target="_blank"
-                    >
-                        avrgirl-arduino
-                    </Link>{" "}
-                    and gave it some TS-love.
-                </Text>
-                <CodeBlock
-                    code={`
+        />
+        <Text>
+          Some more sorcery is happening in the <code>sendMessageToFigma</code>{" "}
+          and <code>useMqtt</code>, but I’ll leave that up to your imagination.
+        </Text>
+      </Section>
+      <Section className="flex justify-center">
+        <Link
+          href="https://www.figma.com/community/plugin/1373258770799080545"
+          target="_blank"
+        >
+          <CallToAction>Try Microflow hardware bridge</CallToAction>
+        </Link>
+      </Section>
+      <Section className="my-96 text-center">
+        <Text size="sm" className="italic">
+          Or{" "}
+          <Link
+            href="https://github.com/xiduzo/microflow/tree/main/apps/figma-plugin"
+            target="_blank"
+          >
+            check the code
+          </Link>{" "}
+          if you are a nerd like me who likes to know how things work.
+        </Text>
+      </Section>
+      <Section variant="full" as="figure">
+        <Text className="col-span-12" variant="note" as="figcaption">
+          Microflow studio connected to Figma
+        </Text>
+        <Image
+          src="/microflow/microflow-studio.png"
+          alt="Example flow in Microflow studio, connected to Figma using the Microflow hardware bridge plugin"
+          width={1920}
+          height={1080}
+          className="w-full"
+        />
+      </Section>
+      <Section>
+        <Text as="h2" variant="subheading">
+          Microflow studio
+        </Text>
+        <Text>
+          Microflow studio is a tool that allows you to create complext
+          interaction with microcontrollers without writing a single line of
+          code.
+        </Text>
+        <Text>
+          This tool was build to make working with microcontrollers as easy as{" "}
+          <em>plug-and-play</em>.
+        </Text>
+        <Text>
+          In order to achieve that, there is some magic happening behind the
+          scenes.
+        </Text>
+      </Section>
+      <Section>
+        <Text as="h3" variant="subheading" size="sm">
+          Flashing firmware
+        </Text>
+        <Text size="sm">
+          When connecting a supported microcontroller, Microflow studio will
+          automatically detect the board and flash it with the correct{" "}
+          <Link
+            href="https://docs.arduino.cc/retired/hacking/software/FirmataLibrary/"
+            target="_blank"
+          >
+            firmata firmware
+          </Link>
+          .
+        </Text>
+        <Text size="sm">
+          To make this work with <code>Electron</code>, the backbone of the
+          application, I stole and adapted the good parts of{" "}
+          <Link
+            href="https://github.com/noopkat/avrgirl-arduino"
+            target="_blank"
+          >
+            avrgirl-arduino
+          </Link>{" "}
+          and gave it some TS-love.
+        </Text>
+        <CodeBlock
+          code={`
 \`\`\`typescript
 import { Board, BoardName, BOARDS } from './constants';
 import { SerialConnection } from './SerialConnection';
@@ -304,23 +305,23 @@ export class Flasher {
 }
 \`\`\`
                     `}
-                />
-            </Section>
-            <Section>
-                <Text as="h3" variant="subheading" size="sm">
-                    Code to generate code
-                </Text>
-                <Text size="sm">
-                    Microflow studio provides a visual flow-based interface to
-                    connect components and create interactions.
-                </Text>
-                <Text size="sm">
-                    For this, I utilized <code>@xyflow/react</code>. Custom code
-                    is generated for the microcontroller based on how the user
-                    connected the <em>nodes</em> and <em>edges</em>.
-                </Text>
-                <CodeBlock
-                    code={`
+        />
+      </Section>
+      <Section>
+        <Text as="h3" variant="subheading" size="sm">
+          Code to generate code
+        </Text>
+        <Text size="sm">
+          Microflow studio provides a visual flow-based interface to connect
+          components and create interactions.
+        </Text>
+        <Text size="sm">
+          For this, I utilized <code>@xyflow/react</code>. Custom code is
+          generated for the microcontroller based on how the user connected the{" "}
+          <em>nodes</em> and <em>edges</em>.
+        </Text>
+        <CodeBlock
+          code={`
 \`\`\`typescript
 import type { Edge, Node } from '@xyflow/react';
 
@@ -371,14 +372,13 @@ export function generateCode(nodes: Node[], edges: Edge[]) {
 }
 \`\`\`
                     `}
-                />
-                <Text size="sm">
-                    Which is a whole lot of code, even after some
-                    simplifications, to generate the following few lines of code
-                    for the microcontroller:
-                </Text>
-                <CodeBlock
-                    code={`
+        />
+        <Text size="sm">
+          Which is a whole lot of code, even after some simplifications, to
+          generate the following few lines of code for the microcontroller:
+        </Text>
+        <CodeBlock
+          code={`
 \`\`\`javascript
 const Microflow = require("@microflow/components");
 
@@ -396,21 +396,20 @@ Interval_4aeu4a.on("change", () => {
 }); // Interval_4aeu4a - change
 \`\`\`
                     `}
-                />
-            </Section>
-            <Section>
-                <Text as="h3" variant="subheading" size="sm">
-                    A wrapper around a wrapper around a wrapper
-                </Text>
-                <Text size="sm">
-                    To communicate with the firmata firmware we have flashed on
-                    the microcontroller, all <code>@microflow/components</code>{" "}
-                    are wrappers around the <code>Johnny-Five</code> library —
-                    Which is a wrapper around the <code>firmata.js</code>{" "}
-                    library itself.
-                </Text>
-                <CodeBlock
-                    code={`
+        />
+      </Section>
+      <Section>
+        <Text as="h3" variant="subheading" size="sm">
+          A wrapper around a wrapper around a wrapper
+        </Text>
+        <Text size="sm">
+          To communicate with the firmata firmware we have flashed on the
+          microcontroller, all <code>@microflow/components</code> are wrappers
+          around the <code>Johnny-Five</code> library — Which is a wrapper
+          around the <code>firmata.js</code> library itself.
+        </Text>
+        <CodeBlock
+          code={`
 \`\`\`typescript
 import JohnnyFive, { ButtonOption } from 'johnny-five';
 import { BaseComponent, BaseComponentOptions } from './BaseComponent';
@@ -443,57 +442,54 @@ export class Button extends BaseComponent<ButtonValueType> {
 }
 \`\`\`
 `}
-                />
-                <Text size="lg" variant="heading" className="text-center">
-                    🪆
-                </Text>
-            </Section>
-            <Section className="flex justify-center">
-                <Link href="https://microflow.vercel.app/" target="_blank">
-                    <CallToAction>Try Microflow studio</CallToAction>
-                </Link>
-            </Section>
-            <aside>
-                <Links
-                    title="Inspired by"
-                    links={[
-                        [
-                            "https://www.youtube.com/live/UwX0ntmJ61A?si=snK2eaVRrkk35YfM",
-                            "The coding train + Noopcat video",
-                        ],
-                        ["https://edges.ideo.com/posts/figproxy", "FigProxy"],
-                        ["https://www.protopie.io/", "Protopie"],
-                        ["https://blokdots.com/", "Blokdots"],
-                        ["https://nodered.org/", "Node-RED"],
-                        ["https://derivative.ca/", "TouchDesigner"],
-                        [
-                            "https://dev.epicgames.com/documentation/en-us/unreal-engine/blueprints-visual-scripting-in-unreal-engine",
-                            "Unreal Engine Blueprints",
-                        ],
-                    ]}
-                />
-                <Links
-                    title="Other reads"
-                    links={[
-                        [
-                            "https://github.com/xiduzo/microflow",
-                            "See all the code on GitHub",
-                        ],
-                        [
-                            "https://microflow.vercel.app/docs",
-                            "Microflow documentation",
-                        ],
-                        [
-                            "https://github.com/xiduzo/figma-hardware-connect",
-                            "First prototype on GitHub",
-                        ],
-                        [
-                            "https://github.com/xiduzo/figma-hardware-connect-with-companion",
-                            "Second prototype on GitHub",
-                        ],
-                    ]}
-                />
-            </aside>
-        </>
-    );
+        />
+        <Text size="lg" variant="heading" className="text-center">
+          🪆
+        </Text>
+      </Section>
+      <Section className="flex justify-center">
+        <Link href="https://microflow.vercel.app/" target="_blank">
+          <CallToAction>Try Microflow studio</CallToAction>
+        </Link>
+      </Section>
+      <aside>
+        <Links
+          title="Inspired by"
+          links={[
+            [
+              "https://www.youtube.com/live/UwX0ntmJ61A?si=snK2eaVRrkk35YfM",
+              "The coding train + Noopcat video",
+            ],
+            ["https://edges.ideo.com/posts/figproxy", "FigProxy"],
+            ["https://www.protopie.io/", "Protopie"],
+            ["https://blokdots.com/", "Blokdots"],
+            ["https://nodered.org/", "Node-RED"],
+            ["https://derivative.ca/", "TouchDesigner"],
+            [
+              "https://dev.epicgames.com/documentation/en-us/unreal-engine/blueprints-visual-scripting-in-unreal-engine",
+              "Unreal Engine Blueprints",
+            ],
+          ]}
+        />
+        <Links
+          title="Other reads"
+          links={[
+            [
+              "https://github.com/xiduzo/microflow",
+              "See all the code on GitHub",
+            ],
+            ["https://microflow.vercel.app/docs", "Microflow documentation"],
+            [
+              "https://github.com/xiduzo/figma-hardware-connect",
+              "First prototype on GitHub",
+            ],
+            [
+              "https://github.com/xiduzo/figma-hardware-connect-with-companion",
+              "Second prototype on GitHub",
+            ],
+          ]}
+        />
+      </aside>
+    </>
+  );
 }
