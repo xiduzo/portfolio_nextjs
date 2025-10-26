@@ -21,7 +21,7 @@ export default function Page() {
         publishDate="Feb 12 2025"
         emoji="1F99C"
         className="bg-green-800"
-        subtitle="A Large Language Model (LLM) experiment for providing students with feedback"
+        subtitle="A Large Language Model experiment for providing students with feedback"
         readTime={12}
       />
       <Technologies
