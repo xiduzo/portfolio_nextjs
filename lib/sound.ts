@@ -28,8 +28,6 @@ function getAudioContext(): AudioContext | null {
 }
 
 export async function playMenuItemHoverSound() {
-  if (typeof window === "undefined") return;
-
   const audios = [
     // "/sound/click-1.wav",
     // "/sound/click-2.wav",
@@ -38,17 +36,14 @@ export async function playMenuItemHoverSound() {
     "/sound/click-5.wav",
   ];
 
-  const randomIndex = Math.floor(Math.random() * audios.length);
-  await playWav(audios[randomIndex], 0.1);
+  await playWav(audios, 0.1);
 }
 
 export async function playCTASound() {
-  if (typeof window === "undefined") return;
   await playWav("/sound/soft-bubbly_button_click_in_01.wav", 0.1);
 }
 
 export async function playMenuItemOpenedSound() {
-  if (typeof window === "undefined") return;
   // await playWav("/sound/folder-open.wav");
   await playWav("/sound/dropdown_menu_08.wav", 0.15);
 }
@@ -61,8 +56,7 @@ export async function playWobbleCardSound() {
     "/sound/navigation_04.wav",
     "/sound/navigation_05.wav",
   ];
-  const randomIndex = Math.floor(Math.random() * audios.length);
-  await playWav(audios[randomIndex], 0.1);
+  await playWav(audios, 0.1);
 }
 
 export async function playMenuItemClosedSound() {
@@ -71,23 +65,15 @@ export async function playMenuItemClosedSound() {
   await playWav("/sound/dropdown_menu_09.wav", 0.15);
 }
 
-async function playWav(url: string, volume: number = 1.0) {
+async function playWav(url: string | string[], volume: number = 1.0) {
   try {
+    const audioSource = Array.isArray(url)
+      ? url[Math.floor(Math.random() * url.length)]
+      : url;
     const audioContext = getAudioContext();
     if (!audioContext) return;
 
-    // Check if we already have this audio buffer cached
-    let audioBuffer = audioBufferCache.get(url);
-
-    if (!audioBuffer) {
-      // Download and decode the audio file
-      const response = await fetch(url);
-      const arrayBuffer = await response.arrayBuffer();
-      audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
-
-      // Cache the decoded audio buffer
-      audioBufferCache.set(url, audioBuffer);
-    }
+    const audioBuffer = await getAudioBuffer(audioContext, audioSource);
 
     // Create and play the audio source
     const source = audioContext.createBufferSource();
@@ -105,4 +91,21 @@ async function playWav(url: string, volume: number = 1.0) {
     // Silently fail if audio can't be played
     console.warn("Failed to play audio:", error);
   }
+}
+
+async function getAudioBuffer(audioContext: AudioContext, url: string) {
+  // Check if we already have this audio buffer cached
+  let audioBuffer = audioBufferCache.get(url);
+
+  if (!audioBuffer) {
+    // Download and decode the audio file
+    const response = await fetch(url);
+    const arrayBuffer = await response.arrayBuffer();
+    audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+
+    // Cache the decoded audio buffer
+    audioBufferCache.set(url, audioBuffer);
+  }
+
+  return audioBuffer;
 }
