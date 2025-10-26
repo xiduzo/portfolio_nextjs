@@ -9,7 +9,6 @@ import { Image } from "@/components/custom/image";
 import NextImage from "next/image";
 import Link from "next/link";
 import { Links } from "@/components/custom/links";
-import { TLDR } from "@/components/custom/tldr";
 
 export default function Page() {
   return (
@@ -29,13 +28,6 @@ export default function Page() {
           "Highcharts",
           "Heroku",
           "Ionic",
-        ]}
-      />
-      <TLDR
-        lines={[
-          "Designed a gamified mobile app to help OCD patients with Exposure Response Prevention therapy.",
-          "Uses monster metaphors for obsessions, mood tracking with playful faces, and badge rewards for exercise completion.",
-          "Features local data storage and optional therapist sharing.",
         ]}
       />
       <Quote cite="Anonymous patient">

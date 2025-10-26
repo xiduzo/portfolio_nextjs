@@ -5,7 +5,6 @@ import { Quote } from "@/components/custom/quote";
 import { Section } from "@/components/custom/section";
 import { Text } from "@/components/custom/text";
 import Link from "next/link";
-import { TLDR } from "@/components/custom/tldr";
 
 export default function Page() {
   return (
@@ -17,14 +16,6 @@ export default function Page() {
         className="bg-red-500"
         subtitle="And become a better engineer"
         readTime={22}
-      />
-      <TLDR
-        lines={[
-          "Testing is essential for software engineers to ensure code works as intended and continues working after changes.",
-          "Common pitfalls include no test runner setup, treating tests as second-class citizens, writing unclean test code, and focusing on coverage percentages over actual confidence.",
-          "Use modern tools like Vitest, Zod for validation, and testing-library for UI tests.",
-          "Write clean, independent, repeatable tests that follow the Arrange-Act-Assert pattern.",
-        ]}
       />
       <Section>
         <Text>

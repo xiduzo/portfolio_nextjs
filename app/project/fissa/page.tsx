@@ -12,7 +12,6 @@ import { Hero } from "@/components/custom/hero";
 import { Technologies } from "@/components/custom/technologies";
 import { StoreIcon } from "lucide-react";
 import { Links } from "@/components/custom/links";
-import { TLDR } from "@/components/custom/tldr";
 
 const animals = ["🐋", "🦀", "🐕", "🦦", "🦔", "🦉", "🦥", "🐍", "🦑", "🐘"];
 
@@ -38,12 +37,6 @@ export default function Page() {
           "React Native",
           "Vercel serverless",
           "tRPC",
-        ]}
-      />
-      <TLDR
-        lines={[
-          "Built a collaborative music app where party guests can add songs to a shared playlist and vote on tracks.",
-          "Features dynamic color themes, Spotify integration, democratic song ordering, and automatic recommendations.",
         ]}
       />
       <Section>

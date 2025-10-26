@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Hero } from "@/components/custom/hero";
 import { Quote } from "@/components/custom/quote";
 import { Links } from "@/components/custom/links";
-import { TLDR } from "@/components/custom/tldr";
 
 export default function Page() {
   return (
@@ -19,14 +18,6 @@ export default function Page() {
         className="bg-sky-500"
         subtitle="Unravelling the magic from React"
         readTime={12}
-      />
-      <TLDR
-        lines={[
-          "Suspense acts as a fancy try/catch block for React components.",
-          "It catches promises thrown by components and renders a fallback until the promise resolves.",
-          "This enables better UX for data fetching and lazy loading, though it adds complexity and is still experimental for data fetching.",
-          "Use it wisely for async operations, but do not treat it as a magic solution for everything.",
-        ]}
       />
       <Section>
         <Text>

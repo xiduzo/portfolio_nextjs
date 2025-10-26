@@ -6,14 +6,7 @@ import Link from "next/link";
 import Alert from "@/components/custom/alert";
 import { Safari } from "@/components/magic-ui/safari";
 import { Links } from "@/components/custom/links";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { Technologies } from "@/components/custom/technologies";
-import { TLDR } from "@/components/custom/tldr";
 
 export default function Page() {
   return (
@@ -35,13 +28,6 @@ export default function Page() {
           "Github actions",
           "SonarCube",
           "Storybook",
-        ]}
-      />
-      <TLDR
-        lines={[
-          "Led the modernization of Royal Flora Holland's flower auction system from monolithic .NET applications to cloud-native microservices.",
-          "Replaced UDP messaging with WebSockets, implemented CI/CD pipelines, and created a web-based React interface.",
-          "Successfully completed pilot phase and rolled out to all auction locations.",
         ]}
       />
       <Section as="figure">
