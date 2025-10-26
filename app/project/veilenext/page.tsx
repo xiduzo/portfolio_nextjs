@@ -18,7 +18,7 @@ export default function Page() {
         publishDate="Jul 15 2021"
         emoji="1F490"
         readTime={8}
-        className="bg-indigo-900"
+        className="bg-indigo-300 dark:bg-indigo-900"
       />
       <Technologies
         technologies={[

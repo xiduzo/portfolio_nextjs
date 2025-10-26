@@ -21,11 +21,11 @@ export default function Page() {
         <ul className="mt-24 flex flex-col gap-4 list-none">
           <li>
             <Link href="/post/2024/zod">
-              <WobbleCard containerClassName="bg-emerald-500">
+              <WobbleCard containerClassName="bg-emerald-300 dark:bg-emerald-900">
                 <Text
                   variant="subheading"
                   motion="none"
-                  className="flex gap-4 justify-between text-muted"
+                  className="flex gap-4 justify-between text-emerald-950 dark:text-emerald-100"
                 >
                   Zod
                   <Openmoji
@@ -34,7 +34,10 @@ export default function Page() {
                     className="block xl:hidden"
                   />
                 </Text>
-                <Text motion="none" className="text-muted max-w-xl">
+                <Text
+                  motion="none"
+                  className="text-emerald-950 dark:text-emerald-50 max-w-xl"
+                >
                   Stronger interfaces, cleaner code, fewer bugs
                 </Text>
                 <Openmoji
@@ -47,11 +50,11 @@ export default function Page() {
           </li>
           <li>
             <Link href="/post/2024/testing">
-              <WobbleCard containerClassName="bg-red-500">
+              <WobbleCard containerClassName="bg-red-300 dark:bg-red-900">
                 <Text
                   variant="subheading"
                   motion="none"
-                  className="flex gap-4 justify-between text-muted"
+                  className="flex gap-4 justify-between text-red-950 dark:text-red-100"
                 >
                   Testing
                   <Openmoji
@@ -60,7 +63,10 @@ export default function Page() {
                     className="block xl:hidden"
                   />
                 </Text>
-                <Text motion="none" className="text-muted max-w-xl">
+                <Text
+                  motion="none"
+                  className="text-red-950 dark:text-red-50 max-w-xl"
+                >
                   And become a better engineer
                 </Text>
                 <Openmoji
@@ -73,11 +79,11 @@ export default function Page() {
           </li>
           <li>
             <Link href="/post/2024/talking-to-water">
-              <WobbleCard containerClassName="bg-violet-500">
+              <WobbleCard containerClassName="bg-violet-300 dark:bg-violet-900">
                 <Text
                   variant="subheading"
                   motion="none"
-                  className="flex gap-4 justify-between text-muted"
+                  className="flex gap-4 justify-between text-violet-950 dark:text-violet-100"
                 >
                   Talking to water
                   <Openmoji
@@ -86,7 +92,10 @@ export default function Page() {
                     className="block xl:hidden"
                   />
                 </Text>
-                <Text motion="none" className="text-muted max-w-xl">
+                <Text
+                  motion="none"
+                  className="text-violet-950 dark:text-violet-50 max-w-xl"
+                >
                   The art of the bodge
                 </Text>
                 <Openmoji
@@ -99,11 +108,11 @@ export default function Page() {
           </li>
           <li>
             <Link href="/post/2023/suspense">
-              <WobbleCard containerClassName="bg-sky-500">
+              <WobbleCard containerClassName="bg-sky-300 dark:bg-sky-900">
                 <Text
                   variant="subheading"
                   motion="none"
-                  className="flex gap-4 justify-between text-muted"
+                  className="flex gap-4 justify-between text-sky-950 dark:text-sky-100"
                 >
                   {"<Suspense />"}
                   <Openmoji
@@ -112,7 +121,10 @@ export default function Page() {
                     className="block xl:hidden"
                   />
                 </Text>
-                <Text motion="none" className="text-muted max-w-xl">
+                <Text
+                  motion="none"
+                  className="text-sky-950 dark:text-sky-50 max-w-xl"
+                >
                   Unravelling the magic from React
                 </Text>
                 <Openmoji

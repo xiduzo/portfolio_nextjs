@@ -21,11 +21,11 @@ export default function Page() {
         <ul className="mt-24 flex flex-col gap-4 list-none">
           <li>
             <Link href="/post/2023/suspense">
-              <WobbleCard containerClassName="bg-sky-500">
+              <WobbleCard containerClassName="bg-sky-300 dark:bg-sky-900">
                 <Text
                   variant="subheading"
                   motion="none"
-                  className="flex gap-4 justify-between text-muted"
+                  className="flex gap-4 justify-between text-sky-950 dark:text-sky-100"
                 >
                   {"<Suspense />"}
                   <Openmoji
@@ -34,7 +34,10 @@ export default function Page() {
                     className="block xl:hidden"
                   />
                 </Text>
-                <Text motion="none" className="text-muted max-w-xl">
+                <Text
+                  motion="none"
+                  className="text-sky-950 dark:text-sky-50 max-w-xl"
+                >
                   Unravelling the magic from React
                 </Text>
                 <Openmoji

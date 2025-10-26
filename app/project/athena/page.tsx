@@ -14,7 +14,7 @@ export default function Page() {
         title="Athena"
         publishDate="Mar 21 2017"
         emoji="1F984"
-        className="bg-amber-300"
+        className="bg-amber-300 dark:bg-amber-900"
         subtitle="An honest feedback tool for students"
         readTime={4}
       />

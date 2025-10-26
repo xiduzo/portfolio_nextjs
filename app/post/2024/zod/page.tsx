@@ -15,7 +15,7 @@ export default function Page() {
         title="Zod"
         publishDate="June 30 2024"
         emoji="1F6C2"
-        className="bg-emerald-500"
+        className="bg-emerald-300 dark:bg-emerald-900"
         subtitle="Stronger interfaces, cleaner code, fewer bugs"
         readTime={14}
       />

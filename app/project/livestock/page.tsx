@@ -38,7 +38,7 @@ export default function Page() {
         readTime={6}
         publishDate="Feb 21 2018"
         emoji="1F4B0"
-        className="bg-cyan-700"
+        className="bg-cyan-300 dark:bg-cyan-900"
       />
       <Technologies technologies={["Angular", "Express", "Socket.io"]} />
       <TLDR

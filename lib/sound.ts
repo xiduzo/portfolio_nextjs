@@ -44,17 +44,31 @@ export async function playMenuItemHoverSound() {
 
 export async function playCTASound() {
   if (typeof window === "undefined") return;
-  await playWav("/sound/soft-bubbly_button_click_in_01.wav", 0.2);
+  await playWav("/sound/soft-bubbly_button_click_in_01.wav", 0.1);
 }
 
 export async function playMenuItemOpenedSound() {
   if (typeof window === "undefined") return;
-  await playWav("/sound/folder-open.wav");
+  // await playWav("/sound/folder-open.wav");
+  await playWav("/sound/dropdown_menu_08.wav", 0.15);
+}
+
+export async function playWobbleCardSound() {
+  const audios = [
+    // "/sound/navigation_01.wav",
+    // "/sound/navigation_02.wav",
+    "/sound/navigation_03.wav",
+    "/sound/navigation_04.wav",
+    "/sound/navigation_05.wav",
+  ];
+  const randomIndex = Math.floor(Math.random() * audios.length);
+  await playWav(audios[randomIndex], 0.1);
 }
 
 export async function playMenuItemClosedSound() {
   if (typeof window === "undefined") return;
-  await playWav("/sound/folder-close.wav");
+  // await playWav("/sound/folder-close.wav");
+  await playWav("/sound/dropdown_menu_09.wav", 0.15);
 }
 
 async function playWav(url: string, volume: number = 1.0) {

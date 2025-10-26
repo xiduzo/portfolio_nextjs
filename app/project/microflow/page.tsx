@@ -19,7 +19,7 @@ export default function Page() {
         readTime={8}
         publishDate="Sep 14 2024"
         emoji="E1D3"
-        className="bg-orange-500"
+        className="bg-orange-300 dark:bg-orange-900"
         link="https://microflow.vercel.app/"
       />
       <Technologies

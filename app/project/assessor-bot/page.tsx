@@ -20,7 +20,7 @@ export default function Page() {
         title="Assessor bot"
         publishDate="Feb 12 2025"
         emoji="1F99C"
-        className="bg-green-800"
+        className="bg-green-300 dark:bg-green-900"
         subtitle="A Large Language Model experiment for providing students with feedback"
         readTime={12}
       />

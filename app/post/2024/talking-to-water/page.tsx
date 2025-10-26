@@ -22,7 +22,7 @@ export default function Page() {
         publishDate="Feb 21 2024"
         emoji="1F30A"
         readTime={10}
-        className="bg-violet-500"
+        className="bg-violet-300 dark:bg-violet-900"
       />
       <Technologies
         technologies={[

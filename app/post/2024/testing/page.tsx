@@ -14,7 +14,7 @@ export default function Page() {
         title="Testing"
         publishDate="Apr 4 2024"
         emoji="1F9EA"
-        className="bg-red-500"
+        className="bg-red-300 dark:bg-red-900"
         subtitle="And become a better engineer"
         readTime={22}
       />

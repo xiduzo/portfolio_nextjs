@@ -16,7 +16,7 @@ export default function Page() {
         title="<Suspense />"
         publishDate="Nov 21 2023"
         emoji="1FA84"
-        className="bg-sky-500"
+        className="bg-sky-300 dark:bg-sky-900"
         subtitle="Unravelling the magic from React"
         readTime={12}
       />

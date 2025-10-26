@@ -25,7 +25,7 @@ export default function Page() {
         readTime={12}
         publishDate="Jun 02 2023"
         emoji="1F415"
-        className="bg-pink-500"
+        className="bg-pink-300 dark:bg-pink-900"
         link="https://fissa-houseparty.vercel.app"
       />
       <Technologies
