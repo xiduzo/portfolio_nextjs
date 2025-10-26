@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import * as React from "react";
-import { useEffect, useRef } from "react";
-import { File, Folder, FolderOpen } from "lucide-react";
+import * as React from 'react';
+import { useEffect, useRef } from 'react';
+import { File, Folder, FolderOpen } from 'lucide-react';
 
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/components/ui/collapsible";
+} from '@/components/ui/collapsible';
 import {
   Sidebar,
   SidebarContent,
@@ -22,17 +22,17 @@ import {
   SidebarMenuSub,
   SidebarRail,
   useSidebar,
-} from "@/components/ui/sidebar";
-import Link from "next/link";
-import { useLocalStorage } from "usehooks-ts";
-import { usePathname, useRouter } from "next/navigation";
-import clsx from "clsx";
+} from '@/components/ui/sidebar';
+import Link from 'next/link';
+import { useLocalStorage } from 'usehooks-ts';
+import { usePathname, useRouter } from 'next/navigation';
+import clsx from 'clsx';
 import {
   playMenuItemClosedSound,
   playMenuItemHoverSound,
   playMenuItemOpenedSound,
-} from "@/lib/sound";
-import { useIsMobile } from "@/hooks/use-mobile";
+} from '@/lib/sound';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 type Item = {
   name: string;
@@ -43,91 +43,91 @@ type Item = {
 
 const items: Item[] = [
   {
-    name: "Get to know me",
+    name: 'Get to know me',
     children: [
       {
-        name: "README.md",
-        link: "/about",
+        name: 'README.md',
+        link: '/about',
       },
       {
-        name: "accessibility.md",
-        link: "/accessibility",
-        state: "♥️",
+        name: 'accessibility.md',
+        link: '/accessibility',
+        state: '♥️',
       },
     ],
   },
   {
-    name: "Things I made",
+    name: 'Things I made',
     children: [
       {
-        name: "archive",
+        name: 'archive',
         children: [
           {
-            name: "athena.md",
-            link: "/project/athena",
+            name: 'athena.md',
+            link: '/project/athena',
           },
           {
-            name: "live-stock.md",
-            link: "/project/livestock",
+            name: 'live-stock.md',
+            link: '/project/livestock',
           },
           {
-            name: "spirit.md",
-            link: "/project/spirit",
+            name: 'spirit.md',
+            link: '/project/spirit',
           },
           {
-            name: "veile-next.md",
-            link: "/project/veilenext",
+            name: 'veile-next.md',
+            link: '/project/veilenext',
           },
         ],
       },
       {
-        name: "highlighted",
+        name: 'highlighted',
         children: [
           {
-            name: "assessor-bot.md",
-            link: "/project/assessor-bot",
+            name: 'assessor-bot.md',
+            link: '/project/assessor-bot',
           },
           {
-            name: "fissa.md",
-            link: "/project/fissa",
+            name: 'fissa.md',
+            link: '/project/fissa',
           },
           {
-            name: "microflow.md",
-            link: "/project/microflow",
-            state: "new",
+            name: 'microflow.md',
+            link: '/project/microflow',
+            state: 'new',
           },
         ],
       },
-      { name: "all.md", link: "/project" },
+      { name: 'all.md', link: '/project' },
     ],
   },
   {
-    name: "Things I wrote",
+    name: 'Things I wrote',
     children: [
       {
-        name: "2023",
+        name: '2023',
         children: [
           {
-            name: "suspense.md",
-            link: "/post/2023/suspense",
+            name: 'suspense.md',
+            link: '/post/2023/suspense',
           },
         ],
       },
       {
-        name: "2024",
+        name: '2024',
         children: [
           {
-            name: "talking-to-water.md",
-            link: "/post/2024/talking-to-water",
+            name: 'talking-to-water.md',
+            link: '/post/2024/talking-to-water',
           },
           {
-            name: "testing.md",
-            link: "/post/2024/testing",
+            name: 'testing.md',
+            link: '/post/2024/testing',
           },
-          { name: "zod.md", link: "/post/2024/zod" },
+          { name: 'zod.md', link: '/post/2024/zod' },
         ],
       },
-      { name: "all.md", link: "/post" },
+      { name: 'all.md', link: '/post' },
     ],
   },
 ];
@@ -136,7 +136,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar {...props}>
       <SidebarContent>
-        {items.map((item) => (
+        {items.map(item => (
           <SidebarGroup key={item.name}>
             <SidebarGroupLabel>{item.name}</SidebarGroupLabel>
             <SidebarGroupContent>
@@ -159,9 +159,9 @@ function Tree(props: { item: Item }) {
   const isMobile = useIsMobile();
   const { setOpenMobile } = useSidebar();
 
-  const [openItems, setOpenItems] = useLocalStorage("open-items", [
-    "highlighted",
-    "2024",
+  const [openItems, setOpenItems] = useLocalStorage('open-items', [
+    'highlighted',
+    '2024',
   ]);
 
   const { name, link, children } = props.item;
@@ -178,17 +178,17 @@ function Tree(props: { item: Item }) {
   if (!children?.length) {
     return (
       <SidebarMenuItem>
-        <Link href={link ?? "/404"} onMouseEnter={playMenuItemHoverSound}>
+        <Link href={link ?? '/404'} onMouseEnter={playMenuItemHoverSound}>
           <SidebarMenuButton
-            isActive={name === "button.tsx"}
+            isActive={name === 'button.tsx'}
             className={clsx(
-              `${pathname.endsWith(link ?? "") ? "bg-muted/70" : ""}`
+              `${pathname.endsWith(link ?? '') ? 'bg-muted/70' : ''}`
             )}
           >
             <File />
             {name}
           </SidebarMenuButton>
-          <SidebarMenuBadge className="text-muted-foreground">
+          <SidebarMenuBadge className='text-muted-foreground'>
             {props.item.state}
           </SidebarMenuBadge>
         </Link>
@@ -199,7 +199,7 @@ function Tree(props: { item: Item }) {
   return (
     <SidebarMenuItem>
       <Collapsible
-        className="group/collapsible [&[data-state=open]>button>svg:first-child]:hidden [&[data-state=open]>button>svg:last-child]:block"
+        className='group/collapsible [&[data-state=open]>button>svg:first-child]:hidden [&[data-state=open]>button>svg:last-child]:block'
         defaultOpen={openItems.includes(name)}
       >
         <CollapsibleTrigger
@@ -208,7 +208,7 @@ function Tree(props: { item: Item }) {
           onClick={() => {
             if (openItems.includes(name)) {
               playMenuItemClosedSound();
-              setOpenItems(openItems.filter((item) => item !== name));
+              setOpenItems(openItems.filter(item => item !== name));
             } else {
               playMenuItemOpenedSound();
               setOpenItems([...openItems, name]);
@@ -217,12 +217,12 @@ function Tree(props: { item: Item }) {
         >
           <SidebarMenuButton>
             <Folder />
-            <FolderOpen className="hidden" />
+            <FolderOpen className='hidden' />
             {name}
           </SidebarMenuButton>
         </CollapsibleTrigger>
         <CollapsibleContent>
-          <SidebarMenuSub className="mr-0">
+          <SidebarMenuSub className='mr-0'>
             {children.map((subItem, index) => (
               <Tree key={index} item={subItem} />
             ))}

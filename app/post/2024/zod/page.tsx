@@ -1,30 +1,30 @@
-import { CodeBlock } from "@/components/custom/code-block";
-import { Section } from "@/components/custom/section";
-import { Text } from "@/components/custom/text";
-import Link from "next/link";
-import { Image } from "@/components/custom/image";
-import { Hero } from "@/components/custom/hero";
-import Alert from "@/components/custom/alert";
-import { Safari } from "@/components/magic-ui/safari";
-import { TLDR } from "@/components/custom/tldr";
+import { CodeBlock } from '@/components/custom/code-block';
+import { Section } from '@/components/custom/section';
+import { Text } from '@/components/custom/text';
+import Link from 'next/link';
+import { Image } from '@/components/custom/image';
+import { Hero } from '@/components/custom/hero';
+import Alert from '@/components/custom/alert';
+import { Safari } from '@/components/magic-ui/safari';
+import { TLDR } from '@/components/custom/tldr';
 
 export default function Page() {
   return (
     <>
       <Hero
-        title="Zod"
-        publishDate="June 30 2024"
-        emoji="1F6C2"
-        className="bg-emerald-300 dark:bg-emerald-900"
-        subtitle="Stronger interfaces, cleaner code, fewer bugs"
+        title='Zod'
+        publishDate='June 30 2024'
+        emoji='1F6C2'
+        className='bg-emerald-300 dark:bg-emerald-900'
+        subtitle='Stronger interfaces, cleaner code, fewer bugs'
         readTime={14}
       />
       <TLDR
         lines={[
-          "Zod provides runtime validation for TypeScript, eliminating lying interfaces that promise data structure but do not validate it.",
-          "By defining schemas instead of types, you get both compile-time type safety and runtime validation.",
-          "This prevents bugs from unexpected data formats in APIs, user input, or external sources.",
-          "While adding initial complexity, it pays off with better error handling, data integrity, and team communication about data formats.",
+          'Zod provides runtime validation for TypeScript, eliminating lying interfaces that promise data structure but do not validate it.',
+          'By defining schemas instead of types, you get both compile-time type safety and runtime validation.',
+          'This prevents bugs from unexpected data formats in APIs, user input, or external sources.',
+          'While adding initial complexity, it pays off with better error handling, data integrity, and team communication about data formats.',
         ]}
       />
       <Section>
@@ -43,7 +43,7 @@ export default function Page() {
         </Text>
       </Section>
       <Section>
-        <Text as="h2" variant="subheading">
+        <Text as='h2' variant='subheading'>
           Lying interfaces
         </Text>
         <Text>
@@ -51,7 +51,7 @@ export default function Page() {
           interface. This will set you —and your team— up for a world of
           unnecessary debug sessions.
         </Text>
-        <Text className="mt-60">
+        <Text className='mt-60'>
           Let&apos;s say you have a neat generic function that fetches data from
           an API:
         </Text>
@@ -93,43 +93,43 @@ const response = await fetchData<ApiData>("example.api.org"); // ApiData
           type inputs and outputs.
         </Text>
         <Text>But theres a catch — or rather 2 lies:</Text>
-        <Text as="ol">
+        <Text as='ol'>
           <li>
             The function can return anything, not just <code>ApiData</code>.
           </li>
           <li>
             The function can throw an error, but you do not know that from the
-            interface. You are{" "}
-            <span className="text-muted-foreground hover:text-foreground transition-colors">
+            interface. You are{' '}
+            <span className='text-muted-foreground hover:text-foreground transition-colors'>
               left in the dark
-            </span>{" "}
+            </span>{' '}
             about what could go wrong.
           </li>
         </Text>
         <Text>
-          You can easily spot those lies in source code whenever you see an{" "}
+          You can easily spot those lies in source code whenever you see an{' '}
           <code>as T</code> which should be read as <code>as LIE</code>.
         </Text>
       </Section>
       <Section>
-        <Text as="h2" variant="subheading">
+        <Text as='h2' variant='subheading'>
           Removing the lies
         </Text>
         <Text>
           We can enhance the interface by adding a runtime validation library
-          like{" "}
-          <Link target="_blank" href="https://zod.dev">
+          like{' '}
+          <Link target='_blank' href='https://zod.dev'>
             Zod
           </Link>
           <sup>1</sup>. This requires some initial extra typing, but it pays off
           in terms of new type-safe superpowers inside your IDE.
         </Text>
-        <Text as="aside" size="sm" className="mt-8">
+        <Text as='aside' size='sm' className='mt-8'>
           <ol>
             <li>
               Zod is my personal go-to runtime validation library for
-              JavaScript. But be aware that there is{" "}
-              <Link target="_blank" href="https://zod.dev/?id=comparison">
+              JavaScript. But be aware that there is{' '}
+              <Link target='_blank' href='https://zod.dev/?id=comparison'>
                 more out there
               </Link>
               .
@@ -157,7 +157,7 @@ async function fetchData<T extends ZodSchema>(url: string, schema: T): Promise<R
                     `}
         />
         <Text>
-          Instead of defining a type directly, we define a schema with{" "}
+          Instead of defining a type directly, we define a schema with{' '}
           <code>Zod</code> and infer the type from it.
         </Text>
         <CodeBlock
@@ -206,12 +206,12 @@ export async function getData() {
         />
       </Section>
       <Section>
-        <Text as="h2" variant="subheading">
+        <Text as='h2' variant='subheading'>
           Zod in the real world
         </Text>
         <Text>
-          For my client,{" "}
-          <Link target="_blank" href="https://www.growy.nl/">
+          For my client,{' '}
+          <Link target='_blank' href='https://www.growy.nl/'>
             Growy
           </Link>
           , we are dealing with unstructured data from various sources.
@@ -273,13 +273,13 @@ function getRecord(id: string) {
           And for MQTT messages, there were handlers that parsed data
           <sup>2</sup> as follows:
         </Text>
-        <Text as="aside" size="sm" className="mt-8">
+        <Text as='aside' size='sm' className='mt-8'>
           <ol start={2}>
             <li>
-              For better <code>JSON.parse</code> type safety, check out{" "}
+              For better <code>JSON.parse</code> type safety, check out{' '}
               <Link
-                target="_blank"
-                href="https://github.com/total-typescript/ts-reset"
+                target='_blank'
+                href='https://github.com/total-typescript/ts-reset'
               >
                 ts-reset
               </Link>
@@ -315,7 +315,7 @@ mqqClient.onMessage(message => {
         </Text>
       </Section>
       <Section>
-        <Text as="h3" variant="subheading" size="sm">
+        <Text as='h3' variant='subheading' size='sm'>
           The problem
         </Text>
         <Text>
@@ -328,7 +328,7 @@ mqqClient.onMessage(message => {
           When we started to get actual data from the real world, bugs started
           to surface. The data we were expecting and worked with in our
           simulated environment was not always the correct data. The interfaces
-          from <em>&ldquo;the hardware team&rdquo;</em> and{" "}
+          from <em>&ldquo;the hardware team&rdquo;</em> and{' '}
           <em>&ldquo;the software team&rdquo;</em> were not always in sync.
         </Text>
         <Text>
@@ -338,7 +338,7 @@ mqqClient.onMessage(message => {
         <Text>
           <code>
             TypeError: Cannot read property &apos;foo&apos; of undefined
-          </code>{" "}
+          </code>{' '}
           or <code>NaN</code> values after calculations were not uncommon.
         </Text>
         <Text>
@@ -348,7 +348,7 @@ mqqClient.onMessage(message => {
         </Text>
       </Section>
       <Section>
-        <Text as="h3" variant="subheading" size="sm">
+        <Text as='h3' variant='subheading' size='sm'>
           Adding runtime validation
         </Text>
         <Text>
@@ -369,7 +369,7 @@ mqqClient.onMessage(message => {
         </Text>
       </Section>
       <Section>
-        <Alert icon="AlertCircle" intent="warning">
+        <Alert icon='AlertCircle' intent='warning'>
           <Text>
             The following code took some time to made, had its&apos; fair share
             of issues while developing and also gave me some headaches.
@@ -433,16 +433,16 @@ export function Parsable<Output = unknown, TypeDef extends ZodTypeDef = ZodTypeD
           Okay, busted. In our code we also use some <code>as LIE</code>s, but
           let me break it down.
         </Text>
-        <Text as="code" className="mt-16 inline-block">
+        <Text as='code' className='mt-16 inline-block'>
           data as Input
         </Text>
         <Text>
           Our constructor requires an <code>Input</code> type and does not allow
-          the <code>unknown</code> data we pass to the <code>parse</code>{" "}
+          the <code>unknown</code> data we pass to the <code>parse</code>{' '}
           method.
         </Text>
-        <Text as="code" className="mt-16 inline-block">
-          {"as unknown as GeneratedParsable<Output, TypeDef, Input>"}
+        <Text as='code' className='mt-16 inline-block'>
+          {'as unknown as GeneratedParsable<Output, TypeDef, Input>'}
         </Text>
         <Text>
           A double <code>LIE</code>! To make your IDE happy we need to return
@@ -480,7 +480,7 @@ export class GrowthCycle extends Parsable(schema) {
                     `}
         />
         <Text>
-          With this setup, we can now use the <code>parse</code> and{" "}
+          With this setup, we can now use the <code>parse</code> and{' '}
           <code>safeParse</code>
           methods to validate any unknown data.
         </Text>
@@ -499,7 +499,7 @@ GrowthCycle.safeParse(input) // Gracefully returns a \`ZodError\`
                     `}
         />
         <Text>
-          On top of this, even <em>new</em> instances of any{" "}
+          On top of this, even <em>new</em> instances of any{' '}
           <code>Parsable</code> class will be validated using the schema and
           giving type-hints in the IDE. Adding some extra static type checking
           magic to the mix.
@@ -525,15 +525,15 @@ const example = new GrowthCycle(invalidInput) // [!code error]
           handle it gracefully.
         </Text>
       </Section>
-      <Section as="figure">
+      <Section as='figure'>
         <Safari
-          src="/zod/parse-failures.png"
-          alt="Monitoring results from parse errors"
-          className="mx-auto"
+          src='/zod/parse-failures.png'
+          alt='Monitoring results from parse errors'
+          className='mx-auto'
         />
       </Section>
       <Section>
-        <Text as="h3" variant="subheading" size="sm">
+        <Text as='h3' variant='subheading' size='sm'>
           The aftermath
         </Text>
         <Text>
@@ -555,42 +555,42 @@ const example = new GrowthCycle(invalidInput) // [!code error]
         </Text>
       </Section>
       <Section>
-        <Text variant="note" className="italic" size="lg">
+        <Text variant='note' className='italic' size='lg'>
           Edit
         </Text>
         <Text>
           Before leaving the project, I was surprised with a gift from the team.
-          They had named a robot after me, forever engraving <code>zod</code>{" "}
+          They had named a robot after me, forever engraving <code>zod</code>{' '}
           <em>(and myself)</em> in the Growy system.
         </Text>
         <Image
-          src="/zod/sander-zod.png"
-          alt="A robot named after me"
+          src='/zod/sander-zod.png'
+          alt='A robot named after me'
           width={578}
           height={676}
-          className="mx-auto mt-40"
+          className='mx-auto mt-40'
         />
       </Section>
       <Section>
-        <Text as="h3" variant="subheading" size="sm">
+        <Text as='h3' variant='subheading' size='sm'>
           Room for improvement
         </Text>
         <Text>
           While the hybrid approach worked well for this project, it is not
           perfect. For instance, it does not work with more complex types like
-          like{" "}
-          <Link target="_blank" href="https://zod.dev/?id=unions">
+          like{' '}
+          <Link target='_blank' href='https://zod.dev/?id=unions'>
             unions
-          </Link>{" "}
-          and{" "}
-          <Link target="_blank" href="https://zod.dev/?id=intersections">
+          </Link>{' '}
+          and{' '}
+          <Link target='_blank' href='https://zod.dev/?id=intersections'>
             intersections
           </Link>
           .
         </Text>
         <Text>
-          When starting a new project, I would personally be going full-in on{" "}
-          <em>the zod way</em>. This would remove the need for the{" "}
+          When starting a new project, I would personally be going full-in on{' '}
+          <em>the zod way</em>. This would remove the need for the{' '}
           <code>Parsable</code> entirely.
         </Text>
         <CodeBlock

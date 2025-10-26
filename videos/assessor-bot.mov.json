@@ -1,1 +1,21 @@
-{"status":"ready","originalFilePath":"videos/assessor-bot.mov","provider":"vercel-blob","providerMetadata":{"vercel-blob":{"key":"videos/assessor-bot.mov","url":"https://3jfgzet5g7ocolrm.public.blob.vercel-storage.com/videos/assessor-bot-6M22WIzZixEb5LXwCYL4pTj5o0fJqC.mov","contentType":"video/quicktime"}},"createdAt":1738444412652,"updatedAt":1738444430015,"size":16639884,"sources":[{"src":"https://3jfgzet5g7ocolrm.public.blob.vercel-storage.com/videos/assessor-bot-6M22WIzZixEb5LXwCYL4pTj5o0fJqC.mov","type":"video/quicktime"}]}
+{
+  "status": "ready",
+  "originalFilePath": "videos/assessor-bot.mov",
+  "provider": "vercel-blob",
+  "providerMetadata": {
+    "vercel-blob": {
+      "key": "videos/assessor-bot.mov",
+      "url": "https://3jfgzet5g7ocolrm.public.blob.vercel-storage.com/videos/assessor-bot-6M22WIzZixEb5LXwCYL4pTj5o0fJqC.mov",
+      "contentType": "video/quicktime"
+    }
+  },
+  "createdAt": 1738444412652,
+  "updatedAt": 1738444430015,
+  "size": 16639884,
+  "sources": [
+    {
+      "src": "https://3jfgzet5g7ocolrm.public.blob.vercel-storage.com/videos/assessor-bot-6M22WIzZixEb5LXwCYL4pTj5o0fJqC.mov",
+      "type": "video/quicktime"
+    }
+  ]
+}

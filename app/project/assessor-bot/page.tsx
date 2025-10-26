@@ -1,57 +1,57 @@
-import Alert from "@/components/custom/alert";
-import { Hero } from "@/components/custom/hero";
-import { Section } from "@/components/custom/section";
-import { Technologies } from "@/components/custom/technologies";
-import { Text } from "@/components/custom/text";
-import Link from "next/link";
-import assessorBot from "/videos/assessor-bot.mov";
-import assessorBotOllama from "/videos/install-ollama.mov";
-import Video from "next-video";
-import { Image } from "@/components/custom/image";
-import { CodeBlock } from "@/components/custom/code-block";
-import { CallToAction } from "@/components/custom/call-to-action";
-import { GithubIcon } from "lucide-react";
-import { TLDR } from "@/components/custom/tldr";
+import Alert from '@/components/custom/alert';
+import { Hero } from '@/components/custom/hero';
+import { Section } from '@/components/custom/section';
+import { Technologies } from '@/components/custom/technologies';
+import { Text } from '@/components/custom/text';
+import Link from 'next/link';
+import assessorBot from '/videos/assessor-bot.mov';
+import assessorBotOllama from '/videos/install-ollama.mov';
+import Video from 'next-video';
+import { Image } from '@/components/custom/image';
+import { CodeBlock } from '@/components/custom/code-block';
+import { CallToAction } from '@/components/custom/call-to-action';
+import { GithubIcon } from 'lucide-react';
+import { TLDR } from '@/components/custom/tldr';
 
 export default function Page() {
   return (
     <>
       <Hero
-        title="Assessor bot"
-        publishDate="Feb 12 2025"
-        emoji="1F99C"
-        className="bg-green-300 dark:bg-green-900"
-        subtitle="A Large Language Model experiment for providing students with feedback"
+        title='Assessor bot'
+        publishDate='Feb 12 2025'
+        emoji='1F99C'
+        className='bg-green-300 dark:bg-green-900'
+        subtitle='A Large Language Model experiment for providing students with feedback'
         readTime={12}
       />
       <Technologies
-        technologies={["Electron", "LangChain", "Ollama", "shadcn/ui"]}
+        technologies={['Electron', 'LangChain', 'Ollama', 'shadcn/ui']}
       />
       <TLDR
         lines={[
-          "Built an Electron app that uses Ollama and LangChain to provide AI-powered feedback on student portfolios.",
-          "The tool processes uploaded documents locally, uses RAG to find relevant competency information, and generates structured feedback through custom prompts.",
-          "Key learnings: avoid over-engineering RAG when context windows are large enough, and prioritize data privacy by keeping everything local.",
+          'Built an Electron app that uses Ollama and LangChain to provide AI-powered feedback on student portfolios.',
+          'The tool processes uploaded documents locally, uses RAG to find relevant competency information, and generates structured feedback through custom prompts.',
+          'Key learnings: avoid over-engineering RAG when context windows are large enough, and prioritize data privacy by keeping everything local.',
         ]}
       />
       <Section>
-        <Text as="h2" variant="subheading">
+        <Text as='h2' variant='subheading'>
           Large Language Models (LLMs) in education
         </Text>
         <Text>
-          Ever since the release of{" "}
-          <Link href="https://openai.com/chatgpt/overview/" target="_blank">
+          Ever since the release of{' '}
+          <Link href='https://openai.com/chatgpt/overview/' target='_blank'>
             OpenAI&apos;s ChatGPT
-          </Link>{" "}
+          </Link>{' '}
           there has been a lot of controversy surrounding the use of Large
           Language Models (LLMs) in education.
         </Text>
         <Text>
-          At the{" "}
-          <Link href="https://www.masterdigitaldesign.com/" target="_blank">
+          At the{' '}
+          <Link href='https://www.masterdigitaldesign.com/' target='_blank'>
             Master Digital Design
-          </Link>{" "}
-          we ask students to reflect on their work based on a set of{" "}
+          </Link>{' '}
+          we ask students to reflect on their work based on a set of{' '}
           <em>competencies</em> and <em>indicators</em>. Since the introduction
           of these LLMs (ChatGPT in particular) we have seen an increase in
           amount of usage of these models in the documents that are submitted by
@@ -64,18 +64,18 @@ export default function Page() {
         </Text>
       </Section>
       <Section>
-        <Text as="h3" variant="subheading" size="sm">
+        <Text as='h3' variant='subheading' size='sm'>
           Guidance instead of banning
         </Text>
-        <Text size="sm">
+        <Text size='sm'>
           As we do see the value of generative technologies in the creative
           field and are sure they are here to stay. We prefer to guide students
           in the use of these technologies, and allow for them to develop a
           critical view, instead of banning it all together<sup>1</sup>.
         </Text>
-        <Text size="sm">
+        <Text size='sm'>
           By hosting a full week dedicated to experimenting with the use of AI
-          in the creative field, with the question to the students to{" "}
+          in the creative field, with the question to the students to{' '}
           <strong>
             create a prompt-based product that uses LLM prompting techniques,
             the product must do only one thing but do it well
@@ -83,8 +83,8 @@ export default function Page() {
           , we explored and reflected opon the field of generative technologies
           together.
         </Text>
-        <Text as="aside" className="mt-8 text-base">
-          <ol className="text-sm text-muted-foreground">
+        <Text as='aside' className='mt-8 text-base'>
+          <ol className='text-sm text-muted-foreground'>
             <li>
               We do now require the students to proved us with a decleration of
               transparency in the use of AI in submitted documents
@@ -93,30 +93,30 @@ export default function Page() {
         </Text>
       </Section>
       <Section>
-        <Text as="h2" variant="subheading">
+        <Text as='h2' variant='subheading'>
           Portfolio checker
         </Text>
         <Text>
-          One of the projects which came out of this week was the{" "}
-          <em>Portfolio checker</em> by{" "}
-          <Link href="https://www.studio-joop.nl" target="_blank">
+          One of the projects which came out of this week was the{' '}
+          <em>Portfolio checker</em> by{' '}
+          <Link href='https://www.studio-joop.nl' target='_blank'>
             Jaap Hulst
           </Link>
-          ,{" "}
+          ,{' '}
           <Link
-            href="https://www.linkedin.com/in/niloofarzabardast"
-            target="_blank"
+            href='https://www.linkedin.com/in/niloofarzabardast'
+            target='_blank'
           >
             Niloo Zabardast
-          </Link>{" "}
-          and{" "}
-          <Link href="https://www.linkedin.com/in/elena-mihai/" target="_blank">
+          </Link>{' '}
+          and{' '}
+          <Link href='https://www.linkedin.com/in/elena-mihai/' target='_blank'>
             Elena Mihai
           </Link>
           .
         </Text>
         <Text>Their project, using a prompt, tried to solve:</Text>
-        <Text as="ul">
+        <Text as='ul'>
           <li>
             Getting designers to <strong>reflect</strong>, get insight in their
             competencies, give direction
@@ -128,30 +128,30 @@ export default function Page() {
             Make the <strong>feedback</strong> loop easier and faster
           </li>
         </Text>
-        <Text className="mt-24 text-center" size="sm">
-          <Link href="/mdd-assessor-bot/portfolio_checker.pdf" target="_blank">
+        <Text className='mt-24 text-center' size='sm'>
+          <Link href='/mdd-assessor-bot/portfolio_checker.pdf' target='_blank'>
             See the whole pitch
           </Link>
         </Text>
       </Section>
       <Section>
-        <Alert intent="info" icon="Lightbulb">
+        <Alert intent='info' icon='Lightbulb'>
           <Text>
-            The concept and design of this project were made by{" "}
-            <Link href="https://www.studio-joop.nl" target="_blank">
+            The concept and design of this project were made by{' '}
+            <Link href='https://www.studio-joop.nl' target='_blank'>
               Jaap Hulst
             </Link>
-            ,{" "}
+            ,{' '}
             <Link
-              href="https://www.linkedin.com/in/niloofarzabardast"
-              target="_blank"
+              href='https://www.linkedin.com/in/niloofarzabardast'
+              target='_blank'
             >
               Niloo Zabardast
-            </Link>{" "}
-            and{" "}
+            </Link>{' '}
+            and{' '}
             <Link
-              href="https://www.linkedin.com/in/elena-mihai/"
-              target="_blank"
+              href='https://www.linkedin.com/in/elena-mihai/'
+              target='_blank'
             >
               Elena Mihai
             </Link>
@@ -167,20 +167,20 @@ export default function Page() {
           </Text>
         </Alert>
       </Section>
-      <Section variant="full" as="figure">
-        <Text variant="note" as="figcaption">
+      <Section variant='full' as='figure'>
+        <Text variant='note' as='figcaption'>
           From document to feedback
         </Text>
         <Video
           src={assessorBot}
-          aria-label="a video showing the process of uploading your document and receiving feedback from a LLM"
+          aria-label='a video showing the process of uploading your document and receiving feedback from a LLM'
         />
-        <Text variant="note" size="sm" className="mt-4">
+        <Text variant='note' size='sm' className='mt-4'>
           Feedback takes about a minute to be generated
         </Text>
       </Section>
       <Section>
-        <Text as="h2" variant="subheading">
+        <Text as='h2' variant='subheading'>
           The game plan
         </Text>
         <Text>
@@ -193,33 +193,33 @@ export default function Page() {
           relevant data through a custom prompt to generate the feedback.
         </Text>
         <Text>
-          After some research I found{" "}
+          After some research I found{' '}
           <Link
-            href="https://js.langchain.com/docs/tutorials/rag"
-            target="_blank"
+            href='https://js.langchain.com/docs/tutorials/rag'
+            target='_blank'
           >
             this post
-          </Link>{" "}
+          </Link>{' '}
           by <code>LangChain</code> which made me confident enough that I could
-          build something similar and give a go at the{" "}
+          build something similar and give a go at the{' '}
           <em>portfolio checker</em>.
         </Text>
         <Image
-          src="/mdd-assessor-bot/langchain-rag.png"
-          className="mt-16"
-          alt="A diagram from the LangChain post show-casing how a system like this could work"
+          src='/mdd-assessor-bot/langchain-rag.png'
+          className='mt-16'
+          alt='A diagram from the LangChain post show-casing how a system like this could work'
         />
       </Section>
       <Section>
-        <Text as="h3" variant="subheading" size="sm">
+        <Text as='h3' variant='subheading' size='sm'>
           I should be less confident
         </Text>
-        <Text size="sm">
+        <Text size='sm'>
           While most of the application was build rather quickly,
           &ldquo;surprisingly&rdquo; enough I struggled getting the RAG properly
           set-up and running to provide valuable feedback.
         </Text>
-        <Text size="sm">
+        <Text size='sm'>
           As I do not really have a clue on how to make a proper RAG
           implementation I followed the documentation and came up with something
           like:
@@ -262,7 +262,7 @@ export async function createVectorStore(
 \`\`\`
                 `}
         />
-        <Text size="sm">
+        <Text size='sm'>
           This vectorstore would then be populated with documents uploaded by
           the student.
         </Text>
@@ -285,12 +285,12 @@ const addStudentDocuments = async (files: AddDocumentInput[]) => {
 \`\`\`
                 `}
         />
-        <Text size="sm">
-          When the student would ask for feedback, it would create a{" "}
-          <code>Runnable</code> for each of the indicators using a{" "}
-          <code>FEEDBACK_TEMPLATE</code> and the following prompt:{" "}
+        <Text size='sm'>
+          When the student would ask for feedback, it would create a{' '}
+          <code>Runnable</code> for each of the indicators using a{' '}
+          <code>FEEDBACK_TEMPLATE</code> and the following prompt:{' '}
         </Text>
-        <Text as="code" size="sm">
+        <Text as='code' size='sm'>
           {
             "what grade ('novice', 'competent', 'proficient', or 'visionary') and feedback would you give the student for given the competency ${competency} and indicator ${indicator.name}?"
           }
@@ -323,9 +323,9 @@ export async function createRunner(
 \`\`\`
                 `}
         />
-        <Text variant="note">The secret sauce of the product, the prompt</Text>
+        <Text variant='note'>The secret sauce of the product, the prompt</Text>
         <CodeBlock
-          className="mt-2"
+          className='mt-2'
           code={`
 \`\`\`typescript
 export const FEEDBACK_TEMPLATE = \`
@@ -367,15 +367,15 @@ Use the following grading guide to help you give a grade and provide feedback:
 \`\`\`
                 `}
         />
-        <Text size="sm">
+        <Text size='sm'>
           This all generated quite some reasonable sounding feedback 🥳!
         </Text>
       </Section>
       <Section>
-        <Text size="sm">
+        <Text size='sm'>
           However, when digging deeper this system would either:
         </Text>
-        <Text as="ul" size="sm">
+        <Text as='ul' size='sm'>
           <li>
             not get the correct information from the competencies and
             indicators, due to the RAG not working as expected. It would
@@ -388,24 +388,24 @@ Use the following grading guide to help you give a grade and provide feedback:
         </Text>
       </Section>
       <Section>
-        <Text as="h3" variant="subheading" size="sm">
+        <Text as='h3' variant='subheading' size='sm'>
           Use the large context-windows
         </Text>
-        <Text size="sm">
+        <Text size='sm'>
           I tried to over-engineer the system where it was not needed.
         </Text>
-        <Text size="sm">
-          As we ask students to reflect upon their work within a{" "}
+        <Text size='sm'>
+          As we ask students to reflect upon their work within a{' '}
           <strong>set word limit</strong> and with the current models context
           windows of 1024 tokens, there was no need to split all documents into
           smaller chunks.
         </Text>
-        <Text size="sm">
+        <Text size='sm'>
           By removing the splitting of the documents and using the full document
-          as context, <em>most</em> of the hallucinations were surpressed and{" "}
+          as context, <em>most</em> of the hallucinations were surpressed and{' '}
           <em>nearly</em> no content was being made up anymore!
         </Text>
-        <Text size="sm">
+        <Text size='sm'>
           Most (modern) Large Language Models are capable of handling all the
           documents content in their context window.
         </Text>
@@ -431,60 +431,60 @@ const chat = [
         />
       </Section>
       <Section>
-        <Text as="h2" variant="subheading">
+        <Text as='h2' variant='subheading'>
           It is your data
         </Text>
         <Text>
           Two thing which was important to me was that 1) the data of the
           students was not stored on any server, but only on the device of the
-          student and 2) I do no want to force the student into a{" "}
+          student and 2) I do no want to force the student into a{' '}
           <Link
-            target="_blank"
-            href="https://techcrunch.com/2024/12/05/openai-may-be-planning-a-chatgpt-pro-plan-for-200-per-month"
+            target='_blank'
+            href='https://techcrunch.com/2024/12/05/openai-may-be-planning-a-chatgpt-pro-plan-for-200-per-month'
           >
             200$ per month plan
-          </Link>{" "}
+          </Link>{' '}
           to get feedback on their work.
         </Text>
         <Text>
-          The assessor bot is utulising{" "}
-          <Link target="_blank" href="https://ollama.com/">
+          The assessor bot is utulising{' '}
+          <Link target='_blank' href='https://ollama.com/'>
             Ollama
-          </Link>{" "}
+          </Link>{' '}
           as it&apos;s core to interact with the Large Language Model. Even
           though it is not be as <em>plug and play</em> and requires the student
           to have a local installation of Ollama, it does give me a more peace
           of mind.
         </Text>
       </Section>
-      <Section variant="full" as="figure">
-        <Text variant="note" as="figcaption">
+      <Section variant='full' as='figure'>
+        <Text variant='note' as='figcaption'>
           Guiding the student towards Ollama
         </Text>
         <Video
           src={assessorBotOllama}
-          aria-label="a video showing the process of uploading your document and receiving feedback from a LLM"
+          aria-label='a video showing the process of uploading your document and receiving feedback from a LLM'
         />
       </Section>
       <Section>
-        <Text as="h3" variant="subheading" size="sm">
+        <Text as='h3' variant='subheading' size='sm'>
           Structured output
         </Text>
-        <Text size="sm">
-          While most models are capable of generating structured output and{" "}
+        <Text size='sm'>
+          While most models are capable of generating structured output and{' '}
           <Link
-            target="_blank"
-            href="https://python.langchain.com/docs/how_to/structured_output/"
+            target='_blank'
+            href='https://python.langchain.com/docs/how_to/structured_output/'
           >
             according to the documentation
-          </Link>{" "}
+          </Link>{' '}
           of <code>LangChain</code> it should be possible to generate structured
-          output using <code>Ollama</code>. In{" "}
+          output using <code>Ollama</code>. In{' '}
           <code>@langchain/ollama 0.1.0</code>, the version available when
           building this tool, this interface was not availalbe.
         </Text>
-        <Text size="sm">
-          I could hovever make the models give me back a <code>JSON</code>{" "}
+        <Text size='sm'>
+          I could hovever make the models give me back a <code>JSON</code>{' '}
           response
         </Text>
         <CodeBlock
@@ -499,7 +499,7 @@ const llm = new Ollama({
 \`\`\`
                 `}
         />
-        <Text size="sm">
+        <Text size='sm'>
           And do some rudimentary post-processing to get the feedback in the
           format required for the student.
         </Text>
@@ -552,53 +552,53 @@ function postProcessResponse(input: Record<string, unknown>) {
 \`\`\`
                 `}
         />
-        <Text size="sm">
+        <Text size='sm'>
           This would give me the required output in about 80% of the cases,
           which is more than plenty for an experimental tool.
         </Text>
       </Section>
-      <Section className="flex justify-center flex-wrap">
-        <Link target="_blank" href="https://github.com/xiduzo/mdd-assessor-bot">
+      <Section className='flex justify-center flex-wrap'>
+        <Link target='_blank' href='https://github.com/xiduzo/mdd-assessor-bot'>
           <CallToAction icon={<GithubIcon />}>Check out the code</CallToAction>
         </Link>
       </Section>
       <Section>
-        <Text as="h2" variant="subheading">
+        <Text as='h2' variant='subheading'>
           Over-rule the design(ers)
         </Text>
         <Text>
-          As a small nudge to{" "}
+          As a small nudge to{' '}
           <Link
-            target="_blank"
-            href="https://dl.acm.org/doi/pdf/10.1145/3442188.3445922"
+            target='_blank'
+            href='https://dl.acm.org/doi/pdf/10.1145/3442188.3445922'
           >
             this research paper
-          </Link>{" "}
-          &ldquo;On the Dangers of Stochastic Parrots&rdquo;, I designed the{" "}
-          <em>entity</em> you get feedback from to a parrot.{" "}
-          <Link href="https://www.studio-joop.nl" target="_blank">
+          </Link>{' '}
+          &ldquo;On the Dangers of Stochastic Parrots&rdquo;, I designed the{' '}
+          <em>entity</em> you get feedback from to a parrot.{' '}
+          <Link href='https://www.studio-joop.nl' target='_blank'>
             Jaap Hulst
-          </Link>{" "}
-          made another itteration to get the style more in line with the{" "}
+          </Link>{' '}
+          made another itteration to get the style more in line with the{' '}
           <code>Ollama</code> llama.
         </Text>
       </Section>
       <Section
-        className="grid grid-cols-12 gap-4 lg:gap-6 xl:gap-12"
-        as="figure"
+        className='grid grid-cols-12 gap-4 lg:gap-6 xl:gap-12'
+        as='figure'
       >
-        <div className="col-span-12 md:col-span-6">
+        <div className='col-span-12 md:col-span-6'>
           <Image
-            src="/mdd-assessor-bot/parrot-head.svg"
-            className="w-full"
-            alt="A parrot head as the entity you get feedback from"
+            src='/mdd-assessor-bot/parrot-head.svg'
+            className='w-full'
+            alt='A parrot head as the entity you get feedback from'
           />
         </div>
-        <div className="col-span-12 md:col-span-6">
+        <div className='col-span-12 md:col-span-6'>
           <Image
-            src="/mdd-assessor-bot/parrot-head-2.svg"
-            className="w-full"
-            alt="An update on the parrot head design by Jaap to be in line with Ollama style"
+            src='/mdd-assessor-bot/parrot-head-2.svg'
+            className='w-full'
+            alt='An update on the parrot head design by Jaap to be in line with Ollama style'
           />
         </div>
       </Section>

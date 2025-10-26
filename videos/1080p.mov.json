@@ -1,21 +1,21 @@
 {
-    "status": "ready",
-    "originalFilePath": "videos/1080p.mov",
-    "provider": "vercel-blob",
-    "providerMetadata": {
-        "vercel-blob": {
-            "key": "videos/1080p.mov",
-            "url": "https://3jfgzet5g7ocolrm.public.blob.vercel-storage.com/videos/1080p-tii00HEqq0bR7LlFONHUsmGZZiQQsG.mov",
-            "contentType": "video/quicktime"
-        }
-    },
-    "createdAt": 1735825561474,
-    "updatedAt": 1735825594877,
-    "size": 36789019,
-    "sources": [
-        {
-            "src": "https://3jfgzet5g7ocolrm.public.blob.vercel-storage.com/videos/1080p-tii00HEqq0bR7LlFONHUsmGZZiQQsG.mov",
-            "type": "video/quicktime"
-        }
-    ]
+  "status": "ready",
+  "originalFilePath": "videos/1080p.mov",
+  "provider": "vercel-blob",
+  "providerMetadata": {
+    "vercel-blob": {
+      "key": "videos/1080p.mov",
+      "url": "https://3jfgzet5g7ocolrm.public.blob.vercel-storage.com/videos/1080p-tii00HEqq0bR7LlFONHUsmGZZiQQsG.mov",
+      "contentType": "video/quicktime"
+    }
+  },
+  "createdAt": 1735825561474,
+  "updatedAt": 1735825594877,
+  "size": 36789019,
+  "sources": [
+    {
+      "src": "https://3jfgzet5g7ocolrm.public.blob.vercel-storage.com/videos/1080p-tii00HEqq0bR7LlFONHUsmGZZiQQsG.mov",
+      "type": "video/quicktime"
+    }
+  ]
 }

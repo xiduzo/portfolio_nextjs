@@ -1,1 +1,1 @@
-export const THEME_STORAGE_KEY = "theme-preference";
+export const THEME_STORAGE_KEY = 'theme-preference';

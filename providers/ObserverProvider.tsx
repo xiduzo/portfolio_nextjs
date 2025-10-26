@@ -1,19 +1,19 @@
-"use client";
+'use client';
 
-import { Observer } from "tailwindcss-intersect";
-import { useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { Observer } from 'tailwindcss-intersect';
+import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function ObserverProvider({
-    children,
+  children,
 }: {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }) {
-    const pathname = usePathname();
+  const pathname = usePathname();
 
-    useEffect(() => {
-        Observer.start();
-    }, [pathname]);
+  useEffect(() => {
+    Observer.start();
+  }, [pathname]);
 
-    return <>{children}</>;
+  return <>{children}</>;
 }

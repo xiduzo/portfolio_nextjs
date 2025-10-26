@@ -1,50 +1,50 @@
-import { Section } from "@/components/custom/section";
-import { Text } from "@/components/custom/text";
-import Link from "next/link";
-import { CodeBlock } from "@/components/custom/code-block";
-import { Image } from "@/components/custom/image";
-import { Button } from "@/components/ui/button";
-import { Hero } from "@/components/custom/hero";
-import { Quote } from "@/components/custom/quote";
-import { Links } from "@/components/custom/links";
-import { TLDR } from "@/components/custom/tldr";
+import { Section } from '@/components/custom/section';
+import { Text } from '@/components/custom/text';
+import Link from 'next/link';
+import { CodeBlock } from '@/components/custom/code-block';
+import { Image } from '@/components/custom/image';
+import { Button } from '@/components/ui/button';
+import { Hero } from '@/components/custom/hero';
+import { Quote } from '@/components/custom/quote';
+import { Links } from '@/components/custom/links';
+import { TLDR } from '@/components/custom/tldr';
 
 export default function Page() {
   return (
     <>
       <Hero
-        title="<Suspense />"
-        publishDate="Nov 21 2023"
-        emoji="1FA84"
-        className="bg-sky-300 dark:bg-sky-900"
-        subtitle="Unravelling the magic from React"
+        title='<Suspense />'
+        publishDate='Nov 21 2023'
+        emoji='1FA84'
+        className='bg-sky-300 dark:bg-sky-900'
+        subtitle='Unravelling the magic from React'
         readTime={12}
       />
       <TLDR
         lines={[
-          "Suspense acts as a fancy try/catch block for React components.",
-          "It catches promises thrown by components and renders a fallback until the promise resolves.",
-          "This enables better UX for data fetching and lazy loading, though it adds complexity and is still experimental for data fetching.",
-          "Use it wisely for async operations, but do not treat it as a magic solution for everything.",
+          'Suspense acts as a fancy try/catch block for React components.',
+          'It catches promises thrown by components and renders a fallback until the promise resolves.',
+          'This enables better UX for data fetching and lazy loading, though it adds complexity and is still experimental for data fetching.',
+          'Use it wisely for async operations, but do not treat it as a magic solution for everything.',
         ]}
       />
       <Section>
         <Text>
-          While trying to answer{" "}
+          While trying to answer{' '}
           <Link
-            target="_blank"
-            href="https://stackoverflow.com/q/77479989/4655177"
+            target='_blank'
+            href='https://stackoverflow.com/q/77479989/4655177'
           >
             this question on StackOverflow
           </Link>
-          , I realized that I did not know enough about the workings of{" "}
+          , I realized that I did not know enough about the workings of{' '}
           <code>Suspense</code> myself to give a good answer. So I decided to do
           some research and write this article.
         </Text>
       </Section>
       <Quote
-        cite="React documentation"
-        link="https://react.dev/reference/react/Suspense"
+        cite='React documentation'
+        link='https://react.dev/reference/react/Suspense'
       >
         <strong>Suspense</strong>,
         <br />
@@ -62,11 +62,11 @@ export default function Page() {
         />
       </Section>
       <Section>
-        <Text as="h2" variant="subheading">
+        <Text as='h2' variant='subheading'>
           But how does it work?
         </Text>
         <Text>
-          Neat, but <em>how</em> does it actually work? <em>How</em> does{" "}
+          Neat, but <em>how</em> does it actually work? <em>How</em> does{' '}
           <code>Suspense</code> know when to show the fallback and when to show
           the child component?
         </Text>
@@ -78,7 +78,7 @@ export default function Page() {
         </Text>
       </Section>
       <Section>
-        <Text as="h2" variant="subheading">
+        <Text as='h2' variant='subheading'>
           TL;DR
         </Text>
         <Text>
@@ -86,7 +86,7 @@ export default function Page() {
         </Text>
         <Text>
           <code>Suspense</code> will <em>try</em> to render your component and
-          whenever a <code>Promise</code> is being thrown it will <em>catch</em>{" "}
+          whenever a <code>Promise</code> is being thrown it will <em>catch</em>{' '}
           it and render the fallback component until the promise resolves.
         </Text>
         <CodeBlock
@@ -99,16 +99,16 @@ export default function Page() {
                     `}
         />
       </Section>
-      <Section variant="full" as="figure">
-        <Text variant="note" as="figcaption">
+      <Section variant='full' as='figure'>
+        <Text variant='note' as='figcaption'>
           How people perceive the Suspense component
         </Text>
         <Image
-          src="/suspense/magic.gif"
+          src='/suspense/magic.gif'
           alt="A meme showing a man waving his hand an saying 'magic'"
           width={400}
           height={400}
-          className="mx-auto"
+          className='mx-auto'
         />
       </Section>
       <Section>
@@ -178,14 +178,14 @@ export function fakeApi(name) {
           which you can wrap our promise.
         </Text>
         <Text>
-          For this, create a poor-mans implementation of{" "}
-          <Link target="_blank" href="https://react.dev/reference/react/use">
+          For this, create a poor-mans implementation of{' '}
+          <Link target='_blank' href='https://react.dev/reference/react/use'>
             Reacts use hook
           </Link>
           <sup>1</sup>
         </Text>
-        <Text as="aside" className="mt-8 text-base">
-          <ol className="text-sm text-muted-foreground">
+        <Text as='aside' className='mt-8 text-base'>
+          <ol className='text-sm text-muted-foreground'>
             <li>
               As of writing this article, Reacts `use` hook is still
               experimental and not available in the stable release.
@@ -246,37 +246,37 @@ export default function App() {
         />
       </Section>
       <Section>
-        <Text as="h2" variant="subheading">
+        <Text as='h2' variant='subheading'>
           Why would you use &lt;Suspense/&gt;
         </Text>
         <Text>
           <code>Suspense</code> is a great way to handle asynchronous data
-          fetching. It is a great alternative to{" "}
+          fetching. It is a great alternative to{' '}
           <Link
-            target="_blank"
-            href="https://react.dev/reference/react/useEffect#fetching-data-with-effects"
+            target='_blank'
+            href='https://react.dev/reference/react/useEffect#fetching-data-with-effects'
           >
             the traditional way
-          </Link>{" "}
+          </Link>{' '}
           of handling data fetching in React.
         </Text>
       </Section>
       <Section>
-        <Text as="h3" size="sm" variant="subheading">
+        <Text as='h3' size='sm' variant='subheading'>
           More than lazy loading
         </Text>
         <Text>
-          <code>Suspense</code> was initially added to React to support{" "}
+          <code>Suspense</code> was initially added to React to support{' '}
           <Link
-            target="_blank"
-            href="https://legacy.reactjs.org/docs/code-splitting.html#reactlazy"
+            target='_blank'
+            href='https://legacy.reactjs.org/docs/code-splitting.html#reactlazy'
           >
             lazy loading of components
           </Link>
-          . But currently can also be used to await data fetching and adding of{" "}
+          . But currently can also be used to await data fetching and adding of{' '}
           <Link
-            target="_blank"
-            href="https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary"
+            target='_blank'
+            href='https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary'
           >
             error boundaries
           </Link>
@@ -284,51 +284,51 @@ export default function App() {
         </Text>
       </Section>
       <Section>
-        <Text as="h3" size="sm" variant="subheading">
+        <Text as='h3' size='sm' variant='subheading'>
           User Experience (UX)
         </Text>
         <Text>
           In order to create a better UX it is important to show the user
           something while we are waiting for data to load. It is also possible
-          to{" "}
+          to{' '}
           <Link
-            target="_blank"
-            href="https://codesandbox.io/s/66nw34?file=/ArtistPage.js"
+            target='_blank'
+            href='https://codesandbox.io/s/66nw34?file=/ArtistPage.js'
           >
             nest Suspense components
-          </Link>{" "}
+          </Link>{' '}
           for a more fine-grained experience.
         </Text>
       </Section>
       <Section>
-        <Text as="h3" size="sm" variant="subheading">
+        <Text as='h3' size='sm' variant='subheading'>
           Be a step ahead
         </Text>
         <Text>
           Even though <code>Suspense</code> is still experimental, libraries
-          like{" "}
+          like{' '}
           <Link
-            target="_blank"
-            href="https://relay.dev/docs/migration-and-compatibility/suspense-compatibility/"
+            target='_blank'
+            href='https://relay.dev/docs/migration-and-compatibility/suspense-compatibility/'
           >
             Relay
           </Link>
-          ,{" "}
-          <Link target="_blank" href="https://swr.vercel.app/docs/suspense">
+          ,{' '}
+          <Link target='_blank' href='https://swr.vercel.app/docs/suspense'>
             SWR
-          </Link>{" "}
-          or{" "}
+          </Link>{' '}
+          or{' '}
           <Link
-            target="_blank"
-            href="https://tanstack.com/query/latest/docs/react/guides/suspense"
+            target='_blank'
+            href='https://tanstack.com/query/latest/docs/react/guides/suspense'
           >
             @tanstack/react-query
-          </Link>{" "}
+          </Link>{' '}
           have added support for it.
         </Text>
       </Section>
       <Section>
-        <Text as="h2" variant="subheading">
+        <Text as='h2' variant='subheading'>
           Why wouldn’t you use &lt;Suspense/&gt;
         </Text>
         <Text>
@@ -342,7 +342,7 @@ export default function App() {
         </Text>
       </Section>
       <Section>
-        <Text as="h3" size="sm" variant="subheading">
+        <Text as='h3' size='sm' variant='subheading'>
           More than lazy loading
         </Text>
         <Text>
@@ -353,36 +353,36 @@ export default function App() {
         </Text>
       </Section>
       <Section>
-        <Text as="h3" size="sm" variant="subheading">
+        <Text as='h3' size='sm' variant='subheading'>
           User Experience (UX)
         </Text>
         <Text>
           In scenarios where finer control over loading states or error handling
-          is crucial, a more manual approach using traditional patterns like{" "}
+          is crucial, a more manual approach using traditional patterns like{' '}
           <code>useEffect</code> and <code>useState</code> might be preferred
         </Text>
       </Section>
       <Section>
-        <Text as="h3" size="sm" variant="subheading">
+        <Text as='h3' size='sm' variant='subheading'>
           Be a step ahead
         </Text>
         <Text>
           The whole concept of <code>Suspense</code> might also get overshadowed
-          by{" "}
+          by{' '}
           <Link
-            target="_blank"
-            href="https://react.dev/reference/react/use-server"
+            target='_blank'
+            href='https://react.dev/reference/react/use-server'
           >
             server components
-          </Link>{" "}
-          in the future. Where{" "}
+          </Link>{' '}
+          in the future. Where{' '}
           <Link
-            target="_blank"
-            href="https://react.dev/reference/react/use#caveats"
+            target='_blank'
+            href='https://react.dev/reference/react/use#caveats'
           >
             the documentation
-          </Link>{" "}
-          mentions:{" "}
+          </Link>{' '}
+          mentions:{' '}
           <em>
             When fetching data in a Server Component, prefer async and await
             over use
@@ -391,7 +391,7 @@ export default function App() {
         </Text>
       </Section>
       <Section>
-        <Text as="h2" variant="subheading">
+        <Text as='h2' variant='subheading'>
           Conclusion
         </Text>
         <Text>
@@ -406,24 +406,24 @@ export default function App() {
       </Section>
       <aside>
         <Links
-          title="Unmentioned resources"
+          title='Unmentioned resources'
           links={[
-            ["https://codesandbox.io/s/ymcj43", "Reacts codesandbox example"],
+            ['https://codesandbox.io/s/ymcj43', 'Reacts codesandbox example'],
             [
-              "https://17.reactjs.org/docs/concurrent-mode-suspense.html",
-              "React 17 documentation on suspense",
+              'https://17.reactjs.org/docs/concurrent-mode-suspense.html',
+              'React 17 documentation on suspense',
             ],
             [
-              "https://stackoverflow.com/q/74196656/4655177",
-              "Another stackoverflow question",
+              'https://stackoverflow.com/q/74196656/4655177',
+              'Another stackoverflow question',
             ],
             [
-              "https://stackoverflow.com/a/73356890/4655177",
-              "And another stackoverflow question",
+              'https://stackoverflow.com/a/73356890/4655177',
+              'And another stackoverflow question',
             ],
             [
-              "https://blog.logrocket.com/data-fetching-react-suspense/",
-              "Logrocket blog post",
+              'https://blog.logrocket.com/data-fetching-react-suspense/',
+              'Logrocket blog post',
             ],
           ]}
         />

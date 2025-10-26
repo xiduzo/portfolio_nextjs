@@ -1,37 +1,37 @@
-import Alert from "@/components/custom/alert";
-import { CodeBlock } from "@/components/custom/code-block";
-import { Hero } from "@/components/custom/hero";
-import { Quote } from "@/components/custom/quote";
-import { Section } from "@/components/custom/section";
-import { Text } from "@/components/custom/text";
-import { TLDR } from "@/components/custom/tldr";
-import Link from "next/link";
+import Alert from '@/components/custom/alert';
+import { CodeBlock } from '@/components/custom/code-block';
+import { Hero } from '@/components/custom/hero';
+import { Quote } from '@/components/custom/quote';
+import { Section } from '@/components/custom/section';
+import { Text } from '@/components/custom/text';
+import { TLDR } from '@/components/custom/tldr';
+import Link from 'next/link';
 
 export default function Page() {
   return (
     <>
       <Hero
-        title="Testing"
-        publishDate="Apr 4 2024"
-        emoji="1F9EA"
-        className="bg-red-300 dark:bg-red-900"
-        subtitle="And become a better engineer"
+        title='Testing'
+        publishDate='Apr 4 2024'
+        emoji='1F9EA'
+        className='bg-red-300 dark:bg-red-900'
+        subtitle='And become a better engineer'
         readTime={22}
       />
       <TLDR
         lines={[
-          "Testing is essential for software engineers to ensure code works as intended and continues working after changes.",
-          "Common pitfalls include no test runner setup, treating tests as second-class citizens, writing unclean test code, and focusing on coverage percentages over actual confidence.",
-          "Use modern tools like Vitest, Zod for validation, and testing-library for UI tests.",
-          "Write clean, independent, repeatable tests that follow the Arrange-Act-Assert pattern.",
+          'Testing is essential for software engineers to ensure code works as intended and continues working after changes.',
+          'Common pitfalls include no test runner setup, treating tests as second-class citizens, writing unclean test code, and focusing on coverage percentages over actual confidence.',
+          'Use modern tools like Vitest, Zod for validation, and testing-library for UI tests.',
+          'Write clean, independent, repeatable tests that follow the Arrange-Act-Assert pattern.',
         ]}
       />
       <Section>
         <Text>
-          Although there are{" "}
+          Although there are{' '}
           <Link
-            href="https://medium.com/codex/types-of-testing-de4cdd98df77"
-            target="_blank"
+            href='https://medium.com/codex/types-of-testing-de4cdd98df77'
+            target='_blank'
           >
             many forms of testing
           </Link>
@@ -39,10 +39,10 @@ export default function Page() {
         </Text>
         <Text>
           I believe they are the easiest to setup, easy to write/maintain and
-          when done properly{" "}
+          when done properly{' '}
           <Link
-            href="https://www.youtube.com/watch?v=QFCHSEHgqFE"
-            target="_blank"
+            href='https://www.youtube.com/watch?v=QFCHSEHgqFE'
+            target='_blank'
           >
             end-to-end testing may become obsolete
           </Link>
@@ -50,7 +50,7 @@ export default function Page() {
         </Text>
       </Section>
       <Section>
-        <Alert icon="AlertCircle" intent="info">
+        <Alert icon='AlertCircle' intent='info'>
           <Text>
             The examples in this article are for testing in JavaScript
             (TypeScript). However, the principles can be applied to you favorite
@@ -59,8 +59,8 @@ export default function Page() {
         </Alert>
       </Section>
       <Quote
-        cite="ChatGPT"
-        link="https://chat.openai.com/share/97ddf631-1171-4c18-9f70-40e2b6f30e8b"
+        cite='ChatGPT'
+        link='https://chat.openai.com/share/97ddf631-1171-4c18-9f70-40e2b6f30e8b'
       >
         Engineers conduct tests and experiments to evaluate the performance,
         safety, and reliability of products or systems. This may involve using
@@ -68,7 +68,7 @@ export default function Page() {
         trials.
       </Quote>
       <Section>
-        <Text as="h2" variant="subheading">
+        <Text as='h2' variant='subheading'>
           The software engineer
         </Text>
         <Text>
@@ -90,7 +90,7 @@ export default function Page() {
         </Text>
       </Section>
       <Section>
-        <Text as="h2" variant="subheading">
+        <Text as='h2' variant='subheading'>
           Some 🚩🚩🚩🚩
         </Text>
         <Text>
@@ -100,7 +100,7 @@ export default function Page() {
         </Text>
       </Section>
       <Section>
-        <Text as="h3" variant="subheading" size="sm">
+        <Text as='h3' variant='subheading' size='sm'>
           🚩 No test runner has been setup
         </Text>
         <Text>
@@ -148,7 +148,7 @@ jobs:
         </Text>
       </Section>
       <Section>
-        <Text as="h3" variant="subheading" size="sm">
+        <Text as='h3' variant='subheading' size='sm'>
           🚩 Tests are treated as second-class citizens
         </Text>
         <Text>
@@ -176,7 +176,7 @@ project-root/
           they are testing.
         </Text>
         <Text>
-          This way the project itself tells you{" "}
+          This way the project itself tells you{' '}
           <em>&ldquo;we care about tests&rdquo;</em> just by working on it.
         </Text>
         <CodeBlock
@@ -194,7 +194,7 @@ project-root/
         />
       </Section>
       <Section>
-        <Text as="h3" variant="subheading" size="sm">
+        <Text as='h3' variant='subheading' size='sm'>
           🚩 Test code is not &ldquo;clean&rdquo;
         </Text>
         <Text>
@@ -202,9 +202,9 @@ project-root/
           throw all of this out of the window when writing tests?
         </Text>
         <Text>
-          Before we start this section I would like to define what I consider as{" "}
+          Before we start this section I would like to define what I consider as{' '}
           <strong>source code</strong>. Source code is all the code which is
-          part of the project. This can be broken down into <em>test code</em>{" "}
+          part of the project. This can be broken down into <em>test code</em>{' '}
           and <em>production code</em>.
         </Text>
         <Text>
@@ -212,8 +212,8 @@ project-root/
           production code it is testing.
         </Text>
         <Quote
-          cite="Clean Code: A Handbook of Agile Software Craftsmanship"
-          link="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
+          cite='Clean Code: A Handbook of Agile Software Craftsmanship'
+          link='https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882'
         >
           Indeed, the ratio of time spent reading versus writing is well over 10
           to 1. We are constantly reading old code as part of the effort to
@@ -221,8 +221,8 @@ project-root/
           write.
         </Quote>
         <Quote
-          cite=" Refactoring: Improving the Design of Existing Code"
-          link="https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599"
+          cite=' Refactoring: Improving the Design of Existing Code'
+          link='https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599'
         >
           Any fool can write code that a computer can understand. Good
           programmers write code that humans can understand.
@@ -233,7 +233,7 @@ project-root/
           Some indicators I have found that you throw out clean code principles
           when writing tests:
         </Text>
-        <Text className="mt-28" as="ol">
+        <Text className='mt-28' as='ol'>
           <li>Ignoring test files in your linting</li>
         </Text>
         <Text>
@@ -251,7 +251,7 @@ project-root/
 \`\`\`
                     `}
         />
-        <Text as="ol" start={2}>
+        <Text as='ol' start={2}>
           <li>Making the test (file) a puzzle by itself</li>
         </Text>
         <Text>
@@ -289,13 +289,13 @@ it("should do the thing", () => {
           tested and what the expected outcome is.
         </Text>
         <Text>
-          The{" "}
+          The{' '}
           <Link
-            href="https://automationpanda.com/2020/07/07/arrange-act-assert-a-pattern-for-writing-good-tests/"
-            target="_blank"
+            href='https://automationpanda.com/2020/07/07/arrange-act-assert-a-pattern-for-writing-good-tests/'
+            target='_blank'
           >
             Arrange, Act, Assert
-          </Link>{" "}
+          </Link>{' '}
           pattern can help you structure your tests.
         </Text>
         <CodeBlock
@@ -321,9 +321,9 @@ it("should plot a curve between two data points", () => {
 \`\`\`
                     `}
         />
-        <Text as="ol" start={3}>
+        <Text as='ol' start={3}>
           <li>
-            Not using <code>constant</code>, <code>enums</code>,{" "}
+            Not using <code>constant</code>, <code>enums</code>,{' '}
             <code>types</code> or <code>interfaces</code> defined in your
             production code
           </li>
@@ -383,7 +383,7 @@ it("should log the constant", async () => {
 \`\`\`
                     `}
         />
-        <Text as="ol" start={4}>
+        <Text as='ol' start={4}>
           <li>The test has too many responsibilities</li>
         </Text>
         <Text>
@@ -411,23 +411,23 @@ it("should test some other thing", () => {
 \`\`\`
                     `}
         />
-        <Text as="section">
-          <div className="mb-4">Tests should be:</div>
+        <Text as='section'>
+          <div className='mb-4'>Tests should be:</div>
           <ul>
             <li>
-              <strong>independent</strong> —{" "}
+              <strong>independent</strong> —{' '}
               <code>
                 it(&ldquo;should not rely on the outcome of another test&rdquo;)
               </code>
             </li>
             <li>
-              <strong>repeatable</strong> —{" "}
+              <strong>repeatable</strong> —{' '}
               <code>
                 it(&ldquo;should be runnable in any environment&rdquo;)
               </code>
             </li>
             <li>
-              <strong>self-validating</strong> —{" "}
+              <strong>self-validating</strong> —{' '}
               <code>
                 it(&ldquo;should return a clear pass or fail result&rdquo;)
               </code>
@@ -501,7 +501,7 @@ describe(doSomeOtherThing.name, () => {
         </Text>
       </Section>
       <Section>
-        <Text as="h3" variant="subheading" size="sm">
+        <Text as='h3' variant='subheading' size='sm'>
           🚩 Coverage !== Confidence
         </Text>
         <Text>
@@ -590,17 +590,17 @@ describe(add.name, () => {
           sake of increasing the coverage.
         </Text>
         <Text>
-          I would not go as far as to{" "}
+          I would not go as far as to{' '}
           <Link
-            href="https://www.youtube.com/watch?v=ZGKGb109-I4"
-            target="_blank"
+            href='https://www.youtube.com/watch?v=ZGKGb109-I4'
+            target='_blank'
           >
             not write any unit tests
           </Link>
-          , just be{" "}
+          , just be{' '}
           <Link
-            href="https://www.youtube.com/watch?v=IInciWyU74U"
-            target="_blank"
+            href='https://www.youtube.com/watch?v=IInciWyU74U'
+            target='_blank'
           >
             thoughtful about what you are testing
           </Link>
@@ -608,15 +608,15 @@ describe(add.name, () => {
         </Text>
       </Section>
       <Section>
-        <Text as="h2" variant="subheading">
+        <Text as='h2' variant='subheading'>
           Using specialized equipment
         </Text>
         <Text>
           Being new in testing, or development for that matter, can be
-          overwhelming. And although you can{" "}
+          overwhelming. And although you can{' '}
           <Link
-            href="https://www.jetbrains.com/help/idea/generate-tests.html"
-            target="_blank"
+            href='https://www.jetbrains.com/help/idea/generate-tests.html'
+            target='_blank'
           >
             generate your tests with AI
           </Link>
@@ -629,27 +629,27 @@ describe(add.name, () => {
         </Text>
       </Section>
       <Section>
-        <Text as="h3" variant="subheading" size="sm">
+        <Text as='h3' variant='subheading' size='sm'>
           Build for speed
         </Text>
         <Text>
-          Time moves on, and so do our tools. Most of us do not use{" "}
-          <Link target="_blank" href="https://www.chaijs.com/">
+          Time moves on, and so do our tools. Most of us do not use{' '}
+          <Link target='_blank' href='https://www.chaijs.com/'>
             chai
-          </Link>{" "}
-          or{" "}
-          <Link target="_blank" href="https://mochajs.org/">
+          </Link>{' '}
+          or{' '}
+          <Link target='_blank' href='https://mochajs.org/'>
             mocha
-          </Link>{" "}
-          anymore to write and run our tests. It is quite common to see{" "}
-          <Link target="_blank" href="https://jestjs.io/">
+          </Link>{' '}
+          anymore to write and run our tests. It is quite common to see{' '}
+          <Link target='_blank' href='https://jestjs.io/'>
             jest
-          </Link>{" "}
+          </Link>{' '}
           being the work-horse nowadays.
         </Text>
         <Quote
-          cite="Clean Code: A Handbook of Agile Software Craftsmanship"
-          link="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
+          cite='Clean Code: A Handbook of Agile Software Craftsmanship'
+          link='https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882'
         >
           Tests should be fast. They should run quickly. When tests run slow,
           you won’t want to run them frequently. If you don’t run them
@@ -658,16 +658,16 @@ describe(add.name, () => {
           begin to rot.
         </Quote>
         <Text>
-          In order to go even faster you can use{" "}
-          <Link target="_blank" href="https://vitest.dev/">
+          In order to go even faster you can use{' '}
+          <Link target='_blank' href='https://vitest.dev/'>
             Vitest
-          </Link>{" "}
+          </Link>{' '}
           as a drop-in replacement for Jest. This is expecialy useful for when
           your test suite grows.
         </Text>
       </Section>
       <Section>
-        <Text as="h3" variant="subheading" size="sm">
+        <Text as='h3' variant='subheading' size='sm'>
           Validation
         </Text>
         <Text>
@@ -730,14 +730,14 @@ describe("fetchData", () => {
                     `}
         />
         <Text>
-          Or, I would advice that, you can use a schema validator like{" "}
-          <Link target="_blank" href="https://zod.dev/">
+          Or, I would advice that, you can use a schema validator like{' '}
+          <Link target='_blank' href='https://zod.dev/'>
             zod
-          </Link>{" "}
-          or{" "}
-          <Link target="_blank" href="https://github.com/jquense/yup">
+          </Link>{' '}
+          or{' '}
+          <Link target='_blank' href='https://github.com/jquense/yup'>
             yup
-          </Link>{" "}
+          </Link>{' '}
           to parse and validate the data you receive.
         </Text>
         <CodeBlock
@@ -766,7 +766,7 @@ fetch("https://api.example.com")
         </Text>
       </Section>
       <Section>
-        <Text as="h3" variant="subheading" size="sm">
+        <Text as='h3' variant='subheading' size='sm'>
           Passing objects
         </Text>
         <Text>
@@ -811,13 +811,13 @@ describe("Annoying boilerplate", () => {
         />
         <Text>
           And this works just fine, untill you start changing the
-          <code>MyType</code>. A solution I used before was to make use of the{" "}
+          <code>MyType</code>. A solution I used before was to make use of the{' '}
           <Link
-            target="_blank"
-            href="https://refactoring.guru/design-patterns/builder"
+            target='_blank'
+            href='https://refactoring.guru/design-patterns/builder'
           >
             builder pattern
-          </Link>{" "}
+          </Link>{' '}
           to generate the objects for the tests.
         </Text>
         <CodeBlock
@@ -904,13 +904,13 @@ describe("Building your tests", () => {
                     `}
         />
         <Text>
-          But sometimes you just need to <em>force something into a space</em>.{" "}
+          But sometimes you just need to <em>force something into a space</em>.{' '}
           <Link
-            target="_blank"
-            href="https://www.npmjs.com/package/@total-typescript/shoehorn"
+            target='_blank'
+            href='https://www.npmjs.com/package/@total-typescript/shoehorn'
           >
             @total-typescript/shoehorn
-          </Link>{" "}
+          </Link>{' '}
           is the tool you are looking for. It will allow you to pass partial
           data in tests while keeping TypeScript happy.
         </Text>
@@ -935,7 +935,7 @@ describe("No more boilerplate", () => {
         </Text>
       </Section>
       <Section>
-        <Text as="h3" variant="subheading" size="sm">
+        <Text as='h3' variant='subheading' size='sm'>
           UI testing
         </Text>
         <Text>
@@ -943,19 +943,19 @@ describe("No more boilerplate", () => {
           need to test some frontend code as well.
         </Text>
         <Text>
-          You might be familiar with tools such as{" "}
+          You might be familiar with tools such as{' '}
           <Link
-            target="_blank"
-            href="https://storybook.js.org/docs/writing-tests/test-runner"
+            target='_blank'
+            href='https://storybook.js.org/docs/writing-tests/test-runner'
           >
             storybook
           </Link>
-          ,{" "}
-          <Link target="_blank" href="https://www.cypress.io/">
+          ,{' '}
+          <Link target='_blank' href='https://www.cypress.io/'>
             cypress
-          </Link>{" "}
-          or{" "}
-          <Link target="_blank" href="https://playwright.dev/">
+          </Link>{' '}
+          or{' '}
+          <Link target='_blank' href='https://playwright.dev/'>
             playwright
           </Link>
           .
@@ -965,15 +965,15 @@ describe("No more boilerplate", () => {
           bloatware when writing unit tests.
         </Text>
         <Text>
-          <Link target="_blank" href="https://playwright.dev/">
+          <Link target='_blank' href='https://playwright.dev/'>
             @testing-library
-          </Link>{" "}
+          </Link>{' '}
           are “simple and complete testing utilities that encourage good testing
           practices” which allow you to test the DOM.
         </Text>
       </Section>
       <Section>
-        <Text as="h3" variant="subheading" size="sm">
+        <Text as='h3' variant='subheading' size='sm'>
           Code coverage
         </Text>
         <Text>
@@ -981,23 +981,23 @@ describe("No more boilerplate", () => {
           what parts of your code are tested and which are not.
         </Text>
         <Text>
-          <Link target="_blank" href="https://about.codecov.io/">
+          <Link target='_blank' href='https://about.codecov.io/'>
             Codecov
-          </Link>{" "}
-          or{" "}
+          </Link>{' '}
+          or{' '}
           <Link
-            target="_blank"
-            href="https://www.sonarsource.com/products/sonarqube/"
+            target='_blank'
+            href='https://www.sonarsource.com/products/sonarqube/'
           >
             Sonarqube
-          </Link>{" "}
+          </Link>{' '}
           can give you these insights. You can use it to make educated decisions
           on the state of your codebase and determine where to focus your
           testing efforts.
         </Text>
       </Section>
       <Section>
-        <Text as="h2" variant="subheading">
+        <Text as='h2' variant='subheading'>
           Conducting simulations
         </Text>
         <Text>
@@ -1061,18 +1061,18 @@ describe("simulate your software", () => {
                     `}
         />
         <Text>
-          You can go even deeper by{" "}
+          You can go even deeper by{' '}
           <Link
-            target="_blank"
-            href="https://www.npmjs.com/package/vitest-mock-extended"
+            target='_blank'
+            href='https://www.npmjs.com/package/vitest-mock-extended'
           >
             mocking any interface or object
-          </Link>{" "}
+          </Link>{' '}
           to give you full control over the simulation.
         </Text>
       </Section>
       <Section>
-        <Text as="h2" variant="subheading">
+        <Text as='h2' variant='subheading'>
           Performing real-world trials
         </Text>
         <Text>
@@ -1080,14 +1080,14 @@ describe("simulate your software", () => {
           in a vacuum.
         </Text>
         <Text>
-          Software does not exist in a vacuum, and{" "}
+          Software does not exist in a vacuum, and{' '}
           <strong>things will break</strong> when placed in the real world. You
           should make sure to have some form of strategy for this.
         </Text>
       </Section>
       <Quote
-        cite="Refactoring: Improving the Design of Existing Code"
-        link="https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599"
+        cite='Refactoring: Improving the Design of Existing Code'
+        link='https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599'
       >
         When you get a bug report, start by writing a unit test that exposes the
         bug.

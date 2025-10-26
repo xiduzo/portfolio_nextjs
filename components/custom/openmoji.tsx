@@ -1,5 +1,5 @@
-import { EMOJIS } from "@/lib/openmoji";
-import { cn } from "@/lib/utils";
+import { EMOJIS } from '@/lib/openmoji';
+import { cn } from '@/lib/utils';
 
 export function Openmoji(props: Props) {
   const emoji = EMOJIS[props.hexcode];
@@ -9,7 +9,7 @@ export function Openmoji(props: Props) {
   return (
     <span
       className={cn(
-        "open-moji inline-block",
+        'open-moji inline-block',
         `text-[${props.size ?? 24}px]`,
         props.className
       )}
@@ -27,7 +27,7 @@ export function Openmoji(props: Props) {
 type Props = {
   hexcode: keyof typeof EMOJIS;
   size?: number;
-  style?: "black" | "color";
+  style?: 'black' | 'color';
   className?: string;
 };
 

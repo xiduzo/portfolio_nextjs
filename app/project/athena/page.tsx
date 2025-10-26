@@ -1,51 +1,51 @@
-import { Section } from "@/components/custom/section";
-import { Text } from "@/components/custom/text";
-import { Hero } from "@/components/custom/hero";
-import { Technologies } from "@/components/custom/technologies";
-import Link from "next/link";
-import { Safari } from "@/components/magic-ui/safari";
-import { Links } from "@/components/custom/links";
-import { TLDR } from "@/components/custom/tldr";
+import { Section } from '@/components/custom/section';
+import { Text } from '@/components/custom/text';
+import { Hero } from '@/components/custom/hero';
+import { Technologies } from '@/components/custom/technologies';
+import Link from 'next/link';
+import { Safari } from '@/components/magic-ui/safari';
+import { Links } from '@/components/custom/links';
+import { TLDR } from '@/components/custom/tldr';
 
 export default function Page() {
   return (
     <>
       <Hero
-        title="Athena"
-        publishDate="Mar 21 2017"
-        emoji="1F984"
-        className="bg-amber-300 dark:bg-amber-900"
-        subtitle="An honest feedback tool for students"
+        title='Athena'
+        publishDate='Mar 21 2017'
+        emoji='1F984'
+        className='bg-amber-300 dark:bg-amber-900'
+        subtitle='An honest feedback tool for students'
         readTime={4}
       />
       <Technologies
         technologies={[
-          "Angular",
-          "Django",
-          "Gulp",
-          "HvA LDAP",
-          "Material design",
-          "Trello API",
+          'Angular',
+          'Django',
+          'Gulp',
+          'HvA LDAP',
+          'Material design',
+          'Trello API',
         ]}
       />
       <TLDR
         lines={[
-          "Built an anonymous feedback platform for propaedeutic students to improve team dynamics and participation.",
-          "Students create contracts with feedback indicators, give weekly anonymous feedback to teammates, and teachers get insights into team performance.",
+          'Built an anonymous feedback platform for propaedeutic students to improve team dynamics and participation.',
+          'Students create contracts with feedback indicators, give weekly anonymous feedback to teammates, and teachers get insights into team performance.',
         ]}
       />
       <Section>
-        <Text as="h2" variant="subheading">
+        <Text as='h2' variant='subheading'>
           What the slack!
         </Text>
         <Text>
-          Propaedeutic students from{" "}
+          Propaedeutic students from{' '}
           <Link
-            target="_blank"
-            href="http://localhost:4321/project/athena/(https://www.hva.nl/opleidingen/communication-and-multimedia-design)"
+            target='_blank'
+            href='http://localhost:4321/project/athena/(https://www.hva.nl/opleidingen/communication-and-multimedia-design)'
           >
             Communication and Multimedia Design (CMD)
-          </Link>{" "}
+          </Link>{' '}
           are struggling to find good team dynamics and teachers do not always
           have proper insight into these dynamics.
         </Text>
@@ -55,7 +55,7 @@ export default function Page() {
         </Text>
       </Section>
       <Section>
-        <Text as="h2" variant="subheading">
+        <Text as='h2' variant='subheading'>
           Challenge
         </Text>
         <Text>
@@ -65,7 +65,7 @@ export default function Page() {
         </Text>
       </Section>
       <Section>
-        <Text as="h2" variant="subheading">
+        <Text as='h2' variant='subheading'>
           Outcome
         </Text>
         <Text>
@@ -75,15 +75,15 @@ export default function Page() {
         </Text>
       </Section>
       <Section>
-        <Text variant="note">Gain quick insights into your performance</Text>
+        <Text variant='note'>Gain quick insights into your performance</Text>
         <Safari
-          src="/athena/dashboard.png"
-          className="mx-auto"
-          alt="A screenshot of the Athena platform showcasing the insights of a student performance"
+          src='/athena/dashboard.png'
+          className='mx-auto'
+          alt='A screenshot of the Athena platform showcasing the insights of a student performance'
         />
       </Section>
       <Section>
-        <Text as="h2" variant="subheading">
+        <Text as='h2' variant='subheading'>
           Feedback
         </Text>
         <Text>
@@ -99,18 +99,18 @@ export default function Page() {
           (disappointing) grade of the project.
         </Text>
       </Section>
-      <Section as="figure">
-        <Text variant="note" as="figcaption">
+      <Section as='figure'>
+        <Text variant='note' as='figcaption'>
           Teachers insights into feedback
         </Text>
         <Safari
-          src="/athena/feedback.png"
-          className="mx-auto"
-          alt="A screenshot of the Athena platform showing the teachers view on team feedback"
+          src='/athena/feedback.png'
+          className='mx-auto'
+          alt='A screenshot of the Athena platform showing the teachers view on team feedback'
         />
       </Section>
       <Section>
-        <Text as="h2" variant="subheading">
+        <Text as='h2' variant='subheading'>
           A contract
         </Text>
         <Text>
@@ -119,7 +119,7 @@ export default function Page() {
           indicators on which the students will give each other feedback upon.
         </Text>
         <Text>The indicators are divided into 4 competences;</Text>
-        <Text as="ol" className="mb-28">
+        <Text as='ol' className='mb-28'>
           <li>Attitude</li>
           <li>Accountability</li>
           <li>Knowledge development</li>
@@ -136,18 +136,18 @@ export default function Page() {
           on the agreed upon indicators.
         </Text>
       </Section>
-      <Section as="figure">
-        <Text variant="note" as="figcaption">
+      <Section as='figure'>
+        <Text variant='note' as='figcaption'>
           Insights into trello activities
         </Text>
         <Safari
-          src="/athena/workload.png"
-          className="mx-auto"
-          alt="A screenshot of the Athena platform showing the trello activities of the student team"
+          src='/athena/workload.png'
+          className='mx-auto'
+          alt='A screenshot of the Athena platform showing the trello activities of the student team'
         />
       </Section>
       <Section>
-        <Text as="h2" variant="subheading">
+        <Text as='h2' variant='subheading'>
           Anonymous
         </Text>
         <Text>
@@ -160,15 +160,15 @@ export default function Page() {
           per student but will never show who gave what feedback.
         </Text>
       </Section>
-      <Section as="figure">
+      <Section as='figure'>
         <Safari
-          src="/athena/workload_2.png"
-          className="mx-auto"
-          alt="A screenshot of the Athena platform showing the trello activities of the student team"
+          src='/athena/workload_2.png'
+          className='mx-auto'
+          alt='A screenshot of the Athena platform showing the trello activities of the student team'
         />
       </Section>
       <Section>
-        <Text as="h2" variant="subheading">
+        <Text as='h2' variant='subheading'>
           Performance
         </Text>
         <Text>
@@ -185,13 +185,13 @@ export default function Page() {
       </Section>
       <aside>
         <Links
-          title="References"
+          title='References'
           links={[
             [
-              "https://github.com/xiduzo/afstudeerproject_backend",
-              "Code (server)",
+              'https://github.com/xiduzo/afstudeerproject_backend',
+              'Code (server)',
             ],
-            ["https://github.com/xiduzo/afstudeerproject", "Code (app)"],
+            ['https://github.com/xiduzo/afstudeerproject', 'Code (app)'],
           ]}
         />
       </aside>

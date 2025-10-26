@@ -1,8 +1,8 @@
-import { unified } from "unified";
-import remarkParse from "remark-parse";
-import remarkRehype from "remark-rehype";
-import rehypeStringify from "rehype-stringify";
-import rehypePrettyCode from "rehype-pretty-code";
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
+import remarkRehype from 'remark-rehype';
+import rehypeStringify from 'rehype-stringify';
+import rehypePrettyCode from 'rehype-pretty-code';
 import {
   transformerNotationDiff,
   transformerNotationHighlight,
@@ -11,8 +11,8 @@ import {
   transformerNotationErrorLevel,
   transformerMetaWordHighlight,
   transformerMetaHighlight,
-} from "@shikijs/transformers";
-import clsx from "clsx";
+} from '@shikijs/transformers';
+import clsx from 'clsx';
 
 // Cache the unified processor to avoid recreating it for each code block
 let cachedProcessor: ReturnType<typeof createProcessor> | null = null;
@@ -23,8 +23,8 @@ function createProcessor() {
     .use(remarkRehype, {})
     .use(rehypePrettyCode, {
       theme: {
-        dark: "github-dark",
-        light: "github-light",
+        dark: 'github-dark',
+        light: 'github-light',
       },
       transformers: [
         transformerMetaWordHighlight(),
@@ -50,7 +50,7 @@ export async function CodeBlock(props: Props) {
   return (
     <div
       className={clsx(
-        "my-36 intersect-once intersect:motion-preset-slide-up-md intersect:motion-delay-300",
+        'my-36 intersect-once intersect:motion-preset-slide-up-md intersect:motion-delay-300',
         props.className
       )}
       dangerouslySetInnerHTML={{ __html: String(file) }}
