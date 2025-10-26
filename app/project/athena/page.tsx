@@ -5,6 +5,7 @@ import { Technologies } from "@/components/custom/technologies";
 import Link from "next/link";
 import { Safari } from "@/components/magic-ui/safari";
 import { Links } from "@/components/custom/links";
+import { TLDR } from "@/components/custom/tldr";
 
 export default function Page() {
   return (
@@ -25,6 +26,12 @@ export default function Page() {
           "HvA LDAP",
           "Material design",
           "Trello API",
+        ]}
+      />
+      <TLDR
+        lines={[
+          "Built an anonymous feedback platform for propaedeutic students to improve team dynamics and participation.",
+          "Students create contracts with feedback indicators, give weekly anonymous feedback to teammates, and teachers get insights into team performance.",
         ]}
       />
       <Section>

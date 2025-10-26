@@ -8,6 +8,7 @@ import { CallToAction } from "@/components/custom/call-to-action";
 import { Technologies } from "@/components/custom/technologies";
 import { Hero } from "@/components/custom/hero";
 import { Links } from "@/components/custom/links";
+import { TLDR } from "@/components/custom/tldr";
 
 export default function Page() {
   return (
@@ -30,6 +31,13 @@ export default function Page() {
           "Johnny-Five",
           "shadcn/ui",
           "MQTT",
+        ]}
+      />
+      <TLDR
+        lines={[
+          "Created a visual programming tool for microcontrollers that eliminates the need for coding.",
+          "Features a Figma plugin for hardware interaction via MQTT and a desktop app with flow-based interface.",
+          "Automatically flashes firmware and generates code from visual connections.",
         ]}
       />
       <Section>

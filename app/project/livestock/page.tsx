@@ -8,6 +8,7 @@ import { Marquee } from "@/components/magic-ui/marquee";
 import NextImage from "next/image";
 import { Iphone15Pro } from "@/components/magic-ui/iphone-15-pro";
 import { Links } from "@/components/custom/links";
+import { TLDR } from "@/components/custom/tldr";
 
 const images = [
   "/livestock/bacon.svg",
@@ -40,6 +41,13 @@ export default function Page() {
         className="bg-cyan-700"
       />
       <Technologies technologies={["Angular", "Express", "Socket.io"]} />
+      <TLDR
+        lines={[
+          "Developed a multiplayer research tool that teaches blockchain concepts through a Farmville-style game.",
+          "Players trade farm animals (mining rigs) and products (cryptocurrencies) while learning about market volatility, wallets, and blockchain mechanics.",
+          "Built for the Institute of Network Cultures to study wallet design patterns.",
+        ]}
+      />
       <Section>
         <Text as="h2" variant="subheading">
           Back to the basics

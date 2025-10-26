@@ -11,6 +11,7 @@ import Alert from "@/components/custom/alert";
 import { Quote } from "@/components/custom/quote";
 import { ContainerIcon, GithubIcon } from "lucide-react";
 import { Technologies } from "@/components/custom/technologies";
+import { TLDR } from "@/components/custom/tldr";
 
 export default function Page() {
   return (
@@ -30,6 +31,13 @@ export default function Page() {
           "MQTT",
           "Docker",
           "PulseAudio",
+        ]}
+      />
+      <TLDR
+        lines={[
+          "Built a system that converts spoken words into visual patterns on water.",
+          "This project demonstrates how to create an interactive art installation that responds to human speech through sentiment analysis.",
+          "The solution required creative problem-solving with Docker and PulseAudio to handle cross-platform audio capture challenges.",
         ]}
       />
       <Section>

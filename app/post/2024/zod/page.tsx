@@ -6,6 +6,7 @@ import { Image } from "@/components/custom/image";
 import { Hero } from "@/components/custom/hero";
 import Alert from "@/components/custom/alert";
 import { Safari } from "@/components/magic-ui/safari";
+import { TLDR } from "@/components/custom/tldr";
 
 export default function Page() {
   return (
@@ -17,6 +18,14 @@ export default function Page() {
         className="bg-emerald-500"
         subtitle="Stronger interfaces, cleaner code, fewer bugs"
         readTime={14}
+      />
+      <TLDR
+        lines={[
+          "Zod provides runtime validation for TypeScript, eliminating lying interfaces that promise data structure but do not validate it.",
+          "By defining schemas instead of types, you get both compile-time type safety and runtime validation.",
+          "This prevents bugs from unexpected data formats in APIs, user input, or external sources.",
+          "While adding initial complexity, it pays off with better error handling, data integrity, and team communication about data formats.",
+        ]}
       />
       <Section>
         <Text>

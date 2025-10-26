@@ -11,6 +11,7 @@ import { Image } from "@/components/custom/image";
 import { CodeBlock } from "@/components/custom/code-block";
 import { CallToAction } from "@/components/custom/call-to-action";
 import { GithubIcon } from "lucide-react";
+import { TLDR } from "@/components/custom/tldr";
 
 export default function Page() {
   return (
@@ -25,6 +26,13 @@ export default function Page() {
       />
       <Technologies
         technologies={["Electron", "LangChain", "Ollama", "shadcn/ui"]}
+      />
+      <TLDR
+        lines={[
+          "Built an Electron app that uses Ollama and LangChain to provide AI-powered feedback on student portfolios.",
+          "The tool processes uploaded documents locally, uses RAG to find relevant competency information, and generates structured feedback through custom prompts.",
+          "Key learnings: avoid over-engineering RAG when context windows are large enough, and prioritize data privacy by keeping everything local.",
+        ]}
       />
       <Section>
         <Text as="h2" variant="subheading">
