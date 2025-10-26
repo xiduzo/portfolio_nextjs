@@ -22,35 +22,47 @@ export function TLDR(props: Props) {
           <AccordionTrigger
             className={cn(
               "flex-row-reverse",
-              "hover:text-muted-foreground hover:no-underline",
+              "text-muted-foreground hover:text-muted-foreground hover:no-underline",
               "[&[data-state=open]_svg.lucide-ellipsis]:opacity-0",
               "[&[data-state=open]_svg.lucide-chevron-down]:rotate-0 [&[data-state=closed]_svg.lucide-chevron-down]:-rotate-90"
             )}
           >
             <Text
+              motion="none"
               size="sm"
               className={cn(
                 "flex-grow text-left flex items-center",
                 "text-muted-foreground hover:text-muted-foreground",
-                "before:mr-2",
-                "ml-2 !mb-0"
+                "ml-2.5 !mb-0"
               )}
             >
-              TLDR;
-              <EllipsisIcon aria-hidden="true" className="opacity-60 size-4" />
+              <span className="inline-block text-3xl mr-2" aria-hidden="true">
+                {"/**"}
+              </span>
+              TL;DR
+              <EllipsisIcon
+                aria-hidden="true"
+                className="opacity-60 size-4 ml-0.5"
+              />
             </Text>
           </AccordionTrigger>
-          <AccordionContent className="text-muted-foreground after:content-['*/'] after:ml-9 after:text-2xl">
-            {props.lines.map((line, index) => (
-              <Text
-                motion="none"
-                size="sm"
-                className="before:content-['*'] before:mr-2 ml-9 !mb-1.5"
-                key={index}
-              >
-                {line}
-              </Text>
-            ))}
+          <AccordionContent className="text-muted-foreground after:content-['\*/'] after:font-body after:ml-11 after:text-3xl">
+            <ul
+              className="list-outside ml-20 [&_li::marker]:font-body [&_li::marker]:text-3xl"
+              style={{ listStyleType: "'* '" }}
+            >
+              {props.lines.map((line, index) => (
+                <Text
+                  as="li"
+                  motion="none"
+                  size="sm"
+                  className="!mb-1.5"
+                  key={index}
+                >
+                  {line}
+                </Text>
+              ))}
+            </ul>
           </AccordionContent>
         </AccordionItem>
       </Accordion>
