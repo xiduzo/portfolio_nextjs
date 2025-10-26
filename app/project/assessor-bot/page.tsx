@@ -513,15 +513,7 @@ function postProcessResponse(input: Record<string, unknown>) {
       const lowerKey = key.toLowerCase();
 
       if (
-        [
-          "grade",
-          "grading",
-          "score",
-          "rating",
-          "overall",
-          "result",
-          "value",
-        ].includes(lowerKey)
+        ["grade", "grading", "score", "rating", "overall", "result", "value"].includes(lowerKey)
       ) {
         switch (typeof value) {
           case "object":
