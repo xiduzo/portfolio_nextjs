@@ -4,6 +4,7 @@ import type { NextConfig } from 'next';
 const nextConfig: NextConfig = {
   /* config options here */
   staticPageGenerationTimeout: 60,
+  output: 'standalone',
 };
 
 export default withNextVideo(nextConfig, {
