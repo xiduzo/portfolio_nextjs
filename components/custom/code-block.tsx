@@ -21,7 +21,8 @@ function createProcessor() {
   return unified()
     .use(remarkParse)
     .use(remarkRehype, {})
-    .use(rehypePrettyCode, {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    .use(rehypePrettyCode as any, {
       theme: {
         dark: 'github-dark',
         light: 'github-light',

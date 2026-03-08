@@ -29,6 +29,6 @@ export const EMOJIS = new Proxy({} as Record<string, Emoji>, {
       // Return a promise that resolves to the emoji
       return getEmojis().then(emojis => emojis[prop]);
     }
-    return (target as any)[prop] || undefined;
+    return typeof prop === 'string' ? target[prop] : undefined;
   },
 });

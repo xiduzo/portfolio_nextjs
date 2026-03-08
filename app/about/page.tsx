@@ -2,7 +2,7 @@ import { Section } from '@/components/custom/section';
 import { Text } from '@/components/custom/text';
 import { Image } from '@/components/custom/image';
 import Link from 'next/link';
-import GitHubCalendar from 'react-github-calendar';
+import { GitHubCalendar } from 'react-github-calendar';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { TextRevealByWord } from '@/components/magic-ui/text-reveal';
 import { ScrollHint } from '@/components/custom/scroll-hint';
