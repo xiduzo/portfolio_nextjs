@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss';
 import typography from '@tailwindcss/typography';
-import motion from 'tailwindcss-motion';
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const motion = require('tailwindcss-motion');
 import intersect from 'tailwindcss-intersect';
 
 export default {
@@ -81,6 +82,7 @@ export default {
         'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear',
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'blink-cursor': 'blink-cursor 1.2s step-end infinite',
       },
       keyframes: {
         marquee: {
@@ -118,6 +120,14 @@ export default {
           },
           to: {
             height: '0',
+          },
+        },
+        'blink-cursor': {
+          '0%, 49%': {
+            opacity: '1',
+          },
+          '50%, 100%': {
+            opacity: '0',
           },
         },
       },

@@ -63,6 +63,10 @@ const items: Item[] = [
         name: 'archive',
         children: [
           {
+            name: 'assessor-bot.md',
+            link: '/project/assessor-bot',
+          },
+          {
             name: 'athena.md',
             link: '/project/athena',
           },
@@ -84,17 +88,17 @@ const items: Item[] = [
         name: 'highlighted',
         children: [
           {
-            name: 'assessor-bot.md',
-            link: '/project/assessor-bot',
-          },
-          {
             name: 'fissa.md',
             link: '/project/fissa',
           },
           {
+            name: 'glosario.md',
+            link: '/project/glosario',
+            state: 'new',
+          },
+          {
             name: 'microflow.md',
             link: '/project/microflow',
-            state: 'new',
           },
         ],
       },

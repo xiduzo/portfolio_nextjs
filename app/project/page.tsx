@@ -36,6 +36,35 @@ export default function Page() {
         </Text>
         <ul className='mt-24 flex flex-col gap-4 list-none'>
           <li>
+            <Link href='/project/assessor-bot'>
+              <WobbleCard containerClassName='bg-green-300 dark:bg-green-900'>
+                <Text
+                  variant='subheading'
+                  motion='none'
+                  className='flex justify-between gap-4 text-green-950 dark:text-green-100'
+                >
+                  Assessor bot
+                  <Openmoji
+                    hexcode='1F99C'
+                    size={42}
+                    className='block xl:hidden'
+                  />
+                </Text>
+                <Text
+                  motion='none'
+                  className='text-green-950 dark:text-green-50 max-w-xl'
+                >
+                  A LLM experiment for providing students with feedback
+                </Text>
+                <Openmoji
+                  hexcode='1F99C'
+                  size={420}
+                  className='xl:block hidden absolute right-4 top-8 -z-10'
+                />
+              </WobbleCard>
+            </Link>
+          </li>
+          <li>
             <Link href='/project/veilenext'>
               <WobbleCard containerClassName='bg-indigo-300 dark:bg-indigo-900'>
                 <Text

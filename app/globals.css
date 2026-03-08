@@ -384,7 +384,7 @@ figure:not(:has(blockquote)) figcaption::after {
   content: ']';
 }
 
-@theme inline {
+@layer utilities {
   @keyframes blink-cursor {
     0%,
     49% {

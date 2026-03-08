@@ -7,29 +7,31 @@ import { Iphone15Pro } from '../magic-ui/iphone-15-pro';
 export function HighlightedProjects() {
   return (
     <div className='grid grid-cols-1 lg:grid-cols-6 gap-4 mx-auto w-full'>
-      <Link href='/project/assessor-bot' className='col-span-6 xl:col-span-3'>
-        <WobbleCard containerClassName='h-full bg-green-300 dark:bg-green-900 min-h-[500px] group'>
+      <Link href='/project/glosario' className='col-span-6 xl:col-span-3'>
+        <WobbleCard containerClassName='h-full bg-violet-300 dark:bg-violet-900 min-h-[500px] group'>
           <Text
             variant='subheading'
             size='sm'
             motion='none'
-            className='text-green-950 dark:text-green-100'
+            className='text-violet-950 dark:text-violet-100'
           >
-            Assessor bot
+            Glosario
           </Text>
           <Text
             size='sm'
             motion='none'
-            className='text-green-950 dark:text-green-50'
+            className='text-violet-950 dark:text-violet-50'
           >
-            A LLM experiment for providing students with feedback
+            A collaborative glossary for everyone
           </Text>
+          {/* IMAGE HINT: Add a screenshot of the glossary overview or term detail
+              as public/glosario/glossary-overview.png — ideally ~1280×800 */}
           <div className='absolute top-[60%] filter grayscale group-hover:filter-none -z-10 transition-all duration-300'>
             <Image
-              width={1920}
-              height={1080}
-              src='/mdd-assessor-bot/mdd-assessor-bot.png'
-              alt='MDD assessor bot demo image'
+              width={1280}
+              height={800}
+              src='/glosario/glossary-overview.png'
+              alt='Glosario glossary overview'
             />
           </div>
         </WobbleCard>
