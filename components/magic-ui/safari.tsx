@@ -8,6 +8,15 @@ export interface SafariProps extends SVGProps<SVGSVGElement> {
   alt?: string;
 }
 
+/**
+ * 
+ * @param src - The image to display in the Safari window. Should be 1200x700.
+ * @param url - The URL to display in the Safari window.
+ * @param width - The width of the Safari window.
+ * @param height - The height of the Safari window.
+ * @param alt - The alt text for the image.
+ * @returns 
+ */
 export function Safari({
   src,
   url,

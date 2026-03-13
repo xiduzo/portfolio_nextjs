@@ -8,19 +8,19 @@ export function HighlightedProjects() {
   return (
     <div className='grid grid-cols-1 lg:grid-cols-6 gap-4 mx-auto w-full'>
       <Link href='/project/glosario' className='col-span-6 xl:col-span-3'>
-        <WobbleCard containerClassName='h-full bg-violet-300 dark:bg-violet-900 min-h-[500px] group'>
+        <WobbleCard containerClassName='h-full bg-amber-300 dark:bg-amber-900 min-h-[500px] group'>
           <Text
             variant='subheading'
             size='sm'
             motion='none'
-            className='text-violet-950 dark:text-violet-100'
+            className='text-amber-950 dark:text-amber-100'
           >
             Glosario
           </Text>
           <Text
             size='sm'
             motion='none'
-            className='text-violet-950 dark:text-violet-50'
+            className='text-amber-950 dark:text-amber-50'
           >
             A collaborative glossary for everyone
           </Text>

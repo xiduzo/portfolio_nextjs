@@ -1,0 +1,55 @@
+import { WobbleCard } from '@/components/aceternity/wobble-card';
+import { Openmoji } from '@/components/custom/openmoji';
+import { Section } from '@/components/custom/section';
+import { Text } from '@/components/custom/text';
+import Link from 'next/link';
+
+export default function Page() {
+  return (
+    <>
+      <Section>
+        <Text as='h1' variant='heading'>
+          Posts from 2026
+        </Text>
+        <Text
+          size='sm'
+          as='small'
+          className="text-muted-foreground before:content-['//'] before:mr-2"
+        >
+          Skipped 2025, we don&rsquo;t talk about 2025
+        </Text>
+        <ul className='mt-24 flex flex-col gap-4 list-none'>
+          <li>
+            <Link href='/post/2026/from-instructions-to-intent'>
+              <WobbleCard containerClassName='bg-violet-300 dark:bg-violet-900'>
+                <Text
+                  variant='subheading'
+                  motion='none'
+                  className='flex gap-4 justify-between text-violet-950 dark:text-violet-100'
+                >
+                  From instructions to intent
+                  <Openmoji
+                    hexcode='1F9E0'
+                    size={42}
+                    className='block xl:hidden'
+                  />
+                </Text>
+                <Text
+                  motion='none'
+                  className='text-violet-950 dark:text-violet-50 max-w-xl'
+                >
+                  Working agentically with AI
+                </Text>
+                <Openmoji
+                  hexcode='1F9E0'
+                  size={420}
+                  className='xl:block hidden absolute right-6 top-8 -z-10'
+                />
+              </WobbleCard>
+            </Link>
+          </li>
+        </ul>
+      </Section>
+    </>
+  );
+}

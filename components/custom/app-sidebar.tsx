@@ -131,6 +131,15 @@ const items: Item[] = [
           { name: 'zod.md', link: '/post/2024/zod' },
         ],
       },
+      {
+        name: '2026',
+        children: [
+          {
+            name: 'from-instructions-to-intent.md',
+            link: '/post/2026/from-instructions-to-intent',
+          },
+        ],
+      },
       { name: 'all.md', link: '/post' },
     ],
   },
