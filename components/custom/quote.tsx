@@ -2,6 +2,14 @@ import Link from 'next/link';
 import { PropsWithChildren } from 'react';
 
 export function Quote(props: Props) {
+  if (props.type === 'inline') {
+    return (
+      <blockquote className='text-muted-foreground not-italic border-l-2 border-muted-foreground/30 pl-4 my-4'>
+        {props.children}
+      </blockquote>
+    );
+  }
+
   return (
     <figure className='space-y-4 my-24 lg:my-36 px-4 lg:px-12 mx-auto prose md:prose-xl lg:prose-2xl max-w-screen-md'>
       <blockquote
@@ -13,7 +21,6 @@ export function Quote(props: Props) {
       <figcaption className='text-muted-foreground'>
         {props.link && (
           <Link
-            // as="cite" // TODO make use of cite propery
             target='_blank'
             href={props.link}
             className='text-muted-foreground'
@@ -28,7 +35,16 @@ export function Quote(props: Props) {
   );
 }
 
-type Props = PropsWithChildren & {
+type InlineCite = {
+  type: 'inline';
+};
+
+type BigCite = {
+  type?: 'big';
   cite: string;
   link?: string;
 };
+
+type Cite = InlineCite | BigCite;
+
+type Props = PropsWithChildren & Cite;

@@ -1,9 +1,14 @@
 import Alert from '@/components/custom/alert';
 import { Hero } from '@/components/custom/hero';
+import { Links } from '@/components/custom/links';
+import { QuadrantDiagram } from '@/components/custom/quadrant-diagram';
 import { Quote } from '@/components/custom/quote';
 import { Section } from '@/components/custom/section';
 import { Text } from '@/components/custom/text';
 import { TLDR } from '@/components/custom/tldr';
+import { WidthDepthVisualizer } from '@/components/custom/width-depth-visualizer';
+import { WorkflowProgression } from '@/components/custom/workflow-progression';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import Link from 'next/link';
 
 export default function Page() {
@@ -12,7 +17,7 @@ export default function Page() {
       <Hero
         title='From instructions to intent'
         publishDate='Mar 13 2026'
-        emoji='1F9E0'
+        emoji='2728'
         className='bg-violet-300 dark:bg-violet-900'
         subtitle='Working agentically with AI'
         readTime={12}
@@ -20,9 +25,8 @@ export default function Page() {
       <TLDR
         lines={[
           'There is no single "correct" way to work with AI — there is a spectrum of workflows, each with different strengths and failure modes.',
-          'Two dimensions define any workflow: width (how much freedom you give the AI to interpret) and depth (how many steps it takes on its own).',
-          'Depth should be earned through narrowness. The more autonomy you give, the clearer your intent must be upfront.',
-          'The higher up the stack you go, the more your job shifts from doing to designing — framing problems, setting constraints, reviewing outcomes.',
+          'Two dimensions define any workflow: width and depth.',
+          'You should "shift up" from doing to designing — framing problems, setting constraints, reviewing outcomes.',
         ]}
       />
       <Section>
@@ -31,281 +35,505 @@ export default function Page() {
           kind of thinking you need to do.
         </Text>
         <Text>
-          Over the past year I&rsquo;ve been spending a lot of time figuring out
-          how to actually work well with AI — not just using it as a smarter
+          Over the past years I have been spending a lot of time figuring out
+          how I could actually work well with AI. Not just using it as a smarter
           autocomplete, but genuinely integrating it into how I build things. The
           further I got, the more I realized the question is never{' '}
           <em>&ldquo;which AI tool should I use?&rdquo;</em> but rather{' '}
           <em>&ldquo;which workflow fits this task?&rdquo;</em>
         </Text>
-        <Text>
-          This post is an attempt to lay that out clearly. No hype, no
-          doom — just a practical map of where we are.
+        <Text size='sm'>
+          This post is an attempt to lay out my learnings and thoughs on this ever evolving field. No hype, no
+          doom. Just a practical map of where I stand.
         </Text>
+      </Section>
+      <Section>
+        <Text as='h2' variant='subheading'>Context matters</Text>
+        <Text size='sm'>
+          Pun intended.
+        </Text>
+        <Text>
+          To be able to work efficiently with this all, regardless of the workflow,{' '}
+          <Link href="https://arxiv.org/abs/1706.03762" target='_blank'>attention is all you need</Link>{' '}
+          to work better with(in) the <em>context</em> (window) of LLMs.
+        </Text>
+        <Text>
+          Each model can only operate in a certain a pre-defined conversation size called the <code>context window</code>, <Link href="https://www.morphllm.com/llm-token-limit" target='_blank'>measured in tokens</Link>.
+        </Text>
+        <Text size="sm">
+          Managing context, what to put in and what to omit is an important balancing game between signal and noise.
+        </Text>
+        <Text as='h3' size="sm" variant='subheading' className='mt-24'>Setting the context</Text>
+        <Text>
+          Before we get started, let's get familiar with some of the terminology I will be using.
+        </Text>
+        <Text size='sm'>
+          After all, I built <Link href='https://glosar.io/' target='_blank'>a whole product</Link> around this exact issue.
+        </Text>
+        <Table className="max-w-3xl mx-auto mt-12">
+          <TableHeader>
+            <TableRow>
+              <TableHead>Term</TableHead>
+              <TableHead>Definition</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            <TableRow>
+              <TableCell>Artificial intelligence (AI)</TableCell>
+              <TableCell>
+                AI is the ability of computer systems to perform tasks that normally require human intelligence, such as learning, reasoning, and decision-making.<br /><br />
+                <Link href='https://www.ibm.com/think/topics/artificial-intelligence' target='_blank'>Learn more</Link>
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>Models</TableCell>
+              <TableCell>
+                An AI model is a trained program that recognizes patterns in data to make predictions or generate outputs.<br /><br />
+                <Link href='https://www.ibm.com/think/topics/ai-model' target='_blank'>Learn more</Link>
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>Large Language Model (LLM)</TableCell>
+              <TableCell>
+                LLMs are AI systems trained on large amounts of text to understand and generate <em>human-like</em> language.<br /><br />
+                <Link href='https://www.ibm.com/think/topics/large-language-models' target='_blank'>Learn more</Link>
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>Agents</TableCell>
+              <TableCell>
+                AI agents are autonomous systems that use AI models to perform tasks and make decisions with little or no human supervision.<br /><br />
+                <Link href='https://www.ibm.com/think/topics/ai-agents' target='_blank'>Learn more</Link>
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>Prompt</TableCell>
+              <TableCell>
+                A prompt is an instruction or input given to an AI to elicit a specific response or action.<br /><br />
+                <Link href='https://www.ibm.com/think/topics/prompt-engineering' target='_blank'>Learn more</Link>
+              </TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
       </Section>
       <Section>
         <Text as='h2' variant='subheading'>
-          Two dimensions that explain everything
+          From copy-🍝 to agentic AI
         </Text>
         <Text>
-          Most of the confusion about AI workflows comes down to two independent
-          properties:{' '}
-          <strong>width</strong> and <strong>depth</strong>.
+          <u>There is no <strong>one</strong> correct way to work with AI</u> &lt;period&gt;
         </Text>
         <Text>
-          <strong>Width</strong> is how much freedom you give the AI to
-          interpret your intent. A wide workflow means many valid paths exist —
-          you&rsquo;re vague, the AI fills in the blanks, and you correct after
-          the fact. A narrow workflow means you&rsquo;ve bounded the problem so
-          tightly there&rsquo;s only one reasonable interpretation.
+          Instead, there is a range of workflows, each with different strengths, risks and “ideal” use cases. Understanding these different workflows can help you pick the right approach for the task at hand.
         </Text>
         <Text>
-          <strong>Depth</strong> is how many steps the AI takes on its own
-          before you intervene. Shallow means one shot and you&rsquo;re back in
-          control. Deep means it plans, executes, evaluates, and iterates — and
-          you might not see the intermediate steps.
+          Over time I have categorized that working with LLMs comes down to two independent, but correlated,
+          properties: <code>width</code> and <code>depth</code>.
         </Text>
-        <Text>
-          Here&rsquo;s the key insight, and I think it&rsquo;s worth
-          internalizing:{' '}
+        <QuadrantDiagram />
+        <Text as="h3" className='mt-12'>
+          Width
         </Text>
+        <Text size='sm'>
+          How much ambiguity is allowed and how many valid paths exist at any moment.
+        </Text>
+        <Table className="max-w-3xl mx-auto mb-12 mt-4">
+          <TableHeader>
+            <TableRow>
+              <TableHead>A <code>wide</code> workflow</TableHead>
+              <TableHead>A <code>narrow</code> workflow</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            <TableRow>
+              <TableCell>
+                Many acceptable interpretations
+              </TableCell>
+              <TableCell>
+                Few valid interpretations
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>
+                Vague or flexible intent
+              </TableCell>
+              <TableCell>
+                Intent is explicit and constrained
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>
+                AI has room to <strong>"fill in the blanks"</strong>
+              </TableCell>
+              <TableCell>
+                AI freedom is bounded
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>
+                Humans correct <em>after</em> the fact
+              </TableCell>
+              <TableCell>
+                Humans correct <em>before</em> execution
+              </TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+        <Text as="h3">Depth</Text>
+        <Text size='sm'>
+          How many steps the AI can take on its own before a <em>human</em> intervenes?
+        </Text>
+        <Table className="max-w-3xl mx-auto mb-12 mt-4">
+          <TableHeader>
+            <TableRow>
+              <TableHead>A <code>shallow</code> workflow</TableHead>
+              <TableHead>A <code>deep</code> workflow</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            <TableRow>
+              <TableCell>
+                One-shot or near one-shot
+              </TableCell>
+              <TableCell>
+                Multistep planning and execution
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>
+                Human involved at every step
+              </TableCell>
+              <TableCell>
+                Human steps in later or only on escalation,<br /> intermediate reasoning may be hidden
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>
+                Errors are easy to spot quickly
+              </TableCell>
+              <TableCell>
+                Errors can compound silently
+              </TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
       </Section>
-      <Quote cite='From instructions to intent'>
-        Depth should be earned through narrowness.
-      </Quote>
+      <hr />
       <Section>
-        <Text>
-          The more autonomous steps you let the AI take, the higher the cost of
-          a wrong interpretation compounds. If you give an agent a vague goal
-          and let it run for 40 steps, you might not realize it went sideways
-          until the end — and by then you&rsquo;ve paid for all those tokens and
-          lost the time.
-        </Text>
-        <Text>
-          This is not a knock on autonomous agents. It&rsquo;s just the physics
-          of the thing.
-        </Text>
+        <Alert icon='RulerDimensionLineIcon' intent='info'>
+          <Text>
+            Depth is not a goal by itself.
+          </Text>
+          <Text>
+            Depth should be earned <strong>through</strong> narrowness.
+          </Text>
+          <Text>
+            The more freedom you give an AI over time, the clearer your intent and constraints must be <u>upfront</u>.
+          </Text>
+          <Text>
+            <em>E.g., Spec-driven workflows often start narrow and shallow, and only become deep once intent, constraints, and validation are strong enough to support autonomy.</em>
+          </Text>
+        </Alert>
+        <WidthDepthVisualizer />
       </Section>
+      <hr />
       <Section>
-        <Text as='h2' variant='subheading'>
+        <Text as="h2" variant="subheading">
           The four workflows
         </Text>
         <Text>
-          Think of these as layers. Each one builds on the previous. To use the
-          higher ones well, you need to understand the lower ones.
+          Each workflow is an abstraction on top of the previous one, to better work with the latter it is good to (fully) understand the former.
         </Text>
+        <WorkflowProgression />
       </Section>
       <Section>
-        <Text as='h3' variant='subheading' size='sm'>
-          1. Prompt engineering — wide &amp; shallow
+        <Text as="h3" variant="subheading" size="sm">
+          Prompt engineering
+        </Text>
+        <Quote type="inline">
+          AI as a smarter search engine or autocomplete
+        </Quote>
+        <Text>
+          <em>Prompt engineering</em> refers to the methodology on how early interactions started to form with the release of LLMs such as ChatGPT back in <time dateTime="2022-11-01">November of 2022</time>.{" "}
+          By <em>engineering</em> the <em>prompts</em>, you can better steer the output that is produced.
         </Text>
         <Text>
-          This is where most people started, and where a lot of daily work still
-          lives. You prompt, AI responds, you copy-paste and adapt. You are the
-          integration layer.
+          Although this is the first workflow, many tasks should still live in this space.{" "}
+          Here, you collaboratively work with <em>LLMs</em> to make something.{" "}
+          You prompt, AI responds, you copy, paste and adapt the output. You are the one who <strong>validates the output</strong> and integrates everything manually.
         </Text>
         <Text>
-          It sounds basic, but that&rsquo;s the point. For exploring ideas,
-          getting unstuck, drafting text, or learning a new domain — this is
-          fast, low-overhead, and surprisingly powerful. The context is
-          short-lived and that&rsquo;s fine.
+          This workflow works well for exploring ideas, getting unstuck, <strong>drafting</strong> pieces of text or even learning unfamiliar domains.
+          It is (usually) very fast, has a low cognitive overhead, is easy to adopt and helps to improve your individual productivity.{" "}
+          On the other hand, the context is short-lived and the quality of output heavily depends on your prompting.
         </Text>
-        <Text>
-          Where it breaks down is when your task grows larger than a single
-          exchange, or when you need to share the output with a team.
+        <Text size='sm'>
+          This workflow breaks down when tasks grow larger, require shared understanding, or span multiple steps.
         </Text>
-        <Alert icon='AlertCircle' intent='warning'>
+        <Alert icon='BookAIcon' intent='warning'>
+          <Text as="strong" className='block'>
+            Key risk
+          </Text>
           <Text>
-            Key risk: mistaking good wording for good thinking. A well-phrased
-            prompt does not guarantee a correct result.
+            Mistaking good wording for good thinking.
           </Text>
         </Alert>
+        <WidthDepthVisualizer showValidation={true} initialStep={0} draggable={false} />
       </Section>
       <Section>
-        <Text as='h3' variant='subheading' size='sm'>
-          2. AI agents — wide &amp; deep
+        <Text as="h3" variant="subheading" size="sm">
+          AI agents
+        </Text>
+        <Quote type="inline">
+          AI as an assistant that can take multiple steps
+        </Quote>
+        <Text>
+          <em>Agents</em> are ways to give your LLMs a bit more autonomy. Here, AI starts doing more than answering a question.{" "}
+          It can plan, act, and use tools. This is where your LLM starts to get integrated in/with the tooling you already use.
         </Text>
         <Text>
-          Agents are what happens when you give an LLM tools. It can now search,
-          write code, read files, call APIs, and iterate across multiple steps.
-          You describe a goal, the AI figures out the path.
+          You describe a task or outcome, AI determines intermediate steps.{" "}
+          It may write code, query data, or iterate, and you review the final result.
         </Text>
         <Text>
-          This is genuinely useful for research and synthesis, code scaffolding,
-          refactoring, and any task where the goal is clear but the steps
-          aren&rsquo;t. It reduces the busywork. It starts to feel like
-          delegation.
+          This workflow works well for research and synthesis,{" "}
+          code scaffolding, refactoring or analysis, or tasks with a clear goal but a flexible path.{" "}
+          It can handle multistep problems, reduces manual “busywork”, explore solution spaces quickly.{" "}
+          This should feel more like delegating a task.
         </Text>
         <Text>
-          The catch is that intermediate reasoning is often invisible. The AI
-          sounds confident even when the goal was under-specified. Mistakes can
-          compound silently across steps before surfacing.
+          On the downside, intermediate reasoning and decisions are not always visible, goals and success criteria are often inferred rather than explicit and mistakes can propagate and compound quietly across steps without being noticed.
         </Text>
-        <Alert icon='AlertCircle' intent='warning'>
+        <Text size='sm'>
+          This workflow breaks down when there is no clear intent. Without clear <em>intent</em>, agents optimize for something — just not always the right thing.
+        </Text>
+        <Alert icon='GoalIcon' intent='warning'>
+          <Text as="strong" className='block'>
+            Key risk
+          </Text>
           <Text>
-            Key risk: without clear intent, agents optimize for{' '}
-            <em>something</em> — just not always the right thing.
+            The AI sounds confident even when the goal was under-specified.
           </Text>
         </Alert>
+        <WidthDepthVisualizer showValidation={true} initialStep={1} draggable={false} />
       </Section>
       <Section>
-        <Text as='h3' variant='subheading' size='sm'>
-          3. Spec-driven development — narrow &amp; shallow-to-deep
+        <Text as="h3" variant="subheading" size="sm">
+          Spec-driven development
+        </Text>
+        <Quote type="inline">
+          AI as an executor of clearly defined intent
+        </Quote>
+        <Text>
+          This workflow is where AI stops being <em>“just helpful”</em> and starts becoming (a) reliable (team member).
         </Text>
         <Text>
-          This is where things get interesting for teams. Instead of prompting,
-          you write a <em>spec</em>: goals, constraints, assumptions, success
-          criteria. The AI executes against the spec. The output is validated
-          against the same spec. Most of the thinking happens{' '}
-          <em>before</em> execution.
+          In this workflow, you are only in the driver's seat by thoroughly describing your intent, after this AI takes over.
         </Text>
         <Text>
-          Specs are opinionated Markdown documents that become shared artifacts.
-          Done well, they create a shared understanding across roles — between
-          humans, and between humans and AI. Ambiguity surfaces early, where
-          it&rsquo;s cheap to fix, rather than late, where it&rsquo;s not.
+          You write specifications (specs); goals, constraints, assumptions, success criteria. AI executes against this spec and the output is automatically reviewed against the same spec. Most thinking happens before execution.
         </Text>
         <Text>
-          If you&rsquo;ve worked in an Agile environment, this should not sound
-          foreign. It&rsquo;s essentially the same discipline applied to AI
-          collaboration.
+          Specs are opinionated pieces of text, often presented in <code>Markdown</code>, and become shared artifacts. When done well, specs create a shared understanding across roles and disciplines. Ambiguity is no longer hidden inside prompts or intermediate steps, but surfaced early and made discussable. Both between humans, and between humans and AI.
         </Text>
         <Text>
-          The upfront cost is real. It takes more time, more domain expertise,
-          and more willingness to think carefully about what you{' '}
-          <em>don&rsquo;t</em> want. But it pays off rapidly as complexity
-          grows.
+          This works well where correctness matters more than speed and in cross-team/cross-discipline collaboration settings. Creating a shared understanding between humans and AI where ambiguity surfaces early. Outputs are more consistent, and are easier to review and iterate on.
         </Text>
-        <Alert icon='AlertCircle' intent='warning'>
+        <Text size='sm'>
+          This workflow has a higher upfront <em>“cost”</em>, in time and tokens, requires more discipline, a better domain understanding and expertise of your field of work as well as knowing what you do not want as much as what you do. All of this typically feels heavier at first, but pays off rapidly as complexity grows, reducing misalignment and rework.
+        </Text>
+        <Alert icon='BrickWallFireIcon' intent='warning'>
+          <Text as="strong" className='block'>
+            Key risk
+          </Text>
           <Text>
-            Key risk: specs encode what you believe to be true — including your
-            blind spots.
+            Specs have a way of enhancing both mastery and misunderstanding.
+          </Text>
+          <Text>
+            They encode what we believe to be true, including the blind spots we may not (yet) see.
           </Text>
         </Alert>
+        <WidthDepthVisualizer showValidation={true} initialStep={2} draggable={false} />
       </Section>
       <Section>
-        <Text as='h3' variant='subheading' size='sm'>
-          4. Agentic AI — narrow &amp; deep
+        <Text as="h3" variant="subheading" size="sm">
+          Agentic AI
+        </Text>
+        <Quote type="inline">
+          AI as a collaborator inside a designed system
+        </Quote>
+        <Text>
+          Agentic AI is not about giving an AI model full freedom.{" "}
+          It is about designing systems in which AI can operate autonomously within clearly defined boundaries{" "}
+          – sometimes refered to as <code>Harness Engineering</code>.
         </Text>
         <Text>
-          At this level, you are not prompting or delegating tasks — you are{' '}
-          <em>designing systems</em>. AI plans, executes, evaluates its outputs,
-          and iterates. Humans define intent, constraints, and escalation paths.
-          The AI does the rest.
+          This workflow shifts effort: less time spent on doing, more time spent on designing how work should happen.
         </Text>
         <Text>
-          This is the right tool for repetitive but complex workflows,
-          cross-tool integrations, and situations where process consistency
-          matters more than individual output. Think automated documentation
-          pipelines, recurring data processing, or multi-step deployment
-          workflows.
+          In this workflow, AI systems are capable of planning work, executing tasks, evaluating their outputs,{" "}
+          and iterating, all while humans remain responsible for intent, constraints, and decision-making.{" "}
+          Rather than prompting or even delegating individual tasks, you design a system in which AI can repeatedly perform work.
         </Text>
         <Text>
-          The problems become obvious when constraints are unclear, oversight is
-          implicit rather than designed, or when you start treating autonomy as
-          a way to offload accountability instead of amplifying it.
+          This works well for repetitive but complex workflows, integrations across tools, data sources or services{" "}
+          and situations where process consistency (e.g., continuous documentation maintenance) matters more than individual output.
         </Text>
-        <Alert icon='AlertCircle' intent='warning'>
+        <Text>
+          The problems with this workflow become evident when constraints are unclear or incomplete, human oversight{" "}
+          is implicit instead of designed, or responsibility is shifted away instead of upward.
+        </Text>
+        <Alert icon='SignatureIcon' intent='warning'>
+          <Text as="strong" className='block'>
+            Key risk
+          </Text>
           <Text>
-            Key risk: confusing autonomy with accountability. The AI can take
-            the action; you are still responsible for the outcome.
+            Confusing autonomy with accountability.
           </Text>
         </Alert>
+        <WidthDepthVisualizer showValidation={true} initialStep={3} draggable={false} />
       </Section>
       <Section>
-        <Text as='h2' variant='subheading'>
-          Picking the right workflow
+        <Text as="h2" variant="subheading">
+          Shifting up
         </Text>
         <Text>
-          A quick heuristic based on what you&rsquo;re trying to do:
-        </Text>
-        <Text as='section'>
-          <ul>
-            <li>
-              Exploring ideas or one-off tasks →{' '}
-              <strong>prompt engineering</strong>
-            </li>
-            <li>
-              Complex execution with a clear goal →{' '}
-              <strong>agents</strong>
-            </li>
-            <li>
-              Cross-team collaboration or correctness-critical work →{' '}
-              <strong>spec-driven</strong>
-            </li>
-            <li>
-              Repeated, complex workflows at scale →{' '}
-              <strong>agentic AI</strong>
-            </li>
-          </ul>
+        It is good to note that AI does not replace thinking nor removes responsibilities.
         </Text>
         <Text>
-          If a workflow feels frustrating, it&rsquo;s usually a sign you&rsquo;re
-          using it beyond its natural limits. Not that you are{' '}
-          &ldquo;doing AI wrong.&rdquo;
+        What matters more than picking “the right tool” or “the best AI” is how we stay in control and the processes we put in place to work collaboratively and safely with AI.
+        </Text>
+        <Text>
+        We move from doing, formatting and translating towards framing problems, setting constraints, reviewing outcomes and making decisions.
+        </Text>
+        <Text>
+        Your way of working should <em>“shift up”</em> to a higher abstraction level.
         </Text>
       </Section>
       <Section>
-        <Text as='h2' variant='subheading'>
-          What this means for you as a developer
+        <Text as="h3" variant="subheading" size="sm">
+          The 🐘 in the room
         </Text>
-        <Text>
-          The shift here is not technical — it&rsquo;s cognitive. The work
-          moves from <em>doing</em> toward <em>framing</em>: defining the
-          problem clearly, setting constraints, reviewing outcomes, making
-          decisions about what good looks like.
+        <Text size='sm'>
+        While we can move a lot of work towards AI, having a deep and systematic understanding of your work should still,{" "}
+        and will always, be the baseline<sup>*</sup>.
         </Text>
-        <Text>
-          The skills that translate best are the ones you may already have in
-          abundance: writing clear requirements, thinking in systems, managing
-          context deliberately, and critically evaluating output rather than
-          accepting it at face value.
+        <Text size='sm'>
+        Over-delegation can lead to imbalance, (hallucinated) confidence can lead to brittle systems{" "}
+        and context loss can lead to the losing of (shared) understanding (in teams).
         </Text>
-        <Text>
-          Context management in particular is underrated. Every model has a
-          context window — a finite amount of information it can hold at once.
-          Working well with AI means being intentional about what you put in and
-          what you leave out. Signal vs. noise. The same way you would write a
-          good PR description.
+        <Text as='aside' className='mt-8 text-muted-foreground'>
+            <sub className='text-sm'>* What you need to know drifts over time, though.</sub>
         </Text>
       </Section>
-      <Section>
-        <Text as='h2' variant='subheading'>
-          The risks worth taking seriously
-        </Text>
-        <Text>
-          I want to end on this, because I think it gets glossed over.
-        </Text>
-        <Text>
-          <strong>Over-delegation</strong> is a real problem. If you stop
-          reasoning through a problem because the AI will do it for you, you
-          atrophy the skills that make you good at your job — and that make you
-          good at <em>reviewing</em> AI output.
-        </Text>
-        <Text>
-          <strong>Hallucinated confidence</strong> is a real problem. LLMs
-          produce fluent, plausible text whether or not they are correct. The
-          output looks right even when it isn&rsquo;t. This is especially
-          dangerous in deep workflows where you review the end result, not the
-          intermediate steps.
-        </Text>
-        <Text>
-          <strong>Context loss</strong> is a real problem. In teams, specs and
-          shared artifacts exist partly to prevent understanding from living only
-          inside someone&rsquo;s head (or conversation history). If you
-          over-rely on AI-generated context, you can lose the shared
-          understanding that makes collaboration work.
-        </Text>
-        <Text>
-          Deep and systematic understanding of your domain — whatever it
-          is — remains the baseline. What you need to know drifts over time, but
-          you cannot outsource the knowing.
-        </Text>
-      </Section>
-      <Quote cite='From instructions to intent'>
-        AI may gain autonomy, but responsibility and accountability always
-        remain with humans.
-      </Quote>
+      <aside>
+        <Links
+          title='Dive deeper down the 🐇 hole'
+          links={[
+            [
+              'https://docs.openclaw.ai/concepts/memory',
+              'Sessions and memory',
+            ],
+            [
+              'https://platform.claude.com/docs/en/build-with-claude/context-windows',
+              'Context windows',
+            ],
+            [
+              'https://www.youtube.com/watch?v=-uW5-TaVXu4',
+              'Most devs do not understand how context windows work',
+            ],
+            [
+              'https://arxiv.org/abs/2406.06608',
+              'The Prompt Report: A Systematic Survey of Prompt Engineering Techniques',
+            ],
+            [
+              'https://github.com/danielmiessler/fabric',
+              'fabric',
+            ],
+            [
+              'https://claude.com/skills',
+              'Claude Skills',
+            ],
+            [
+              'https://code.claude.com/docs/en/mcp',
+              'Connect Claude Code to tools via MCP',
+            ],
+            [
+              'https://arxiv.org/abs/2602.11988',
+              'Evaluating AGENTS.md: Are Repository-Level Context Files Helpful for Coding Agents?',
+            ],
+            [
+              'https://www.youtube.com/watch?v=AtYtuVTZCQU',
+              'Most devs do not understand what agents are',
+            ],
+            [
+              'https://github.com/github/spec-kit',
+              '🌱 Spec Kit',
+            ],
+            [
+              'https://github.com/gsd-build/get-shit-done/',
+              'GET SHIT DONE',
+            ],
+            [
+              'https://kiro.dev/docs/cli/chat/planning-agent/',
+              'Planning agent',
+            ],
+            [
+              'https://code.visualstudio.com/docs/copilot/agents/planning',
+              'Planning with agents in VS Code',
+            ],
+            [
+              'https://n8n.io/',
+              'AI workflows',
+            ],
+            [
+              'https://ralph-wiggum.ai/',
+              'Ralph Wiggum',
+            ],
+            [
+              'https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents',
+              'Effective harnesses for long-running agents',
+            ],
+            [
+              'https://blog.langchain.com/improving-deep-agents-with-harness-engineering/',
+              'Improving Deep Agents with harness engineering',
+            ],
+            [
+              'https://github.com/rowboatlabs/rowboat',
+              'AI coworker',
+            ],
+            [
+              'https://openclaw.ai/',
+              'OpenClaw',
+            ],
+            [
+              'https://github.com/qwibitai/nanoclaw',
+              'NanoClaw',
+            ],
+            [
+              'https://github.com/snarktank/antfarm',
+              'Antfarm',
+            ],
+            [
+              'https://github.com/Significant-Gravitas/AutoGPT',
+              'AutoGPT',
+            ],
+            [
+              'https://www.youtube.com/watch?v=_IK18goX4X8&t=369s',
+              'Ship working code while you sleep',
+            ],
+            [
+              'https://kiro.dev/docs/cli/chat/planning-agent/',
+              'Planning agent',
+            ],
+            ['https://chatgpt.com/', 'chatGPT'],
+            ['https://copilot.microsoft.com/', 'Copilot'],
+            ['https://claude.com/product/claude-code', 'Claude Code'],
+            ['https://code.visualstudio.com/docs/copilot/overview', 'GitHub Copilot in VS Code'],
+            ['https://github.com/modelcontextprotocol/servers', 'Model Context Protocol servers'],
+          ]}
+        />
+      </aside>
     </>
   );
 }

@@ -351,6 +351,10 @@ main > article *::selection {
   @apply bg-muted-foreground/10;
 }
 
+main > article time {
+  @apply text-muted-foreground bg-muted-foreground/10 px-1 py-0.5 rounded-md;
+}
+
 figure:has(blockquote)::before,
 figure:has(blockquote)::after {
   @apply text-9xl font-note;

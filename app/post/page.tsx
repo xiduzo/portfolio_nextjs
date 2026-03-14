@@ -29,7 +29,7 @@ export default function Page() {
                 >
                   From instructions to intent
                   <Openmoji
-                    hexcode='1F9E0'
+                    hexcode='2728'
                     size={42}
                     className='block xl:hidden'
                   />
@@ -41,7 +41,7 @@ export default function Page() {
                   Working agentically with AI
                 </Text>
                 <Openmoji
-                  hexcode='1F9E0'
+                  hexcode='2728'
                   size={420}
                   className='xl:block hidden absolute right-6 top-8 -z-10'
                 />

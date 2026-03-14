@@ -24,8 +24,6 @@ export function HighlightedProjects() {
           >
             A collaborative glossary for everyone
           </Text>
-          {/* IMAGE HINT: Add a screenshot of the glossary overview or term detail
-              as public/glosario/glossary-overview.png — ideally ~1280×800 */}
           <div className='absolute top-[60%] filter grayscale group-hover:filter-none -z-10 transition-all duration-300'>
             <Image
               width={1280}
