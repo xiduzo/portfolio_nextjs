@@ -20,7 +20,7 @@ export default function Page() {
         emoji='2728'
         className='bg-violet-300 dark:bg-violet-900'
         subtitle='Working agentically with AI'
-        readTime={12}
+        readTime={24}
       />
       <TLDR
         lines={[
@@ -215,6 +215,49 @@ export default function Page() {
             </TableRow>
           </TableBody>
         </Table>
+        <Text as="h3" className='mt-12'>
+          Intent
+        </Text>
+        <Text size='sm'>
+          Width and depth describe how a workflow behaves. But what steers it is <em>intent</em> — and intent is not a single thing. It has layers, and leaving any of them implicit is how AI work quietly drifts off course.
+        </Text>
+        <Table className="max-w-3xl mx-auto mb-12 mt-4">
+          <TableHeader>
+            <TableRow>
+              <TableHead>Layer</TableHead>
+              <TableHead>What it answers</TableHead>
+              <TableHead>Example</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            <TableRow>
+              <TableCell>Outcome</TableCell>
+              <TableCell>What should change?</TableCell>
+              <TableCell>&ldquo;Reduce support tickets&rdquo;</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>Constraints</TableCell>
+              <TableCell>What rules apply?</TableCell>
+              <TableCell>&ldquo;Must comply with WCAG&rdquo;</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>Evaluation</TableCell>
+              <TableCell>How do we know it worked?</TableCell>
+              <TableCell>&ldquo;Tickets reduced by 20%&rdquo;</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>Boundaries</TableCell>
+              <TableCell>What must not be touched?</TableCell>
+              <TableCell>&ldquo;No changes to the payment system&rdquo;</TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+        <Text size='sm'>
+          A spec that only states the outcome but omits boundaries is wide open to unintended side effects. One that defines constraints but no evaluation criteria gives you no way to know whether the work succeeded. As workflows grow wider and deeper, the number of intent layers you need to specify grows with them.
+        </Text>
+        <Text size='sm'>
+          Keep these layers in mind as you read through the four workflows below as each one demands more of them.
+        </Text>
       </Section>
       <hr />
       <Section>
@@ -393,7 +436,7 @@ export default function Page() {
       </Section>
       <Section>
         <Text as="h2" variant="subheading">
-          Shift from doing to designing
+          Shift from doing to designing intent
         </Text>
         <Alert icon='ShieldOffIcon' intent='danger' className='mb-8'>
           <Text className='!mb-0'>
@@ -406,8 +449,11 @@ export default function Page() {
         <Text>
           We move from doing, formatting and translating towards framing problems, setting constraints, reviewing outcomes and making decisions. Your way of working should <em>&ldquo;shift up&rdquo;</em> to a higher abstraction level.
         </Text>
+        <Text>
+          This shift also exposes something that tools alone cannot fix. In practice, <em>design intent</em>, <em>engineering intent</em>, and <em>business intent</em> are often different. Sometimes subtly, sometimes wildly. A designer optimizes for clarity, an engineer for maintainability, a product owner for conversion. All three call it &ldquo;the right thing to do.&rdquo;
+        </Text>
         <Text size='sm'>
-          Tomorrow, when you open your AI tool, try three things: name which workflow you are in, narrow it one notch if you can, and decide how deep you are willing to let it go before you step back in. Over time, the habit of choosing width and depth on purpose is what turns &ldquo;using AI&rdquo; into working agentically with it.
+          AI does not solve this misalignment. It makes it visible faster. When a spec surfaces a contradiction between what design wants and what engineering assumes, that is not a failure of the process. It the process working. The organizational implication is that shared artifacts like specs become alignment tools, not just technical ones. They force conversations that used to happen too late, or not at all.
         </Text>
       </Section>
       <Section>
@@ -422,6 +468,9 @@ export default function Page() {
         </Text>
         <Text size='sm'>
           Over-delegation can lead to imbalance, (hallucinated) confidence can lead to brittle systems, and context loss can lead to losing (shared) understanding in teams.
+        </Text>
+        <Text size='sm'>
+          Tomorrow, when you open your AI tool, try three things: name which workflow you are in, narrow it one notch if you can, and decide how deep you are willing to let it go before you step back in. Over time, the habit of choosing width and depth on purpose is what turns &ldquo;using AI&rdquo; into working agentically with it.
         </Text>
         <Text as='aside' className='mt-8 text-muted-foreground'>
           <sub className='text-sm'>* What you need to know drifts over time, though.</sub>
