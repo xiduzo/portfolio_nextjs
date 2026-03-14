@@ -1,12 +1,13 @@
 import { cva, VariantProps } from 'class-variance-authority';
 import { PropsWithChildren } from 'react';
 import * as Icons from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 export default function Alert(props: Props) {
   const Icon = Icons[props.icon] as typeof Icons.AArrowDown;
 
   return (
-    <div className={container({ intent: props.intent })}>
+    <div className={cn(container({ intent: props.intent }), props.className)}>
       <div className={text({ intent: props.intent })}>
         <Icon size={36} className='shrink-0' />
         <section>{props.children}</section>
@@ -18,7 +19,9 @@ export default function Alert(props: Props) {
 type Props = PropsWithChildren &
   VariantProps<typeof container> & {
     icon: keyof typeof Icons;
-  };
+  } & {
+    className?: string
+  }
 
 const container = cva('border-l-4 p-4', {
   variants: {

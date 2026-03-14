@@ -31,44 +31,40 @@ export default function Page() {
       />
       <Section>
         <Text>
-          AI is not going to replace thinking. But it <em>is</em> changing what
-          kind of thinking you need to do.
+          AI is not going to replace thinking. But it <del>is changing</del><ins>has changed</ins> what
+          kind of thinking your work actually needs from you.
         </Text>
         <Text>
-          Over the past years I have been spending a lot of time figuring out
-          how I could actually work well with AI. Not just using it as a smarter
-          autocomplete, but genuinely integrating it into how I build things. The
-          further I got, the more I realized the question is never{' '}
+          If you are a developer, designer, or knowledge worker trying to use AI for real work, not just demos, you have probably felt this: there is no single &ldquo;right&rdquo; way to work with AI, only a messy spectrum of workflows.
+        </Text>
+        <Text>
+          Over the past years I have been figuring out how to integrate AI into how I build things. The further I got, the more I realized the key question is rarely{' '}
           <em>&ldquo;which AI tool should I use?&rdquo;</em> but rather{' '}
           <em>&ldquo;which workflow fits this task?&rdquo;</em>
         </Text>
         <Text size='sm'>
-          This post is an attempt to lay out my learnings and thoughs on this ever evolving field. No hype, no
-          doom. Just a practical map of where I stand.
+          This post lays out my current map of those workflows. Where they shine, where they break, and how to move from giving instructions to designing intent. No hype, no doom. Just a practical guide you can apply tomorrow.
         </Text>
       </Section>
       <Section>
-        <Text as='h2' variant='subheading'>Context matters</Text>
-        <Text size='sm'>
-          Pun intended.
+        <Text as='h2' variant='subheading'>
+          Context matters
+        </Text>
+        <Text size="sm" className='italic'>
+          pun intended
         </Text>
         <Text>
-          To be able to work efficiently with this all, regardless of the workflow,{' '}
-          <Link href="https://arxiv.org/abs/1706.03762" target='_blank'>attention is all you need</Link>{' '}
-          to work better with(in) the <em>context</em> (window) of LLMs.
+          No matter which workflow you use, you are always working inside a limited <code>context window</code>, the chunk of conversation and documents your model can &ldquo;see&rdquo; at once (<Link href="https://www.morphllm.com/llm-token-limit" target='_blank'>measured in tokens</Link>). Managing what goes in (signal) and what stays out (noise) quietly shapes what AI can do for you.
         </Text>
-        <Text>
-          Each model can only operate in a certain a pre-defined conversation size called the <code>context window</code>, <Link href="https://www.morphllm.com/llm-token-limit" target='_blank'>measured in tokens</Link>.
-        </Text>
-        <Text size="sm">
-          Managing context, what to put in and what to omit is an important balancing game between signal and noise.
-        </Text>
-        <Text as='h3' size="sm" variant='subheading' className='mt-24'>Setting the context</Text>
-        <Text>
-          Before we get started, let's get familiar with some of the terminology I will be using.
+        <Text as='h3' size="sm" variant='subheading' className='mt-24'>A shared glossary</Text>
+        <Text size='sm' className='italic text-muted-foreground'>
+          After all, I built <Link href='https://glosar.io/' target='_blank'>a whole product</Link> around making this kind of shared vocabulary easier.
         </Text>
         <Text size='sm'>
-          After all, I built <Link href='https://glosar.io/' target='_blank'>a whole product</Link> around this exact issue.
+          The rest of this post assumes basic familiarity with terms like <em>LLM</em>, <em>agents</em>, and <em>prompts</em>. If those are fuzzy, skim the table below.
+        </Text>
+        <Text size='sm'>
+          Or jump straight to the workflows and come back later.
         </Text>
         <Table className="max-w-3xl mx-auto mt-12">
           <TableHeader>
@@ -121,14 +117,16 @@ export default function Page() {
           From copy-🍝 to agentic AI
         </Text>
         <Text>
-          <u>There is no <strong>one</strong> correct way to work with AI</u> &lt;period&gt;
+          <u>There is no <strong>one</strong> correct way to work with AI</u> &lt;&lt;period&gt;&gt;
         </Text>
         <Text>
-          Instead, there is a range of workflows, each with different strengths, risks and “ideal” use cases. Understanding these different workflows can help you pick the right approach for the task at hand.
+          Instead, there is a range of workflows, each with different strengths, risks and &ldquo;ideal&rdquo; use cases. Understanding them helps you pick the right approach for the task at hand.
         </Text>
         <Text>
-          Over time I have categorized that working with LLMs comes down to two independent, but correlated,
-          properties: <code>width</code> and <code>depth</code>.
+          Over time I have come to see that working with LLMs boils down to two dimensions: <code>width</code> and <code>depth</code>. We will look at four workflows along that spectrum: prompt engineering, AI agents, spec-driven development, and agentic systems.
+        </Text>
+        <Text size='sm'>
+          Each building on the previous one.
         </Text>
         <QuadrantDiagram />
         <Text as="h3" className='mt-12'>
@@ -181,7 +179,7 @@ export default function Page() {
         </Table>
         <Text as="h3">Depth</Text>
         <Text size='sm'>
-          How many steps the AI can take on its own before a <em>human</em> intervenes?
+          How many steps can the AI take on its own before a <em>human</em> intervenes?
         </Text>
         <Table className="max-w-3xl mx-auto mb-12 mt-4">
           <TableHeader>
@@ -234,7 +232,7 @@ export default function Page() {
             <em>E.g., Spec-driven workflows often start narrow and shallow, and only become deep once intent, constraints, and validation are strong enough to support autonomy.</em>
           </Text>
         </Alert>
-        <WidthDepthVisualizer />
+        <WidthDepthVisualizer showValidation={true} />
       </Section>
       <hr />
       <Section>
@@ -267,7 +265,7 @@ export default function Page() {
           It is (usually) very fast, has a low cognitive overhead, is easy to adopt and helps to improve your individual productivity.{" "}
           On the other hand, the context is short-lived and the quality of output heavily depends on your prompting.
         </Text>
-        <Text size='sm'>
+        <Text size='sm' className='mb-8'>
           This workflow breaks down when tasks grow larger, require shared understanding, or span multiple steps.
         </Text>
         <Alert icon='BookAIcon' intent='warning'>
@@ -304,7 +302,7 @@ export default function Page() {
         <Text>
           On the downside, intermediate reasoning and decisions are not always visible, goals and success criteria are often inferred rather than explicit and mistakes can propagate and compound quietly across steps without being noticed.
         </Text>
-        <Text size='sm'>
+        <Text size='sm' className='mb-8'>
           This workflow breaks down when there is no clear intent. Without clear <em>intent</em>, agents optimize for something — just not always the right thing.
         </Text>
         <Alert icon='GoalIcon' intent='warning'>
@@ -331,7 +329,7 @@ export default function Page() {
           In this workflow, you are only in the driver's seat by thoroughly describing your intent, after this AI takes over.
         </Text>
         <Text>
-          You write specifications (specs); goals, constraints, assumptions, success criteria. AI executes against this spec and the output is automatically reviewed against the same spec. Most thinking happens before execution.
+          You write specifications (specs); goals, constraints, assumptions, success criteria. AI executes against this spec and the output is automatically reviewed against the same spec. Most thinking happens <strong>before</strong> execution.
         </Text>
         <Text>
           Specs are opinionated pieces of text, often presented in <code>Markdown</code>, and become shared artifacts. When done well, specs create a shared understanding across roles and disciplines. Ambiguity is no longer hidden inside prompts or intermediate steps, but surfaced early and made discussable. Both between humans, and between humans and AI.
@@ -339,8 +337,8 @@ export default function Page() {
         <Text>
           This works well where correctness matters more than speed and in cross-team/cross-discipline collaboration settings. Creating a shared understanding between humans and AI where ambiguity surfaces early. Outputs are more consistent, and are easier to review and iterate on.
         </Text>
-        <Text size='sm'>
-          This workflow has a higher upfront <em>“cost”</em>, in time and tokens, requires more discipline, a better domain understanding and expertise of your field of work as well as knowing what you do not want as much as what you do. All of this typically feels heavier at first, but pays off rapidly as complexity grows, reducing misalignment and rework.
+        <Text size='sm' className='mb-8'>
+          This workflow has a higher upfront <em>“cost”</em>, in time and tokens, requires more discipline, a better domain understanding and expertise of your field of work as well as <u>knowing what you do not want</u> as much as what you do. All of this typically feels heavier at first, but pays off rapidly as complexity grows, reducing misalignment and rework.
         </Text>
         <Alert icon='BrickWallFireIcon' intent='warning'>
           <Text as="strong" className='block'>
@@ -365,7 +363,7 @@ export default function Page() {
         <Text>
           Agentic AI is not about giving an AI model full freedom.{" "}
           It is about designing systems in which AI can operate autonomously within clearly defined boundaries{" "}
-          – sometimes refered to as <code>Harness Engineering</code>.
+          – sometimes referred to as <code>Harness Engineering</code>.
         </Text>
         <Text>
           This workflow shifts effort: less time spent on doing, more time spent on designing how work should happen.
@@ -379,7 +377,7 @@ export default function Page() {
           This works well for repetitive but complex workflows, integrations across tools, data sources or services{" "}
           and situations where process consistency (e.g., continuous documentation maintenance) matters more than individual output.
         </Text>
-        <Text>
+        <Text size='sm' className='mb-8'>
           The problems with this workflow become evident when constraints are unclear or incomplete, human oversight{" "}
           is implicit instead of designed, or responsibility is shifted away instead of upward.
         </Text>
@@ -395,35 +393,38 @@ export default function Page() {
       </Section>
       <Section>
         <Text as="h2" variant="subheading">
-          Shifting up
+          Shift from doing to designing
+        </Text>
+        <Alert icon='ShieldOffIcon' intent='danger' className='mb-8'>
+          <Text className='!mb-0'>
+            AI does not replace thinking nor remove responsibilities.
+          </Text>
+        </Alert>
+        <Text>
+          What matters more than picking &ldquo;the right tool&rdquo; or &ldquo;the best AI&rdquo; is how we stay in control and the processes we put in place to work collaboratively and safely with AI.
         </Text>
         <Text>
-        It is good to note that AI does not replace thinking nor removes responsibilities.
+          We move from doing, formatting and translating towards framing problems, setting constraints, reviewing outcomes and making decisions. Your way of working should <em>&ldquo;shift up&rdquo;</em> to a higher abstraction level.
         </Text>
-        <Text>
-        What matters more than picking “the right tool” or “the best AI” is how we stay in control and the processes we put in place to work collaboratively and safely with AI.
-        </Text>
-        <Text>
-        We move from doing, formatting and translating towards framing problems, setting constraints, reviewing outcomes and making decisions.
-        </Text>
-        <Text>
-        Your way of working should <em>“shift up”</em> to a higher abstraction level.
+        <Text size='sm'>
+          Tomorrow, when you open your AI tool, try three things: name which workflow you are in, narrow it one notch if you can, and decide how deep you are willing to let it go before you step back in. Over time, the habit of choosing width and depth on purpose is what turns &ldquo;using AI&rdquo; into working agentically with it.
         </Text>
       </Section>
       <Section>
         <Text as="h3" variant="subheading" size="sm">
-          The 🐘 in the room
+          Why deep understanding still matters
+        </Text>
+        <Text size="sm">
+          The 🐘 in the room.
         </Text>
         <Text size='sm'>
-        While we can move a lot of work towards AI, having a deep and systematic understanding of your work should still,{" "}
-        and will always, be the baseline<sup>*</sup>.
+          While we can move a lot of work towards AI, having a deep and systematic understanding of your work should still, and will always, be the baseline<sup>*</sup>.
         </Text>
         <Text size='sm'>
-        Over-delegation can lead to imbalance, (hallucinated) confidence can lead to brittle systems{" "}
-        and context loss can lead to the losing of (shared) understanding (in teams).
+          Over-delegation can lead to imbalance, (hallucinated) confidence can lead to brittle systems, and context loss can lead to losing (shared) understanding in teams.
         </Text>
         <Text as='aside' className='mt-8 text-muted-foreground'>
-            <sub className='text-sm'>* What you need to know drifts over time, though.</sub>
+          <sub className='text-sm'>* What you need to know drifts over time, though.</sub>
         </Text>
       </Section>
       <aside>
@@ -521,10 +522,6 @@ export default function Page() {
             [
               'https://www.youtube.com/watch?v=_IK18goX4X8&t=369s',
               'Ship working code while you sleep',
-            ],
-            [
-              'https://kiro.dev/docs/cli/chat/planning-agent/',
-              'Planning agent',
             ],
             ['https://chatgpt.com/', 'chatGPT'],
             ['https://copilot.microsoft.com/', 'Copilot'],
