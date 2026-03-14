@@ -219,7 +219,7 @@ export default function Page() {
           Intent
         </Text>
         <Text size='sm'>
-          Width and depth describe how a workflow behaves. But what steers it is <em>intent</em> — and intent is not a single thing. It has layers, and leaving any of them implicit is how AI work quietly drifts off course.
+          Width and depth describe how a workflow behaves. But what steers it is <em>intent</em>. Intent is not a single thing. It has layers, and leaving any of them implicit is how AI work quietly drifts off course.
         </Text>
         <Table className="max-w-3xl mx-auto mb-12 mt-4">
           <TableHeader>
@@ -253,10 +253,7 @@ export default function Page() {
           </TableBody>
         </Table>
         <Text size='sm'>
-          A spec that only states the outcome but omits boundaries is wide open to unintended side effects. One that defines constraints but no evaluation criteria gives you no way to know whether the work succeeded. As workflows grow wider and deeper, the number of intent layers you need to specify grows with them.
-        </Text>
-        <Text size='sm'>
-          Keep these layers in mind as you read through the four workflows below as each one demands more of them.
+          Intent that only states the outcome but omits boundaries is wide open to unintended side effects. One that defines constraints but no evaluation criteria gives you no way to know whether the work succeeded. As workflows grow deeper, the number of intent layers you need to specify grows with them.
         </Text>
       </Section>
       <hr />
