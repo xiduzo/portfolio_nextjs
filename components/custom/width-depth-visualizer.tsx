@@ -55,11 +55,6 @@ export function WidthDepthVisualizer({
     setWidthPct(PRESETS[index].width);
   }, []);
 
-  const handlePreset = useCallback((index: number) => {
-    setActivePreset(index);
-    setWidthPct(PRESETS[index].width);
-  }, []);
-
   // SVG tunnel shape calculations
   const svgW = 400;
   const svgH = 240;

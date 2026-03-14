@@ -161,7 +161,7 @@ export default function Page() {
             </TableRow>
             <TableRow>
               <TableCell>
-                AI has room to <strong>"fill in the blanks"</strong>
+                AI has room to <strong>&quot;fill in the blanks&quot;</strong>
               </TableCell>
               <TableCell>
                 AI freedom is bounded
@@ -323,10 +323,10 @@ export default function Page() {
           AI as an executor of clearly defined intent
         </Quote>
         <Text>
-          This workflow is where AI stops being <em>“just helpful”</em> and starts becoming (a) reliable (team member).
+          This workflow is where AI stops being <em>&quot;just helpful&quot;</em> and starts becoming (a) reliable (team member).
         </Text>
         <Text>
-          In this workflow, you are only in the driver's seat by thoroughly describing your intent, after this AI takes over.
+          In this workflow, you are only in the driver&apos;s seat by thoroughly describing your intent, after this AI takes over.
         </Text>
         <Text>
           You write specifications (specs); goals, constraints, assumptions, success criteria. AI executes against this spec and the output is automatically reviewed against the same spec. Most thinking happens <strong>before</strong> execution.

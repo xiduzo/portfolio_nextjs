@@ -8,7 +8,6 @@ import { Hero } from '@/components/custom/hero';
 import { TLDR } from '@/components/custom/tldr';
 import { CodeBlock } from '@/components/custom/code-block';
 import { Safari } from '@/components/magic-ui/safari';
-import { Links } from '@/components/custom/links';
 import { ExternalLinkIcon } from 'lucide-react';
 
 export default function Page() {

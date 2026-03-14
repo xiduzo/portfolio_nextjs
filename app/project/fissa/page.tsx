@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { Iphone15Pro } from '@/components/magic-ui/iphone-15-pro';
 import { Image } from '@/components/custom/image';
 import { CodeBlock } from '@/components/custom/code-block';
-import { Button } from '@/components/ui/button';
 import { Marquee } from '@/components/magic-ui/marquee';
 import { randomSort } from '@/lib/utils';
 import { CallToAction } from '@/components/custom/call-to-action';

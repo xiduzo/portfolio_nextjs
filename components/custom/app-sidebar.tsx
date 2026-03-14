@@ -25,7 +25,7 @@ import {
 } from '@/components/ui/sidebar';
 import Link from 'next/link';
 import { useLocalStorage } from 'usehooks-ts';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 import {
   playMenuItemClosedSound,

@@ -3,7 +3,6 @@ import { Text } from '@/components/custom/text';
 import Link from 'next/link';
 import { CodeBlock } from '@/components/custom/code-block';
 import { Image } from '@/components/custom/image';
-import { Button } from '@/components/ui/button';
 import { Hero } from '@/components/custom/hero';
 import { Quote } from '@/components/custom/quote';
 import { Links } from '@/components/custom/links';
