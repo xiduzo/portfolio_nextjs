@@ -351,7 +351,7 @@ main > article *::selection {
   @apply bg-muted-foreground/10;
 }
 
-main > article time {
+main > article p time {
   @apply text-muted-foreground bg-muted-foreground/10 px-1 py-0.5 rounded-md;
 }
 
