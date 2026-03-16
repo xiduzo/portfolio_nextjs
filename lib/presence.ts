@@ -10,7 +10,7 @@ export type CursorColor = (typeof COLORS)[number];
 
 export type PresencePayload = {
   clientId: string;
-  cursor: { x: number; y: number } | null;
+  cursor: { x: number; y: number; area: 'sidebar' | 'content' } | null;
   page: string;
   selection: {
     text: string;

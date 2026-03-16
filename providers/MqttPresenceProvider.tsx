@@ -79,15 +79,35 @@ export function MqttPresenceProvider({ children }: { children: React.ReactNode }
     publish({ page: pathname, cursor: null, selection: null });
   }, [pathname, publish]);
 
+  // Cache content area bounds (updated on mount and resize, not on every mousemove)
+  const contentBoundsRef = useRef({ left: 0, width: 1 });
+  useEffect(() => {
+    const updateContentBounds = () => {
+      const main = document.querySelector('main');
+      if (main) {
+        const rect = main.getBoundingClientRect();
+        contentBoundsRef.current = { left: rect.left, width: rect.width || 1 };
+      }
+    };
+    updateContentBounds();
+    const ro = new ResizeObserver(updateContentBounds);
+    ro.observe(document.documentElement);
+    return () => ro.disconnect();
+  }, []);
+
   // Cursor tracking (throttled to ~30fps)
   useEffect(() => {
     let rafId: number;
-    let pending: { x: number; y: number } | null = null;
+    let pending: { x: number; y: number; area: 'sidebar' | 'content' } | null = null;
 
     const onMove = (e: MouseEvent) => {
+      const inSidebar = e.clientX < contentBoundsRef.current.left;
       pending = {
-        x: e.pageX / document.documentElement.scrollWidth,
-        y: e.pageY / document.documentElement.scrollHeight,
+        area: inSidebar ? 'sidebar' : 'content',
+        x: e.clientX / window.innerWidth,
+        y: inSidebar
+          ? e.clientY / window.innerHeight
+          : e.pageY / document.documentElement.scrollHeight,
       };
       if (!rafId) {
         rafId = requestAnimationFrame(() => {

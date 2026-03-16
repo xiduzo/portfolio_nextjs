@@ -74,6 +74,11 @@ export function LiveCursors() {
   const [scroll, setScroll] = useState(() =>
     typeof window !== 'undefined' ? { x: window.scrollX, y: window.scrollY } : { x: 0, y: 0 }
   );
+  const [viewport, setViewport] = useState(() =>
+    typeof window !== 'undefined'
+      ? { w: window.innerWidth, h: window.innerHeight }
+      : { w: 0, h: 0 }
+  );
   const [docSize, setDocSize] = useState(() =>
     typeof window !== 'undefined'
       ? { w: document.documentElement.scrollWidth, h: document.documentElement.scrollHeight }
@@ -82,11 +87,15 @@ export function LiveCursors() {
 
   useEffect(() => {
     const onScroll = () => setScroll({ x: window.scrollX, y: window.scrollY });
-    const updateDocSize = () => setDocSize({
-      w: document.documentElement.scrollWidth,
-      h: document.documentElement.scrollHeight,
-    });
-    const ro = new ResizeObserver(updateDocSize);
+    const update = () => {
+      setViewport({ w: window.innerWidth, h: window.innerHeight });
+      setDocSize({
+        w: document.documentElement.scrollWidth,
+        h: document.documentElement.scrollHeight,
+      });
+    };
+    update(); // measure immediately after mount (SSR gives 0,0)
+    const ro = new ResizeObserver(update);
     ro.observe(document.documentElement);
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => {
@@ -110,8 +119,10 @@ export function LiveCursors() {
             key={user.clientId}
             className='absolute transition-[top,left] duration-75'
             style={{
-              top: user.cursor!.y * docSize.h - scroll.y,
-              left: user.cursor!.x * docSize.w - scroll.x,
+              left: user.cursor!.x * viewport.w,
+              top: user.cursor!.area === 'sidebar'
+                ? user.cursor!.y * viewport.h
+                : user.cursor!.y * docSize.h - scroll.y,
             }}
           >
             <svg
