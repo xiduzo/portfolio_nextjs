@@ -136,11 +136,11 @@ export function MqttPresenceProvider({ children }: { children: React.ReactNode }
       return path;
     };
 
-    // Walk up from node to find the nearest ancestor element with an id.
-    const findNamedAncestor = (node: Node): Element | null => {
-      let current: Node | null = node.nodeType === Node.ELEMENT_NODE ? node : node.parentNode;
+    // Walk up from startNode to find the deepest named ancestor that also contains endNode.
+    const findCommonNamedAncestor = (startNode: Node, endNode: Node): Element | null => {
+      let current: Node | null = startNode.nodeType === Node.ELEMENT_NODE ? startNode : startNode.parentNode;
       while (current && current !== document.body) {
-        if ((current as Element).id) return current as Element;
+        if ((current as Element).id && current.contains(endNode)) return current as Element;
         current = current.parentNode;
       }
       return null;
@@ -158,9 +158,9 @@ export function MqttPresenceProvider({ children }: { children: React.ReactNode }
         return;
       }
       const range = sel.getRangeAt(0);
-      // Use the nearest named ancestor of the start container as root so paths
-      // are short and stable. Fall back to document.body if none found.
-      const anchor = findNamedAncestor(range.startContainer);
+      // Use the deepest named ancestor containing both endpoints as root.
+      // This keeps paths short and stable while handling cross-element selections.
+      const anchor = findCommonNamedAncestor(range.startContainer, range.endContainer);
       const root: Node = anchor ?? document.body;
       const startPath = getNodePath(root, range.startContainer);
       const endPath = getNodePath(root, range.endContainer);

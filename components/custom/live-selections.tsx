@@ -75,13 +75,6 @@ function resolveRects(sel: NonNullable<PresencePayload['selection']>): DOMRect[]
     const range = document.createRange();
     range.setStart(startNode, sel.startOffset);
     range.setEnd(endNode, sel.endOffset);
-    // Verify text matches to catch stale or wrong selections.
-    const resolved = range.toString().replace(/\s+/g, ' ').trim();
-    const expected = sel.text.replace(/\s+/g, ' ').trim();
-    if (resolved !== expected) {
-      console.warn('[LiveSelections] text mismatch, dropping selection', { resolved, expected });
-      return [];
-    }
     const rects = Array.from(range.getClientRects());
     console.log('[LiveSelections] resolved', rects.length, 'rects for', JSON.stringify(sel.text));
     return rects;
