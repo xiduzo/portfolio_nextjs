@@ -12,6 +12,7 @@ import {
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
@@ -23,6 +24,7 @@ import {
   SidebarRail,
   useSidebar,
 } from '@/components/ui/sidebar';
+import { OnlineIndicator } from '@/components/custom/online-indicator';
 import Link from 'next/link';
 import { useLocalStorage } from 'usehooks-ts';
 import { usePathname } from 'next/navigation';
@@ -162,6 +164,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           </SidebarGroup>
         ))}
       </SidebarContent>
+      <SidebarFooter className='pb-2'>
+        <OnlineIndicator />
+      </SidebarFooter>
       <SidebarRail />
     </Sidebar>
   );
@@ -172,10 +177,11 @@ function Tree(props: { item: Item }) {
   const isMobile = useIsMobile();
   const { setOpenMobile } = useSidebar();
 
-  const [openItems, setOpenItems] = useLocalStorage('open-items', [
-    'highlighted',
-    '2024',
-  ]);
+  const [openItems, setOpenItems] = useLocalStorage(
+    'open-items',
+    ['highlighted', '2024'],
+    { initializeWithValue: false }
+  );
 
   const { name, link, children } = props.item;
 
@@ -213,18 +219,19 @@ function Tree(props: { item: Item }) {
     <SidebarMenuItem>
       <Collapsible
         className='group/collapsible [&[data-state=open]>button>svg:first-child]:hidden [&[data-state=open]>button>svg:last-child]:block'
-        defaultOpen={openItems.includes(name)}
+        defaultOpen={openItems?.includes(name) ?? false}
       >
         <CollapsibleTrigger
           asChild
           onMouseEnter={playMenuItemHoverSound}
           onClick={() => {
-            if (openItems.includes(name)) {
+            const current = openItems ?? [];
+            if (current.includes(name)) {
               playMenuItemClosedSound();
-              setOpenItems(openItems.filter(item => item !== name));
+              setOpenItems(current.filter(item => item !== name));
             } else {
               playMenuItemOpenedSound();
-              setOpenItems([...openItems, name]);
+              setOpenItems([...current, name]);
             }
           }}
         >

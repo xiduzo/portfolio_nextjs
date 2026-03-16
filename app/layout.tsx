@@ -20,6 +20,10 @@ import {
 import ObserverProvider from '@/providers/ObserverProvider';
 import { CallToAction } from '@/components/custom/call-to-action';
 import { Theme } from '@/components/custom/theme';
+import { MqttPresenceProvider } from '@/providers/MqttPresenceProvider';
+import { LiveCursors } from '@/components/custom/live-cursors';
+import { LiveSelections } from '@/components/custom/live-selections';
+
 
 import { cookies } from 'next/headers';
 import { THEME_STORAGE_KEY } from '@/lib/constants';
@@ -90,6 +94,9 @@ export default async function RootLayout({
           Jump to content
         </a>
         <Theme />
+        <MqttPresenceProvider>
+        <LiveCursors />
+        <LiveSelections />
         <SidebarProvider>
           <AppSidebar />
           <SidebarInset>
@@ -155,6 +162,7 @@ export default async function RootLayout({
             </footer>
           </SidebarInset>
         </SidebarProvider>
+        </MqttPresenceProvider>
         <Analytics />
       </body>
     </html>
