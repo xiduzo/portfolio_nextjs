@@ -116,6 +116,36 @@ export function MqttPresenceProvider({ children }: { children: React.ReactNode }
 
   // Text selection
   useEffect(() => {
+    // Returns the path of child indices from root down to targetNode.
+    const getNodePath = (root: Node, targetNode: Node): number[] | null => {
+      const path: number[] = [];
+      let current: Node = targetNode;
+      while (current !== root) {
+        const parent = current.parentNode;
+        if (!parent) return null;
+        let index = 0;
+        let sibling: ChildNode | null = parent.firstChild;
+        while (sibling && sibling !== current) {
+          index++;
+          sibling = sibling.nextSibling;
+        }
+        if (!sibling) return null;
+        path.unshift(index);
+        current = parent;
+      }
+      return path;
+    };
+
+    // Walk up from node to find the nearest ancestor element with an id.
+    const findNamedAncestor = (node: Node): Element | null => {
+      let current: Node | null = node.nodeType === Node.ELEMENT_NODE ? node : node.parentNode;
+      while (current && current !== document.body) {
+        if ((current as Element).id) return current as Element;
+        current = current.parentNode;
+      }
+      return null;
+    };
+
     const onSelectionChange = () => {
       const sel = window.getSelection();
       if (!sel || sel.isCollapsed || !sel.rangeCount) {
@@ -128,15 +158,26 @@ export function MqttPresenceProvider({ children }: { children: React.ReactNode }
         return;
       }
       const range = sel.getRangeAt(0);
-      const sw = document.documentElement.scrollWidth;
-      const sh = document.documentElement.scrollHeight;
-      const rects = Array.from(range.getClientRects()).map((r) => ({
-        top: (r.top + window.scrollY) / sh,
-        left: (r.left + window.scrollX) / sw,
-        width: r.width / sw,
-        height: r.height / sh,
-      }));
-      publish({ selection: { text, rects } });
+      // Use the nearest named ancestor of the start container as root so paths
+      // are short and stable. Fall back to document.body if none found.
+      const anchor = findNamedAncestor(range.startContainer);
+      const root: Node = anchor ?? document.body;
+      const startPath = getNodePath(root, range.startContainer);
+      const endPath = getNodePath(root, range.endContainer);
+      if (!startPath || !endPath) {
+        publish({ selection: null });
+        return;
+      }
+      const selection = {
+        text,
+        rootId: anchor?.id ?? null,
+        startPath,
+        startOffset: range.startOffset,
+        endPath,
+        endOffset: range.endOffset,
+      };
+      console.log('[Presence] publishing selection', JSON.stringify(selection));
+      publish({ selection });
     };
 
     document.addEventListener('selectionchange', onSelectionChange);
@@ -200,6 +241,9 @@ export function MqttPresenceProvider({ children }: { children: React.ReactNode }
       try {
         const payload: PresencePayload = JSON.parse(message.toString());
         if (payload.clientId === clientId) return; // skip self
+        if (payload.selection) {
+          console.log('[Presence] received selection from', payload.name, JSON.stringify(payload.selection));
+        }
 
         if (payload.timestamp === 0) {
           // Disconnect signal

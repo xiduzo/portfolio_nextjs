@@ -4,7 +4,7 @@ export const COLORS = [
   'blue', 'red', 'green', 'orange', 'purple',
   'pink', 'teal', 'cyan', 'yellow', 'rose',
   'violet', 'emerald',
-];
+] as const;
 
 export type CursorColor = (typeof COLORS)[number];
 
@@ -14,7 +14,11 @@ export type PresencePayload = {
   page: string;
   selection: {
     text: string;
-    rects: Array<{ top: number; left: number; width: number; height: number }>;
+    rootId: string | null; // id of the anchor element; null means document.body
+    startPath: number[];
+    startOffset: number;
+    endPath: number[];
+    endOffset: number;
   } | null;
   color: CursorColor;
   name: string;

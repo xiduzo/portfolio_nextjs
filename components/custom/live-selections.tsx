@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { cva } from 'class-variance-authority';
 import { usePresence } from '@/providers/MqttPresenceProvider';
-import type { CursorColor } from '@/lib/presence';
+import type { CursorColor, PresencePayload } from '@/lib/presence';
 
 // Highlight uses shade 600 at reduced opacity — vivid enough to see but not overwhelming.
 const selectionHighlight = cva('absolute rounded-sm opacity-30', {
@@ -49,29 +49,60 @@ const selectionLabel = cva(
   }
 );
 
+// Walk the child-index path from root to recover the exact node that was serialized.
+function resolveNodePath(root: Node, path: number[]): Node | null {
+  let current: Node = root;
+  for (const index of path) {
+    if (index >= current.childNodes.length) return null;
+    current = current.childNodes[index];
+  }
+  return current;
+}
+
+function resolveRects(sel: NonNullable<PresencePayload['selection']>): DOMRect[] {
+  try {
+    const root: Node = sel.rootId
+      ? (document.getElementById(sel.rootId) ?? document.body)
+      : document.body;
+    console.log('[LiveSelections] resolving', JSON.stringify(sel));
+    const startNode = resolveNodePath(root, sel.startPath);
+    const endNode = resolveNodePath(root, sel.endPath);
+    if (!startNode || !endNode) {
+      console.warn('[LiveSelections] node path resolution failed', { startNode, endNode, sel });
+      return [];
+    }
+    console.log('[LiveSelections] resolved nodes', { startNode, endNode });
+    const range = document.createRange();
+    range.setStart(startNode, sel.startOffset);
+    range.setEnd(endNode, sel.endOffset);
+    // Verify text matches to catch stale or wrong selections.
+    const resolved = range.toString().replace(/\s+/g, ' ').trim();
+    const expected = sel.text.replace(/\s+/g, ' ').trim();
+    if (resolved !== expected) {
+      console.warn('[LiveSelections] text mismatch, dropping selection', { resolved, expected });
+      return [];
+    }
+    const rects = Array.from(range.getClientRects());
+    console.log('[LiveSelections] resolved', rects.length, 'rects for', JSON.stringify(sel.text));
+    return rects;
+  } catch {
+    return [];
+  }
+}
+
 export function LiveSelections() {
   const pathname = usePathname();
   const { others } = usePresence();
-  const [scroll, setScroll] = useState(() =>
-    typeof window !== 'undefined' ? { x: window.scrollX, y: window.scrollY } : { x: 0, y: 0 }
-  );
-  const [docSize, setDocSize] = useState(() =>
-    typeof window !== 'undefined'
-      ? { w: document.documentElement.scrollWidth, h: document.documentElement.scrollHeight }
-      : { w: 0, h: 0 }
-  );
+  // Tick forces re-render when viewport changes so getClientRects() stays accurate.
+  const [, setTick] = useState(0);
 
   useEffect(() => {
-    const onScroll = () => setScroll({ x: window.scrollX, y: window.scrollY });
-    const onResize = () => setDocSize({
-      w: document.documentElement.scrollWidth,
-      h: document.documentElement.scrollHeight,
-    });
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onResize, { passive: true });
+    const tick = () => setTick((t) => t + 1);
+    window.addEventListener('scroll', tick, { passive: true });
+    window.addEventListener('resize', tick, { passive: true });
     return () => {
-      window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', onResize);
+      window.removeEventListener('scroll', tick);
+      window.removeEventListener('resize', tick);
     };
   }, []);
 
@@ -81,32 +112,37 @@ export function LiveSelections() {
 
   if (!selectingUsers.length) return null;
 
+  // Pre-compute rects once per user to avoid calling resolveRects twice.
+  const resolved = selectingUsers.map((user) => ({
+    user,
+    color: user.color as CursorColor,
+    rects: resolveRects(user.selection!),
+  }));
+
   return (
     <div className='pointer-events-none fixed inset-0 z-40 overflow-hidden'>
-      {selectingUsers.map((user) => {
-        const color = user.color as CursorColor;
-        return user.selection!.rects.map((rect, i) => (
+      {resolved.map(({ user, color, rects }) =>
+        rects.map((rect, i) => (
           <div
             key={`${user.clientId}-${i}`}
             className={selectionHighlight({ color })}
             style={{
-              top: rect.top * docSize.h - scroll.y,
-              left: rect.left * docSize.w - scroll.x,
-              width: rect.width * docSize.w,
-              height: rect.height * docSize.h,
+              top: rect.top,
+              left: rect.left,
+              width: rect.width,
+              height: rect.height,
             }}
           />
-        ));
-      })}
-      {selectingUsers.map((user) => {
-        const first = user.selection!.rects[0];
+        ))
+      )}
+      {resolved.map(({ user, color, rects }) => {
+        const first = rects[0];
         if (!first) return null;
-        const color = user.color as CursorColor;
         return (
           <div
             key={`${user.clientId}-label`}
             className={selectionLabel({ color })}
-            style={{ top: first.top * docSize.h - scroll.y, left: first.left * docSize.w - scroll.x }}
+            style={{ top: first.top, left: first.left }}
           >
             {user.name}
           </div>
