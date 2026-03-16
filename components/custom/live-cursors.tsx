@@ -82,15 +82,16 @@ export function LiveCursors() {
 
   useEffect(() => {
     const onScroll = () => setScroll({ x: window.scrollX, y: window.scrollY });
-    const onResize = () => setDocSize({
+    const updateDocSize = () => setDocSize({
       w: document.documentElement.scrollWidth,
       h: document.documentElement.scrollHeight,
     });
+    const ro = new ResizeObserver(updateDocSize);
+    ro.observe(document.documentElement);
     window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onResize, { passive: true });
     return () => {
       window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', onResize);
+      ro.disconnect();
     };
   }, []);
 
@@ -125,10 +126,10 @@ export function LiveCursors() {
                 strokeWidth='2'
                 strokeLinejoin='round'
                 strokeLinecap='round'
-                className={`${cursorFill({ color })} ${cursorStroke({ color })}`}
+                className={`${cursorFill({ color: color as CursorColor })} ${cursorStroke({ color: color as CursorColor })}`}
               />
             </svg>
-            <span className={cursorLabel({ color })}>{user.name}</span>
+            <span className={cursorLabel({ color: color as CursorColor })}>{user.name}</span>
           </div>
         );
       })}
