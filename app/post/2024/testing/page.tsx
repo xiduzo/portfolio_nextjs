@@ -20,10 +20,9 @@ export default function Page() {
       />
       <TLDR
         lines={[
-          'Testing is essential for software engineers to ensure code works as intended and continues working after changes.',
-          'Common pitfalls include no test runner setup, treating tests as second-class citizens, writing unclean test code, and focusing on coverage percentages over actual confidence.',
-          'Use modern tools like Vitest, Zod for validation, and testing-library for UI tests.',
-          'Write clean, independent, repeatable tests that follow the Arrange-Act-Assert pattern.',
+          'Writing code is the easy part. Making sure it still works three months later — that is the engineering part.',
+          'Most testing problems come down to four habits: no test runner, tests buried in a separate folder, messy test code, and chasing coverage numbers that mean nothing.',
+          'Good tools (Vitest, Zod, testing-library) and one simple pattern (Arrange-Act-Assert) will get you most of the way there.',
         ]}
       />
       <Section>
@@ -53,8 +52,8 @@ export default function Page() {
         <Alert icon='AlertCircle' intent='info'>
           <Text>
             The examples in this article are for testing in JavaScript
-            (TypeScript). However, the principles can be applied to you favorite
-            tools.
+            (TypeScript). However, the principles apply to your favorite
+            tools too.
           </Text>
         </Alert>
       </Section>
@@ -77,8 +76,8 @@ export default function Page() {
           was not tested properly, right?
         </Text>
         <Text>
-          So how is it that I come across many <em>software engineers</em> who
-          not test their code?
+          So why do I keep running into <em>software engineers</em> who do not
+          test their code?
         </Text>
         <Text>
           It is our job that the code we write works as intended, and
@@ -94,9 +93,8 @@ export default function Page() {
           Some 🚩🚩🚩🚩
         </Text>
         <Text>
-          Every project (-team) is different, but there are some common pitfalls
-          that I have seen over and over again which should raise some red flags
-          for you.
+          Every project is different, but these patterns keep showing up — and
+          each one is a red flag.
         </Text>
       </Section>
       <Section>
@@ -104,19 +102,14 @@ export default function Page() {
           🚩 No test runner has been setup
         </Text>
         <Text>
-          This one is kind of obvious, but when a project has no test runner
-          setup it does not motivate (new) team members to write tests.
+          When a project has no test runner, the message to new team members is
+          clear: tests are not important here. Why would they bother?
         </Text>
         <Text>
-          Why would you bother writing tests as this project clearly does not
-          find them important?
-        </Text>
-        <Text>
-          This is true for a local setup which enables developers to validate
-          their code locally.
-        </Text>
-        <Text>
-          It is equally important to have a test runner in your CI/CD pipeline.
+          You need a test runner locally so developers can validate their own
+          work — and you need one in CI so nothing slips through when someone
+          forgets to run tests before pushing. A minimal GitHub Actions setup
+          looks like this:
         </Text>
         <CodeBlock
           code={`
@@ -143,8 +136,8 @@ jobs:
                     `}
         />
         <Text>
-          This way you can ensure no old code is broken unintentionally. Even
-          when you or a team member forgot about running the tests locally.
+          Now old code cannot break unintentionally — even when someone forgets
+          to run tests locally.
         </Text>
       </Section>
       <Section>
@@ -152,10 +145,9 @@ jobs:
           🚩 Tests are treated as second-class citizens
         </Text>
         <Text>
-          When tests are stored away in a separate folder it makes them harder
-          to find and easier to forget about.
+          When tests live in a separate folder, they are out of sight and out of
+          mind. No one is nudged to write them.
         </Text>
-        <Text>There is no constant nudge to write tests.</Text>
         <CodeBlock
           code={`
 \`\`\`
@@ -172,12 +164,8 @@ project-root/
                     `}
         />
         <Text>
-          Try placing the tests as part of the source code, next to the code
-          they are testing.
-        </Text>
-        <Text>
-          This way the project itself tells you{' '}
-          <em>&ldquo;we care about tests&rdquo;</em> just by working on it.
+          Place tests next to the code they test. The project should say{' '}
+          <em>&ldquo;we care about tests&rdquo;</em> just by its file structure.
         </Text>
         <CodeBlock
           code={`
@@ -585,7 +573,7 @@ describe(add.name, () => {
           array only has one element?
         </Text>
         <Text>
-          Setting a (mandatory) coverage percentage is a <del>stupid</del> bad
+          Setting a (mandatory) coverage percentage is a <del>stupid</del><ins>bad</ins>{" "}
           idea. More often than not this will lead to poorer tests just for the
           sake of increasing the coverage.
         </Text>
@@ -658,11 +646,11 @@ describe(add.name, () => {
           begin to rot.
         </Quote>
         <Text>
-          In order to go even faster you can use{' '}
+          To go even faster, use{' '}
           <Link target='_blank' href='https://vitest.dev/'>
             Vitest
           </Link>{' '}
-          as a drop-in replacement for Jest. This is expecialy useful for when
+          as a drop-in replacement for Jest. This is especially noticeable once
           your test suite grows.
         </Text>
       </Section>
@@ -674,7 +662,7 @@ describe(add.name, () => {
           A common way your code can break is when the data you receive is not
           what you expect. You should treat all external data as untrusted.
         </Text>
-        <Text>Given the following example</Text>
+        <Text>Take this common pattern:</Text>
         <CodeBlock
           code={`
 \`\`\`typescript
@@ -810,7 +798,7 @@ describe("Annoying boilerplate", () => {
                     `}
         />
         <Text>
-          And this works just fine, untill you start changing the
+          This works fine — until you start changing{' '}
           <code>MyType</code>. A solution I used before was to make use of the{' '}
           <Link
             target='_blank'
@@ -881,7 +869,7 @@ describe("Building your tests", () => {
     expect(result).toBe(false);
   });
 
-  it("can set multuple properties", () => {
+  it("can set multiple properties", () => {
     const result = testMe(
       new MyTestBuilder()
         .withProperty("bar")
@@ -939,8 +927,8 @@ describe("No more boilerplate", () => {
           UI testing
         </Text>
         <Text>
-          As you are working with Typescript, there is a big change you will
-          need to test some frontend code as well.
+          Working with TypeScript, there is a good chance you will need to test
+          some frontend code as well.
         </Text>
         <Text>
           You might be familiar with tools such as{' '}

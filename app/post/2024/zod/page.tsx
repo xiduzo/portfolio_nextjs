@@ -21,17 +21,15 @@ export default function Page() {
       />
       <TLDR
         lines={[
-          'Zod provides runtime validation for TypeScript, eliminating lying interfaces that promise data structure but do not validate it.',
-          'By defining schemas instead of types, you get both compile-time type safety and runtime validation.',
-          'This prevents bugs from unexpected data formats in APIs, user input, or external sources.',
-          'While adding initial complexity, it pays off with better error handling, data integrity, and team communication about data formats.',
+          "TypeScript's type system only works at compile time. The moment your app talks to an API or reads user input, all bets are off.",
+          'Zod validates data at runtime — so "this is of type ApiData" means something, instead of just being wishful thinking.',
+          'The story of how a real IoT platform went from silent data corruption to catching bad data before it could do damage.',
         ]}
       />
       <Section>
         <Text>
-          I am a big fan of TypeScript, but one thing that I still find lacking
-          compared to a real strongly type language: the runtime validation of
-          the data.
+          I am a big fan of TypeScript, but one thing it lacks compared to a
+          truly strongly typed language: runtime validation of data.
         </Text>
         <Text>
           While a static type checker ensures everything <em>works</em>,
@@ -92,7 +90,7 @@ const response = await fetchData<ApiData>("example.api.org"); // ApiData
           At first glance the interface looks fine, the function has explicit
           type inputs and outputs.
         </Text>
-        <Text>But theres a catch — or rather 2 lies:</Text>
+        <Text>But there&apos;s a catch — or rather, 2 lies:</Text>
         <Text as='ol'>
           <li>
             The function can return anything, not just <code>ApiData</code>.
@@ -116,13 +114,12 @@ const response = await fetchData<ApiData>("example.api.org"); // ApiData
           Removing the lies
         </Text>
         <Text>
-          We can enhance the interface by adding a runtime validation library
-          like{' '}
+          Adding a runtime validation library like{' '}
           <Link target='_blank' href='https://zod.dev'>
             Zod
           </Link>
-          <sup>1</sup>. This requires some initial extra typing, but it pays off
-          in terms of new type-safe superpowers inside your IDE.
+          <sup>1</sup> fixes both lies. There is some upfront typing, but you
+          get type-safe superpowers inside your IDE in return.
         </Text>
         <Text as='aside' size='sm' className='mt-8'>
           <ol>
@@ -226,8 +223,8 @@ export async function getData() {
           MQTT messages.
         </Text>
         <Text>
-          In the software, there was efford put into data-classes that allow for
-          creating data objects for static type-safety.
+          The codebase had data-classes for creating typed data objects — effort
+          put into static type-safety, but not runtime validation.
         </Text>
         <CodeBlock
           code={`
@@ -356,10 +353,10 @@ mqqClient.onMessage(message => {
           incorrectly, we introduced runtime validation to our data objects.
         </Text>
         <Text>
-          When I joined the project, which was already quite large, it had
-          adopted a heavy Object-Oriented Programming (OOP) style. The data
-          objects were used exetensively throughout the codebase. As a result,
-          we decided to not go full-in on <em>the zod way</em>.
+          When I joined, the project was already large and had adopted a heavy
+          OOP style. The data objects were used extensively throughout the
+          codebase — rewriting everything was not an option. So we did not go
+          full-in on <em>the zod way</em>.
         </Text>
         <Text>
           Instead, we opted for a hybrid approach, adding zod parsing
@@ -371,8 +368,8 @@ mqqClient.onMessage(message => {
       <Section>
         <Alert icon='AlertCircle' intent='warning'>
           <Text>
-            The following code took some time to made, had its&apos; fair share
-            of issues while developing and also gave me some headaches.
+            Fair warning: the following code took some time to make, had its fair
+            share of issues, and gave me a few headaches.
           </Text>
         </Alert>
       </Section>
@@ -458,9 +455,8 @@ export function Parsable<Output = unknown, TypeDef extends ZodTypeDef = ZodTypeD
       </Section>
       <Section>
         <Text>
-          Luckely, all of the above happens behind the scenes and we can extend
-          the <code>Parsable</code> in the data objects to give it runtime
-          validation capabilities.
+          Luckily, all of that happens behind the scenes. To add runtime
+          validation to any data object, just extend <code>Parsable</code>:
         </Text>
         <CodeBlock
           code={`
@@ -577,8 +573,7 @@ const example = new GrowthCycle(invalidInput) // [!code error]
         </Text>
         <Text>
           While the hybrid approach worked well for this project, it is not
-          perfect. For instance, it does not work with more complex types like
-          like{' '}
+          perfect. For instance, it does not work with more complex types like{' '}
           <Link target='_blank' href='https://zod.dev/?id=unions'>
             unions
           </Link>{' '}
@@ -631,7 +626,7 @@ function handler(growthCycle: GrowthCycle) { /* ... */ }
 import { GrowthCycle } from "./GrowthCycle";
 
 export class Handler {
-  handle(data: unkown) {
+  handle(data: unknown) {
     const { success, data, error} = GrowthCycle.safeParse(data);
 
     // ... handle the result

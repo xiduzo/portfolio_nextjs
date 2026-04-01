@@ -21,10 +21,9 @@ export default function Page() {
       />
       <TLDR
         lines={[
-          'Suspense acts as a fancy try/catch block for React components.',
-          'It catches promises thrown by components and renders a fallback until the promise resolves.',
-          'This enables better UX for data fetching and lazy loading, though it adds complexity and is still experimental for data fetching.',
-          'Use it wisely for async operations, but do not treat it as a magic solution for everything.',
+          'Everyone calls Suspense "magic." It is not. It is a fancy try/catch block for React components.',
+          'When a component throws a Promise, Suspense catches it and shows your fallback until that promise resolves.',
+          'Powerful for async data fetching and lazy loading — but it adds complexity, so use it where it earns its place.',
         ]}
       />
       <Section>
@@ -73,7 +72,7 @@ export default function Page() {
           When I asked around I just got the answer that <em>“it is magic”</em>.
         </Text>
         <Text>
-          But I don not like magic code, so let’s find out how it works!
+          But I do not like magic code, so let&apos;s find out how it works.
         </Text>
       </Section>
       <Section>
@@ -113,8 +112,8 @@ export default function Page() {
       <Section>
         <Text>Hey, you made it this far!</Text>
         <Text>
-          This means you are interested in how things works instead of accepting
-          the magic, kudos to you.
+          That means you want to know how things actually work instead of just
+          accepting the magic. Good.
         </Text>
       </Section>
       <Section>
@@ -173,15 +172,12 @@ export function fakeApi(name) {
 `}
         />
         <Text>
-          To play nice with <code>Suspense</code> you need to have a method in
-          which you can wrap our promise.
-        </Text>
-        <Text>
-          For this, create a poor-mans implementation of{' '}
+          To work with <code>Suspense</code>, you need a way to wrap a promise
+          so it can be thrown. Here is a minimal implementation of{' '}
           <Link target='_blank' href='https://react.dev/reference/react/use'>
-            Reacts use hook
+            React&apos;s use hook
           </Link>
-          <sup>1</sup>
+          <sup>1</sup>:
         </Text>
         <Text as='aside' className='mt-8 text-base'>
           <ol className='text-sm text-muted-foreground'>
@@ -221,7 +217,7 @@ export function use(promise) {
 \`\`\`
 `}
         />
-        <Text>And finally use this inside of your component</Text>
+        <Text>Then use it inside your component:</Text>
         <CodeBlock
           code={`
 \`\`\`jsx
@@ -287,8 +283,7 @@ export default function App() {
           User Experience (UX)
         </Text>
         <Text>
-          In order to create a better UX it is important to show the user
-          something while we are waiting for data to load. It is also possible
+          Show the user something while waiting for data to load. It is also possible
           to{' '}
           <Link
             target='_blank'

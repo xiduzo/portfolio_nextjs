@@ -176,7 +176,7 @@ export default function Page() {
           The game plan
         </Text>
         <Text>
-          In order to <em>talk to water</em> the problem was broken down into:
+          To <em>talk to water</em>, we needed to solve three things in order:
         </Text>
         <Text as='ol'>
           <li>
@@ -271,7 +271,8 @@ my_assistant.start()
           >
             text-classification model
           </Link>{' '}
-          to determine the emotions of the words.
+          to detect the emotion behind the words. Plugging that in looks like
+          this:
         </Text>
         <CodeBlock
           code={`
@@ -309,14 +310,9 @@ my_assistant.start()
           3. Stream results
         </Text>
         <Text>
-          In architecture rooms this would be a hot-topic. Having multiple
-          sessions to discuss the up- and down-sides of different streaming
-          protocols. Calculating throughput needs, determine latency
-          requirements and write-up reliability specifications.
-        </Text>
-        <Text>
-          But we are bodging things over here, we <em>just</em> need to send
-          some data from one tool to another tool.
+          In a serious engineering team this would spark days of debate —
+          protocols, throughput, latency, reliability. But we are bodging here.
+          We <em>just</em> need to get some data from one tool to another.
         </Text>
         <Text>
           At the university we have set-up a{' '}
@@ -333,8 +329,9 @@ my_assistant.start()
           >
             UDP messaging
           </Link>{' '}
-          would probably have been a better fit for the job we used MQTT as it
-          was already there, configured, and known to work.
+          would probably have been a better fit, MQTT was already there,
+          already configured, and already working. Good enough. Here is the
+          final version:
         </Text>
         <CodeBlock
           code={`
@@ -368,7 +365,7 @@ my_assistant.start()
 \`\`\`
                     `}
         />
-        <Text>And thats it.</Text>
+        <Text>And that&apos;s it.</Text>
         <Text>
           We can now <em>talk to water</em>.
         </Text>
@@ -430,7 +427,7 @@ my_assistant.start()
         </Text>
         <Text>Awesome, you made it this far.</Text>
         <Text>
-          That means you are realy bored or a super nerd, either way let us go!
+          That means you are either really bored or a super nerd — either way, let us go!
         </Text>
       </Section>
       <Section>
