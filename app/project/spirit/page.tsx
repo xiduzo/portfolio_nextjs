@@ -33,9 +33,9 @@ export default function Page() {
       />
       <TLDR
         lines={[
-          'Designed a gamified mobile app to help OCD patients with Exposure Response Prevention therapy.',
-          'Uses monster metaphors for obsessions, mood tracking with playful faces, and badge rewards for exercise completion.',
-          'Features local data storage and optional therapist sharing.',
+          'OCD patients often drop out of therapy because doing exercises alone — without guidance or visible progress — is hard to stay motivated for.',
+          'Spirit makes those exercises feel less isolating: monster metaphors for obsessions, playful mood tracking, and a progress diary that stays on your device.',
+          'Presented at Games for Health Europe.',
         ]}
       />
       <Quote cite='Anonymous patient'>

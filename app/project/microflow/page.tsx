@@ -35,9 +35,9 @@ export default function Page() {
       />
       <TLDR
         lines={[
-          'Created a visual programming tool for microcontrollers that eliminates the need for coding.',
-          'Features a Figma plugin for hardware interaction via MQTT and a desktop app with flow-based interface.',
-          'Automatically flashes firmware and generates code from visual connections.',
+          'Designers want to build interactive prototypes with physical hardware, but learning Arduino is a steep cliff for someone who has never coded.',
+          'Microflow removes the cliff: plug in your board, drag connections between components, and it generates the code for you.',
+          'Also ships a Figma plugin so your hardware can talk directly to your design prototype.',
         ]}
       />
       <Section>
@@ -54,7 +54,7 @@ export default function Page() {
         </Text>
         <Text>
           The students want to create interactive (phygital) prototypes, but the
-          learning curve is often too steep for most designers whom have never
+          learning curve is often too steep for most designers who have never
           touched code before.
         </Text>
         <Text>
@@ -119,7 +119,7 @@ export default function Page() {
         </Text>
         <Text>I think Figma is an awesome tool.</Text>
         <Text>
-          After the introducion of <em>variables</em> in Figma, you can create
+          After the introduction of <em>variables</em> in Figma, you can create
           some pretty nifty prototypes and fool any stakeholders, making them
           believe they’re already viewing a real application.
         </Text>

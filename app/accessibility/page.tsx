@@ -10,7 +10,7 @@ export default function Page() {
     <>
       <Section>
         <Text size='sm' as='h1' variant='heading' motion='none'>
-          Together we can make the digital world a better place for everyone ♥️
+          The web works best when it works for everyone
         </Text>
         <Quote
           link='https://www.w3.org/mission/accessibility/'
@@ -20,16 +20,20 @@ export default function Page() {
           <strong>regardless of ability</strong> is an{' '}
           <em className='text-muted-foreground italic'>essential</em> aspect.
         </Quote>
-        <Text motion='none'>I firmly believe in that quote.</Text>
         <Text motion='none'>
-          And although I have tried my best to make this website accessible for
-          everybody, I am sure there are still some improvements to be made. If
-          you have any suggestions or feedback, do not hesitate to reach out to
-          me!
+          That is not just a nice idea — it is a responsibility. I build with
+          accessibility in mind from the start, not as an afterthought.
+        </Text>
+        <Text motion='none'>
+          Found something that does not work for you? I want to know. Whether it
+          is a screen reader issue, a keyboard trap, or anything in between.
+        </Text>
+        <Text motion='none'>
+          Your feedback helps me do better!
         </Text>
         <Text as='div' className='flex justify-center flex-wrap pt-12'>
           <Link href='mailto:mail@sanderboer.nl' className='text-2xl underline'>
-            <CallToAction icon={<MailIcon />}>Send me an email</CallToAction>
+            <CallToAction icon={<MailIcon />}>Report an issue</CallToAction>
           </Link>
         </Text>
       </Section>

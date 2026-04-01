@@ -33,9 +33,9 @@ export default function Page() {
       />
       <TLDR
         lines={[
-          "Led the modernization of Royal Flora Holland's flower auction system from monolithic .NET applications to cloud-native microservices.",
-          'Replaced UDP messaging with WebSockets, implemented CI/CD pipelines, and created a web-based React interface.',
-          'Successfully completed pilot phase and rolled out to all auction locations.',
+          "The world's largest flower auction had been running on decade-old Windows software. Modernizing it — without disrupting daily auctions used by thousands of buyers — was the challenge.",
+          'Broke the monolith into microservices, swapped unreliable UDP broadcasts for WebSockets, introduced CI/CD, and replaced the Windows-only client with a browser-based interface.',
+          'The pilot completed successfully and rolled out to all auction locations in early 2025.',
         ]}
       />
       <Section as='figure'>
@@ -259,7 +259,7 @@ export default function Page() {
           Modernize
         </Text>
         <Text>
-          While a lot of efford has been put into automize the auction, to
+          While a lot of effort has been put into automating the auction, to
           update the flower auction to modern standards, we identified four
           areas that required improvement:
         </Text>
@@ -342,7 +342,7 @@ export default function Page() {
         <Text as='aside' className='mt-8 text-base'>
           <ol className='text-sm text-muted-foreground'>
             <li>
-              We investivated Native Websockets, socket.io, SignalR, gRPC, and
+              We investigated Native Websockets, socket.io, SignalR, gRPC, and
               WebRTC
             </li>
           </ol>

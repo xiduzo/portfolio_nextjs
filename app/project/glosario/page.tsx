@@ -126,7 +126,7 @@ export default function Page() {
         </Text>
         <Text size='sm'>
           Once a term is approved, the definition is not set in stone. Any team
-          member can submit a <em>suggestion</em> as an proposed rewrite which
+          member can submit a <em>suggestion</em> as a proposed rewrite which
           a domain curator can accept or reject.
         </Text>
         <Text size='sm'>

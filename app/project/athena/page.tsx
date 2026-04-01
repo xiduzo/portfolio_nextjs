@@ -30,8 +30,8 @@ export default function Page() {
       />
       <TLDR
         lines={[
-          'Built an anonymous feedback platform for propaedeutic students to improve team dynamics and participation.',
-          'Students create contracts with feedback indicators, give weekly anonymous feedback to teammates, and teachers get insights into team performance.',
+          'Students in group projects often feel frustrated but never say it — until the grade comes back and the damage is done.',
+          'Athena is an anonymous feedback platform where teammates rate each other weekly, giving students and teachers a clear picture of team dynamics before things go wrong.',
         ]}
       />
       <Section>
@@ -87,7 +87,7 @@ export default function Page() {
           Feedback
         </Text>
         <Text>
-          Giving- or asking for feedback can be a tough task for propaedeutic
+          Giving or asking for feedback can be a tough task for propaedeutic
           students, <strong>especially</strong> in a new team.
         </Text>
         <Text>

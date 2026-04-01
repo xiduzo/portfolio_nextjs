@@ -43,9 +43,9 @@ export default function Page() {
       <Technologies technologies={['Angular', 'Express', 'Socket.io']} />
       <TLDR
         lines={[
-          'Developed a multiplayer research tool that teaches blockchain concepts through a Farmville-style game.',
-          'Players trade farm animals (mining rigs) and products (cryptocurrencies) while learning about market volatility, wallets, and blockchain mechanics.',
-          'Built for the Institute of Network Cultures to study wallet design patterns.',
+          'What if you could teach blockchain to anyone by turning it into a farm game?',
+          'LiveStock is a multiplayer research game where farm animals are mining rigs and bacon is the most volatile currency. You learn blockchain by playing, not by reading a whitepaper.',
+          'Built for the Institute of Network Cultures to study how people learn about crypto wallets through play.',
         ]}
       />
       <Section>

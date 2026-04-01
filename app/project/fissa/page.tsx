@@ -41,8 +41,8 @@ export default function Page() {
       />
       <TLDR
         lines={[
-          'Built a collaborative music app where party guests can add songs to a shared playlist and vote on tracks.',
-          'Features dynamic color themes, Spotify integration, democratic song ordering, and automatic recommendations.',
+          'At every party, one person hijacks the playlist. Fissa fixes that.',
+          'A collaborative music app where guests vote on what plays next, the queue never runs dry, and every party gets its own color.',
         ]}
       />
       <Section>
@@ -361,7 +361,7 @@ const Component = () => {
           to be a fun experience, both for the users and for us creating Fissa.
         </Text>
         <Text>
-          By playing around with animal-eomjis as copy we try to lighten the
+          By playing around with animal-emojis as copy we try to lighten the
           mood of Fissa and bring some extra joy to the experience.
         </Text>
         <Text>
@@ -404,7 +404,7 @@ const Component = () => {
         </Text>
         <Text>
           What is more annoying than being at a party, <em>finally</em> having
-          the courage to show your moves and then the musics stops.
+          the courage to show your moves and then the music stops.
         </Text>
         <Text>
           This should never happen, <strong>the Fissa never stops</strong>.

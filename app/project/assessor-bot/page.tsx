@@ -29,9 +29,9 @@ export default function Page() {
       />
       <TLDR
         lines={[
-          'Built an Electron app that uses Ollama and LangChain to provide AI-powered feedback on student portfolios.',
-          'The tool processes uploaded documents locally, uses RAG to find relevant competency information, and generates structured feedback through custom prompts.',
-          'Key learnings: avoid over-engineering RAG when context windows are large enough, and prioritize data privacy by keeping everything local.',
+          'Students were submitting AI-generated text. Instead of banning it, we decided to understand it and have an open discussion.',
+          'Built a local, free AI tool that reads student portfolios and generates structured feedback based on assessment criteria.',
+          'The hard part: getting the AI to stop making things up. The fix: stop over-engineering it.',
         ]}
       />
       <Section>
@@ -58,9 +58,9 @@ export default function Page() {
           students.
         </Text>
         <Text>
-          From a assessors&apos; perspective, we could see the generic (and
-          mostly mediocre) generated text which was submitted and held an
-          intervention to have an open conversation on the use of these models.
+          From an assessor&apos;s perspective, the generic AI-generated text was
+          easy to spot. So we held an open conversation with students about how
+          they were using these models.
         </Text>
       </Section>
       <Section>
@@ -184,13 +184,13 @@ export default function Page() {
           The game plan
         </Text>
         <Text>
-          As this was my first time incorporating a Large Language Model (LLM)
-          into a product I only had a rhough idea on how to approach this.
+          As this was my first time building with a Large Language Model (LLM),
+          I only had a rough idea of how to approach it.
         </Text>
         <Text>
-          By making the students upload their documents, use Retrieval-augmented
-          generation (RAG) to find relevant infromation, and combine the
-          relevant data through a custom prompt to generate the feedback.
+          The plan: have students upload their documents, use Retrieval-Augmented
+          Generation (RAG) to find relevant information, and combine it through a
+          custom prompt to generate feedback.
         </Text>
         <Text>
           After some research I found{' '}
@@ -215,7 +215,7 @@ export default function Page() {
           I should be less confident
         </Text>
         <Text size='sm'>
-          While most of the application was build rather quickly,
+          While most of the application was built rather quickly,
           &ldquo;surprisingly&rdquo; enough I struggled getting the RAG properly
           set-up and running to provide valuable feedback.
         </Text>
@@ -397,7 +397,7 @@ Use the following grading guide to help you give a grade and provide feedback:
         <Text size='sm'>
           As we ask students to reflect upon their work within a{' '}
           <strong>set word limit</strong> and with the current models context
-          windows of 1024 tokens, there was no need to split all documents into
+          windows, there was no need to split all documents into
           smaller chunks.
         </Text>
         <Text size='sm'>
@@ -435,9 +435,8 @@ const chat = [
           It is your data
         </Text>
         <Text>
-          Two thing which was important to me was that 1) the data of the
-          students was not stored on any server, but only on the device of the
-          student and 2) I do no want to force the student into a{' '}
+          Two things were important to me: 1) student data stays on their own
+          device, never a server, and 2) I did not want to force students into a{' '}
           <Link
             target='_blank'
             href='https://techcrunch.com/2024/12/05/openai-may-be-planning-a-chatgpt-pro-plan-for-200-per-month'
@@ -447,7 +446,7 @@ const chat = [
           to get feedback on their work.
         </Text>
         <Text>
-          The assessor bot is utulising{' '}
+          The assessor bot uses{' '}
           <Link target='_blank' href='https://ollama.com/'>
             Ollama
           </Link>{' '}
@@ -481,10 +480,10 @@ const chat = [
           of <code>LangChain</code> it should be possible to generate structured
           output using <code>Ollama</code>. In{' '}
           <code>@langchain/ollama 0.1.0</code>, the version available when
-          building this tool, this interface was not availalbe.
+          building this tool, this interface was not available.
         </Text>
         <Text size='sm'>
-          I could hovever make the models give me back a <code>JSON</code>{' '}
+          I could however make the models return a <code>JSON</code>{' '}
           response
         </Text>
         <CodeBlock
