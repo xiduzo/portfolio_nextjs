@@ -20,7 +20,7 @@ export default function Page() {
         publishDate='Sep 14 2024'
         emoji='E1D3'
         className='bg-orange-300 dark:bg-orange-900'
-        link='https://microflow.vercel.app/'
+        link='https://microflow.tech/'
       />
       <Technologies
         technologies={[
@@ -442,7 +442,7 @@ export class Button extends BaseComponent<ButtonValueType> {
         </Text>
       </Section>
       <Section className='flex justify-center'>
-        <Link href='https://microflow.vercel.app/' target='_blank'>
+        <Link href='https://microflow.tech/' target='_blank'>
           <CallToAction>Try Microflow studio</CallToAction>
         </Link>
       </Section>
@@ -472,7 +472,7 @@ export class Button extends BaseComponent<ButtonValueType> {
               'https://github.com/xiduzo/microflow',
               'See all the code on GitHub',
             ],
-            ['https://microflow.vercel.app/docs', 'Microflow documentation'],
+            ['https://docs.microflow.tech/', 'Microflow documentation'],
             [
               'https://github.com/xiduzo/figma-hardware-connect',
               'First prototype on GitHub',
