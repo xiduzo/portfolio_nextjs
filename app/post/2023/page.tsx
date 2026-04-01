@@ -16,7 +16,7 @@ export default function Page() {
           as='small'
           className="text-muted-foreground before:content-['//'] before:mr-2"
         >
-          Quality over quantity, right?
+          One post. Turns out I am a slow writer.
         </Text>
         <ul className='mt-24 flex flex-col gap-4 list-none'>
           <li>

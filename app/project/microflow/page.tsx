@@ -84,11 +84,10 @@ export default function Page() {
           , starting a new project still requires a lot of Arduino-like
           knowledge.
         </Text>
-        <Text size='sm'>That is where Microflow comes in.</Text>
         <Text size='sm'>
-          Microflow is a set of tools designed to facilitate prototyping for
-          interactivity without the need to worry about low-level coding, or
-          coding at all for that matter!
+          Microflow cuts straight through that. No Arduino IDE. No boilerplate.
+          No prerequisite knowledge — just connect your hardware and start
+          building.
         </Text>
       </Section>
       <Section>
@@ -226,17 +225,13 @@ export function MqttVariableMessenger() {
           Microflow studio
         </Text>
         <Text>
-          Microflow studio is a tool that allows you to create complext
-          interaction with microcontrollers without writing a single line of
-          code.
+          Microflow studio lets you wire up complex microcontroller interactions
+          without writing a single line of code.
         </Text>
         <Text>
-          This tool was build to make working with microcontrollers as easy as{' '}
-          <em>plug-and-play</em>.
-        </Text>
-        <Text>
-          In order to achieve that, there is some magic happening behind the
-          scenes.
+          Plug in your board, drag some nodes, connect some edges — it just
+          works. The goal was <em>plug-and-play</em> simple, and a few layers of
+          magic make that possible.
         </Text>
       </Section>
       <Section>

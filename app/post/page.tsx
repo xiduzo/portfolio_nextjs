@@ -16,7 +16,7 @@ export default function Page() {
           as='small'
           className="text-muted-foreground before:content-['//'] before:mr-2"
         >
-          A bunch of <em>things</em> I wrote so future me can nod knowingly.
+          Things I figured out the hard way — written down so you don&apos;t have to.
         </Text>
         <ul className='mt-24 flex flex-col gap-4 list-none'>
           <li>
@@ -38,7 +38,7 @@ export default function Page() {
                   motion='none'
                   className='text-violet-950 dark:text-violet-50 max-w-xl'
                 >
-                  Working agentically with AI
+                  Stop prompting. Start delegating.
                 </Text>
                 <Openmoji
                   hexcode='2728'
@@ -96,7 +96,7 @@ export default function Page() {
                   motion='none'
                   className='text-red-950 dark:text-red-50 max-w-xl'
                 >
-                  And become a better engineer
+                  The discipline that makes everything else click
                 </Text>
                 <Openmoji
                   hexcode='1F9EA'

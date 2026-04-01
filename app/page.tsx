@@ -20,20 +20,21 @@ export default function Page() {
         <div className='flex gap-6 md:gap-12 flex-col-reverse xl:flex-row items-center'>
           <section>
             <Text motion='none'>
-              My name is <strong>Sander</strong>, and I am a passionate
-              developer with a creative mind.
+              I am <strong>Sander</strong>. A developer who turns complex
+              problems into tools people actually enjoy using.
             </Text>
             <Text motion='none'>
               I{' '}
               <span className='motion-preset-pulse inline-block motion-ease-bounce'>
                 ♥️
               </span>{' '}
-              to create <em>things</em> that enhance the performance of
-              professionals and empower individuals.
+              bridging the gap between <em>good engineering</em> and{' '}
+              <em>great experience</em>. Making professionals faster and
+              individuals more capable.
             </Text>
             <Text as='div' className='flex justify-center mt-12 md:mt-20'>
               <Link href='/about'>
-                <CallToAction>Get to know me more</CallToAction>
+                <CallToAction>See what drives me</CallToAction>
               </Link>
             </Text>
           </section>
@@ -48,17 +49,17 @@ export default function Page() {
       </Section>
       <Section>
         <Text as='h2' variant='subheading'>
-          Highlighted things I made
+          Work worth talking about
         </Text>
         <Text size='sm' className='text-muted-foreground pb-12'>
-          A selection of <em>things</em> I am proud to share.
+          A selection of <em>things</em> built to solve real problems.
         </Text>
         <HighlightedProjects />
       </Section>
       <Section className='flex justify-center flex-wrap'>
         <Link href='/project'>
           <CallToAction>
-            See more <em>things</em>
+            Explore all my work
           </CallToAction>
         </Link>
       </Section>

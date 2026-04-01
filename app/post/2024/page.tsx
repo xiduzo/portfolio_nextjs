@@ -16,7 +16,7 @@ export default function Page() {
           as='small'
           className="text-muted-foreground before:content-['//'] before:mr-2"
         >
-          I was on a roll this year
+          Three posts. I got chatty.
         </Text>
         <ul className='mt-24 flex flex-col gap-4 list-none'>
           <li>
@@ -67,7 +67,7 @@ export default function Page() {
                   motion='none'
                   className='text-red-950 dark:text-red-50 max-w-xl'
                 >
-                  And become a better engineer
+                  The discipline that makes everything else click
                 </Text>
                 <Openmoji
                   hexcode='1F9EA'

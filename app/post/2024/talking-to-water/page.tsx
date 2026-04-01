@@ -35,9 +35,9 @@ export default function Page() {
       />
       <TLDR
         lines={[
-          'Built a system that converts spoken words into visual patterns on water.',
-          'This project demonstrates how to create an interactive art installation that responds to human speech through sentiment analysis.',
-          'The solution required creative problem-solving with Docker and PulseAudio to handle cross-platform audio capture challenges.',
+          'Students at the Master Digital Design wanted to make water respond to what people say. So we figured out how.',
+          'The idea: capture speech, detect the emotion behind it, and send that feeling to a generative art installation.',
+          'Getting it to run on any laptop — that was the real challenge. Enter Docker, PulseAudio, and the art of the bodge.',
         ]}
       />
       <Section>
@@ -221,8 +221,8 @@ export default function Page() {
           .
         </Text>
         <Text>
-          Some cool folks even build a python wrapper around the open-sourced
-          model for easy, free and local use.
+          Some cool folks even built a Python wrapper around it — free, local,
+          and surprisingly easy to use. Here is what that looks like:
         </Text>
         <CodeBlock
           code={`

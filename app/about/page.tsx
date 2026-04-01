@@ -23,30 +23,31 @@ export default function Page() {
         </div>
         <ScrollHint className='-mt-32' />
       </Section>
-      <TextRevealByWord text='Designer by education, Developer by interest, Tinkerer by curiosity.' />
+      <TextRevealByWord text='Designer by education, Developer by passion, Tinkerer by nature.' />
       <Section>
         <Text motion='none'>
           I have always been fascinated by technology. While my friends played{' '}
           <Link target='_blank' href='https://tibia.com'>
             tibia
           </Link>
-          , I was busy creating my own hacked version.
+          , I was busy reverse-engineering my own version of it.
         </Text>
         <Text motion='none'>
-          This is where my interest for programming began as I learned how to
-          host a server, create a database and modify game code to make it work
-          as I wanted. Checkout my awesome{' '}
+          That is where my programming journey began — hosting a server,
+          designing a database, and bending game code to my will. One result?
+          A fully working{' '}
           <Link
             href='https://otland.net/threads/bombsquad-9-6.187509'
             target='_blank'
           >
             bomb squad mod
-          </Link>
-          !
+          </Link>{' '}
+          that players actually enjoyed.
         </Text>
         <Text>
-          The process of unraveling complex systems is a driving force for me,
-          ever since the day I ran my first <code>XAMPP</code> stack.
+          That drive of taking something apart to understand it, then building
+          something better has never left me. It started with{' '}
+          <code>XAMPP</code>. These days the stack is a bit more complex.
         </Text>
       </Section>
       <Section>
@@ -54,10 +55,11 @@ export default function Page() {
           Creative technologist
         </Text>
         <Text>
-          Throughout my journey as a creative technologist, I have gained a firm
-          grasp on the principles of (digital) design
-          <sup>1</sup> and a deep understanding of programming
-          <sup>2</sup>. Merging the worlds of aesthetics and functionality.
+          Most teams split design and engineering into separate silos. I sit at
+          the intersection. Fluent in both.<sup>1</sup> That means I can turn a
+          vague idea into a polished, working product without the usual
+          back-and-forth. I speak designer and developer, and I bridge the
+          gap.<sup>2</sup>
         </Text>
         <Text as='aside' className='mt-8 text-base'>
           <ol className='text-sm text-muted-foreground'>
@@ -106,18 +108,19 @@ export default function Page() {
           design.
         </Text>
         <Text>
-          I love to create tools that enhance the performance of professionals
-          or/and empower individuals.
+          I build tools that make professionals faster and individuals more
+          capable. Things that actually change how people work.
         </Text>
         <Text>
-          Collaborating with people from diverse backgrounds to achieve a shared
-          objective is a value I hold dear. I firmly believe that exceptional
-          solutions emerge only when we embrace a multitude of perspectives.
+          My best work happens in cross-functional teams. Designers, developers,
+          researchers, stakeholders. The more diverse the room, the better the
+          outcome. I have seen too many "great" solutions fail because only one
+          perspective built them.
         </Text>
         <Text>
-          My true strengths shine at the intersection of development and User
-          Experience (UX) design. Engaging in both disciplines is where I like
-          to play ball.
+          Where I add the most value: taking ownership of the full
+          design-to-delivery pipeline. From early UX thinking to the last pixel
+          in production.
         </Text>
       </Section>
       <Section className='flex flex-col items-center mb-60 max-w-[95%] overflow-hidden'>
@@ -138,8 +141,8 @@ export default function Page() {
           in!
         </Text>
         <Text>
-          I like (to be in) nature and am your go-to-person to <del>annoy</del>{' '}
-          entertain the house pet at any party!
+          I like (to be in) nature and am your go-to-person to <del>annoy</del><ins>entertain</ins>{" "}
+          the house pet at any party!
         </Text>
       </Section>
       <Section variant='full'>
@@ -172,9 +175,9 @@ export default function Page() {
           Sharing === caring
         </Text>
         <Text>
-          I like to share my knowledge and experience with others. I do this by
-          giving workshops, mentoring students and trying to be an active member
-          of the developer community.
+          I give workshops, mentor students, and stay active in the developer
+          community. Sharing what I know makes everyone better — including me.
+          Teaching forces you to actually understand something, not just use it.
         </Text>
       </Section>
       <Section variant='full'>

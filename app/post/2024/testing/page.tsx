@@ -15,7 +15,7 @@ export default function Page() {
         publishDate='Apr 4 2024'
         emoji='1F9EA'
         className='bg-red-300 dark:bg-red-900'
-        subtitle='And become a better engineer'
+        subtitle='The discipline that makes everything else click'
         readTime={22}
       />
       <TLDR

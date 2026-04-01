@@ -76,7 +76,7 @@ export function HighlightedProjects() {
               motion='none'
               className='text-orange-950 dark:text-orange-50'
             >
-              Microcontrollers made easy.
+              Microcontrollers made simple.
             </Text>
           </div>
           <div className='absolute xl:left-[30%] xl:top-[10%] top-[40%] filter grayscale group-hover:filter-none -z-10 transition-all duration-300'>

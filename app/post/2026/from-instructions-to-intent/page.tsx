@@ -19,7 +19,7 @@ export default function Page() {
         publishDate='Mar 13 2026'
         emoji='2728'
         className='bg-violet-300 dark:bg-violet-900'
-        subtitle='Working agentically with AI'
+        subtitle='Stop prompting. Start delegating.'
         readTime={24}
       />
       <TLDR

@@ -16,7 +16,7 @@ export default function Page() {
           as='small'
           className="text-muted-foreground before:content-['//'] before:mr-2"
         >
-          Skipped 2025, we don&rsquo;t talk about 2025
+          Back. Rested. Arguably wiser.
         </Text>
         <ul className='mt-24 flex flex-col gap-4 list-none'>
           <li>
@@ -38,7 +38,7 @@ export default function Page() {
                   motion='none'
                   className='text-violet-950 dark:text-violet-50 max-w-xl'
                 >
-                  Working agentically with AI
+                  Stop prompting. Start delegating.
                 </Text>
                 <Openmoji
                   hexcode='2728'

@@ -13,10 +13,13 @@ export default function Page() {
           Things I made
         </Text>
         <Text>
-          I enjoy the act of making <em>things</em>.
+          Every project here started with a real problem — something that annoyed
+          me enough to build a solution.
         </Text>
-        <Text>Not all of those see the light of day.</Text>
-        <Text>This is a selection of those who did.</Text>
+        <Text>
+          Some shipped to thousands of users. Some taught me something I could
+          not have learned any other way. All of them were worth building.
+        </Text>
       </Section>
       <Section>
         <Text as='h2' variant='subheading' motion='none'>
@@ -32,7 +35,7 @@ export default function Page() {
           Archive
         </Text>
         <Text size='sm' className='text-muted-foreground'>
-          Some more <em>things</em> I made over the years.
+          More projects — each one a different problem, a different lesson.
         </Text>
         <ul className='mt-24 flex flex-col gap-4 list-none'>
           <li>
@@ -54,7 +57,7 @@ export default function Page() {
                   motion='none'
                   className='text-green-950 dark:text-green-50 max-w-xl'
                 >
-                  A LLM experiment for providing students with feedback
+                  What if students got instant, honest feedback — without waiting for a teacher?
                 </Text>
                 <Openmoji
                   hexcode='1F99C'
@@ -83,7 +86,7 @@ export default function Page() {
                   motion='none'
                   className='text-indigo-950 dark:text-indigo-50 max-w-xl'
                 >
-                  Modernize the biggest flower auction in the world
+                  Dragging the world&apos;s largest flower auction into the modern web
                 </Text>
                 <Openmoji
                   hexcode='1F490'
@@ -112,8 +115,7 @@ export default function Page() {
                   motion='none'
                   className='text-orange-950 dark:text-orange-50 max-w-xl'
                 >
-                  Empower patients who suffer from Obsessive-Compulsive Disorder
-                  (OCD)
+                  A tool that helps OCD patients track and break their compulsion cycles
                 </Text>
                 <Openmoji
                   hexcode='1FA9C'
@@ -142,7 +144,7 @@ export default function Page() {
                   motion='none'
                   className='text-cyan-950 dark:text-cyan-50 max-w-xl'
                 >
-                  Introduce humans to the blockchain and crypto-currency wallets
+                  Making crypto wallets feel less like rocket science
                 </Text>
                 <Openmoji
                   hexcode='1F4B0'
@@ -171,7 +173,7 @@ export default function Page() {
                   motion='none'
                   className='text-amber-950 dark:text-amber-50 max-w-xl'
                 >
-                  An honest feedback tool for students
+                  Peer feedback that students actually engage with
                 </Text>
                 <Openmoji
                   hexcode='1F984'
