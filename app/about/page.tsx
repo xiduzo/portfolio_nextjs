@@ -114,7 +114,7 @@ export default function Page() {
         <Text>
           My best work happens in cross-functional teams. Designers, developers,
           researchers, stakeholders. The more diverse the room, the better the
-          outcome. I have seen too many "great" solutions fail because only one
+          outcome. I have seen too many &ldquo;great&rdquo; solutions fail because only one
           perspective built them.
         </Text>
         <Text>
