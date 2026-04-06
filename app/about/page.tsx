@@ -8,26 +8,31 @@ import { TextRevealByWord } from '@/components/magic-ui/text-reveal';
 import { ScrollHint } from '@/components/custom/scroll-hint';
 import { SmileIcon } from 'lucide-react';
 import { SparklesText } from '@/components/ui/sparkles-text';
-import type { Metadata } from 'next';
+import { JsonLd } from '@/components/seo/json-ld';
+import {
+  type SitePageSeo,
+  sitePageJsonLdFromSeo,
+  sitePageMetadata,
+} from '@/lib/schema';
 
-export const metadata: Metadata = {
-  title: {
-    absolute: 'About Sander Boer — Developer & Designer',
-  },
+const SEO: SitePageSeo = {
+  title: 'About Sander Boer',
+  titleAbsolute: 'About Sander Boer — Developer & Designer',
   description:
     'Meet Sander Boer: designer by training, developer by obsession. Background, values, GitHub activity, and how I collaborate when the goal is craft, clarity, and usable software.',
-  alternates: { canonical: '/about' },
-  openGraph: {
-    url: 'https://sanderboer.nl/about',
-    title: 'About Sander Boer',
-    description:
-      'Background and approach—design education, hands-on engineering, tinkering, and what drives the work.',
-  },
+  path: '/about',
+  openGraphTitle: 'About Sander Boer',
+  openGraphDescription:
+    'Background and approach—design education, hands-on engineering, tinkering, and what drives the work.',
+  pageJsonLd: 'ProfilePage',
 };
+
+export const metadata = sitePageMetadata(SEO);
 
 export default function Page() {
   return (
     <>
+      <JsonLd data={sitePageJsonLdFromSeo(SEO)} />
       <Section className='flex flex-col items-center justify-between min-h-screen'>
         <div className='flex-grow flex items-center'>
           <Avatar className='w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 transition-all'>

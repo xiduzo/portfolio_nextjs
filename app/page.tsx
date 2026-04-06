@@ -6,24 +6,28 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { CallToAction } from '@/components/custom/call-to-action';
 import { ScrollHint } from '@/components/custom/scroll-hint';
 import { SmileIcon } from 'lucide-react';
-import type { Metadata } from 'next';
+import { JsonLd } from '@/components/seo/json-ld';
+import {
+  type SitePageSeo,
+  sitePageJsonLdFromSeo,
+  sitePageMetadata,
+} from '@/lib/schema';
 
-export const metadata: Metadata = {
+const SEO: SitePageSeo = {
   title: 'Sander Boer — Developer & Designer',
   description:
     'Welcome. I am Sander Boer, a developer and designer. Explore my portfolio for case studies, side projects, and articles on React, TypeScript, testing, and working with AI.',
-  alternates: { canonical: '/' },
-  openGraph: {
-    url: 'https://sanderboer.nl',
-    title: 'Sander Boer — Developer & Designer',
-    description:
-      'Portfolio of developer and designer Sander Boer: shipping software that feels as good as it works.',
-  },
+  path: '/',
+  openGraphDescription:
+    'Portfolio of developer and designer Sander Boer: shipping software that feels as good as it works.',
 };
+
+export const metadata = sitePageMetadata(SEO);
 
 export default function Page() {
   return (
     <>
+      <JsonLd data={sitePageJsonLdFromSeo(SEO)} />
       <Section className='min-h-screen flex flex-col justify-between'>
         <Text as='h1' variant='heading' motion='none' className='mb-0'>
           <span className='inline-block motion-rotate-in-12 motion-ease-spring-bounciest motion-delay-700'>

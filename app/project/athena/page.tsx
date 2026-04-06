@@ -6,24 +6,29 @@ import Link from 'next/link';
 import { Safari } from '@/components/magic-ui/safari';
 import { Links } from '@/components/custom/links';
 import { TLDR } from '@/components/custom/tldr';
-import type { Metadata } from 'next';
+import { JsonLd } from '@/components/seo/json-ld';
+import {
+  type PortfolioProjectSeo,
+  portfolioProjectJsonLdFromSeo,
+  portfolioProjectMetadata,
+} from '@/lib/schema';
 
-export const metadata: Metadata = {
+const SEO: PortfolioProjectSeo = {
   title: 'Athena — anonymous peer feedback for student teams',
   description:
     'Athena lets student teams give weekly anonymous ratings and comments so teachers see collaboration issues early—honest signals without public blame, built for classroom dynamics.',
-  alternates: { canonical: '/project/athena' },
-  openGraph: {
-    url: 'https://sanderboer.nl/project/athena',
-    title: 'Athena — peer feedback for students',
-    description:
-      'Product case study: structured team feedback in education settings.',
-  },
+  path: '/project/athena',
+  openGraphTitle: 'Athena — peer feedback for students',
+  openGraphDescription:
+    'Product case study: structured team feedback in education settings.',
 };
+
+export const metadata = portfolioProjectMetadata(SEO);
 
 export default function Page() {
   return (
     <>
+      <JsonLd data={portfolioProjectJsonLdFromSeo(SEO)} />
       <Hero
         title='Athena'
         publishDate='Mar 21 2017'

@@ -1,22 +1,28 @@
 import { Section } from '@/components/custom/section';
 import { Text } from '@/components/custom/text';
-import type { Metadata } from 'next';
+import { JsonLd } from '@/components/seo/json-ld';
+import {
+  type SitePageSeo,
+  sitePageJsonLdFromSeo,
+  sitePageMetadata,
+} from '@/lib/schema';
 
-export const metadata: Metadata = {
+const SEO: SitePageSeo = {
   title: '2025 — Blog archive',
   description:
     'Archive page for posts published in 2025 on sanderboer.nl. New writing will appear here and on the main blog index when it goes live.',
-  alternates: { canonical: '/post/2025' },
-  openGraph: {
-    url: 'https://sanderboer.nl/post/2025',
-    title: 'Blog archive — 2025',
-    description: 'Placeholder archive for 2025 posts.',
-  },
+  path: '/post/2025',
+  openGraphTitle: 'Blog archive — 2025',
+  openGraphDescription: 'Placeholder archive for 2025 posts.',
+  pageJsonLd: 'CollectionPage',
 };
+
+export const metadata = sitePageMetadata(SEO);
 
 export default function Page() {
   return (
     <>
+      <JsonLd data={sitePageJsonLdFromSeo(SEO)} />
       <Section>
         <Text as='h1' variant='heading'>
           Posts from 2025

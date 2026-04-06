@@ -7,38 +7,29 @@ import { Hero } from '@/components/custom/hero';
 import { Quote } from '@/components/custom/quote';
 import { Links } from '@/components/custom/links';
 import { TLDR } from '@/components/custom/tldr';
-import type { Metadata } from 'next';
 import { JsonLd } from '@/components/seo/json-ld';
-import { blogPostingJsonLd } from '@/lib/schema';
+import {
+  type BlogPostSeo,
+  blogPostJsonLdFromSeo,
+  blogPostMetadata,
+} from '@/lib/schema';
 
-export const metadata: Metadata = {
+const SEO: BlogPostSeo = {
   title: 'React Suspense explained — beyond the magic',
   description:
     'Everyone calls Suspense “magic.” It is not. A React-focused deep dive into how Suspense really works—concurrency, boundaries, and why it is better thought of as structured promise handling than mysticism.',
-  alternates: { canonical: '/post/2023/suspense' },
-  openGraph: {
-    type: 'article',
-    publishedTime: '2023-11-21',
-    authors: ['Sander Boer'],
-    url: 'https://sanderboer.nl/post/2023/suspense',
-    title: 'React Suspense explained — beyond the magic',
-    description:
-      'How React Suspense works under the hood: mental models, pitfalls, and why “magic” is a lazy explanation.',
-  },
+  path: '/post/2023/suspense',
+  publishedTime: '2023-11-21',
+  openGraphDescription:
+    'How React Suspense works under the hood: mental models, pitfalls, and why “magic” is a lazy explanation.',
 };
+
+export const metadata = blogPostMetadata(SEO);
 
 export default function Page() {
   return (
     <>
-      <JsonLd
-        data={blogPostingJsonLd({
-          headline: 'React Suspense explained — beyond the magic',
-          description:
-            'Everyone calls Suspense “magic.” It is not. A React-focused deep dive into how Suspense really works—concurrency, boundaries, and why it is better thought of as structured promise handling than mysticism.',
-          datePublished: '2023-11-21',
-          path: '/post/2023/suspense',
-        })}
-      />
+      <JsonLd data={blogPostJsonLdFromSeo(SEO)} />
       <Hero
         title='<Suspense />'
         publishDate='Nov 21 2023'

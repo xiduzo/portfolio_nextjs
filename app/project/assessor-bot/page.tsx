@@ -12,24 +12,29 @@ import { CodeBlock } from '@/components/custom/code-block';
 import { CallToAction } from '@/components/custom/call-to-action';
 import { GithubIcon } from 'lucide-react';
 import { TLDR } from '@/components/custom/tldr';
-import type { Metadata } from 'next';
+import { JsonLd } from '@/components/seo/json-ld';
+import {
+  type PortfolioProjectSeo,
+  portfolioProjectJsonLdFromSeo,
+  portfolioProjectMetadata,
+} from '@/lib/schema';
 
-export const metadata: Metadata = {
+const SEO: PortfolioProjectSeo = {
   title: 'Assessor Bot — local LLM grading assistant for portfolios',
   description:
     'A free, local-first desktop app that ingests student work and drafts criterion-aligned feedback using LangChain and Ollama—built to keep data on-device while teachers steer the rubric.',
-  alternates: { canonical: '/project/assessor-bot' },
-  openGraph: {
-    url: 'https://sanderboer.nl/project/assessor-bot',
-    title: 'Assessor Bot — LLM feedback for students',
-    description:
-      'Electron + local models for structured portfolio feedback without sending student text to the cloud.',
-  },
+  path: '/project/assessor-bot',
+  openGraphTitle: 'Assessor Bot — LLM feedback for students',
+  openGraphDescription:
+    'Electron + local models for structured portfolio feedback without sending student text to the cloud.',
 };
+
+export const metadata = portfolioProjectMetadata(SEO);
 
 export default function Page() {
   return (
     <>
+      <JsonLd data={portfolioProjectJsonLdFromSeo(SEO)} />
       <Hero
         title='Assessor bot'
         publishDate='Feb 12 2025'

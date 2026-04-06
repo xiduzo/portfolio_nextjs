@@ -12,38 +12,29 @@ import { Quote } from '@/components/custom/quote';
 import { ContainerIcon, GithubIcon } from 'lucide-react';
 import { Technologies } from '@/components/custom/technologies';
 import { TLDR } from '@/components/custom/tldr';
-import type { Metadata } from 'next';
 import { JsonLd } from '@/components/seo/json-ld';
-import { blogPostingJsonLd } from '@/lib/schema';
+import {
+  type BlogPostSeo,
+  blogPostJsonLdFromSeo,
+  blogPostMetadata,
+} from '@/lib/schema';
 
-export const metadata: Metadata = {
+const SEO: BlogPostSeo = {
   title: 'Talking to Water — generative art with Whisper & MQTT',
   description:
     'Build notes from an installation that reacts to speech: OpenAI Whisper, Hugging Face sentiment, MQTT to the visuals, and about thirty lines of Python—honest “bodge” engineering for a deadline.',
-  alternates: { canonical: '/post/2024/talking-to-water' },
-  openGraph: {
-    type: 'article',
-    publishedTime: '2024-02-21',
-    authors: ['Sander Boer'],
-    url: 'https://sanderboer.nl/post/2024/talking-to-water',
-    title: 'Talking to Water — generative art with Whisper & MQTT',
-    description:
-      'How speech, sentiment scoring, and MQTT shaped a generative piece—small code, real constraints, working demo.',
-  },
+  path: '/post/2024/talking-to-water',
+  publishedTime: '2024-02-21',
+  openGraphDescription:
+    'How speech, sentiment scoring, and MQTT shaped a generative piece—small code, real constraints, working demo.',
 };
+
+export const metadata = blogPostMetadata(SEO);
 
 export default function Page() {
   return (
     <>
-      <JsonLd
-        data={blogPostingJsonLd({
-          headline: 'Talking to Water — generative art with Whisper & MQTT',
-          description:
-            'Build notes from an installation that reacts to speech: OpenAI Whisper, Hugging Face sentiment, MQTT to the visuals, and about thirty lines of Python—honest “bodge” engineering for a deadline.',
-          datePublished: '2024-02-21',
-          path: '/post/2024/talking-to-water',
-        })}
-      />
+      <JsonLd data={blogPostJsonLdFromSeo(SEO)} />
       <Hero
         title='Talking to water'
         subtitle='The art of the bodge'

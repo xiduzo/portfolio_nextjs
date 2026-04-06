@@ -10,24 +10,29 @@ import NextImage from 'next/image';
 import Link from 'next/link';
 import { Links } from '@/components/custom/links';
 import { TLDR } from '@/components/custom/tldr';
-import type { Metadata } from 'next';
+import { JsonLd } from '@/components/seo/json-ld';
+import {
+  type PortfolioProjectSeo,
+  portfolioProjectJsonLdFromSeo,
+  portfolioProjectMetadata,
+} from '@/lib/schema';
 
-export const metadata: Metadata = {
+const SEO: PortfolioProjectSeo = {
   title: 'Spirit — OCD therapy companion & mood tracking',
   description:
     'Spirit is a gamified therapy companion for people with OCD: mood logging, exposure-style exercises, and gentle structure around compulsion cycles—presented at Games for Health Europe.',
-  alternates: { canonical: '/project/spirit' },
-  openGraph: {
-    url: 'https://sanderboer.nl/project/spirit',
-    title: 'Spirit — OCD therapy companion app',
-    description:
-      'Design and build notes for a mobile app that supports patients between clinical sessions.',
-  },
+  path: '/project/spirit',
+  openGraphTitle: 'Spirit — OCD therapy companion app',
+  openGraphDescription:
+    'Design and build notes for a mobile app that supports patients between clinical sessions.',
 };
+
+export const metadata = portfolioProjectMetadata(SEO);
 
 export default function Page() {
   return (
     <>
+      <JsonLd data={portfolioProjectJsonLdFromSeo(SEO)} />
       <Hero
         title='Spirit'
         subtitle='Empower patients who suffer from Obsessive-Compulsive Disorder (OCD)'

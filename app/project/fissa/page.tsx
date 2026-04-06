@@ -12,26 +12,32 @@ import { Technologies } from '@/components/custom/technologies';
 import { StoreIcon } from 'lucide-react';
 import { Links } from '@/components/custom/links';
 import { TLDR } from '@/components/custom/tldr';
-import type { Metadata } from 'next';
+import { JsonLd } from '@/components/seo/json-ld';
+import {
+  type PortfolioProjectSeo,
+  portfolioProjectJsonLdFromSeo,
+  portfolioProjectMetadata,
+} from '@/lib/schema';
 
-export const metadata: Metadata = {
+const SEO: PortfolioProjectSeo = {
   title: 'Fissa — collaborative party playlist with voting',
   description:
     'Fissa is a party queue where guests propose tracks and vote on what plays next—Expo/React Native clients, Next.js and tRPC on the backend, Prisma and Spotify for music data. Democracy for the dance floor.',
-  alternates: { canonical: '/project/fissa' },
-  openGraph: {
-    url: 'https://sanderboer.nl/project/fissa',
-    title: 'Fissa — collaborative party playlist',
-    description:
-      'Mobile app case study: shared queues, voting, and Spotify integration.',
-  },
+  path: '/project/fissa',
+  openGraphTitle: 'Fissa — collaborative party playlist',
+  openGraphDescription:
+    'Mobile app case study: shared queues, voting, and Spotify integration.',
+  demoUrl: 'https://fissa-houseparty.vercel.app',
 };
+
+export const metadata = portfolioProjectMetadata(SEO);
 
 const animals = ['🐋', '🦀', '🐕', '🦦', '🦔', '🦉', '🦥', '🐍', '🦑', '🐘'];
 
 export default function Page() {
   return (
     <>
+      <JsonLd data={portfolioProjectJsonLdFromSeo(SEO)} />
       <Hero
         title='Fissa'
         subtitle='Not only one person should decide what is playing on a party'

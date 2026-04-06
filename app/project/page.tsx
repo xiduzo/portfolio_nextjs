@@ -4,24 +4,30 @@ import { Text } from '@/components/custom/text';
 import Link from 'next/link';
 import { WobbleCard } from '@/components/aceternity/wobble-card';
 import { Openmoji } from '@/components/custom/openmoji';
-import type { Metadata } from 'next';
+import { JsonLd } from '@/components/seo/json-ld';
+import {
+  type SitePageSeo,
+  sitePageJsonLdFromSeo,
+  sitePageMetadata,
+} from '@/lib/schema';
 
-export const metadata: Metadata = {
+const SEO: SitePageSeo = {
   title: 'Portfolio — apps, tools & case studies',
   description:
     'Selected work by Sander Boer: collaborative party playlists, visual microcontroller tooling, peer feedback products, LLM-assisted grading experiments, glossary platforms, and auction-platform modernization.',
-  alternates: { canonical: '/project' },
-  openGraph: {
-    url: 'https://sanderboer.nl/project',
-    title: 'Projects — Sander Boer',
-    description:
-      'Case studies and shipped products spanning mobile, web, hardware-adjacent tools, and large legacy modernization.',
-  },
+  path: '/project',
+  openGraphTitle: 'Projects — Sander Boer',
+  openGraphDescription:
+    'Case studies and shipped products spanning mobile, web, hardware-adjacent tools, and large legacy modernization.',
+  pageJsonLd: 'CollectionPage',
 };
+
+export const metadata = sitePageMetadata(SEO);
 
 export default function Page() {
   return (
     <>
+      <JsonLd data={sitePageJsonLdFromSeo(SEO)} />
       <Section>
         <Text as='h1' variant='heading' motion='none'>
           Things I made

@@ -3,24 +3,30 @@ import { Openmoji } from '@/components/custom/openmoji';
 import { Section } from '@/components/custom/section';
 import { Text } from '@/components/custom/text';
 import Link from 'next/link';
-import type { Metadata } from 'next';
+import { JsonLd } from '@/components/seo/json-ld';
+import {
+  type SitePageSeo,
+  sitePageJsonLdFromSeo,
+  sitePageMetadata,
+} from '@/lib/schema';
 
-export const metadata: Metadata = {
+const SEO: SitePageSeo = {
   title: 'Blog — React, TypeScript, testing & AI',
   description:
     'Technical writing and essays by Sander Boer: React Suspense, Zod at runtime, testing discipline, generative art with Whisper and MQTT, and designing intent for agentic AI systems.',
-  alternates: { canonical: '/post' },
-  openGraph: {
-    url: 'https://sanderboer.nl/post',
-    title: 'Blog — Sander Boer',
-    description:
-      'Deep dives on front-end engineering, testing, runtime validation, and practical AI workflows.',
-  },
+  path: '/post',
+  openGraphTitle: 'Blog — Sander Boer',
+  openGraphDescription:
+    'Deep dives on front-end engineering, testing, runtime validation, and practical AI workflows.',
+  pageJsonLd: 'CollectionPage',
 };
+
+export const metadata = sitePageMetadata(SEO);
 
 export default function Page() {
   return (
     <>
+      <JsonLd data={sitePageJsonLdFromSeo(SEO)} />
       <Section>
         <Text as='h1' variant='heading'>
           All posts

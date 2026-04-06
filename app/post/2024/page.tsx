@@ -3,23 +3,30 @@ import { Openmoji } from '@/components/custom/openmoji';
 import { Section } from '@/components/custom/section';
 import { Text } from '@/components/custom/text';
 import Link from 'next/link';
-import type { Metadata } from 'next';
+import { JsonLd } from '@/components/seo/json-ld';
+import {
+  type SitePageSeo,
+  sitePageJsonLdFromSeo,
+  sitePageMetadata,
+} from '@/lib/schema';
 
-export const metadata: Metadata = {
+const SEO: SitePageSeo = {
   title: '2024 — Blog archive',
   description:
     'Articles from 2024: Zod for runtime validation in a real IoT stack, a testing playbook that makes refactors safe, and “Talking to Water”—Whisper, sentiment, and MQTT in a generative installation.',
-  alternates: { canonical: '/post/2024' },
-  openGraph: {
-    url: 'https://sanderboer.nl/post/2024',
-    title: 'Blog archive — 2024',
-    description: 'Zod, testing discipline, and an AI-driven art project—three posts from 2024.',
-  },
+  path: '/post/2024',
+  openGraphTitle: 'Blog archive — 2024',
+  openGraphDescription:
+    'Zod, testing discipline, and an AI-driven art project—three posts from 2024.',
+  pageJsonLd: 'CollectionPage',
 };
+
+export const metadata = sitePageMetadata(SEO);
 
 export default function Page() {
   return (
     <>
+      <JsonLd data={sitePageJsonLdFromSeo(SEO)} />
       <Section>
         <Text as='h1' variant='heading'>
           Posts from 2024

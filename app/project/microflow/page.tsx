@@ -9,24 +9,30 @@ import { Technologies } from '@/components/custom/technologies';
 import { Hero } from '@/components/custom/hero';
 import { Links } from '@/components/custom/links';
 import { TLDR } from '@/components/custom/tldr';
-import type { Metadata } from 'next';
+import { JsonLd } from '@/components/seo/json-ld';
+import {
+  type PortfolioProjectSeo,
+  portfolioProjectJsonLdFromSeo,
+  portfolioProjectMetadata,
+} from '@/lib/schema';
 
-export const metadata: Metadata = {
+const SEO: PortfolioProjectSeo = {
   title: 'Microflow — visual programming for microcontroller prototypes',
   description:
     'Microflow connects flow graphs to real boards so designers can prototype physical UX without firmware. Electron, Figma plugin, Firmata/Johnny-Five—making hardware iteration feel closer to screen design.',
-  alternates: { canonical: '/project/microflow' },
-  openGraph: {
-    url: 'https://sanderboer.nl/project/microflow',
-    title: 'Microflow — microcontrollers made simple',
-    description:
-      'Case study: node-based authoring plus a Figma bridge for interactive objects.',
-  },
+  path: '/project/microflow',
+  openGraphTitle: 'Microflow — microcontrollers made simple',
+  openGraphDescription:
+    'Case study: node-based authoring plus a Figma bridge for interactive objects.',
+  demoUrl: 'https://microflow.tech/',
 };
+
+export const metadata = portfolioProjectMetadata(SEO);
 
 export default function Page() {
   return (
     <>
+      <JsonLd data={portfolioProjectJsonLdFromSeo(SEO)} />
       <Hero
         title='Microflow'
         subtitle='Microcontrollers made simple'

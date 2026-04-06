@@ -9,20 +9,24 @@ import NextImage from 'next/image';
 import { Iphone15Pro } from '@/components/magic-ui/iphone-15-pro';
 import { Links } from '@/components/custom/links';
 import { TLDR } from '@/components/custom/tldr';
-import type { Metadata } from 'next';
+import { JsonLd } from '@/components/seo/json-ld';
+import {
+  type PortfolioProjectSeo,
+  portfolioProjectJsonLdFromSeo,
+  portfolioProjectMetadata,
+} from '@/lib/schema';
 
-export const metadata: Metadata = {
+const SEO: PortfolioProjectSeo = {
   title: 'LiveStock — blockchain concepts through a research game',
   description:
     'LiveStock is a multiplayer research game for the Institute of Network Cultures: playful farm metaphors that explain ledgers, trust, and coordination—serious ideas, approachable interaction design.',
-  alternates: { canonical: '/project/livestock' },
-  openGraph: {
-    url: 'https://sanderboer.nl/project/livestock',
-    title: 'LiveStock — blockchain through play',
-    description:
-      'Case study: an educational game that makes abstract blockchain mechanics tangible.',
-  },
+  path: '/project/livestock',
+  openGraphTitle: 'LiveStock — blockchain through play',
+  openGraphDescription:
+    'Case study: an educational game that makes abstract blockchain mechanics tangible.',
 };
+
+export const metadata = portfolioProjectMetadata(SEO);
 
 const images = [
   '/livestock/bacon.svg',
@@ -46,6 +50,7 @@ const images = [
 export default function Page() {
   return (
     <>
+      <JsonLd data={portfolioProjectJsonLdFromSeo(SEO)} />
       <Hero
         title='LiveStock'
         subtitle='Introduce humans to the blockchain and crypto-currency wallets'

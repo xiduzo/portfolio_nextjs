@@ -3,23 +3,29 @@ import { Openmoji } from '@/components/custom/openmoji';
 import { Section } from '@/components/custom/section';
 import { Text } from '@/components/custom/text';
 import Link from 'next/link';
-import type { Metadata } from 'next';
+import { JsonLd } from '@/components/seo/json-ld';
+import {
+  type SitePageSeo,
+  sitePageJsonLdFromSeo,
+  sitePageMetadata,
+} from '@/lib/schema';
 
-export const metadata: Metadata = {
+const SEO: SitePageSeo = {
   title: '2026 — Blog archive',
   description:
     'Posts from 2026 on sanderboer.nl, starting with Designing Intent—a guide to spec-driven and agentic AI workflows so you delegate outcomes, not one-off prompts.',
-  alternates: { canonical: '/post/2026' },
-  openGraph: {
-    url: 'https://sanderboer.nl/post/2026',
-    title: 'Blog archive — 2026',
-    description: 'Designing intent and more from 2026.',
-  },
+  path: '/post/2026',
+  openGraphTitle: 'Blog archive — 2026',
+  openGraphDescription: 'Designing intent and more from 2026.',
+  pageJsonLd: 'CollectionPage',
 };
+
+export const metadata = sitePageMetadata(SEO);
 
 export default function Page() {
   return (
     <>
+      <JsonLd data={sitePageJsonLdFromSeo(SEO)} />
       <Section>
         <Text as='h1' variant='heading'>
           Posts from 2026

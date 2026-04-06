@@ -9,24 +9,30 @@ import { TLDR } from '@/components/custom/tldr';
 import { CodeBlock } from '@/components/custom/code-block';
 import { Safari } from '@/components/magic-ui/safari';
 import { ExternalLinkIcon } from 'lucide-react';
-import type { Metadata } from 'next';
+import { JsonLd } from '@/components/seo/json-ld';
+import {
+  type PortfolioProjectSeo,
+  portfolioProjectJsonLdFromSeo,
+  portfolioProjectMetadata,
+} from '@/lib/schema';
 
-export const metadata: Metadata = {
+const SEO: PortfolioProjectSeo = {
   title: 'Glosario — collaborative glossary & terminology workflows',
   description:
     'Glosario is a multi-tenant glossary product: propose terms, run approvals, map synonyms and related concepts, and keep org-wide language from drifting—React 19, Hono, Drizzle, PostgreSQL.',
-  alternates: { canonical: '/project/glosario' },
-  openGraph: {
-    url: 'https://sanderboer.nl/project/glosario',
-    title: 'Glosario — collaborative glossary platform',
-    description:
-      'Case study: shared definitions, review queues, and relationship voting for growing teams.',
-  },
+  path: '/project/glosario',
+  openGraphTitle: 'Glosario — collaborative glossary platform',
+  openGraphDescription:
+    'Case study: shared definitions, review queues, and relationship voting for growing teams.',
+  demoUrl: 'https://glosar.io/',
 };
+
+export const metadata = portfolioProjectMetadata(SEO);
 
 export default function Page() {
   return (
     <>
+      <JsonLd data={portfolioProjectJsonLdFromSeo(SEO)} />
       <Hero
         title='Glosario'
         subtitle='A collaborative glossary for everyone'

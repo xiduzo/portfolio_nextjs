@@ -4,26 +4,29 @@ import { Section } from '@/components/custom/section';
 import { Quote } from '@/components/custom/quote';
 import { CallToAction } from '@/components/custom/call-to-action';
 import { MailIcon } from 'lucide-react';
-import type { Metadata } from 'next';
+import { JsonLd } from '@/components/seo/json-ld';
+import {
+  type SitePageSeo,
+  sitePageJsonLdFromSeo,
+  sitePageMetadata,
+} from '@/lib/schema';
 
-export const metadata: Metadata = {
-  title: {
-    absolute: 'Accessibility statement — Sander Boer',
-  },
+const SEO: SitePageSeo = {
+  title: 'Accessibility statement',
+  titleAbsolute: 'Accessibility statement — Sander Boer',
   description:
     'Accessibility statement for sanderboer.nl: commitment to inclusive experiences, current limits, and how to request help or report barriers—because the web works best when it works for everyone.',
-  alternates: { canonical: '/accessibility' },
-  openGraph: {
-    url: 'https://sanderboer.nl/accessibility',
-    title: 'Accessibility statement',
-    description:
-      'How this site approaches accessibility, known issues, and contact options for feedback.',
-  },
+  path: '/accessibility',
+  openGraphDescription:
+    'How this site approaches accessibility, known issues, and contact options for feedback.',
 };
+
+export const metadata = sitePageMetadata(SEO);
 
 export default function Page() {
   return (
     <>
+      <JsonLd data={sitePageJsonLdFromSeo(SEO)} />
       <Section>
         <Text size='sm' as='h1' variant='heading' motion='none'>
           The web works best when it works for everyone

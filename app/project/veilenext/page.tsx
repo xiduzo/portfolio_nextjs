@@ -8,24 +8,29 @@ import { Safari } from '@/components/magic-ui/safari';
 import { Links } from '@/components/custom/links';
 import { Technologies } from '@/components/custom/technologies';
 import { TLDR } from '@/components/custom/tldr';
-import type { Metadata } from 'next';
+import { JsonLd } from '@/components/seo/json-ld';
+import {
+  type PortfolioProjectSeo,
+  portfolioProjectJsonLdFromSeo,
+  portfolioProjectMetadata,
+} from '@/lib/schema';
 
-export const metadata: Metadata = {
+const SEO: PortfolioProjectSeo = {
   title: 'VeileNext — modernizing the world’s largest flower auction',
   description:
     'Case study on replacing critical auction infrastructure: monolith toward microservices, UDP toward WebSockets, Windows-only desks toward browser-based trading—high stakes, zero “big bang” fantasy.',
-  alternates: { canonical: '/project/veilenext' },
-  openGraph: {
-    url: 'https://sanderboer.nl/project/veilenext',
-    title: 'VeileNext — flower auction modernization',
-    description:
-      'How a massive live auction floor moved toward modern web and distributed services without stopping the market.',
-  },
+  path: '/project/veilenext',
+  openGraphTitle: 'VeileNext — flower auction modernization',
+  openGraphDescription:
+    'How a massive live auction floor moved toward modern web and distributed services without stopping the market.',
 };
+
+export const metadata = portfolioProjectMetadata(SEO);
 
 export default function Page() {
   return (
     <>
+      <JsonLd data={portfolioProjectJsonLdFromSeo(SEO)} />
       <Hero
         title='VeileNext'
         subtitle='Modernize the biggest flower auction in the world'
