@@ -12,10 +12,16 @@ import { ExternalLinkIcon } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Glosario — A Collaborative Glossary Platform',
+  title: 'Glosario — collaborative glossary & terminology workflows',
   description:
-    'A multi-tenant glossary platform where teams define, review, and manage shared terminology with approval workflows and crowd-voted term relationships.',
+    'Glosario is a multi-tenant glossary product: propose terms, run approvals, map synonyms and related concepts, and keep org-wide language from drifting—React 19, Hono, Drizzle, PostgreSQL.',
   alternates: { canonical: '/project/glosario' },
+  openGraph: {
+    url: 'https://sanderboer.nl/project/glosario',
+    title: 'Glosario — collaborative glossary platform',
+    description:
+      'Case study: shared definitions, review queues, and relationship voting for growing teams.',
+  },
 };
 
 export default function Page() {

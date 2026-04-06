@@ -30,6 +30,11 @@ import { SparklesText } from '@/components/ui/sparkles-text';
 
 import { Analytics } from '@vercel/analytics/next';
 import { TableOfContents } from '@/components/custom/table-of-contents';
+import { JsonLd } from '@/components/seo/json-ld';
+import { rootJsonLdGraph } from '@/lib/schema';
+import { getSiteUrl } from '@/lib/site';
+
+const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
   title: {
@@ -37,27 +42,27 @@ export const metadata: Metadata = {
     template: '%s | Sander Boer',
   },
   description:
-    'Developer who turns complex problems into tools people actually enjoy using. Bridging the gap between good engineering and great experience.',
-  metadataBase: new URL('https://sanderboer.nl'),
+    'Developer and designer Sander Boer builds React and TypeScript products people enjoy. Portfolio, case studies, and articles on testing, Zod, Suspense, creative AI, and pragmatic workflows.',
+  metadataBase: new URL(siteUrl),
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://sanderboer.nl',
+    url: siteUrl,
     siteName: 'Sander Boer',
     title: 'Sander Boer — Developer & Designer',
     description:
-      'Developer who turns complex problems into tools people actually enjoy using.',
+      'Developer and designer shipping thoughtful software—React, TypeScript, strong UX, and practical writing on testing and AI workflows.',
     images: [{ url: '/me.jpeg', width: 512, height: 512, alt: 'Sander Boer' }],
   },
   twitter: {
     card: 'summary',
     title: 'Sander Boer — Developer & Designer',
     description:
-      'Developer who turns complex problems into tools people actually enjoy using.',
+      'Developer and designer shipping React/TypeScript products with great UX—portfolio, case studies, and technical writing.',
     images: ['/me.jpeg'],
   },
   alternates: {
-    canonical: 'https://sanderboer.nl',
+    canonical: siteUrl,
   },
 };
 
@@ -114,6 +119,7 @@ export default async function RootLayout({
       <body
         className={`${headings.variable} ${subHeadings.variable} ${body.variable} ${note.variable} antialiased`}
       >
+        <JsonLd data={rootJsonLdGraph()} />
         <a
           tabIndex={0}
           className='bg-muted absolute left-0 z-50 m-3 -translate-y-16 p-3 transition focus:translate-y-0 focus:opacity-100 motion-reduce:-z-10 motion-reduce:translate-y-0 motion-reduce:opacity-0 motion-reduce:focus:z-50'

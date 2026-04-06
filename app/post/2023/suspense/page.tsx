@@ -8,22 +8,37 @@ import { Quote } from '@/components/custom/quote';
 import { Links } from '@/components/custom/links';
 import { TLDR } from '@/components/custom/tldr';
 import type { Metadata } from 'next';
+import { JsonLd } from '@/components/seo/json-ld';
+import { blogPostingJsonLd } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: '<Suspense /> — Unravelling the Magic from React',
+  title: 'React Suspense explained — beyond the magic',
   description:
-    'Everyone calls Suspense "magic." It is not. A deep dive into how React Suspense works under the hood — it is a fancy try/catch for promises.',
+    'Everyone calls Suspense “magic.” It is not. A React-focused deep dive into how Suspense really works—concurrency, boundaries, and why it is better thought of as structured promise handling than mysticism.',
   alternates: { canonical: '/post/2023/suspense' },
   openGraph: {
     type: 'article',
     publishedTime: '2023-11-21',
     authors: ['Sander Boer'],
+    url: 'https://sanderboer.nl/post/2023/suspense',
+    title: 'React Suspense explained — beyond the magic',
+    description:
+      'How React Suspense works under the hood: mental models, pitfalls, and why “magic” is a lazy explanation.',
   },
 };
 
 export default function Page() {
   return (
     <>
+      <JsonLd
+        data={blogPostingJsonLd({
+          headline: 'React Suspense explained — beyond the magic',
+          description:
+            'Everyone calls Suspense “magic.” It is not. A React-focused deep dive into how Suspense really works—concurrency, boundaries, and why it is better thought of as structured promise handling than mysticism.',
+          datePublished: '2023-11-21',
+          path: '/post/2023/suspense',
+        })}
+      />
       <Hero
         title='<Suspense />'
         publishDate='Nov 21 2023'

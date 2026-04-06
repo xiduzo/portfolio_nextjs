@@ -6,10 +6,16 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Posts',
+  title: 'Blog — React, TypeScript, testing & AI',
   description:
-    'Articles on React, TypeScript, testing, AI workflows, and creative coding by Sander Boer.',
+    'Technical writing and essays by Sander Boer: React Suspense, Zod at runtime, testing discipline, generative art with Whisper and MQTT, and designing intent for agentic AI systems.',
   alternates: { canonical: '/post' },
+  openGraph: {
+    url: 'https://sanderboer.nl/post',
+    title: 'Blog — Sander Boer',
+    description:
+      'Deep dives on front-end engineering, testing, runtime validation, and practical AI workflows.',
+  },
 };
 
 export default function Page() {

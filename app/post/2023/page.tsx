@@ -6,9 +6,15 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Posts from 2023',
-  description: 'Blog posts from 2023 — including a deep dive into React Suspense.',
+  title: '2023 — Blog archive',
+  description:
+    'Writing from 2023 on sanderboer.nl, including a long post on React Suspense—how it really works beyond the “magic,” with mental models for concurrent rendering.',
   alternates: { canonical: '/post/2023' },
+  openGraph: {
+    url: 'https://sanderboer.nl/post/2023',
+    title: 'Blog archive — 2023',
+    description: 'React Suspense deep dive and other notes from 2023.',
+  },
 };
 
 export default function Page() {

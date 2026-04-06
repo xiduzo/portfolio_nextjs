@@ -12,10 +12,16 @@ import { TLDR } from '@/components/custom/tldr';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Microflow — Microcontrollers Made Simple',
+  title: 'Microflow — visual programming for microcontroller prototypes',
   description:
-    'A visual flow-based tool that lets designers build interactive hardware prototypes without writing code. Includes a Figma plugin for bridging physical and digital.',
+    'Microflow connects flow graphs to real boards so designers can prototype physical UX without firmware. Electron, Figma plugin, Firmata/Johnny-Five—making hardware iteration feel closer to screen design.',
   alternates: { canonical: '/project/microflow' },
+  openGraph: {
+    url: 'https://sanderboer.nl/project/microflow',
+    title: 'Microflow — microcontrollers made simple',
+    description:
+      'Case study: node-based authoring plus a Figma bridge for interactive objects.',
+  },
 };
 
 export default function Page() {

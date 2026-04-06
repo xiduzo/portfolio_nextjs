@@ -3,9 +3,15 @@ import { Text } from '@/components/custom/text';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Posts from 2025',
-  description: 'Blog posts from 2025 by Sander Boer. Coming soon.',
+  title: '2025 — Blog archive',
+  description:
+    'Archive page for posts published in 2025 on sanderboer.nl. New writing will appear here and on the main blog index when it goes live.',
   alternates: { canonical: '/post/2025' },
+  openGraph: {
+    url: 'https://sanderboer.nl/post/2025',
+    title: 'Blog archive — 2025',
+    description: 'Placeholder archive for 2025 posts.',
+  },
 };
 
 export default function Page() {

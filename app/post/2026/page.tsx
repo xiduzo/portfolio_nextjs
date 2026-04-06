@@ -6,9 +6,15 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Posts from 2026',
-  description: 'Blog posts from 2026 — including designing intent and working agentically with AI.',
+  title: '2026 — Blog archive',
+  description:
+    'Posts from 2026 on sanderboer.nl, starting with Designing Intent—a guide to spec-driven and agentic AI workflows so you delegate outcomes, not one-off prompts.',
   alternates: { canonical: '/post/2026' },
+  openGraph: {
+    url: 'https://sanderboer.nl/post/2026',
+    title: 'Blog archive — 2026',
+    description: 'Designing intent and more from 2026.',
+  },
 };
 
 export default function Page() {

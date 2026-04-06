@@ -11,10 +11,18 @@ import { SparklesText } from '@/components/ui/sparkles-text';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About',
+  title: {
+    absolute: 'About Sander Boer — Developer & Designer',
+  },
   description:
-    'Designer by education, developer by passion, tinkerer by nature. Learn more about Sander Boer.',
+    'Meet Sander Boer: designer by training, developer by obsession. Background, values, GitHub activity, and how I collaborate when the goal is craft, clarity, and usable software.',
   alternates: { canonical: '/about' },
+  openGraph: {
+    url: 'https://sanderboer.nl/about',
+    title: 'About Sander Boer',
+    description:
+      'Background and approach—design education, hands-on engineering, tinkering, and what drives the work.',
+  },
 };
 
 export default function Page() {

@@ -7,22 +7,37 @@ import { Text } from '@/components/custom/text';
 import { TLDR } from '@/components/custom/tldr';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { JsonLd } from '@/components/seo/json-ld';
+import { blogPostingJsonLd } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'Testing — The Discipline That Makes Everything Else Click',
+  title: 'Software testing discipline — habits that make teams faster',
   description:
-    'Writing code is the easy part. Most testing problems come down to four habits. Good tools and one simple pattern will get you most of the way there.',
+    'Writing code is the easy part; keeping it correct is the job. Most testing pain comes down to four habits—plus tooling and one simple pattern that gets you most of the way to confident refactors.',
   alternates: { canonical: '/post/2024/testing' },
   openGraph: {
     type: 'article',
     publishedTime: '2024-04-04',
     authors: ['Sander Boer'],
+    url: 'https://sanderboer.nl/post/2024/testing',
+    title: 'Software testing discipline — habits that make teams faster',
+    description:
+      'Practical testing habits and patterns so your suite actually protects you—not just more files in the repo.',
   },
 };
 
 export default function Page() {
   return (
     <>
+      <JsonLd
+        data={blogPostingJsonLd({
+          headline: 'Software testing discipline — habits that make teams faster',
+          description:
+            'Writing code is the easy part; keeping it correct is the job. Most testing pain comes down to four habits—plus tooling and one simple pattern that gets you most of the way to confident refactors.',
+          datePublished: '2024-04-04',
+          path: '/post/2024/testing',
+        })}
+      />
       <Hero
         title='Testing'
         publishDate='Apr 4 2024'

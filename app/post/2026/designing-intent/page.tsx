@@ -11,22 +11,37 @@ import { WorkflowProgression } from '@/components/custom/workflow-progression';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { JsonLd } from '@/components/seo/json-ld';
+import { blogPostingJsonLd } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'Designing Intent — From Instructions to Agentic AI',
+  title: 'Designing intent — spec-driven & agentic AI workflows',
   description:
-    'Stop prompting, start delegating. A practical guide to AI workflows — from prompt engineering to spec-driven development and agentic systems.',
+    'Stop firefighting prompts and start delegating outcomes. A practical spectrum of AI workflows—from ad-hoc chat to spec-driven and agentic systems—with failure modes, tooling, and how to choose what to automate next.',
   alternates: { canonical: '/post/2026/designing-intent' },
   openGraph: {
     type: 'article',
     publishedTime: '2026-03-13',
     authors: ['Sander Boer'],
+    url: 'https://sanderboer.nl/post/2026/designing-intent',
+    title: 'Designing intent — spec-driven & agentic AI workflows',
+    description:
+      'A field guide to modern AI workflow design: when to prompt, when to spec, and when agents earn the keys.',
   },
 };
 
 export default function Page() {
   return (
     <>
+      <JsonLd
+        data={blogPostingJsonLd({
+          headline: 'Designing intent — spec-driven & agentic AI workflows',
+          description:
+            'Stop firefighting prompts and start delegating outcomes. A practical spectrum of AI workflows—from ad-hoc chat to spec-driven and agentic systems—with failure modes, tooling, and how to choose what to automate next.',
+          datePublished: '2026-03-13',
+          path: '/post/2026/designing-intent',
+        })}
+      />
       <Hero
         title='Designing intent'
         publishDate='Mar 13 2026'

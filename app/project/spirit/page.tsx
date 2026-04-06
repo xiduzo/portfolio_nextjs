@@ -13,10 +13,16 @@ import { TLDR } from '@/components/custom/tldr';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Spirit — OCD Therapy Companion App',
+  title: 'Spirit — OCD therapy companion & mood tracking',
   description:
-    'A gamified app that helps OCD patients track and break their compulsion cycles through playful mood tracking and exposure exercises. Presented at Games for Health Europe.',
+    'Spirit is a gamified therapy companion for people with OCD: mood logging, exposure-style exercises, and gentle structure around compulsion cycles—presented at Games for Health Europe.',
   alternates: { canonical: '/project/spirit' },
+  openGraph: {
+    url: 'https://sanderboer.nl/project/spirit',
+    title: 'Spirit — OCD therapy companion app',
+    description:
+      'Design and build notes for a mobile app that supports patients between clinical sessions.',
+  },
 };
 
 export default function Page() {

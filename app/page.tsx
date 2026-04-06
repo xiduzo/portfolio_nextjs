@@ -11,8 +11,14 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Sander Boer — Developer & Designer',
   description:
-    'Developer who turns complex problems into tools people actually enjoy using. Bridging the gap between good engineering and great experience.',
+    'Welcome. I am Sander Boer, a developer and designer. Explore my portfolio for case studies, side projects, and articles on React, TypeScript, testing, and working with AI.',
   alternates: { canonical: '/' },
+  openGraph: {
+    url: 'https://sanderboer.nl',
+    title: 'Sander Boer — Developer & Designer',
+    description:
+      'Portfolio of developer and designer Sander Boer: shipping software that feels as good as it works.',
+  },
 };
 
 export default function Page() {

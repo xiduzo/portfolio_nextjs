@@ -6,9 +6,15 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Posts from 2024',
-  description: 'Blog posts from 2024 — covering Zod runtime validation, unit testing practices, and talking to water with AI.',
+  title: '2024 — Blog archive',
+  description:
+    'Articles from 2024: Zod for runtime validation in a real IoT stack, a testing playbook that makes refactors safe, and “Talking to Water”—Whisper, sentiment, and MQTT in a generative installation.',
   alternates: { canonical: '/post/2024' },
+  openGraph: {
+    url: 'https://sanderboer.nl/post/2024',
+    title: 'Blog archive — 2024',
+    description: 'Zod, testing discipline, and an AI-driven art project—three posts from 2024.',
+  },
 };
 
 export default function Page() {

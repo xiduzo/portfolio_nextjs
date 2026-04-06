@@ -7,10 +7,16 @@ import { Openmoji } from '@/components/custom/openmoji';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Projects',
+  title: 'Portfolio — apps, tools & case studies',
   description:
-    'A collection of projects by Sander Boer — from collaborative music apps to microcontroller tools and flower auction modernization.',
+    'Selected work by Sander Boer: collaborative party playlists, visual microcontroller tooling, peer feedback products, LLM-assisted grading experiments, glossary platforms, and auction-platform modernization.',
   alternates: { canonical: '/project' },
+  openGraph: {
+    url: 'https://sanderboer.nl/project',
+    title: 'Projects — Sander Boer',
+    description:
+      'Case studies and shipped products spanning mobile, web, hardware-adjacent tools, and large legacy modernization.',
+  },
 };
 
 export default function Page() {

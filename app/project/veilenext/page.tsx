@@ -11,10 +11,16 @@ import { TLDR } from '@/components/custom/tldr';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'VeileNext — Modernizing the Flower Auction',
+  title: 'VeileNext — modernizing the world’s largest flower auction',
   description:
-    "Modernizing the world's largest flower auction — from monolith to microservices, UDP to WebSockets, and Windows-only to browser-based.",
+    'Case study on replacing critical auction infrastructure: monolith toward microservices, UDP toward WebSockets, Windows-only desks toward browser-based trading—high stakes, zero “big bang” fantasy.',
   alternates: { canonical: '/project/veilenext' },
+  openGraph: {
+    url: 'https://sanderboer.nl/project/veilenext',
+    title: 'VeileNext — flower auction modernization',
+    description:
+      'How a massive live auction floor moved toward modern web and distributed services without stopping the market.',
+  },
 };
 
 export default function Page() {

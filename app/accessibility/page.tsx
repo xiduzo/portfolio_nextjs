@@ -7,10 +7,18 @@ import { MailIcon } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Accessibility',
+  title: {
+    absolute: 'Accessibility statement — Sander Boer',
+  },
   description:
-    'Accessibility statement for sanderboer.nl. The web works best when it works for everyone.',
+    'Accessibility statement for sanderboer.nl: commitment to inclusive experiences, current limits, and how to request help or report barriers—because the web works best when it works for everyone.',
   alternates: { canonical: '/accessibility' },
+  openGraph: {
+    url: 'https://sanderboer.nl/accessibility',
+    title: 'Accessibility statement',
+    description:
+      'How this site approaches accessibility, known issues, and contact options for feedback.',
+  },
 };
 
 export default function Page() {

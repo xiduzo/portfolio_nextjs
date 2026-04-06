@@ -9,10 +9,16 @@ import { TLDR } from '@/components/custom/tldr';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Athena — Peer Feedback for Students',
+  title: 'Athena — anonymous peer feedback for student teams',
   description:
-    'An anonymous feedback platform where teammates rate each other weekly, giving students and teachers a clear picture of team dynamics.',
+    'Athena lets student teams give weekly anonymous ratings and comments so teachers see collaboration issues early—honest signals without public blame, built for classroom dynamics.',
   alternates: { canonical: '/project/athena' },
+  openGraph: {
+    url: 'https://sanderboer.nl/project/athena',
+    title: 'Athena — peer feedback for students',
+    description:
+      'Product case study: structured team feedback in education settings.',
+  },
 };
 
 export default function Page() {

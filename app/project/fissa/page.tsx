@@ -15,10 +15,16 @@ import { TLDR } from '@/components/custom/tldr';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Fissa — Collaborative Party Playlist',
+  title: 'Fissa — collaborative party playlist with voting',
   description:
-    'A collaborative music app where guests vote on what plays next. Built with Expo, React Native, tRPC, and the Spotify API.',
+    'Fissa is a party queue where guests propose tracks and vote on what plays next—Expo/React Native clients, Next.js and tRPC on the backend, Prisma and Spotify for music data. Democracy for the dance floor.',
   alternates: { canonical: '/project/fissa' },
+  openGraph: {
+    url: 'https://sanderboer.nl/project/fissa',
+    title: 'Fissa — collaborative party playlist',
+    description:
+      'Mobile app case study: shared queues, voting, and Spotify integration.',
+  },
 };
 
 const animals = ['🐋', '🦀', '🐕', '🦦', '🦔', '🦉', '🦥', '🐍', '🦑', '🐘'];

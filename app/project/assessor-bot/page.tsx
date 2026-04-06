@@ -15,10 +15,16 @@ import { TLDR } from '@/components/custom/tldr';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Assessor Bot — LLM Feedback for Students',
+  title: 'Assessor Bot — local LLM grading assistant for portfolios',
   description:
-    'A local, free AI tool that reads student portfolios and generates structured feedback based on assessment criteria. Built with Electron, LangChain, and Ollama.',
+    'A free, local-first desktop app that ingests student work and drafts criterion-aligned feedback using LangChain and Ollama—built to keep data on-device while teachers steer the rubric.',
   alternates: { canonical: '/project/assessor-bot' },
+  openGraph: {
+    url: 'https://sanderboer.nl/project/assessor-bot',
+    title: 'Assessor Bot — LLM feedback for students',
+    description:
+      'Electron + local models for structured portfolio feedback without sending student text to the cloud.',
+  },
 };
 
 export default function Page() {

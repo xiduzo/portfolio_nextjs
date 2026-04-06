@@ -8,22 +8,37 @@ import Alert from '@/components/custom/alert';
 import { Safari } from '@/components/magic-ui/safari';
 import { TLDR } from '@/components/custom/tldr';
 import type { Metadata } from 'next';
+import { JsonLd } from '@/components/seo/json-ld';
+import { blogPostingJsonLd } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'Zod — Stronger Interfaces, Cleaner Code, Fewer Bugs',
+  title: 'Zod runtime validation — TypeScript is not enough',
   description:
-    'TypeScript types only work at compile time. Zod validates data at runtime — the story of how a real IoT platform went from silent data corruption to catching bad data before it could do damage.',
+    'TypeScript only checks at compile time. This is how a production IoT-style system used Zod to catch corrupt payloads early—stronger interfaces at the boundary, fewer mysterious production bugs.',
   alternates: { canonical: '/post/2024/zod' },
   openGraph: {
     type: 'article',
     publishedTime: '2024-06-30',
     authors: ['Sander Boer'],
+    url: 'https://sanderboer.nl/post/2024/zod',
+    title: 'Zod runtime validation — TypeScript is not enough',
+    description:
+      'Lessons from shipping Zod at system edges: schemas, parsing discipline, and why runtime validation pays off.',
   },
 };
 
 export default function Page() {
   return (
     <>
+      <JsonLd
+        data={blogPostingJsonLd({
+          headline: 'Zod runtime validation — TypeScript is not enough',
+          description:
+            'TypeScript only checks at compile time. This is how a production IoT-style system used Zod to catch corrupt payloads early—stronger interfaces at the boundary, fewer mysterious production bugs.',
+          datePublished: '2024-06-30',
+          path: '/post/2024/zod',
+        })}
+      />
       <Hero
         title='Zod'
         publishDate='June 30 2024'

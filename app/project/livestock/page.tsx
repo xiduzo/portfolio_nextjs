@@ -12,10 +12,16 @@ import { TLDR } from '@/components/custom/tldr';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'LiveStock — Blockchain Through Play',
+  title: 'LiveStock — blockchain concepts through a research game',
   description:
-    'A multiplayer research game that teaches blockchain concepts through farm symbolism. Built for the Institute of Network Cultures.',
+    'LiveStock is a multiplayer research game for the Institute of Network Cultures: playful farm metaphors that explain ledgers, trust, and coordination—serious ideas, approachable interaction design.',
   alternates: { canonical: '/project/livestock' },
+  openGraph: {
+    url: 'https://sanderboer.nl/project/livestock',
+    title: 'LiveStock — blockchain through play',
+    description:
+      'Case study: an educational game that makes abstract blockchain mechanics tangible.',
+  },
 };
 
 const images = [
