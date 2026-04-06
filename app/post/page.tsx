@@ -3,6 +3,14 @@ import { Openmoji } from '@/components/custom/openmoji';
 import { Section } from '@/components/custom/section';
 import { Text } from '@/components/custom/text';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Posts',
+  description:
+    'Articles on React, TypeScript, testing, AI workflows, and creative coding by Sander Boer.',
+  alternates: { canonical: '/post' },
+};
 
 export default function Page() {
   return (

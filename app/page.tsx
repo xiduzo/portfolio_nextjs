@@ -6,6 +6,14 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { CallToAction } from '@/components/custom/call-to-action';
 import { ScrollHint } from '@/components/custom/scroll-hint';
 import { SmileIcon } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Sander Boer — Developer & Designer',
+  description:
+    'Developer who turns complex problems into tools people actually enjoy using. Bridging the gap between good engineering and great experience.',
+  alternates: { canonical: '/' },
+};
 
 export default function Page() {
   return (

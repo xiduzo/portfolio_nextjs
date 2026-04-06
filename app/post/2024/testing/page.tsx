@@ -6,6 +6,19 @@ import { Section } from '@/components/custom/section';
 import { Text } from '@/components/custom/text';
 import { TLDR } from '@/components/custom/tldr';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Testing — The Discipline That Makes Everything Else Click',
+  description:
+    'Writing code is the easy part. Most testing problems come down to four habits. Good tools and one simple pattern will get you most of the way there.',
+  alternates: { canonical: '/post/2024/testing' },
+  openGraph: {
+    type: 'article',
+    publishedTime: '2024-04-04',
+    authors: ['Sander Boer'],
+  },
+};
 
 export default function Page() {
   return (

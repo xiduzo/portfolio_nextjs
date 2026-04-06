@@ -32,10 +32,33 @@ import { Analytics } from '@vercel/analytics/next';
 import { TableOfContents } from '@/components/custom/table-of-contents';
 
 export const metadata: Metadata = {
-  title: 'Portfolio Sander Boer',
+  title: {
+    default: 'Sander Boer — Developer & Designer',
+    template: '%s | Sander Boer',
+  },
   description:
-    'Hello world! My name is Sander and I am a passionate developer with a creative mind. I love to create things that enhance the performance of professionals and empower individuals.',
+    'Developer who turns complex problems into tools people actually enjoy using. Bridging the gap between good engineering and great experience.',
   metadataBase: new URL('https://sanderboer.nl'),
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://sanderboer.nl',
+    siteName: 'Sander Boer',
+    title: 'Sander Boer — Developer & Designer',
+    description:
+      'Developer who turns complex problems into tools people actually enjoy using.',
+    images: [{ url: '/me.jpeg', width: 512, height: 512, alt: 'Sander Boer' }],
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Sander Boer — Developer & Designer',
+    description:
+      'Developer who turns complex problems into tools people actually enjoy using.',
+    images: ['/me.jpeg'],
+  },
+  alternates: {
+    canonical: 'https://sanderboer.nl',
+  },
 };
 
 export default async function RootLayout({

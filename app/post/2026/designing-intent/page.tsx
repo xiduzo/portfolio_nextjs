@@ -10,6 +10,19 @@ import { WidthDepthVisualizer } from '@/components/custom/width-depth-visualizer
 import { WorkflowProgression } from '@/components/custom/workflow-progression';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Designing Intent — From Instructions to Agentic AI',
+  description:
+    'Stop prompting, start delegating. A practical guide to AI workflows — from prompt engineering to spec-driven development and agentic systems.',
+  alternates: { canonical: '/post/2026/designing-intent' },
+  openGraph: {
+    type: 'article',
+    publishedTime: '2026-03-13',
+    authors: ['Sander Boer'],
+  },
+};
 
 export default function Page() {
   return (

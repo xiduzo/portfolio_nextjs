@@ -9,6 +9,14 @@ import { Technologies } from '@/components/custom/technologies';
 import { Hero } from '@/components/custom/hero';
 import { Links } from '@/components/custom/links';
 import { TLDR } from '@/components/custom/tldr';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Microflow — Microcontrollers Made Simple',
+  description:
+    'A visual flow-based tool that lets designers build interactive hardware prototypes without writing code. Includes a Figma plugin for bridging physical and digital.',
+  alternates: { canonical: '/project/microflow' },
+};
 
 export default function Page() {
   return (

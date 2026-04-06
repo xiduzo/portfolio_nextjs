@@ -12,6 +12,14 @@ import { CodeBlock } from '@/components/custom/code-block';
 import { CallToAction } from '@/components/custom/call-to-action';
 import { GithubIcon } from 'lucide-react';
 import { TLDR } from '@/components/custom/tldr';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Assessor Bot — LLM Feedback for Students',
+  description:
+    'A local, free AI tool that reads student portfolios and generates structured feedback based on assessment criteria. Built with Electron, LangChain, and Ollama.',
+  alternates: { canonical: '/project/assessor-bot' },
+};
 
 export default function Page() {
   return (

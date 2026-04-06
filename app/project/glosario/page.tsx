@@ -9,6 +9,14 @@ import { TLDR } from '@/components/custom/tldr';
 import { CodeBlock } from '@/components/custom/code-block';
 import { Safari } from '@/components/magic-ui/safari';
 import { ExternalLinkIcon } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Glosario — A Collaborative Glossary Platform',
+  description:
+    'A multi-tenant glossary platform where teams define, review, and manage shared terminology with approval workflows and crowd-voted term relationships.',
+  alternates: { canonical: '/project/glosario' },
+};
 
 export default function Page() {
   return (

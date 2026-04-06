@@ -12,6 +12,19 @@ import { Quote } from '@/components/custom/quote';
 import { ContainerIcon, GithubIcon } from 'lucide-react';
 import { Technologies } from '@/components/custom/technologies';
 import { TLDR } from '@/components/custom/tldr';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Talking to Water — The Art of the Bodge',
+  description:
+    'How we used Whisper, Hugging Face sentiment analysis, and MQTT to make a generative art installation respond to human speech — in 30 lines of Python.',
+  alternates: { canonical: '/post/2024/talking-to-water' },
+  openGraph: {
+    type: 'article',
+    publishedTime: '2024-02-21',
+    authors: ['Sander Boer'],
+  },
+};
 
 export default function Page() {
   return (

@@ -8,6 +8,14 @@ import { Safari } from '@/components/magic-ui/safari';
 import { Links } from '@/components/custom/links';
 import { Technologies } from '@/components/custom/technologies';
 import { TLDR } from '@/components/custom/tldr';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'VeileNext — Modernizing the Flower Auction',
+  description:
+    "Modernizing the world's largest flower auction — from monolith to microservices, UDP to WebSockets, and Windows-only to browser-based.",
+  alternates: { canonical: '/project/veilenext' },
+};
 
 export default function Page() {
   return (

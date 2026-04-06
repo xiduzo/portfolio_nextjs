@@ -9,6 +9,14 @@ import NextImage from 'next/image';
 import { Iphone15Pro } from '@/components/magic-ui/iphone-15-pro';
 import { Links } from '@/components/custom/links';
 import { TLDR } from '@/components/custom/tldr';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'LiveStock — Blockchain Through Play',
+  description:
+    'A multiplayer research game that teaches blockchain concepts through farm symbolism. Built for the Institute of Network Cultures.',
+  alternates: { canonical: '/project/livestock' },
+};
 
 const images = [
   '/livestock/bacon.svg',

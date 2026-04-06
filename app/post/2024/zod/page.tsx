@@ -7,6 +7,19 @@ import { Hero } from '@/components/custom/hero';
 import Alert from '@/components/custom/alert';
 import { Safari } from '@/components/magic-ui/safari';
 import { TLDR } from '@/components/custom/tldr';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Zod — Stronger Interfaces, Cleaner Code, Fewer Bugs',
+  description:
+    'TypeScript types only work at compile time. Zod validates data at runtime — the story of how a real IoT platform went from silent data corruption to catching bad data before it could do damage.',
+  alternates: { canonical: '/post/2024/zod' },
+  openGraph: {
+    type: 'article',
+    publishedTime: '2024-06-30',
+    authors: ['Sander Boer'],
+  },
+};
 
 export default function Page() {
   return (

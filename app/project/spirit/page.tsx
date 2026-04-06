@@ -10,6 +10,14 @@ import NextImage from 'next/image';
 import Link from 'next/link';
 import { Links } from '@/components/custom/links';
 import { TLDR } from '@/components/custom/tldr';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Spirit — OCD Therapy Companion App',
+  description:
+    'A gamified app that helps OCD patients track and break their compulsion cycles through playful mood tracking and exposure exercises. Presented at Games for Health Europe.',
+  alternates: { canonical: '/project/spirit' },
+};
 
 export default function Page() {
   return (

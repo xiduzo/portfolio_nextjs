@@ -1,5 +1,12 @@
 import { Section } from '@/components/custom/section';
 import { Text } from '@/components/custom/text';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Posts from 2025',
+  description: 'Blog posts from 2025 by Sander Boer. Coming soon.',
+  alternates: { canonical: '/post/2025' },
+};
 
 export default function Page() {
   return (

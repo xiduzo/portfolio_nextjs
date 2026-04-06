@@ -3,6 +3,13 @@ import { Openmoji } from '@/components/custom/openmoji';
 import { Section } from '@/components/custom/section';
 import { Text } from '@/components/custom/text';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Posts from 2026',
+  description: 'Blog posts from 2026 — including designing intent and working agentically with AI.',
+  alternates: { canonical: '/post/2026' },
+};
 
 export default function Page() {
   return (

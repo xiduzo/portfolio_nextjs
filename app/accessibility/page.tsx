@@ -4,6 +4,14 @@ import { Section } from '@/components/custom/section';
 import { Quote } from '@/components/custom/quote';
 import { CallToAction } from '@/components/custom/call-to-action';
 import { MailIcon } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Accessibility',
+  description:
+    'Accessibility statement for sanderboer.nl. The web works best when it works for everyone.',
+  alternates: { canonical: '/accessibility' },
+};
 
 export default function Page() {
   return (

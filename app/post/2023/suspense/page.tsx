@@ -7,6 +7,19 @@ import { Hero } from '@/components/custom/hero';
 import { Quote } from '@/components/custom/quote';
 import { Links } from '@/components/custom/links';
 import { TLDR } from '@/components/custom/tldr';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: '<Suspense /> — Unravelling the Magic from React',
+  description:
+    'Everyone calls Suspense "magic." It is not. A deep dive into how React Suspense works under the hood — it is a fancy try/catch for promises.',
+  alternates: { canonical: '/post/2023/suspense' },
+  openGraph: {
+    type: 'article',
+    publishedTime: '2023-11-21',
+    authors: ['Sander Boer'],
+  },
+};
 
 export default function Page() {
   return (

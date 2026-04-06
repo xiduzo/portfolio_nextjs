@@ -8,6 +8,14 @@ import { TextRevealByWord } from '@/components/magic-ui/text-reveal';
 import { ScrollHint } from '@/components/custom/scroll-hint';
 import { SmileIcon } from 'lucide-react';
 import { SparklesText } from '@/components/ui/sparkles-text';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About',
+  description:
+    'Designer by education, developer by passion, tinkerer by nature. Learn more about Sander Boer.',
+  alternates: { canonical: '/about' },
+};
 
 export default function Page() {
   return (

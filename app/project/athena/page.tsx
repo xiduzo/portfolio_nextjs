@@ -6,6 +6,14 @@ import Link from 'next/link';
 import { Safari } from '@/components/magic-ui/safari';
 import { Links } from '@/components/custom/links';
 import { TLDR } from '@/components/custom/tldr';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Athena — Peer Feedback for Students',
+  description:
+    'An anonymous feedback platform where teammates rate each other weekly, giving students and teachers a clear picture of team dynamics.',
+  alternates: { canonical: '/project/athena' },
+};
 
 export default function Page() {
   return (

@@ -12,6 +12,14 @@ import { Technologies } from '@/components/custom/technologies';
 import { StoreIcon } from 'lucide-react';
 import { Links } from '@/components/custom/links';
 import { TLDR } from '@/components/custom/tldr';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Fissa — Collaborative Party Playlist',
+  description:
+    'A collaborative music app where guests vote on what plays next. Built with Expo, React Native, tRPC, and the Spotify API.',
+  alternates: { canonical: '/project/fissa' },
+};
 
 const animals = ['🐋', '🦀', '🐕', '🦦', '🦔', '🦉', '🦥', '🐍', '🦑', '🐘'];
 
