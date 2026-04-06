@@ -2,10 +2,9 @@ import Link from 'next/link';
 import { Text } from '@/components/custom/text';
 import { HighlightedProjects } from '@/components/custom/highlighted-projects';
 import { Section } from '@/components/custom/section';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { ProfileAvatar } from '@/components/custom/profile-avatar';
 import { CallToAction } from '@/components/custom/call-to-action';
 import { ScrollHint } from '@/components/custom/scroll-hint';
-import { SmileIcon } from 'lucide-react';
 import { JsonLd } from '@/components/seo/json-ld';
 import {
   type SitePageSeo,
@@ -56,12 +55,12 @@ export default function Page() {
               </Link>
             </Text>
           </section>
-          <Avatar className='w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 transition-all'>
-            <AvatarImage src='/me.jpeg' alt='Sander Boer' fetchPriority='high' />
-            <AvatarFallback>
-              <SmileIcon size={72} className='text-muted-foreground' />
-            </AvatarFallback>
-          </Avatar>
+          <ProfileAvatar
+            alt='Sander Boer'
+            className='w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 transition-all'
+            sizes='(min-width: 1024px) 384px, (min-width: 768px) 320px, 288px'
+            priority
+          />
         </div>
         <ScrollHint />
       </Section>

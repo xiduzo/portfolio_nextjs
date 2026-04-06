@@ -3,10 +3,9 @@ import { Text } from '@/components/custom/text';
 import { Image } from '@/components/custom/image';
 import Link from 'next/link';
 import { GitHubCalendar } from 'react-github-calendar';
-import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import { ProfileAvatar } from '@/components/custom/profile-avatar';
 import { TextRevealByWord } from '@/components/magic-ui/text-reveal';
 import { ScrollHint } from '@/components/custom/scroll-hint';
-import { SmileIcon } from 'lucide-react';
 import { SparklesText } from '@/components/ui/sparkles-text';
 import { JsonLd } from '@/components/seo/json-ld';
 import {
@@ -35,12 +34,11 @@ export default function Page() {
       <JsonLd data={sitePageJsonLdFromSeo(SEO)} />
       <Section className='flex flex-col items-center justify-between min-h-screen'>
         <div className='flex-grow flex items-center'>
-          <Avatar className='w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 transition-all'>
-            <AvatarImage src='/me.jpeg' alt='Sander Boer' />
-            <AvatarFallback>
-              <SmileIcon size={72} className='text-muted-foreground' />
-            </AvatarFallback>
-          </Avatar>
+          <ProfileAvatar
+            alt='Sander Boer'
+            className='w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 transition-all'
+            sizes='(min-width: 1024px) 384px, (min-width: 768px) 320px, 288px'
+          />
         </div>
         <ScrollHint className='-mt-32' />
       </Section>

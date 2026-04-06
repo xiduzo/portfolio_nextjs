@@ -8,7 +8,7 @@ import {
 } from '@/components/ui/sidebar';
 import { Separator } from '@/components/ui/separator';
 import { BreadCrumbs } from '@/components/custom/breadcrumbs';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { ProfileAvatar } from '@/components/custom/profile-avatar';
 import Link from 'next/link';
 import {
   body,
@@ -25,7 +25,7 @@ import { LazyPresence } from '@/components/custom/lazy-presence';
 import { cookies } from 'next/headers';
 import { THEME_STORAGE_KEY } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
-import { MailIcon, SmileIcon } from 'lucide-react';
+import { MailIcon } from 'lucide-react';
 import { SparklesText } from '@/components/ui/sparkles-text';
 
 import { Analytics } from '@vercel/analytics/next';
@@ -77,12 +77,6 @@ export default async function RootLayout({
     <html lang='en' className={theme}>
       <head>
         <link rel='icon' href='/icon/favicon.ico' />
-        <link
-          rel='preload'
-          href='/me.jpeg'
-          as='image'
-          type='image/jpeg'
-        />
         <link
           rel='icon'
           type='image/png'
@@ -143,12 +137,11 @@ export default async function RootLayout({
                   className='hover:cursor-help gap-4 flex items-center'
                 >
                   <span className='hidden md:block'>Sander Boer</span>
-                  <Avatar>
-                    <AvatarImage src='/me.jpeg' alt='Sander Boer' />
-                    <AvatarFallback>
-                      <SmileIcon className='text-muted-foreground' />
-                    </AvatarFallback>
-                  </Avatar>
+                  <ProfileAvatar
+                    alt='Sander Boer'
+                    className='h-10 w-10'
+                    sizes='40px'
+                  />
                 </Link>
               </header>
               <TableOfContents />

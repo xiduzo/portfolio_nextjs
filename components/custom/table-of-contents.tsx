@@ -161,7 +161,7 @@ export function TableOfContents() {
       <nav
         aria-label="Table of contents"
         className={cn(
-          'hidden min-[2000px]:block fixed right-8 top-36 w-56 z-20 transition-opacity duration-300',
+          'hidden min-[2200px]:block fixed right-8 top-36 w-56 z-20 transition-opacity duration-300',
           visible ? 'opacity-100' : 'opacity-0 pointer-events-none'
         )}
       >
@@ -173,7 +173,7 @@ export function TableOfContents() {
 
       {/* Mobile: positioned below toolbar, overlaying content */}
       <div className={cn(
-        "min-[2000px]:hidden absolute left-0 right-0 z-30 transition-all duration-300",
+        "min-[2200px]:hidden absolute left-0 right-0 z-30 transition-all duration-300",
           visible ? 'translate-y-0 opacity-100' : '-translate-y-2 opacity-0 pointer-events-none'
       )}>
             <button
