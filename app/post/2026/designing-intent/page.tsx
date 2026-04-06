@@ -15,7 +15,7 @@ export default function Page() {
   return (
     <>
       <Hero
-        title='From instructions to intent'
+        title='Designing intent'
         publishDate='Mar 13 2026'
         emoji='2728'
         className='bg-violet-300 dark:bg-violet-900'

@@ -137,8 +137,8 @@ const items: Item[] = [
         name: '2026',
         children: [
           {
-            name: 'from-instructions-to-intent.md',
-            link: '/post/2026/from-instructions-to-intent',
+            name: 'designing-intent.md',
+            link: '/post/2026/designing-intent',
           },
         ],
       },

@@ -90,7 +90,7 @@ export default function Page() {
         </Text>
         <Text aria-label='Fusing hot technology with magic design'>
           Fusing{' '}
-          <div className='relative inline-block w-8'>
+          <span className='relative inline-block w-8'>
             <span className='absolute bottom-0 left-0 motion-preset-stretch motion-ease-bounce motion-loop-infinite'>
               🔥
             </span>
@@ -100,7 +100,7 @@ export default function Page() {
             <span className='absolute bottom-0 -left-2 motion-preset-stretch motion-delay-150 motion-ease-bounce motion-loop-infinite'>
               🔥
             </span>
-          </div>{' '}
+          </span>{' '}
           technology with{' '}
           <SparklesText className='font-base inline-block text-3xl'>
             🪄

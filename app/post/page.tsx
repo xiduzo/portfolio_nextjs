@@ -20,14 +20,14 @@ export default function Page() {
         </Text>
         <ul className='mt-24 flex flex-col gap-4 list-none'>
           <li>
-            <Link href='/post/2026/from-instructions-to-intent'>
+            <Link href='/post/2026/designing-intent'>
               <WobbleCard containerClassName='bg-violet-300 dark:bg-violet-900'>
                 <Text
                   variant='subheading'
                   motion='none'
                   className='flex gap-4 justify-between text-violet-950 dark:text-violet-100'
                 >
-                  From instructions to intent
+                  Designing intent
                   <Openmoji
                     hexcode='2728'
                     size={42}
