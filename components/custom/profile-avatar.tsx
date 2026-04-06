@@ -32,6 +32,8 @@ export function ProfileAvatar({
         fill
         sizes={sizes}
         className='object-cover'
+        fetchPriority='high'
+        loading='eager'
         priority={priority}
       />
     </div>
