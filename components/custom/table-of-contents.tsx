@@ -112,6 +112,8 @@ export function TableOfContents() {
     }
   };
 
+  if (pathname === '/') return null;
+
   if (items.length === 0) return null;
 
   const activeItem = items.find((i) => activeIds.has(i.id));
