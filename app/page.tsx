@@ -39,7 +39,7 @@ export default function Page() {
             </Text>
           </section>
           <Avatar className='w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 transition-all'>
-            <AvatarImage src='/me.jpeg' alt='Sander Boer' />
+            <AvatarImage src='/me.jpeg' alt='Sander Boer' fetchPriority='high' />
             <AvatarFallback>
               <SmileIcon size={72} className='text-muted-foreground' />
             </AvatarFallback>

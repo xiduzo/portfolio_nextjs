@@ -9,6 +9,7 @@ body {
 @font-face {
   font-family: 'OpenMojiFont';
   src: url('/openmoji/OpenMoji-color-colr0_svg.woff2') format('woff2');
+  font-display: swap;
   unicode-range:
     U+23, U+2A, U+2D, U+30-39, U+A9, U+AE, U+200D, U+203C, U+2049, U+20E3,
     U+2117, U+2120, U+2122, U+2139, U+2194-2199, U+21A9, U+21AA, U+229C, U+231A,

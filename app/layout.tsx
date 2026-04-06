@@ -20,10 +20,7 @@ import {
 import ObserverProvider from '@/providers/ObserverProvider';
 import { CallToAction } from '@/components/custom/call-to-action';
 import { Theme } from '@/components/custom/theme';
-import { MqttPresenceProvider } from '@/providers/MqttPresenceProvider';
-import { LiveCursors } from '@/components/custom/live-cursors';
-import { LiveSelections } from '@/components/custom/live-selections';
-
+import { LazyPresence } from '@/components/custom/lazy-presence';
 
 import { cookies } from 'next/headers';
 import { THEME_STORAGE_KEY } from '@/lib/constants';
@@ -38,6 +35,7 @@ export const metadata: Metadata = {
   title: 'Portfolio Sander Boer',
   description:
     'Hello world! My name is Sander and I am a passionate developer with a creative mind. I love to create things that enhance the performance of professionals and empower individuals.',
+  metadataBase: new URL('https://sanderboer.nl'),
 };
 
 export default async function RootLayout({
@@ -51,6 +49,12 @@ export default async function RootLayout({
     <html lang='en' className={theme}>
       <head>
         <link rel='icon' href='/icon/favicon.ico' />
+        <link
+          rel='preload'
+          href='/me.jpeg'
+          as='image'
+          type='image/jpeg'
+        />
         <link
           rel='icon'
           type='image/png'
@@ -95,9 +99,7 @@ export default async function RootLayout({
           Jump to content
         </a>
         <Theme />
-        <MqttPresenceProvider>
-        <LiveCursors />
-        <LiveSelections />
+        <LazyPresence>
         <SidebarProvider>
           <AppSidebar />
           <SidebarInset>
@@ -166,7 +168,7 @@ export default async function RootLayout({
             </footer>
           </SidebarInset>
         </SidebarProvider>
-        </MqttPresenceProvider>
+        </LazyPresence>
         <Analytics />
       </body>
     </html>

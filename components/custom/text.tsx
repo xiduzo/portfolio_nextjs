@@ -6,24 +6,28 @@ export const headings = Alegreya({
   variable: '--font-heading',
   weight: ['400', '500', '600', '700', '800', '900'],
   subsets: ['latin'],
+  display: 'swap',
 });
 
 export const subHeadings = IBM_Plex_Mono({
   variable: '--font-subheading',
-  weight: ['100', '200', '300', '400', '500', '600', '700'],
+  weight: ['200', '300', '400', '500', '600', '700'],
   subsets: ['latin'],
+  display: 'swap',
 });
 
 export const body = IBM_Plex_Mono({
   variable: '--font-body',
-  weight: ['100', '200', '300', '400', '500', '600', '700'],
+  weight: ['200', '300', '400', '500', '600', '700'],
   subsets: ['latin'],
+  display: 'swap',
 });
 
 export const note = Caveat({
   variable: '--font-note',
   weight: ['400', '500', '600', '700'],
   subsets: ['latin'],
+  display: 'swap',
 });
 
 function extractText(children: React.ReactNode): string {

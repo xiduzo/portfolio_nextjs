@@ -196,7 +196,6 @@ export function MqttPresenceProvider({ children }: { children: React.ReactNode }
         endPath,
         endOffset: range.endOffset,
       };
-      console.log('[Presence] publishing selection', JSON.stringify(selection));
       publish({ selection });
     };
 
@@ -261,9 +260,6 @@ export function MqttPresenceProvider({ children }: { children: React.ReactNode }
       try {
         const payload: PresencePayload = JSON.parse(message.toString());
         if (payload.clientId === clientId) return; // skip self
-        if (payload.selection) {
-          console.log('[Presence] received selection from', payload.name, JSON.stringify(payload.selection));
-        }
 
         if (payload.timestamp === 0) {
           // Disconnect signal

@@ -64,20 +64,15 @@ function resolveRects(sel: NonNullable<PresencePayload['selection']>): DOMRect[]
     const root: Node = sel.rootId
       ? (document.getElementById(sel.rootId) ?? document.body)
       : document.body;
-    console.log('[LiveSelections] resolving', JSON.stringify(sel));
     const startNode = resolveNodePath(root, sel.startPath);
     const endNode = resolveNodePath(root, sel.endPath);
     if (!startNode || !endNode) {
-      console.warn('[LiveSelections] node path resolution failed', { startNode, endNode, sel });
       return [];
     }
-    console.log('[LiveSelections] resolved nodes', { startNode, endNode });
     const range = document.createRange();
     range.setStart(startNode, sel.startOffset);
     range.setEnd(endNode, sel.endOffset);
-    const rects = Array.from(range.getClientRects());
-    console.log('[LiveSelections] resolved', rects.length, 'rects for', JSON.stringify(sel.text));
-    return rects;
+    return Array.from(range.getClientRects());
   } catch {
     return [];
   }

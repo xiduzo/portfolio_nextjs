@@ -7,6 +7,7 @@ export async function Image(props: Props) {
       width={1920}
       height={1080}
       loading='lazy'
+      sizes='(max-width: 768px) 80vw, (max-width: 1200px) 60vw, 50vw'
       {...props}
       className={image({
         className: props.className,

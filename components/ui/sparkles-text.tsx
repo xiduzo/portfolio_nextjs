@@ -1,6 +1,6 @@
 'use client';
 
-import { CSSProperties, ReactElement, useEffect, useState } from 'react';
+import { CSSProperties, ReactElement, useEffect, useRef, useState } from 'react';
 import { motion } from 'motion/react';
 
 import { cn } from '@/lib/utils';
@@ -92,8 +92,23 @@ export const SparklesText: React.FC<SparklesTextProps> = ({
   ...props
 }) => {
   const [sparkles, setSparkles] = useState<Sparkle[]>([]);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { rootMargin: '100px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
     const generateStar = (): Sparkle => {
       const starX = `${Math.random() * 100}%`;
       const starY = `${Math.random() * 100}%`;
@@ -126,10 +141,11 @@ export const SparklesText: React.FC<SparklesTextProps> = ({
     const interval = setInterval(updateStars, 100);
 
     return () => clearInterval(interval);
-  }, [colors.first, colors.second, sparklesCount]);
+  }, [isVisible, colors.first, colors.second, sparklesCount]);
 
   return (
     <div
+      ref={containerRef}
       className={cn('text-6xl font-bold', className)}
       {...props}
       style={
