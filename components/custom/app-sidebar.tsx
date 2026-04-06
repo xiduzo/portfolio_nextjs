@@ -179,7 +179,7 @@ function Tree(props: { item: Item }) {
 
   const [openItems, setOpenItems] = useLocalStorage(
     'open-items',
-    ['highlighted', '2024'],
+    ['highlighted', '2026'],
     { initializeWithValue: false }
   );
 

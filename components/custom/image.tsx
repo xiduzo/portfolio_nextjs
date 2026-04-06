@@ -18,5 +18,5 @@ export async function Image(props: Props) {
 type Props = ImageProps;
 
 const image = cva(
-  'intersect-once intersect:motion-preset-blur-up-md intersect:motion-delay-500 max-w-[100%]'
+  'intersect-once intersect:motion-preset-blur-up-md intersect:motion-delay-500 max-w-[80vw]'
 );

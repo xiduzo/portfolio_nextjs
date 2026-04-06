@@ -32,6 +32,7 @@ import { MailIcon, SmileIcon } from 'lucide-react';
 import { SparklesText } from '@/components/ui/sparkles-text';
 
 import { Analytics } from '@vercel/analytics/next';
+import { TableOfContents } from '@/components/custom/table-of-contents';
 
 export const metadata: Metadata = {
   title: 'Portfolio Sander Boer',
@@ -100,24 +101,27 @@ export default async function RootLayout({
         <SidebarProvider>
           <AppSidebar />
           <SidebarInset>
-            <header className='sticky top-0 flex items-center gap-2 border-b bg-background p-4 z-30'>
-              <SidebarTrigger className='-ml-1' />
-              <Separator orientation='vertical' className='mr-2 h-4' />
-              <BreadCrumbs />
-              <section hidden className='grow flex'></section>
-              <Link
-                href='/about'
-                className='hover:cursor-help gap-4 flex items-center'
-              >
-                <span className='hidden md:block'>Sander Boer</span>
-                <Avatar>
-                  <AvatarImage src='/me.jpeg' alt='Sander Boer' />
-                  <AvatarFallback>
-                    <SmileIcon className='text-muted-foreground' />
-                  </AvatarFallback>
-                </Avatar>
-              </Link>
-            </header>
+            <div className='sticky top-0 z-30'>
+              <header className='flex items-center gap-2 border-b bg-background p-4'>
+                <SidebarTrigger className='-ml-1' />
+                <Separator orientation='vertical' className='mr-2 h-4' />
+                <BreadCrumbs />
+                <section hidden className='grow flex'></section>
+                <Link
+                  href='/about'
+                  className='hover:cursor-help gap-4 flex items-center'
+                >
+                  <span className='hidden md:block'>Sander Boer</span>
+                  <Avatar>
+                    <AvatarImage src='/me.jpeg' alt='Sander Boer' />
+                    <AvatarFallback>
+                      <SmileIcon className='text-muted-foreground' />
+                    </AvatarFallback>
+                  </Avatar>
+                </Link>
+              </header>
+              <TableOfContents />
+            </div>
             <article id='main-content' tabIndex={-1}>
               <ObserverProvider>{children}</ObserverProvider>
             </article>

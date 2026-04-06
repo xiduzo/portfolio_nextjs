@@ -1,5 +1,5 @@
 import { cva, VariantProps } from 'class-variance-authority';
-import { JSX, PropsWithChildren } from 'react';
+import { Children, JSX, PropsWithChildren, isValidElement } from 'react';
 import { Alegreya, Caveat, IBM_Plex_Mono } from 'next/font/google';
 
 export const headings = Alegreya({
@@ -26,17 +26,46 @@ export const note = Caveat({
   subsets: ['latin'],
 });
 
+function extractText(children: React.ReactNode): string {
+  return Children.toArray(children)
+    .map((child) => {
+      if (typeof child === 'string') return child;
+      if (typeof child === 'number') return String(child);
+      if (isValidElement<{ children?: React.ReactNode }>(child) && child.props.children)
+        return extractText(child.props.children);
+      return '';
+    })
+    .join('');
+}
+
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+}
+
+const headingTags = new Set(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']);
+
 export function Text<T extends keyof JSX.IntrinsicElements = 'p'>(
   props: Props<T>
 ) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { as: Component = 'p' as any, ...restProps } = props;
 
+  const isHeading =
+    headingTags.has(Component as string) && props.variant === 'subheading';
+  const id =
+    isHeading && !restProps.id
+      ? slugify(extractText(props.children))
+      : restProps.id;
+
   return (
     <Component
       {...restProps}
+      id={id}
       className={typography({
-        className: props.className,
+        className: `${props.className ?? ''} ${isHeading ? 'scroll-mt-32 xl:scroll-mt-20' : ''}`.trim(),
         variant: props.variant,
         size: props.size,
         motion: props.motion,
