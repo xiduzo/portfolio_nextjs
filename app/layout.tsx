@@ -26,7 +26,10 @@ import { cookies } from 'next/headers';
 import { THEME_STORAGE_KEY } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 import { MailIcon } from 'lucide-react';
-import { SparklesText } from '@/components/ui/sparkles-text';
+import dynamic from 'next/dynamic';
+const SparklesText = dynamic(() =>
+  import('@/components/ui/sparkles-text').then(m => ({ default: m.SparklesText }))
+);
 
 import { Analytics } from '@vercel/analytics/next';
 import { TableOfContents } from '@/components/custom/table-of-contents';
