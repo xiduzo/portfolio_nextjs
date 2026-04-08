@@ -11,10 +11,9 @@ import { BreadCrumbs } from '@/components/custom/breadcrumbs';
 import { ProfileAvatar } from '@/components/custom/profile-avatar';
 import Link from 'next/link';
 import {
-  body,
   headings,
+  mono,
   note,
-  subHeadings,
   Text,
 } from '@/components/custom/text';
 import ObserverProvider from '@/providers/ObserverProvider';
@@ -114,7 +113,7 @@ export default async function RootLayout({
         />
       </head>
       <body
-        className={`${headings.variable} ${subHeadings.variable} ${body.variable} ${note.variable} antialiased`}
+        className={`${headings.variable} ${mono.variable} ${note.variable} antialiased`}
       >
         <JsonLd data={rootJsonLdGraph()} />
         <a

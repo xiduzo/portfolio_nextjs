@@ -9,19 +9,16 @@ export const headings = Alegreya({
   display: 'swap',
 });
 
-export const subHeadings = IBM_Plex_Mono({
-  variable: '--font-subheading',
-  weight: ['200', '300', '400', '500', '600', '700'],
+export const mono = IBM_Plex_Mono({
+  variable: '--font-mono',
+  weight: ['200', '400', '600', '700'],
   subsets: ['latin'],
   display: 'swap',
 });
 
-export const body = IBM_Plex_Mono({
-  variable: '--font-body',
-  weight: ['200', '300', '400', '500', '600', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-});
+// Aliases kept so layout.tsx and other callers don't need changes
+export const subHeadings = mono;
+export const body = mono;
 
 export const note = Caveat({
   variable: '--font-note',

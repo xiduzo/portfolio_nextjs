@@ -15,8 +15,8 @@ export default {
     extend: {
       fontFamily: {
         heading: 'var(--font-heading)',
-        subheading: 'var(--font-subheading)',
-        body: 'var(--font-body)',
+        subheading: 'var(--font-mono)',
+        body: 'var(--font-mono)',
         note: 'var(--font-note)',
       },
       colors: {

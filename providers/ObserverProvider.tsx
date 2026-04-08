@@ -12,7 +12,8 @@ export default function ObserverProvider({
   const pathname = usePathname();
 
   useEffect(() => {
-    Observer.start();
+    const id = setTimeout(() => Observer.start(), 0);
+    return () => clearTimeout(id);
   }, [pathname]);
 
   return <>{children}</>;
