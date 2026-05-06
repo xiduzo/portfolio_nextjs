@@ -62,9 +62,11 @@ export default function Page() {
           Lying interfaces
         </Text>
         <Text>
-          One thing that is more harmful than no interface, is a lying
-          interface. This will set you —and your team— up for a world of
-          unnecessary debug sessions.
+          Static types describe intent; runtime validation enforces it. Anywhere
+          data crosses a trust boundary, you need both — otherwise you have a{' '}
+          <em>lying interface</em>, which is more harmful than no interface at
+          all. Lies set you —and your team— up for a world of unnecessary debug
+          sessions.
         </Text>
         <Text className='mt-60'>
           Let&apos;s say you have a neat generic function that fetches data from
@@ -363,7 +365,7 @@ mqqClient.onMessage(message => {
       </Section>
       <Section>
         <Text as='h3' variant='subheading' size='sm'>
-          Adding runtime validation
+          Retrofitting Zod into a class-heavy codebase
         </Text>
         <Text>
           To prevent services from crashing and data from being stored
