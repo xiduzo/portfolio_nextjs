@@ -13,15 +13,16 @@ export function Title(props: Props) {
   return (
     <Section space='none' className='text-center max-w-screen-lg mx-auto mt-24'>
       <Text
-        as='h1'
+        as='p'
         size='sm'
         variant='body'
         className='italic text-muted-foreground font-light motion-preset-slide-up-md'
         motion='none'
       >
-        {props.title},
+        {props.title}
       </Text>
       <Text
+        as='h1'
         size='lg'
         variant='subheading'
         className='text-center mb-8 motion-preset-slide-up-md motion-delay-75'
