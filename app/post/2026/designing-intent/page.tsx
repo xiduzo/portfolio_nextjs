@@ -50,8 +50,10 @@ export default function Page() {
       />
       <Section>
         <Text>
-          AI is not going to replace thinking. But it <del>is changing</del><ins>has changed</ins> what
-          kind of thinking your work actually needs from you.
+          Most teams I see are still copy-pasting from ChatGPT and calling it
+          an AI workflow. There are at least four better ones — and picking the
+          right one is the difference between AI as a party trick and AI as
+          part of how you actually ship.
         </Text>
         <Text>
           If you are a developer, designer, or knowledge worker trying to use AI for real work, not just demos, you have probably felt this: there is no single &ldquo;right&rdquo; way to work with AI, only a messy spectrum of workflows.
@@ -75,17 +77,20 @@ export default function Page() {
         <Text>
           No matter which workflow you use, you are always working inside a limited <code>context window</code>, the chunk of conversation and documents your model can &ldquo;see&rdquo; at once (<Link href="https://www.morphllm.com/llm-token-limit" target='_blank'>measured in tokens</Link>). Managing what goes in (signal) and what stays out (noise) quietly shapes what AI can do for you.
         </Text>
-        <Text as='h3' size="sm" variant='subheading' className='mt-24'>A shared glossary</Text>
-        <Text size='sm' className='italic text-muted-foreground'>
-          After all, I built <Link href='https://glosar.io/' target='_blank'>a whole product</Link> around making this kind of shared vocabulary easier.
-        </Text>
-        <Text size='sm'>
-          The rest of this post assumes basic familiarity with terms like <em>LLM</em>, <em>agents</em>, and <em>prompts</em>. If those are fuzzy, skim the table below.
-        </Text>
-        <Text size='sm'>
-          Or jump straight to the workflows and come back later.
-        </Text>
-        <Table className="max-w-3xl mx-auto mt-12">
+        <details className='mt-24 group'>
+          <summary className='cursor-pointer list-none flex items-baseline gap-2'>
+            <Text as='h3' size='sm' variant='subheading'>
+              A shared glossary
+            </Text>
+            <Text size='sm' className='italic text-muted-foreground'>
+              (click to expand — skip if <em>LLM</em>, <em>agents</em>, and{' '}
+              <em>prompts</em> are familiar)
+            </Text>
+          </summary>
+          <Text size='sm' className='italic text-muted-foreground mt-4'>
+            After all, I built <Link href='https://glosar.io/' target='_blank'>a whole product</Link> around making this kind of shared vocabulary easier.
+          </Text>
+          <Table className="max-w-3xl mx-auto mt-12">
           <TableHeader>
             <TableRow>
               <TableHead>Term</TableHead>
@@ -128,8 +133,9 @@ export default function Page() {
                 <Link href='https://www.ibm.com/think/topics/prompt-engineering' target='_blank'>Learn more</Link>
               </TableCell>
             </TableRow>
-          </TableBody>
-        </Table>
+            </TableBody>
+          </Table>
+        </details>
       </Section>
       <Section>
         <Text as='h2' variant='subheading'>
@@ -485,9 +491,18 @@ export default function Page() {
         <Text size='sm'>
           Over-delegation can lead to imbalance, (hallucinated) confidence can lead to brittle systems, and context loss can lead to losing (shared) understanding in teams.
         </Text>
-        <Text size='sm'>
-          Tomorrow, when you open your AI tool, try three things: name which workflow you are in, narrow it one notch if you can, and decide how deep you are willing to let it go before you step back in. Over time, the habit of choosing width and depth on purpose is what turns &ldquo;using AI&rdquo; into working agentically with it.
-        </Text>
+        <Alert icon='Sparkles' intent='info'>
+          <Text>
+            <strong>Try this tomorrow.</strong> Next time you open an AI tool,
+            do three things: name which workflow you are in, narrow it one
+            notch if you can, and decide how deep you are willing to let it go
+            before you step back in.
+          </Text>
+          <Text size='sm'>
+            Over time, the habit of choosing width and depth on purpose is what
+            turns &ldquo;using AI&rdquo; into working agentically with it.
+          </Text>
+        </Alert>
         <Text as='aside' className='mt-8 text-muted-foreground'>
           <sub className='text-sm'>* What you need to know drifts over time, though.</sub>
         </Text>
