@@ -78,11 +78,11 @@ export default function Page() {
           No matter which workflow you use, you are always working inside a limited <code>context window</code>, the chunk of conversation and documents your model can &ldquo;see&rdquo; at once (<Link href="https://www.morphllm.com/llm-token-limit" target='_blank'>measured in tokens</Link>). Managing what goes in (signal) and what stays out (noise) quietly shapes what AI can do for you.
         </Text>
         <details className='mt-24 group'>
-          <summary className='cursor-pointer list-none flex items-baseline gap-2'>
+          <summary className='cursor-pointer list-none'>
             <Text as='h3' size='sm' variant='subheading'>
               A shared glossary
             </Text>
-            <Text size='sm' className='italic text-muted-foreground'>
+            <Text size='sm' className='italic text-muted-foreground mt-2'>
               (click to expand — skip if <em>LLM</em>, <em>agents</em>, and{' '}
               <em>prompts</em> are familiar)
             </Text>
