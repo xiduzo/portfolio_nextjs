@@ -61,7 +61,7 @@ export default function Page() {
           Propaedeutic students from{' '}
           <Link
             target='_blank'
-            href='http://localhost:4321/project/athena/(https://www.hva.nl/opleidingen/communication-and-multimedia-design)'
+            href='https://www.hva.nl/opleidingen/communication-and-multimedia-design'
           >
             Communication and Multimedia Design (CMD)
           </Link>{' '}
