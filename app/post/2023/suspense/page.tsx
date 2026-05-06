@@ -82,31 +82,16 @@ export default function Page() {
       </Section>
       <Section>
         <Text as='h2' variant='subheading'>
-          But how does it work?
+          Suspense is a try/catch for thrown Promises
         </Text>
         <Text>
-          Neat, but <em>how</em> does it actually work? <em>How</em> does{' '}
-          <code>Suspense</code> know when to show the fallback and when to show
-          the child component?
+          When I asked around <em>how</em> Suspense knows when to render the
+          fallback, the answer was always <em>“it is magic”</em>. It is not.
         </Text>
         <Text>
-          When I asked around I just got the answer that <em>“it is magic”</em>.
-        </Text>
-        <Text>
-          But I do not like magic code, so let&apos;s find out how it works.
-        </Text>
-      </Section>
-      <Section>
-        <Text as='h2' variant='subheading'>
-          TL;DR
-        </Text>
-        <Text>
-          <code>Suspense</code> acts as a fancy <code>try/catch</code> block.
-        </Text>
-        <Text>
-          <code>Suspense</code> will <em>try</em> to render your component and
-          whenever a <code>Promise</code> is being thrown it will <em>catch</em>{' '}
-          it and render the fallback component until the promise resolves.
+          <code>Suspense</code> tries to render your component. If anything
+          inside it throws a <code>Promise</code>, Suspense catches it and
+          renders the fallback until that promise resolves — then re-renders.
         </Text>
         <CodeBlock
           code={`
@@ -139,9 +124,9 @@ export default function Page() {
       </Section>
       <Section>
         <Text>
-          As seen in the TL;DR - whenever <em>something</em> throws a promise
-          from within the <code>Suspense</code> component, it will render the
-          fallback component until the promise resolves.
+          Whenever <em>something</em> throws a promise from within the{' '}
+          <code>Suspense</code> component, it renders the fallback until that
+          promise resolves.
         </Text>
         <CodeBlock
           code={`
@@ -317,7 +302,7 @@ export default function App() {
       </Section>
       <Section>
         <Text as='h3' size='sm' variant='subheading'>
-          Be a step ahead
+          Library support (Relay, SWR, React Query)
         </Text>
         <Text>
           Even though <code>Suspense</code> is still experimental, libraries
