@@ -240,8 +240,8 @@ project-root/
           Some indicators I have found that you throw out clean code principles
           when writing tests:
         </Text>
-        <Text className='mt-28' as='ol'>
-          <li>Ignoring test files in your linting</li>
+        <Text as='h4' variant='subheading' size='sm' className='mt-28'>
+          1. Linting tests away
         </Text>
         <Text>
           Sure, this makes your life easier in the short term. But over the
@@ -258,8 +258,8 @@ project-root/
 \`\`\`
                     `}
         />
-        <Text as='ol' start={2}>
-          <li>Making the test (file) a puzzle by itself</li>
+        <Text as='h4' variant='subheading' size='sm' className='mt-28'>
+          2. Tests as puzzles
         </Text>
         <Text>
           Tests can be considered documentation itself when written properly.
@@ -328,12 +328,8 @@ it("should plot a curve between two data points", () => {
 \`\`\`
                     `}
         />
-        <Text as='ol' start={3}>
-          <li>
-            Not using <code>constant</code>, <code>enums</code>,{' '}
-            <code>types</code> or <code>interfaces</code> defined in your
-            production code
-          </li>
+        <Text as='h4' variant='subheading' size='sm' className='mt-28'>
+          3. Ignoring shared types and constants
         </Text>
         <Text>
           In our <em>production code</em> we tend use those to try and make the
@@ -390,8 +386,8 @@ it("should log the constant", async () => {
 \`\`\`
                     `}
         />
-        <Text as='ol' start={4}>
-          <li>The test has too many responsibilities</li>
+        <Text as='h4' variant='subheading' size='sm' className='mt-28'>
+          4. God-tests
         </Text>
         <Text>
           When a test is <em>doing</em> too many things at once it becomes
@@ -1005,7 +1001,7 @@ describe("No more boilerplate", () => {
       </Section>
       <Section>
         <Text as='h2' variant='subheading'>
-          Conducting simulations
+          Simulating failure with mocks
         </Text>
         <Text>
           The beauty of testing is that you can mock (simulate) almost
@@ -1080,7 +1076,7 @@ describe("simulate your software", () => {
       </Section>
       <Section>
         <Text as='h2' variant='subheading'>
-          Performing real-world trials
+          Beyond unit tests: real-world strategy
         </Text>
         <Text>
           Testing is great, but if you are conducting unit tests they are placed
@@ -1099,6 +1095,12 @@ describe("simulate your software", () => {
         When you get a bug report, start by writing a unit test that exposes the
         bug.
       </Quote>
+      <Section>
+        <Text>
+          A bridge engineer does not ship 80% coverage. They ship a bridge that
+          holds.
+        </Text>
+      </Section>
     </>
   );
 }
