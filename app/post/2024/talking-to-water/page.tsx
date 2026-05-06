@@ -37,7 +37,7 @@ export default function Page() {
       <JsonLd data={blogPostJsonLdFromSeo(SEO)} />
       <Hero
         title='Talking to water'
-        subtitle='The art of the bodge'
+        subtitle='Generative art with Whisper & MQTT'
         publishDate='Feb 21 2024'
         emoji='1F30A'
         readTime={10}
@@ -71,8 +71,6 @@ export default function Page() {
           This time a group of students came to me asking if I could guide them
           on how they could <em>talk to water</em>.
         </Text>
-        <Text>But how does one talk to water?</Text>
-        <Text>And what does it even mean to talk to water?</Text>
       </Section>
       <Section>
         <Alert icon='Copyright' intent='info'>
@@ -151,9 +149,8 @@ export default function Page() {
       </Section>
       <Section>
         <Text as='h2' variant='subheading'>
-          How does one talk to water?
+          Why bodge it
         </Text>
-        <Text>Well, that is an interesting question.</Text>
         <Text>
           Like how most of my answers start with{' '}
           <em>“I don’t know, but let’s figure it out together”</em>, this answer
@@ -176,7 +173,7 @@ export default function Page() {
       </Section>
       <Section>
         <Text as='h3' size='sm' variant='subheading'>
-          So, what is the concept?
+          The concept: speech in, emotion out
         </Text>
         <Text>
           Put simply the concept is to use sentiment analysis to detect the{' '}
@@ -409,6 +406,12 @@ my_assistant.start()
           wildest imaginations.
         </Text>
         <Text>Thank you random strangers on the internet ❤️.</Text>
+        <Text className='mt-16'>
+          The lesson worth keeping: prototypes do not fail because the idea is
+          too ambitious. They fail on distribution — getting them to run on
+          someone else’s machine, in someone else’s room, at someone else’s
+          deadline. That is what the rest of this post is about.
+        </Text>
       </Section>
       <Section>
         <Text as='h2' variant='subheading'>
