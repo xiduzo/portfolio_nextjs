@@ -972,7 +972,7 @@ describe("No more boilerplate", () => {
           bloatware when writing unit tests.
         </Text>
         <Text>
-          <Link target='_blank' href='https://playwright.dev/'>
+          <Link target='_blank' href='https://testing-library.com/'>
             @testing-library
           </Link>{' '}
           are “simple and complete testing utilities that encourage good testing

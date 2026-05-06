@@ -469,7 +469,7 @@ export default function Page() {
           This shift also exposes something that tools alone cannot fix. In practice, <em>design intent</em>, <em>engineering intent</em>, and <em>business intent</em> are often different. Sometimes subtly, sometimes wildly. A designer optimizes for clarity, an engineer for maintainability, a product owner for conversion. All three call it &ldquo;the right thing to do.&rdquo;
         </Text>
         <Text size='sm'>
-          AI does not solve this misalignment. It makes it visible faster. When a spec surfaces a contradiction between what design wants and what engineering assumes, that is not a failure of the process. It the process working. The organizational implication is that shared artifacts like specs become alignment tools, not just technical ones. They force conversations that used to happen too late, or not at all.
+          AI does not solve this misalignment. It makes it visible faster. When a spec surfaces a contradiction between what design wants and what engineering assumes, that is not a failure of the process. It is the process working. The organizational implication is that shared artifacts like specs become alignment tools, not just technical ones. They force conversations that used to happen too late, or not at all.
         </Text>
       </Section>
       <Section>

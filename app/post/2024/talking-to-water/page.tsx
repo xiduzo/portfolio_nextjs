@@ -134,10 +134,7 @@ export default function Page() {
         />
       </Section>
       <Section>
-        <Quote
-          link='https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882'
-          cite='The students'
-        >
+        <Quote cite='The students'>
           What we say to water can impact its crystals: positive words create
           intricate structures and negative words lead to collapse{' '}
           <em className='italic text-muted-foreground'>(Dr. Masaru Emoto)</em>
@@ -417,7 +414,9 @@ my_assistant.start()
         <Text as='h2' variant='subheading'>
           Experience it yourself
         </Text>
-        <Text>Before going down the rabbit hole and I will lose you.</Text>
+        <Text>
+          Before we go down the rabbit hole — this is where I lose half of you.
+        </Text>
         <Text>
           You can experience the project yourself or use it as the basis for
           your next bodge project!
