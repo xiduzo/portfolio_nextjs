@@ -633,7 +633,7 @@ describe(add.name, () => {
       </Section>
       <Section>
         <Text as='h3' variant='subheading' size='sm'>
-          Build for speed
+          Switch from Jest to Vitest
         </Text>
         <Text>
           Time moves on, and so do our tools. Most of us do not use{' '}
@@ -671,7 +671,7 @@ describe(add.name, () => {
       </Section>
       <Section>
         <Text as='h3' variant='subheading' size='sm'>
-          Validation
+          Validate inputs with Zod, not 20 unit tests
         </Text>
         <Text>
           A common way your code can break is when the data you receive is not
@@ -770,7 +770,7 @@ fetch("https://api.example.com")
       </Section>
       <Section>
         <Text as='h3' variant='subheading' size='sm'>
-          Passing objects
+          Use the Builder pattern for test fixtures
         </Text>
         <Text>
           Writing clean tests can become tedious when you have to pass a whole
@@ -939,7 +939,7 @@ describe("No more boilerplate", () => {
       </Section>
       <Section>
         <Text as='h3' variant='subheading' size='sm'>
-          UI testing
+          Test the DOM with @testing-library, not Cypress
         </Text>
         <Text>
           Working with TypeScript, there is a good chance you will need to test
@@ -977,11 +977,21 @@ describe("No more boilerplate", () => {
       </Section>
       <Section>
         <Text as='h3' variant='subheading' size='sm'>
-          Code coverage
+          Coverage targets cause worse tests
         </Text>
+        <Alert icon='AlertTriangle' intent='warning'>
+          <Text>
+            <strong>Coverage is silent on whether you actually checked the
+            result.</strong> 80% line coverage means 80% of lines executed
+            during a test run — not 80% of behaviours verified. Mandate a
+            coverage number and your team will write tests that hit lines, not
+            tests that catch bugs.
+          </Text>
+        </Alert>
         <Text>
-          Although I am against setting coverage targets, it is valuable to know
-          what parts of your code are tested and which are not.
+          That said, knowing <em>which</em> parts of your code are exercised by
+          the suite is genuinely useful — just do not turn the percentage into
+          a target.
         </Text>
         <Text>
           <Link target='_blank' href='https://about.codecov.io/'>
