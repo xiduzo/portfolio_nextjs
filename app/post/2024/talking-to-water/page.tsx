@@ -54,22 +54,22 @@ export default function Page() {
       />
       <TLDR
         lines={[
-          'Students at the Master Digital Design wanted to make water respond to what people say. So we figured out how.',
-          'The idea: capture speech, detect the emotion behind it, and send that feeling to a generative art installation.',
-          'Getting it to run on any laptop — that was the real challenge. Enter Docker, PulseAudio, and the art of the bodge.',
+          'Prototypes do not fail because the idea is too ambitious. They fail on distribution — getting them to run on someone else’s machine, in someone else’s room, at someone else’s deadline.',
+          'A group of Master Digital Design students wanted to make water respond to what people say. The 30 lines of Python that did the work were the easy part.',
+          'The hard part was Docker, PulseAudio, and the bodges that got the project off my laptop.',
         ]}
       />
       <Section>
         <Text>
-          One of the things I like about my job at the{' '}
+          A group of students at the{' '}
           <Link href='https://www.masterdigitaldesign.com/' target='_blank'>
             Master Digital Design
           </Link>{' '}
-          is the odd requests I get from students from time to time.
-        </Text>
-        <Text>
-          This time a group of students came to me asking if I could guide them
-          on how they could <em>talk to water</em>.
+          came to me asking if I could guide them on how to{' '}
+          <em>talk to water</em>. Speech in, emotion out, generative visuals
+          back — about thirty lines of Python in total. This post is mostly
+          about the hours <em>after</em> that, when we tried to make the
+          project run on machines that were not mine.
         </Text>
       </Section>
       <Section>
@@ -407,10 +407,8 @@ my_assistant.start()
         </Text>
         <Text>Thank you random strangers on the internet ❤️.</Text>
         <Text className='mt-16'>
-          The lesson worth keeping: prototypes do not fail because the idea is
-          too ambitious. They fail on distribution — getting them to run on
-          someone else’s machine, in someone else’s room, at someone else’s
-          deadline. That is what the rest of this post is about.
+          That is the work. Now to the part that took longer than the work:
+          getting it to run on someone else&apos;s laptop.
         </Text>
       </Section>
       <Section>
