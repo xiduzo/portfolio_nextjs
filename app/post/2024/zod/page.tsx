@@ -35,7 +35,7 @@ export default function Page() {
         publishDate='June 30 2024'
         emoji='1F6C2'
         className='bg-emerald-300 dark:bg-emerald-900'
-        subtitle='Stronger interfaces, cleaner code, fewer bugs'
+        subtitle='TypeScript is not enough — runtime validation with Zod'
         readTime={14}
       />
       <TLDR
@@ -47,16 +47,14 @@ export default function Page() {
       />
       <Section>
         <Text>
-          I am a big fan of TypeScript, but one thing it lacks compared to a
-          truly strongly typed language: runtime validation of data.
+          Our IoT platform shipped fine in simulation and broke the moment real
+          devices spoke to it. Here is how Zod ended the silent data corruption
+          — and why TypeScript alone is not enough at the boundary.
         </Text>
         <Text>
-          While a static type checker ensures everything <em>works</em>,
-          eventually we have to interact with the scary outside world.
-        </Text>
-        <Text>
-          This can include user input, API responses, streamed data, reading
-          data from disk or even loading environment variables.
+          The scary outside world arrives through user input, API responses,
+          streamed data, files on disk, even environment variables. The static
+          type checker has nothing to say about any of it.
         </Text>
       </Section>
       <Section>
@@ -335,10 +333,10 @@ mqqClient.onMessage(message => {
           The problem
         </Text>
         <Text>
-          As we tested our platform with simulated (IoT) devices, everything
-          seemed to work smoothly. But when the simulated devices were being
-          replaced by their actual real-world counterparts, that is when things
-          got interesting.
+          Silent data corruption. As we tested our platform with simulated (IoT)
+          devices, everything seemed to work smoothly. But when the simulated
+          devices were being replaced by their actual real-world counterparts,
+          that is when things got interesting.
         </Text>
         <Text>
           When we started to get actual data from the real world, bugs started
@@ -393,9 +391,14 @@ mqqClient.onMessage(message => {
         </Alert>
       </Section>
       <Section>
+        <Text as='h3' variant='subheading' size='sm'>
+          The Parsable helper
+        </Text>
         <Text>
-          The following <code>Parsable</code> class serves as the foundation for
-          our runtime validation framework:
+          The following <code>Parsable</code> class is the foundation: it wraps
+          any Zod schema into a class with <code>parse</code> /{' '}
+          <code>safeParse</code> static methods, so existing data classes can
+          opt into runtime validation without a rewrite.
         </Text>
         <CodeBlock
           code={`
@@ -546,27 +549,31 @@ const example = new GrowthCycle(invalidInput) // [!code error]
           alt='Monitoring results from parse errors'
           className='mx-auto'
         />
+        <Text variant='note' as='figcaption'>
+          Production monitoring after rollout — each spike is a
+          previously-silent corruption now caught at the boundary.
+        </Text>
       </Section>
       <Section>
         <Text as='h3' variant='subheading' size='sm'>
           The aftermath
         </Text>
-        <Text>
-          After implementing runtime validation, services started reporting a
-          lot more faulty data inputs. Initially, the team was not very pleased
-          with the constant need for fixing <em>unnecessary errors</em>. Instead
-          of adding new features the focus was on data integrity for nearly a
-          full month.
-        </Text>
-        <Text>
-          However, as time passed, received data became increasingly in line
-          with the expected format. This led to better discussions between teams
-          about data formats and interfaces, as faulty data would no longer be
-          accepted.
-        </Text>
-        <Text>
-          As a result, the platform is now more stable, and the reliability of
-          the data has improved significantly.
+        <Text as='ul'>
+          <li>
+            <strong>~1 month of cleanup.</strong> Services started surfacing
+            faulty inputs immediately; instead of new features, the team
+            focused on data integrity.
+          </li>
+          <li>
+            <strong>Hardware ↔ software alignment.</strong> Faulty data was no
+            longer silently accepted, which forced honest cross-team
+            conversations about contracts and formats.
+          </li>
+          <li>
+            <strong>Stability improved significantly.</strong> The platform
+            became more reliable and the data flowing through it more
+            trustworthy.
+          </li>
         </Text>
       </Section>
       <Section>
