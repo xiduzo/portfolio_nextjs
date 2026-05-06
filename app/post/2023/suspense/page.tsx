@@ -35,7 +35,7 @@ export default function Page() {
         publishDate='Nov 21 2023'
         emoji='1FA84'
         className='bg-sky-300 dark:bg-sky-900'
-        subtitle='Unravelling the magic from React'
+        subtitle='React Suspense, beyond the magic'
         readTime={12}
       />
       <TLDR
@@ -47,16 +47,18 @@ export default function Page() {
       />
       <Section>
         <Text>
-          While trying to answer{' '}
+          <code>Suspense</code> is not magic — it is a try/catch that catches
+          thrown Promises. Here is the mechanism, in about 60 lines of code.
+        </Text>
+        <Text size='sm'>
+          (Written after I tried to answer{' '}
           <Link
             target='_blank'
             href='https://stackoverflow.com/q/77479989/4655177'
           >
-            this question on StackOverflow
-          </Link>
-          , I realized that I did not know enough about the workings of{' '}
-          <code>Suspense</code> myself to give a good answer. So I decided to do
-          some research and write this article.
+            this StackOverflow question
+          </Link>{' '}
+          and realised I did not understand it well enough myself.)
         </Text>
       </Section>
       <Quote
@@ -356,7 +358,7 @@ export default function App() {
       </Section>
       <Section>
         <Text as='h3' size='sm' variant='subheading'>
-          More than lazy loading
+          Added abstraction cost
         </Text>
         <Text>
           For simple applications with straightforward data fetching
@@ -367,7 +369,7 @@ export default function App() {
       </Section>
       <Section>
         <Text as='h3' size='sm' variant='subheading'>
-          User Experience (UX)
+          Manual loading control
         </Text>
         <Text>
           In scenarios where finer control over loading states or error handling
@@ -377,7 +379,7 @@ export default function App() {
       </Section>
       <Section>
         <Text as='h3' size='sm' variant='subheading'>
-          Be a step ahead
+          Server Components may eclipse it
         </Text>
         <Text>
           The whole concept of <code>Suspense</code> might also get overshadowed
