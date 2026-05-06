@@ -55,16 +55,12 @@ export default function Page() {
           right one is the difference between AI as a party trick and AI as
           part of how you actually ship.
         </Text>
-        <Text>
-          If you are a developer, designer, or knowledge worker trying to use AI for real work, not just demos, you have probably felt this: there is no single &ldquo;right&rdquo; way to work with AI, only a messy spectrum of workflows.
-        </Text>
-        <Text>
-          Over the past years I have been figuring out how to integrate AI into how I build things. The further I got, the more I realized the key question is rarely{' '}
-          <em>&ldquo;which AI tool should I use?&rdquo;</em> but rather{' '}
-          <em>&ldquo;which workflow fits this task?&rdquo;</em>
-        </Text>
         <Text size='sm'>
-          This post lays out my current map of those workflows. Where they shine, where they break, and how to move from giving instructions to designing intent. No hype, no doom. Just a practical guide you can apply tomorrow.
+          For developers, designers, and knowledge workers trying to use AI on
+          real work. The key question is rarely{' '}
+          <em>&ldquo;which AI tool should I use?&rdquo;</em> but{' '}
+          <em>&ldquo;which workflow fits this task?&rdquo;</em> No hype, no
+          doom — a practical map you can apply tomorrow.
         </Text>
       </Section>
       <Section>
@@ -311,7 +307,7 @@ export default function Page() {
       </Section>
       <Section>
         <Text as="h3" variant="subheading" size="sm">
-          Prompt engineering
+          Prompt engineering: fast, fragile, fine for drafts
         </Text>
         <Quote type="inline">
           AI as a smarter search engine or autocomplete
@@ -345,7 +341,7 @@ export default function Page() {
       </Section>
       <Section>
         <Text as="h3" variant="subheading" size="sm">
-          AI agents
+          AI agents: width without depth
         </Text>
         <Quote type="inline">
           AI as an assistant that can take multiple steps
@@ -382,7 +378,7 @@ export default function Page() {
       </Section>
       <Section>
         <Text as="h3" variant="subheading" size="sm">
-          Spec-driven development
+          Spec-driven development: pay upfront, ship straighter
         </Text>
         <Quote type="inline">
           AI as an executor of clearly defined intent
@@ -420,7 +416,7 @@ export default function Page() {
       </Section>
       <Section>
         <Text as="h3" variant="subheading" size="sm">
-          Agentic AI
+          Agentic AI: depth on rails
         </Text>
         <Quote type="inline">
           AI as a collaborator inside a designed system
