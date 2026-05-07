@@ -26,6 +26,53 @@ Re-critique result (after Phases 0–2): Suspense lifted ~3 grades and is no lon
 
 ---
 
+## Outstanding work — Visuals (the only remaining phase)
+
+All text edits are shipped and verified. The single remaining lever is **adding load-bearing visuals** to the picture-weak posts. Until this lands, the technical trio (`suspense`, `zod`, `testing`) stays graded Weak/Failing on Lynch's Principle 4 regardless of how strong the prose is.
+
+### Visual checklist
+
+Ranked by impact (highest first). Each item links to its detailed spec in **§ 3b**.
+
+| # | Post | Visual | Impact | Effort | Status |
+|---|---|---|---|---|---|
+| 7 | designing-intent | [Real spec snippet (code block)](#visual-7--designing-intent-a-real-spec-snippet) | High | [S] | ⏳ |
+| 6 | talking-to-water | [Architecture diagram (mic→Whisper→classifier→MQTT→TouchDesigner)](#visual-6--talking-to-water-architecture-diagram) | High | [M] | ⏳ |
+| 3 | zod | [Trust-boundary / data-flow diagram](#visual-3--zod-boundary--data-flow-diagram) | High | [M] | ⏳ |
+| 1 | suspense | [State-machine after `use`-hook code](#visual-1--suspense-state-machine) | High | [M] | ⏳ |
+| 4 | testing | [Folder-tree side-by-side comparison](#visual-4--testing-folder-tree-side-by-side) | Medium | [M] | ⏳ |
+| 5 | testing | [Annotated coverage-report screenshot](#visual-5--testing-annotated-coverage-screenshot) | Medium | [M] | ⏳ |
+| 2 | suspense | [Fallback-swap screenshot or short GIF](#visual-2--suspense-fallback-swap-screenshot-or-short-gif) | Low | [M] | ⏳ |
+
+### Why this matters
+
+After Phase 5, every post's text scores Strong/OK on Principles 1, 2, and 5. Pictures are now the **only** principle pulling grades down. Specifically:
+
+- **Suspense** — currently 1 visual (a meme). Needs the state machine diagram before "Picture" grade can move.
+- **Zod** — 2 visuals (one screenshot + one robot photo). Needs the boundary diagram.
+- **Testing** — 0 visuals. Folder-tree + coverage screenshot are the cheapest wins.
+- **Talking-to-water** — picture-rich already, but still missing the architecture diagram that would replace ~200 words of prose.
+- **Designing-intent** — picture-rich, but the Spec-driven section never shows a real spec. Visual 7 is purely a code block; can ship in 15 minutes.
+
+### How to start
+
+1. Pick **Visual 7** first — it is text-only (a Markdown code block already drafted in § 3b). No tooling needed.
+2. For the diagrams, install Excalidraw (free) or use the recommended tool from § 3a. Save SVG + editable `.excalidraw` source side-by-side.
+3. Each visual lands as its own commit (`blog: add <post> <visual-name> diagram`) so they're independently revertable.
+4. After each visual ships, run `npm run build` to confirm asset paths resolve.
+
+### Owner / handoff
+
+If a designer or contractor picks this up:
+
+- Brief: "produce the visuals listed in **§ 3b** of `BLOG_IMPROVEMENT_PLAN.md`. Each spec contains the full content, the destination file path, the caption, and the alt text. Do not redesign the briefs — execute them."
+- Storage convention is in **§ 3a**.
+- Source artwork files (`.excalidraw`, layered files) commit alongside the exports so future iteration is possible.
+
+The detailed specs follow in Phase 3 below.
+
+---
+
 ## Phase 0 — Bug sweep (do first, all [S])
 
 Fast wins; no design judgement needed.
