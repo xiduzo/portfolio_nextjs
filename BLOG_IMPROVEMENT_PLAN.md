@@ -18,9 +18,9 @@ Legend: **[S]** small (≤15 min) · **[M]** medium (15–60 min) · **[L]** lar
 | 2d — Talking-to-water (filler headings, opener, distribution closer) | ✅ Done |
 | 2e — Designing-intent (opener, CTA Alert, glossary `<details>`) | ✅ Done |
 | 2.5 — Heading-as-claim sweep + opener trims | ✅ Done |
-| **3 — Visuals (specs documented, artifacts pending)** | ⏳ Specs ready, next |
-| 4 — Verify and ship | ⏳ Pending (detailed checklist below) |
-| 5 — Optional polish (post-Phase 3) | 📋 Documented |
+| **3 — Visuals (specs documented, artifacts pending)** | ⏳ Specs ready, only phase left |
+| 4 — Verify and ship (tsc + build) | ✅ Green |
+| 5 — Optional polish | ✅ Done (5a–5e); 5f deferred as judgement call |
 
 Re-critique result (after Phases 0–2): Suspense lifted ~3 grades and is no longer the worst post. Zod and Testing meaningfully sharper. Picture grades unchanged for technical posts (Phase 3 not yet started). The re-critique surfaced new heading-as-label issues across all 5 posts that were not in the first pass — captured in Phase 2.5 below.
 
