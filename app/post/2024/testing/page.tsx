@@ -89,6 +89,10 @@ export default function Page() {
         <Text as='h2' variant='subheading'>
           The software engineer
         </Text>
+        <Text size='sm' className='italic text-muted-foreground'>
+          If you write TypeScript and your team treats tests as an afterthought,
+          this is for you.
+        </Text>
         <Text>
           In the physical world, you rely on engineers to be due diligent in
           their work. You would not like to have a bridge collapse because it

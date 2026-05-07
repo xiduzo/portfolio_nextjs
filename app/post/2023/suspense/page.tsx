@@ -395,6 +395,13 @@ export default function App() {
           Conclusion
         </Text>
         <Text>
+          Throwing a <code>Promise</code> is not a hack — it is React reusing
+          the language&apos;s exception mechanism for control flow. The same
+          shape shows up in algebraic effects, in error boundaries, in
+          resumable parsers. Once you see it, you stop calling it{' '}
+          <em>&ldquo;magic&rdquo;</em> anywhere.
+        </Text>
+        <Text>
           <code>Suspense</code> can be a powerful tool in your toolbox,
           especially if you truly understand how it functions.
         </Text>

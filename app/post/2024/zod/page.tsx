@@ -144,9 +144,21 @@ const response = await fetchData<ApiData>("example.api.org"); // ApiData
           <ol>
             <li>
               Zod is my personal go-to runtime validation library for
-              JavaScript. But be aware that there is{' '}
+              JavaScript, but it is not the only option:{' '}
+              <Link target='_blank' href='https://valibot.dev/'>
+                Valibot
+              </Link>{' '}
+              (smaller bundle, modular),{' '}
+              <Link target='_blank' href='https://github.com/gcanti/io-ts'>
+                io-ts
+              </Link>{' '}
+              (fp-ts ecosystem), or{' '}
+              <Link target='_blank' href='https://ajv.js.org/'>
+                ajv
+              </Link>{' '}
+              (JSON Schema). The pattern in this post applies to all of them —{' '}
               <Link target='_blank' href='https://zod.dev/?id=comparison'>
-                more out there
+                full comparison
               </Link>
               .
             </li>

@@ -62,6 +62,10 @@ export default function Page() {
           <em>&ldquo;which workflow fits this task?&rdquo;</em> No hype, no
           doom — a practical map you can apply tomorrow.
         </Text>
+        <Text size='sm' className='italic text-muted-foreground'>
+          Designers and PMs: skim &ldquo;The four workflows&rdquo; and stop.
+          Devs: keep going.
+        </Text>
       </Section>
       <Section>
         <Text as='h2' variant='subheading'>
@@ -312,6 +316,16 @@ export default function Page() {
         <Quote type="inline">
           AI as a smarter search engine or autocomplete
         </Quote>
+        <Alert icon='CompassIcon' intent='info'>
+          <Text>
+            <strong>Use when</strong> drafting a one-off output where the cost
+            of a bad answer is low.
+          </Text>
+          <Text>
+            <strong>Avoid when</strong> the same task will repeat across a team
+            or codebase.
+          </Text>
+        </Alert>
         <Text>
           <em>Prompt engineering</em> refers to the methodology on how early interactions started to form with the release of LLMs such as ChatGPT back in <time dateTime="2022-11-01">November of 2022</time>.{" "}
           By <em>engineering</em> the <em>prompts</em>, you can better steer the output that is produced.
@@ -346,6 +360,15 @@ export default function Page() {
         <Quote type="inline">
           AI as an assistant that can take multiple steps
         </Quote>
+        <Alert icon='CompassIcon' intent='info'>
+          <Text>
+            <strong>Use when</strong> the work spans several tools or steps and
+            you can verify each.
+          </Text>
+          <Text>
+            <strong>Avoid when</strong> any single bad step is irreversible.
+          </Text>
+        </Alert>
         <Text>
           <em>Agents</em> are ways to give your LLMs a bit more autonomy. Here, AI starts doing more than answering a question.{" "}
           It can plan, act, and use tools. This is where your LLM starts to get integrated in/with the tooling you already use.
@@ -383,6 +406,16 @@ export default function Page() {
         <Quote type="inline">
           AI as an executor of clearly defined intent
         </Quote>
+        <Alert icon='CompassIcon' intent='info'>
+          <Text>
+            <strong>Use when</strong> the task is well-bounded and you will
+            execute it more than once.
+          </Text>
+          <Text>
+            <strong>Avoid when</strong> you are still exploring what
+            &quot;done&quot; means.
+          </Text>
+        </Alert>
         <Text>
           This workflow is where AI stops being <em>&quot;just helpful&quot;</em> and starts becoming (a) reliable (team member).
         </Text>
@@ -421,6 +454,16 @@ export default function Page() {
         <Quote type="inline">
           AI as a collaborator inside a designed system
         </Quote>
+        <Alert icon='CompassIcon' intent='info'>
+          <Text>
+            <strong>Use when</strong> you have invested in evals, guardrails,
+            and a feedback loop.
+          </Text>
+          <Text>
+            <strong>Avoid when</strong> the system has not earned that trust
+            yet.
+          </Text>
+        </Alert>
         <Text>
           Agentic AI is not about giving an AI model full freedom.{" "}
           It is about designing systems in which AI can operate autonomously within clearly defined boundaries{" "}
