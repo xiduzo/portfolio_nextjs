@@ -62,7 +62,7 @@ export default function Page() {
       </Section>
       <Section>
         <Text as='h2' variant='subheading'>
-          What the slack!
+          Late feedback is no feedback
         </Text>
         <Text>
           Propaedeutic students from{' '}
@@ -174,7 +174,7 @@ export default function Page() {
       </Section>
       <Section>
         <Text as='h2' variant='subheading'>
-          Anonymous
+          How identity is dropped before the teacher sees anything
         </Text>
         <Text>
           As the purpose of Athena is to give more insight into team dynamics
