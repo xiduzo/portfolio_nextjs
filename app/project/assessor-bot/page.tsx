@@ -474,6 +474,14 @@ const chat = [
           to have a local installation of Ollama, it does give me a more peace
           of mind.
         </Text>
+        <Text>
+          Local-only does have a real cost — students need a laptop that can
+          run a small open model, which rules some lower-end machines out.
+          That trade-off was conscious, and the reason was as much ethical as
+          technical: privacy first, and equality second. No student should
+          need a paid subscription to a frontier model to get better feedback
+          on their portfolio than the next student over.
+        </Text>
       </Section>
       <Section variant='full' as='figure'>
         <Text variant='note' as='figcaption'>
