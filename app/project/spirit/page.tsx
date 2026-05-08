@@ -6,6 +6,7 @@ import { Technologies } from '@/components/custom/technologies';
 import { Text } from '@/components/custom/text';
 import { Iphone15Pro } from '@/components/magic-ui/iphone-15-pro';
 import { Image } from '@/components/custom/image';
+import { CodeBlock } from '@/components/custom/code-block';
 import NextImage from 'next/image';
 import Link from 'next/link';
 import { Links } from '@/components/custom/links';
@@ -240,6 +241,45 @@ export default function Page() {
           className='w-full'
           width={1920}
           height={1080}
+        />
+      </Section>
+      <Section>
+        <Text as='h3' variant='subheading' size='sm'>
+          A level is a step on the ladder
+        </Text>
+        <Text size='sm'>
+          The clinical model lives directly in the data. A{' '}
+          <code>Level</code> is one rung of the avoidance hierarchy, and its
+          monster shrinks as a percentage of its exposure steps cross a fear
+          threshold the clinician set:
+        </Text>
+        <CodeBlock
+          code={`
+\`\`\`typescript
+export class Level {
+  public id: string;
+  public number: number;
+  public steps: Array<Step>;
+  public completion: number; // Percentage of completed steps
+  public done: boolean = false;
+  public monster: string;
+  public monster_sized: string;
+
+  isLevelDone() {
+    this.done = this.completion >= 100;
+  }
+
+  calculateCompletion() {
+    const stepsCompleted = this.steps.filter(
+      step => step.fear.completion >= FEAR_COMPLETION_POSITIVE_LIMIT
+    );
+    this.completion = Math.round(
+      (stepsCompleted.length * 100) / this.steps.length
+    );
+  }
+}
+\`\`\`
+                `}
         />
       </Section>
       <Section>

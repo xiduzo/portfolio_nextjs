@@ -495,6 +495,42 @@ export default function Page() {
           <em>Who doesn’t want that sweet ol’ bacon right?</em>
         </Text>
         <Text>Users can trade commodities or use animals to produce them.</Text>
+        <Text size='sm'>
+          Each currency is a stack of overlapping cycles with random phase
+          offsets and noise — that&apos;s how stable wool ends up calmer than
+          volatile bacon, even though both come out of the same function:
+        </Text>
+        <CodeBlock
+          code={`
+\`\`\`javascript
+function generateRandomStockMarket(numberOfPoints, center, min, max, cycles) {
+  var result = [];
+  var y = center;
+
+  function randomPlusMinus() { return (Math.random() * 2) - 1; }
+
+  _.each(cycles, function(cycle) {
+    cycle.phase = Math.random() * Math.PI;
+    cycle.increment = Math.PI / cycle.length;
+  });
+
+  _.each(_.range(numberOfPoints), function() {
+    _.each(cycles, function(cycle) {
+      cycle.phase += cycle.increment * randomPlusMinus();
+      y += (Math.sin(cycle.phase) * (cycle.variance / cycle.length) * (randomPlusMinus() * cycle.noise)) + (cycle.trend / cycle.length);
+    });
+
+    if (min) y = Math.max(y, min);
+    if (max) y = Math.min(y, max);
+
+    result.push(Math.round(y));
+  });
+
+  return result;
+}
+\`\`\`
+                    `}
+        />
       </Section>
       <Section>
         <Text as='h2' variant='subheading'>
