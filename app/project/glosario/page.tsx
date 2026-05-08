@@ -122,6 +122,14 @@ export default function Page() {
           A term does not just appear in the glossary. It has to earn
           it.
         </Text>
+        <Image
+          src='/glosario/term-lifecycle.png'
+          alt='State diagram of a Glosario term: draft -> pending (approve or reject), approved -> flagged unclear -> resolved, approved -> suggestion -> new revision (which append-only loops back into approved). Annotation: append-only, never overwrite.'
+          width={1280}
+          height={1280}
+          className='w-full max-w-2xl mx-auto mt-8'
+        />
+      </Section>
         <Text>
           Every term starts as a <code>draft</code>. A scratchpad for whoever
           first noticed the word was causing confusion. When it is ready,
