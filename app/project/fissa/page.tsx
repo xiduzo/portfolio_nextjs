@@ -81,6 +81,10 @@ export default function Page() {
           and myself have experienced countless times and instead of complaining
           about it constantly we decided to do something about it.
         </Text>
+        <Text>
+          Milan led the visual identity and the concept. I took the build —
+          the Expo + tRPC stack, the voting algorithm, and everything between.
+        </Text>
         <Text size='sm'>
           As I am always looking for an excuse to start a new pet-project to
           learn and explore new technologies, Fissa seemed like a perfect
