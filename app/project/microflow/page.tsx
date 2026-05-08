@@ -61,6 +61,14 @@ export default function Page() {
         ]}
       />
       <Section>
+        <Text size='sm' variant='note'>
+          Solo build. The Electron studio, the Figma plugin, the MQTT bridge,
+          and the Johnny-Five wrappers are all mine. The audience and the
+          friction came from teaching at the Master Digital Design — students
+          and staff there shaped what Microflow needed to feel like.
+        </Text>
+      </Section>
+      <Section>
         <Text as='h2' variant='subheading'>
           Interactivity
         </Text>
@@ -158,11 +166,17 @@ export default function Page() {
       </Section>
       <Section>
         <Text as='h3' variant='subheading' size='sm'>
-          MQTT
+          MQTT, not WebSockets
         </Text>
         <Text>
           Microflow Hardware Bridge relies on MQTT to communicate between Figma
           and the plugin.
+        </Text>
+        <Text>
+          MQTT, not WebSockets, because it lets the firmware side stay dumb.
+          The broker handles fan-out, so a microcontroller never has to host a
+          server or know who is listening — it just publishes and subscribes
+          on a topic.
         </Text>
         <Text>
           This enables any client – whether in your browser, mobile app,
@@ -252,6 +266,12 @@ export function MqttVariableMessenger() {
           Plug in your board, drag some nodes, connect some edges — it just
           works. The goal was <em>plug-and-play</em> simple, and a few layers of
           magic make that possible.
+        </Text>
+        <Text>
+          Electron, not a web app, because flashing firmata firmware over USB
+          needs native access the browser sandbox does not grant. WebUSB exists
+          but is patchy across platforms — the second prototype tried it and
+          paid for it.
         </Text>
       </Section>
       <Section>
@@ -460,6 +480,52 @@ export class Button extends BaseComponent<ButtonValueType> {
         <Link href='https://microflow.tech/' target='_blank'>
           <CallToAction>Try Microflow studio</CallToAction>
         </Link>
+      </Section>
+      <Section>
+        <Text as='h2' variant='subheading'>
+          How we got here
+        </Text>
+        <Text>
+          Microflow is the third take, not the first. The two earlier
+          prototypes are still on GitHub and worth naming, because each one
+          taught the next one what not to do.
+        </Text>
+        <Text as='ol'>
+          <li>
+            <strong>
+              <Link
+                href='https://github.com/xiduzo/figma-hardware-connect'
+                target='_blank'
+              >
+                figma-hardware-connect
+              </Link>
+            </strong>{' '}
+            — Figma plugin only, no real hardware. Proved that variables in
+            Figma could drive a prototype, but a Figma plugin alone cannot
+            reach a microcontroller.
+          </li>
+          <li>
+            <strong>
+              <Link
+                href='https://github.com/xiduzo/figma-hardware-connect-with-companion'
+                target='_blank'
+              >
+                figma-hardware-connect-with-companion
+              </Link>
+            </strong>{' '}
+            — added a companion that talked to hardware over WebUSB. The idea
+            worked; WebUSB did not. Cross-platform behaviour was unreliable
+            enough that demos broke in front of students, which is the worst
+            possible failure mode for a teaching tool.
+          </li>
+          <li>
+            <strong>Microflow</strong> — Electron host plus Firmata, with MQTT
+            as the bridge to Figma. Native access to the serial port made
+            flashing reliable; MQTT decoupled the design surface from the
+            hardware surface. Both moves came directly from what the previous
+            prototype could not do.
+          </li>
+        </Text>
       </Section>
       <aside>
         <Links
