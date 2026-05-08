@@ -82,7 +82,7 @@ export default function Page() {
       </Quote>
       <Section>
         <Text as='h2' variant='subheading'>
-          Problem
+          Why patients drop out of CBT
         </Text>
         <Text>
           Obsessive-Compulsive Disorder (OCD) can be a debilitating condition
@@ -308,7 +308,7 @@ export default function Page() {
       </Section>
       <Section>
         <Text as='h2' variant='subheading'>
-          Quantified self
+          Why the diary stays on the device
         </Text>
         <Text>
           By giving insights into performed exercises patients will be guided
