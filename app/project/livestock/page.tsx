@@ -88,7 +88,7 @@ export default function Page() {
       </Section>
       <Section>
         <Text as='h2' variant='subheading'>
-          Back to the basics
+          Bitcoin is hard. A farm is not.
         </Text>
         <Text>
           Bitcoin emerged in 2009 when the global financial crisis had left a
@@ -345,7 +345,7 @@ export default function Page() {
       </Section>
       <Section>
         <Text as='h2' variant='subheading'>
-          Symbolism
+          Wool, milk, bacon — and what they map to
         </Text>
         <Text>
           In Livestock, core concepts of the blockchain are explained through
