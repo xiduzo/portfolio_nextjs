@@ -57,6 +57,22 @@ export default function Page() {
           'Presented at Games for Health Europe.',
         ]}
       />
+      <Section>
+        <Text size='sm' variant='note'>
+          <Link href='https://carmenscherbaum.myportfolio.com' target='_blank'>
+            Carmen Scherbaum
+          </Link>{' '}
+          led the visual design and the monster system.{' '}
+          <Link
+            href='https://clinical-neuropsychology.de/steffen-moritz'
+            target='_blank'
+          >
+            Prof. Dr. Steffen Moritz
+          </Link>{' '}
+          advised on the clinical model — CBT and Exposure Response Prevention.
+          I built the Ionic + Angular app and the on-device diary.
+        </Text>
+      </Section>
       <Quote cite='Anonymous patient'>
         <strong>A monster in my mind</strong>
         <br />
@@ -208,6 +224,12 @@ export default function Page() {
           in Spirit to represent their problematic obsessive thoughts and
           compulsive behaviors.
         </Text>
+        <Text>
+          The gamification couldn&apos;t drift from the clinical model. Every
+          monster level had to map onto a real avoidance-hierarchy step that a
+          therapist would recognize, otherwise the playfulness would start
+          fighting the therapy instead of supporting it.
+        </Text>
         <Text variant='note' className='mt-32'>
           Monsters representing the Cognitive Behavioral Therapy (CBT) worksheet
           ladder
@@ -295,9 +317,11 @@ export default function Page() {
           treatment progress outside of the sessions with their therapist.
         </Text>
         <Text>
-          All exercises will be kept in a <strong>local</strong> diary for the
-          patient to reflect upon and gain insight into their progress over
-          time.
+          All exercises stay in a <strong>local</strong> diary on the
+          patient&apos;s device. Clinical data should not pass through
+          infrastructure we run, and a patient&apos;s mental-health record is
+          not ours to host — that constraint shaped the architecture before any
+          screen was designed.
         </Text>
         <Text>
           Entries can be shared with the therapist{' '}
@@ -387,6 +411,22 @@ export default function Page() {
             height={1080}
           />
         </div>
+      </Section>
+      <Section>
+        <Text as='h2' variant='subheading'>
+          What we never tested
+        </Text>
+        <Text>
+          Spirit was presented at Games for Health Europe and shaped by clinical
+          input from Prof. Dr. Steffen Moritz, but it was never validated with
+          real OCD patients in a clinical setting.
+        </Text>
+        <Text>
+          The gamification reads well on paper and the avoidance-hierarchy
+          mapping survived clinical review. Whether it actually helps adherence
+          between therapy sessions is an open question — and one I would want a
+          proper trial, not a portfolio page, to answer.
+        </Text>
       </Section>
       <Section variant='full' as='figure'>
         <Text variant='note' as='figcaption'>
