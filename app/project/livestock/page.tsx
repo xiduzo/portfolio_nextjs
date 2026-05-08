@@ -287,6 +287,13 @@ export default function Page() {
           state sync, the market simulator, the symbolism map — had to fit
           inside that envelope.
         </Text>
+        <Image
+          src='/livestock/topology.png'
+          alt='Real-time multiplayer topology: market simulator feeds ticks into a Socket.io server, which broadcasts shared state to 2-5 player clients; session state with a 15-60 minute cap sits beside the server. Annotation: session length is a research-design constraint, not a product preference.'
+          width={1280}
+          height={920}
+          className='w-full max-w-2xl mx-auto mt-8'
+        />
         <Text>
           This data will help the Institute of Network Cultures (INC) to
           evaluate wallet designs.
