@@ -8,7 +8,6 @@ import { Hero } from '@/components/custom/hero';
 import { TLDR } from '@/components/custom/tldr';
 import { CodeBlock } from '@/components/custom/code-block';
 import { Safari } from '@/components/magic-ui/safari';
-import { ExternalLinkIcon } from 'lucide-react';
 import { JsonLd } from '@/components/seo/json-ld';
 import {
   type PortfolioProjectSeo,
@@ -64,6 +63,13 @@ export default function Page() {
         ]}
       />
       <Section>
+        <Text size='sm' variant='note'>
+          Solo project. Concept, design, and the full stack — React 19 +
+          TanStack Router on the front, Hono + tRPC + Drizzle + Postgres on
+          the back — are all mine.
+        </Text>
+      </Section>
+      <Section>
         <Text as='h2' variant='subheading'>
           ASS 🍑
         </Text>
@@ -84,18 +90,6 @@ export default function Page() {
         </Text>
         <Text size='sm'>
           Glosario is my attempt to close that gap — one term at a time.
-        </Text>
-      </Section>
-      <Section>
-        <Text as='div' className='flex justify-center flex-wrap gap-4 mt-12'>
-          <Link
-            href='https://glosar.io/'
-            target='_blank'
-          >
-            <CallToAction icon={<ExternalLinkIcon />}>
-            Help your team!
-            </CallToAction>
-          </Link>
         </Text>
       </Section>
       <Section>
@@ -153,6 +147,13 @@ export default function Page() {
           Accepted suggestions become a new immutable <em>revision</em>. Every
           revision is stored, so you can always trace how a definition evolved
           and who changed it.
+        </Text>
+        <Text size='sm'>
+          Immutable, not editable. Letting curators overwrite a definition
+          would have been simpler, but you would lose every prior reading and
+          the team&apos;s history of how a term got sharper would disappear
+          with it. Append-only beats merge logic when the audit trail is the
+          product.
         </Text>
         <CodeBlock
           code={`
@@ -228,6 +229,13 @@ export const definitionRevision = pgTable("definition_revision", {
           the team actually considers meaningful versus someone&apos;s
           half-baked idea at 4pm on a Friday.
         </Text>
+        <Text size='sm'>
+          Crowd-voted, not curator-only. A single curator gating every
+          relationship would have collapsed under a glossary of any real size,
+          and would also have hidden the disagreements that are themselves
+          information — when half the team links A to B and the other half
+          doesn&apos;t, that&apos;s the team telling you something.
+        </Text>
       </Section>
 
       {/* IMAGE HINT: Screenshot showing the term links / related terms section
@@ -247,6 +255,19 @@ export const definitionRevision = pgTable("definition_revision", {
         />
       </Section>
 
+      <Section>
+        <Text as='h2' variant='subheading'>
+          What is still open
+        </Text>
+        <Text>
+          The hardest unsolved problem is the cold start: who fills the first
+          hundred terms. Glossaries die from emptiness more often than from
+          drift. Approval workflows, immutable revisions, and crowd-voted
+          relations are all worth something only once a glossary has enough
+          terms to feel like a place — and getting there from zero is its own
+          design problem that I have not finished thinking about.
+        </Text>
+      </Section>
       <Section>
         <Text as='h2' variant='subheading'>
           Does your team speak the same language?
