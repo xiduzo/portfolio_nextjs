@@ -68,6 +68,25 @@ export default function Page() {
         ]}
       />
       <Section>
+        <Text size='sm' variant='note'>
+          A four-person student project.{' '}
+          <Link href='https://bkantar.com/' target='_blank'>
+            Buğra
+          </Link>
+          ,{' '}
+          <Link href='https://chantalramzy.com/' target='_blank'>
+            Chantal
+          </Link>
+          ,{' '}
+          <Link href='https://lenaheinrich.de/' target='_blank'>
+            Lena
+          </Link>
+          , and I shared the concept work. Once the concept was settled, I
+          focused on building the prototype — the Angular client, the Express
+          server, and the real-time multiplayer state.
+        </Text>
+      </Section>
+      <Section>
         <Text as='h2' variant='subheading'>
           Back to the basics
         </Text>
@@ -259,6 +278,14 @@ export default function Page() {
           The research tool can monitor the actions of 2-5 participants in a
           15-60 minute session, including trading strategies, wallet upgrades,
           and usage of miners.
+        </Text>
+        <Text>
+          The 2-5 player range and the 60-minute cap were research-design
+          constraints, not product preferences. INC needed enough exposure to
+          let blockchain concepts surface through play, but short enough to fit
+          a research session and a follow-up questionnaire. Everything else —
+          state sync, the market simulator, the symbolism map — had to fit
+          inside that envelope.
         </Text>
         <Text>
           This data will help the Institute of Network Cultures (INC) to
@@ -468,6 +495,23 @@ export default function Page() {
           <em>Who doesn’t want that sweet ol’ bacon right?</em>
         </Text>
         <Text>Users can trade commodities or use animals to produce them.</Text>
+      </Section>
+      <Section>
+        <Text as='h2' variant='subheading'>
+          What didn&apos;t land
+        </Text>
+        <Text>
+          Not every metaphor survived contact with players. The animal-as-mining-rig
+          link was the weakest one: people happily collected sheep, cows, and
+          pigs as farm assets, but rarely connected the act of owning them to
+          producing computational power on a blockchain.
+        </Text>
+        <Text>
+          The wool/milk/bacon-to-currency mapping landed; the animal-to-miner
+          mapping stayed background. If we had picked it up earlier, the
+          onboarding would have spent more time on what the animal{' '}
+          <em>does</em>, not just what it produces.
+        </Text>
       </Section>
       <aside>
         <Links
