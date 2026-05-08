@@ -54,6 +54,13 @@ export default function Page() {
         ]}
       />
       <Section>
+        <Text size='sm' variant='note'>
+          Solo project. I designed and built Athena end-to-end — the Angular
+          client, the Django server, the HvA LDAP integration, and the Trello
+          sync. It started as my graduation project at HvA.
+        </Text>
+      </Section>
+      <Section>
         <Text as='h2' variant='subheading'>
           What the slack!
         </Text>
@@ -200,6 +207,39 @@ export default function Page() {
           project teams in order to follow the progress of a project. Athena has
           the option to connect any project group to a trello board if a teacher
           would like to.
+        </Text>
+      </Section>
+      <Section>
+        <Text as='h2' variant='subheading'>
+          From graduation project to something students could actually use
+        </Text>
+        <Text>
+          Athena started as a graduation project, which would have ended at the
+          prototype. Making it real meant it had to fit into a flow students
+          already had. That was the constraint that pulled in LDAP: HvA
+          students log in with their school credentials anywhere else they go,
+          so Athena had to do the same. Asking them to register a new account
+          for a feedback tool would have killed adoption before the first
+          weekly cycle.
+        </Text>
+      </Section>
+      <Section>
+        <Text as='h2' variant='subheading'>
+          What we ran into
+        </Text>
+        <Text>
+          The honest part: students could not care less. Once Athena went into
+          a real cohort, weekly feedback became a chore on top of project work,
+          not a tool that helped. Engagement was low and uneven; in most teams
+          it became a burden teachers had to push, not something students
+          reached for.
+        </Text>
+        <Text>
+          In retrospect, the design assumed students wanted clearer team
+          dynamics. They mostly wanted the project to be over. A version that
+          surfaced the same signals from data they were already producing —
+          Trello activity, commits, attendance — without asking them to write
+          weekly feedback, would have stood a much better chance.
         </Text>
       </Section>
       <aside>
