@@ -274,6 +274,18 @@ export function MqttVariableMessenger() {
           paid for it.
         </Text>
       </Section>
+      <Section variant='full' as='figure'>
+        <Text variant='note' as='figcaption'>
+          How a Figma variable change reaches a board (and back)
+        </Text>
+        <Image
+          src='/microflow/architecture.png'
+          alt='Vertical sequence diagram: Figma plugin to MQTT broker to Microflow Studio (Electron) to Firmata firmware to microcontroller, with bidirectional publish/subscribe between the first three, a one-time flash arrow from Studio to Firmata, and serial USB between Firmata and the board.'
+          width={1280}
+          height={1700}
+          className='w-full max-w-2xl mx-auto'
+        />
+      </Section>
       <Section>
         <Text as='h3' variant='subheading' size='sm'>
           Flashing firmware
