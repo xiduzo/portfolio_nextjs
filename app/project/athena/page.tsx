@@ -4,6 +4,7 @@ import { Hero } from '@/components/custom/hero';
 import { Technologies } from '@/components/custom/technologies';
 import Link from 'next/link';
 import { Safari } from '@/components/magic-ui/safari';
+import { Image } from '@/components/custom/image';
 import { Links } from '@/components/custom/links';
 import { TLDR } from '@/components/custom/tldr';
 import { JsonLd } from '@/components/seo/json-ld';
@@ -185,6 +186,13 @@ export default function Page() {
           students and teachers. Athena only shows the outcome of the feedback
           per student but will never show who gave what feedback.
         </Text>
+        <Image
+          src='/athena/anonymization.png'
+          alt='Anonymization flow: a student authenticated via HvA LDAP submits weekly feedback; the server drops the author identifier at write-time (not at read-time), producing an aggregated feedback record with no author attached, which the teacher dashboard then reads. Annotation: small-group identifiability is the open risk.'
+          width={1280}
+          height={1100}
+          className='w-full max-w-2xl mx-auto mt-8'
+        />
       </Section>
       <Section as='figure'>
         <Safari
