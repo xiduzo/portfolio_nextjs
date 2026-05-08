@@ -57,6 +57,19 @@ export default function Page() {
           'The pilot completed successfully and rolled out to all auction locations in early 2025.',
         ]}
       />
+      <Section>
+        <Text size='sm' variant='note'>
+          VeileNext started as my traineeship project at Conclusion. I
+          proposed bringing React into the new auction stack and the early
+          version was &ldquo;everything by me&rdquo; — CI/CD, QA, cloud,
+          front-end, design. As the project found its scale, the team grew
+          with experienced tech leads, designers, and QA engineers, and I
+          gradually handed over the parts where they could go deeper. By the
+          time I left Conclusion, my scope had narrowed to making the
+          front-end feel right — the part the end-user actually sees, and the
+          part I enjoyed most.
+        </Text>
+      </Section>
       <Section as='figure'>
         <Text variant='note' as='figcaption'>
           The auction back in 1940
@@ -460,6 +473,24 @@ export default function Page() {
           src='/veilenext/exploration_scaled.png'
           alt='Exploratory design of the auctioneer interface to spark conversations'
         />
+      </Section>
+      <Section>
+        <Text as='h2' variant='subheading'>
+          The hardest part was not the tech
+        </Text>
+        <Text>
+          UDP, microservices, websockets, CI/CD — those were tractable
+          problems with known shapes. The bigger drag was getting buyers to
+          leave a Windows interface and a physical &ldquo;beneath the
+          clock&rdquo; ritual that had been part of their working day for
+          decades. The tech could move faster than the people; we kept having
+          to slow down to wait for them.
+        </Text>
+        <Text>
+          That reality is one of the main reasons the pilot took the shape it
+          did — small group, single location, long ramp — instead of a hard
+          cutover.
+        </Text>
       </Section>
       <Section>
         <Text>
