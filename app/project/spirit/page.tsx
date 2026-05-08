@@ -356,6 +356,13 @@ export class Level {
           be able to see the effect of their Exposure Response Prevention (ERP)
           treatment progress outside of the sessions with their therapist.
         </Text>
+        <Image
+          src='/spirit/privacy-flow.png'
+          alt="Diagram of Spirit's data boundary: a patient device contains mood entry, exercise log, and the local diary; a dashed red device boundary separates the device from a therapist view, with a single optional, patient-initiated arrow crossing the boundary. Annotation: no server holds the diary."
+          width={1280}
+          height={1100}
+          className='w-full max-w-2xl mx-auto mt-8'
+        />
         <Text>
           All exercises stay in a <strong>local</strong> diary on the
           patient&apos;s device. Clinical data should not pass through
