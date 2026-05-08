@@ -473,6 +473,18 @@ class FissaService {
 `}
         />
       </Section>
+      <Section variant='full' as='figure'>
+        <Text variant='note' as='figcaption'>
+          Why every operation has to fit in 10 seconds
+        </Text>
+        <Image
+          src='/fissa/architecture.png'
+          alt='Architecture: Expo client calls a Vercel serverless function (with a 10-second execution limit boundary marked in red) which runs a tRPC handler, a Prisma client, and an in-memory sort by score; the function reads/writes Postgres and fetches/queues against the Spotify Web API. Annotation: tracks are ordered by score, not by index, after the post-pivot state.'
+          width={1280}
+          height={1900}
+          className='w-full max-w-2xl mx-auto'
+        />
+      </Section>
       <Section>
         <Text as='h3' variant='subheading'>
           Determining the next song
